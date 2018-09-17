@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== OCR ======
+
+===== tesseract-ocr =====
+* ''tesseract-ocr''
+* ''tesseract-ocr-fra''
+
+→ frontend ''gscan2pdf'' basic mais utilisable.
+
+===== gocr et gocr-tk =====
+Logiciel en ligne de commande et graphique
+
+===== ocrad =====
+
+===== ocrfeeder =====
+système d'analyse de mise en page et de reconnaissance optique de caractères
+
+===== cuneiform =====
+multi-language OCR system
+
+===== Misc =====
+* ''yagf''
+* ''simple-scan''
+* ''xsane''
+* ''gimagereader''

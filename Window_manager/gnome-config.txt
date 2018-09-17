@@ -1,0 +1,125 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== Configuration de Gnome ======
+
+===== Pour suprimer les bookmarks =====
+Editer le fichier ''~/.config/user-dirs.dirs'' et commenter les XDG
+
+===== Ajouter la possibilité de créer un fichier vide =====
+configurer le ''XDG_TEMPLATE_DIR'' de ''~/.config/user-dirs.dirs'' et créer un fichier vide dans le dossier template.
+
+===== Ajouter open terminal here =====
+voir contrib avec les screen shots :
+http://askubuntu.com/questions/76712/setting-nautilus-open-terminal-to-launch-terminator-rather-than-gnome-terminal
+
+ou sinon :
+1. ''sudo apt-get install nautilus-open-terminal''
+2. ''nautilus -q''
+
+La seconde commande permet de faire un refresh de la config.
+
+===== Créer un raccourci dans les applications =====
+dans ''~/.local/share/applications''
+
+créer un fichier ''.desktop'', comme par exemple, ''eclipse.desktop'' avec le contenu :
+
+'''
+[Desktop Entry]
+Name=Eclipse
+Comment=SensiNact Eclipse
+Exec=/home/eg244698/eclipse/eclipses/studio/eclipse -data /home/eg244698/eclipse/workspaces/studio/workspace
+StartupNotify=true
+Terminal=false
+Type=Application
+Icon=/home/eg244698/eclipse/eclipses/studio/icon.xpm
+'''
+
+
+gsettings
+
+ATTENTION : ''gconftool-2'' est l'ANCETRE (qui peine à disparaitre…) de ''gsettings''. Il faut donc utiliser ''gsettings'' en priorité.
+
+Connaitre tous les schemas (catégories) disponibles : ''gsettings list-schemas''
+
+Lister les clés dans un schéma : ''gsettings list-keys org.gnome.desktop.background''
+
+Connaitre la valeur d'une clé
+
+* ''gsettings get org.gnome.desktop.background picture-uri''
+* ''gsettings get org.gnome.desktop.background picture-options''
+
+Setter une clé : ''gsettings set org.gnome.desktop.background picture-uri 'file:///usr/share/backgrounds/gnome/FootFall.png'''
+
+
+===== Boite de dialogue et notif faciles =====
+https://help.gnome.org/users/zenity/stable/
+https://wiki.ubuntu.com/NotificationDevelopmentGuidelines?action=AttachFile&do=view&target=icon-summary-body.c
+https://wiki.ubuntu.com/NotificationDevelopmentGuidelines
+
+Libnotify…
+https://developer.gnome.org/libnotify/unstable/NotifyNotification.html
+
+* commande : ''notify send''
+* démon pour afficher les notif sous Unity : ''notify osd''
+
+The Desktop Notification Spec on http://www.galago-project.org/specs/notification/
+
+https://wiki.ubuntu.com/NotifyOSD
+
+https://wiki.ubuntu.com/NotificationDevelopmentGuidelines
+
+https://wiki.gnome.org/Design/OS/Notifications
+
+
+Contains three sections:
+
+* Notifications
+	* Listed in date/time order.
+	* Dismiss button is displayed on pointer hover.
+	* Clicking/pressing a notification performs the default action. 
+* Birthdays for today
+* Events
+	* Shows a list of events for today 
+
+
+
+https://developer.gnome.org/libnotify/unstable/NotifyNotification.html
+
+https://wiki.ubuntu.com/mhall119/devportal/notify-osd
+
+
+https://developer.gnome.org/notification-spec/
+
+
+
+https://blogs.gnome.org/aday/2015/02/26/in-case-you-didnt-notice/
+https://wiki.gnome.org/HowDoI
+
+
+https://git.gnome.org/browse/gnome-shell/
+
+git://git.gnome.org/gnome-shell
+
+/home/eg244698/gnome-shell/js/ui/calendar.js
+
+
+Time and Date Drop-Down
+
+
+
+https://wiki.gnome.org/Design/OS/Notifications
+
+
+
+https://help.gnome.org/users/gnome-help/stable/clock-calendar.html.en
+
+
+
+GMenu
+
+* https://developer.gnome.org/gnome-devel-demos/unstable/gmenu.py.html.en
+* https://developer.gnome.org/gio/stable/GMenu.html
+
+Widgets : https://developer.gnome.org/gnome-devel-demos/unstable/beginner.py.html.en

@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== Police de caractères ======
+https://wiki.debian.org/Fonts
+
+===== Ajouter une police de caractère dans Linux =====
+* mettre la police dans ''/usr/local/share/fonts''
+* exécuter la commande : ''fc-cache -fv''
+
+===== Visualiser les polices de caractère =====
+* ''gnome-font-viewer'' pour visualiser les police une par une (avec le ficher ttf)
+* ''fontmatrix'' pour voir le catalogue des fonts installées

@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== Thunar config ======
+Changer le comportement de backspace dans thunar
+
+* dans ''.config/Thunar/accels.scm''
+* ajouter la ligne ''(gtk_accel_path "<Actions>/ThunarWindow/open-parent" "BackSpace")''
+

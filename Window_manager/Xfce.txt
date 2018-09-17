@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-15T13:43:52+02:00
+
+====== Xfce ======
+
+===== Capture d'écran =====
+Dans le gestionnaire de paramètres, Editeur de paramètres.
+
+Exemple : configuration de l'action sur appui de ''<impr ecran>''
+ 
+* canal : ''xfce4-keyboard-shortcut''
+* propriété ''commands/custom/Print'' → ''xfce4-screenshooter''
+
+

@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-09-15T22:51:24+02:00
+
+====== X11 vs Wayland ======
+
+Le protocole de serveur d'affichage ''X11'' (avec son implémentation ''X.Org'') présente de nombreuses limites en teme de sécurité, du fait que les applications ne sont pas convenablement isolées.
+
+Le protocole de serveur d'affichage ''Wayland'' est la solution à privilégier aujourd'hui.
+
+Utilisation :
+* Dans Debian 9 Stretch, sortie le 17 juin 2017 (mais non activé pas par défaut)
+* Dans Ubuntu 17.10 (mais pas 18.04)
+
+Pour connaitre le type de serveur d'affichage utilisé : ''echo $XDG_SESSION_TYPE''.
+
+

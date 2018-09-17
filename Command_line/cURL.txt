@@ -1,0 +1,27 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== cURL ======
+[[https://ec.haxx.se|Everything cURL]]
+
+''curl -k -A 'Mozilla/5.0' -u login:pass -b /tmp/cookie -c /tmp/cookie https://domain.tld''
+ 
+Soit dans l'ordre : pas de verification de certificat SSL, user-agent == firefox, login:passwd on enregistre les cookies et on les lit…
+ 
+http://www.linuxjournal.com/video/use-curl-login-websites-script
+
+''curl --cookie-jar cjar --output /dev/null http://www.linuxjournal.com/user/login''
+
+'''
+curl --cookie cjar --cookie-jar cjar \
+	 --date 'name=USERNAME' \
+	 --date 'pass=PASSWORD' \
+	 --location \
+	 --output ~/toto.txt \
+	 http://www.linuxjournal.com/user/login
+
+curl --cookie cjar \
+	 --output ~/titi.txt \
+	 http://www.linuxjournal.com/user/login
+'''

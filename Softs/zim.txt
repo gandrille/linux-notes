@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Zim ======
+* [[https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/CHANGELOG.txt|Changelog]]
+* [[https://github.com/jaap-karssenberg/zim-desktop-wiki/wiki/Planning|Roadmap]]
+
+**Format as code in zim**
+* ''Ctrl+T'' selecting one or multiple lines
+
+**Special characters**
+* …
+* √
+* œ
+* →
+
+===== Packages =====
+''apt install zim gtkspellcheck gtkspell''
+
+===== Plugins =====
+* Correcteur d'orthographe
+* Edition sans distraction
+	* largeur maximale de la page : 850
+	* Marges verticales : 50
+	* Fond du texte : #FAFAFA
+	* Texte : #2E3436
+	* Fond de l'écran : #EDEDED
+* Liste des tâches
+* Navigateur de fichiers liés
+* Table des matières
+* Editeur de tableaux
+* Etiquettes
+
+===== Projets similaires =====
+La page https://github.com/jaap-karssenberg/zim-wiki/wiki/Similar-projects liste des projets similaires :
+
+* https://github.com/tagspaces/tagspaces
+* http://www.giuspen.com/cherrytree/
+* http://tiddlywiki.com
+* http://strlen.com/treesheets/
+
+See also https://alternativeto.net/software/zim---a-desktop-wiki/

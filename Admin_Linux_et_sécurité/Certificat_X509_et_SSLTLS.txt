@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== Certificat X509 et SSLTLS ======
+https://doc.ubuntu-fr.org/tutoriel/comment_creer_un_certificat_ssl
+
+===== Certificate signing request (CSR) =====
+Cela va permettre de générer une clé privée, ainsi que 
+* création : ''openssl req -new''
+	* affiche sur la sortie standard une demande de certificat encodée en base64, qui contient les informations demandées ainsi que la clé publique. 
+	* créé un fichier ''privkey.pem'' avec la clé privée correspondante
+* affichage : ''openssl req -text -noout -in request.pem''
+
+===== Générer un certificat autosigné =====
+''openssl x509 -in request.csr -out new.cert.cert -req -signkey unlocked-privkey.key -days NNN''
+
+===== Afficher le contenu d'un certificat =====
+''openssl x509 -in cert.pem -noout -text''
+
+===== Récupérer la clé publique =====
+''openssl x509 -in ./snaThing.cert.pem -noout -pubkey''
+
+===== Récupérer un certificat sur un site web =====
+* ''echo -n | openssl s_client -connect mywebsite.com:443''
+* ''echo -n | openssl s_client -connect mywebsite.com:443 2>/dev/null | openssl x509 -in /dev/stdin''
+
+===== Tester une config ssl =====
+* web https://www.ssllabs.com/ssltest/
+* script https://github.com/rbsec/sslscan
+* plugin firefox https://addons.mozilla.org/fr/firefox/addon/calomel-ssl-validation/?src=ss
+
+→ VOIR LE TRES BON DOCUMENT SUR SSL/TLS DANS LA BASE DOCUMENTAIRE

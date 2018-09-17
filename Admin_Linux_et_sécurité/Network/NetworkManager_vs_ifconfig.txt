@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-12-20T09:39:21+01:00
+
+====== NetworkManager vs ifconfig ======
+
+===== Ifup/down =====
+This is the legacy system for managing network connections.
+It uses files stored inside ''/etc/network/interfaces'' folder.
+
+===== Network Manager : the network management daemon =====
+This is the default manager used by latest versions of Ubuntu.
+
+''sudo service network-manager start''
+
+**Profiles**
+[[https://developer.gnome.org/NetworkManager/1.14/nm-settings.html|NetworkManager connection profiles]] are stored in ''/etc/NetworkManager/system-connections/'' folder.
+They must be kept private, thats why each file must
+* have permissions set with 600
+* be owned by ''root:root''
+
+**Front end**
+* ''nmtui'' — Text User Interface for controlling NetworkManager
+* ''network-manager-gnome''
+
+**Sources**
+* https://debian-facile.org/doc:reseau:network-manager
+* https://wiki.gnome.org/Projects/NetworkManager
+* https://developer.gnome.org/NetworkManager/1.14/nm-settings.html
+* https://doc.ubuntu-fr.org/network-manager

@@ -1,0 +1,147 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-12-19T10:35:57+01:00
+
+====== FIDO ======
+
+===== Références et ressources =====
+**FIDO Alliance**
+* [[https://fidoalliance.org/download/|Specs]]
+* [[https://www.slideshare.net/FIDOAlliance/presentations|SlidesShare]]
+* [[https://www.youtube.com/channel/UCbC3HuHhfyqlXR6sBuEHSug/videos|Youtube]]
+ 
+**Serveurs de test**
+* [[https://demo.yubico.com/u2f|Yubico U2F Demo server]]
+* [[https://u2fval.appspot.com/|Yubico U2F validation Demo server]] using [[https://developers.yubico.com/u2fval/|U2F validation server implem]]
+* [[https://u2fdemo.appspot.com/|Google U2F Demo Server]] using [[https://github.com/google/u2f-ref-code/|U2F Ref Code implem]]
+
+**Implems open source** 
+* [[https://developers.yubico.com/U2F/Libraries/List_of_libraries.html|List of libraries to start an implem]]
+* voir la section serveurs de tests
+
+===== Introduction =====
+
+==== Motivation : les limites à l'utilisation des passwords ====
+* passwords could be stolen from the server
+* could be entered into untrusted apps/websites (phishing)
+* hard to type on mobile devices
+* usability : too many passwords to remember
+
+==== Type d'attaques ====
+* attaques du server
+* attaques du client 
+	* user input channel compromized (keyloggers)
+	* fausse fenêtre de login
+* quand on est authentifié, on de dit pas pourquoi
+
+===== Présentation de Fido 1.X =====
+
+==== Historique ====
+* fev 2013 : Fido Alliance Announced
+* dec 2013 : FIDO ready program
+* Feb 2014 : Specification review draft
+* fin 2014 : premiers déploiement UAF et U2F
+* 9 dec 2014 : FIDO 1.0
+* mai 2015 : certification program
+* juin 2015 : Bluetooth et NFC transports added
+* Fev 2016 : W3C standardisation
+* nov 2016 : FIDO 1.1
+
+==== Adoption ====
+* [[https://security.googleblog.com/2014/10/strengthening-2-step-verification-with.html|oct 2014 : Google]]
+* [[https://blogs.dropbox.com/dropbox/2015/08/u2f-security-keys/|aout 2015 : Dropbox]]
+* [[https://github.com/blog/2071-github-supports-universal-2nd-factor-authentication|oct 2015 : GitHub]]
+* [[https://www.yubico.com/2017/01/yubikey-u2f-protect-facebook-accounts/|jan 2017 : Facebook]]
+* [[https://releasenotes.docs.salesforce.com/en-us/winter17/release-notes/rn_security_auth_u2f.htm|winter 2017 : SalesForce]]
+* and still counting...
+
+==== Avantages de FIDO ====
+* pas d'autorité centrale
+* pas de secret sur le serveur pour FIDO (que des clés privées)
+* les données biométriques de UAF restent sur le device
+* pas de possibilité de tracking de l'utilisateur entre service ou comptes
+
+==== Les DEUX standards ====
+* [[https://github.com/dainnilsson/flask-u2f-tutorial|U2F tutorial]]
+* [[https://www.slideshare.net/FIDOAlliance/fido-technical-specifications-overview-80504684|Flows (slides 17 et 18)]]
+
+==== Différences entre UAF et U2F ====
+* UAF standard : First Factor - passwordless, avec biométrie
+	* UAF 1.1 (February 2nd, 2017)
+		* Android "N" attestation support
+		* APDU framing of commands (optional – for "smart cards")
+		* New metadata statement fields
+		* "Delete-all" de-provisioning Functionality
+* U2F standard : Second factor - Universal 2nd Factor
+	* U2F 1.2 (July 11th, 2017)
+		* Change USB transport to conform to ISO7816-4
+		* NFC (ISO7816-4) support
+		* Bluetooth Low Energy support
+		* Updated JavaScript 1.1 specification
+		* Transports Extension specification
+		* Expanded Metadata Service specification to include U2F
+
+→ Important : lors de l'authentification avec U2F, on s'attend à un utilisateur que l'on connait déjà, alors que ce n'est pas le cas avec UAF. Les flots sont donc différents.
+
+
+==== U2F ====
+Acteurs
+
+* **Relying Party** server
+* **FIDO Client** API du browser ou une app
+* **Authenticator** physical token which stores the private key
+
+L'Authenticator dispose d'une paire de clé publique/clé privée (authentication keys) pour chaque Relying Party (site web, généralement) et utilisateur, afin d'empêcher le suivi des utilisateurs entre RP en suivant les clés. Il a partagé chaque clé publique avec le RP correspondant.
+
+Après le login, le RP connait l'utilisateur qui est authentifié. Il envoie un challenge. Le FIDO client transmet ce challenge à l'Authenticator qui le signe avec sa clé privée. Le challenge signé est alors renvoyé par le FIDO client au RP qui vérifie la signature avec la clé publique.
+
+Par voie de conséquence
+* Cette interaction permet de vérifier que l'utilisateur possède la clé privée. C'est tout. Ce n'est PAS l'identification d'une personne, qui est faite par le login, mais au plus l'identification d'un device (la possession de la clé privée).
+* Un geste physique peut être demandé à l'utilisateur côté Authenticator afin de provoquer la lecture de la clé privée. Ce geste aussi simple que presser un bouton est un test de présence qui permet d'éviter des tentatives de chiffrements via API. 
+
+→ device sign data given by the server with his private key. Server knows the public key (pre shared) and can verify the user.
+
+==== UAF ====
+* séparation entre
+	* user verification, on the authenticator
+	* authentication, on the server
+
+* **attestation** cryptographic proof for letting the server understanding authenticator security (fingerprint,...)
+* **keys (on the authenticator)**
+	* attestation key : injected at manufacturing time, doesn't change
+	* authentication keys : generated at registration time
+
+
+==== Vocabulaire ====
+
+| old name                | new name             |
+|-------------------------|----------------------|
+| rpid                    | App ID               |
+| account info (AI)       | username             |
+| COpts.webauthn_authnSel | policy               |
+| AAGUID                  | AAID                 |
+| FinalChallengeParam     | clientData           |
+| fc                      | clientDataHash (cdh) |
+| credentials             | handle (h)           |
+
+
+===== FIDO en pratique =====
+
+==== Browsers compatibility ====
+* Google Chrome v38
+* Opera v40
+* [[https://www.yubico.com/2017/11/how-to-navigate-fido-u2f-in-firefox-quantum/|Firefox v57]]
+* Microsoft is working on FIDO 2.0 support for Windows 10 and the Edge
+
+==== Devices certifiés U2F ====
+ La plupart des équipements sont disponibles sur Amazon, parfois à des prix plus intéressants que sur le site web de l'équipmentier.
+
+* [[https://www.yubico.com/products/yubikey-hardware/compare-yubikeys/|Yubico]]
+* [[https://ftsafe.com/products/FIDO|Feitian]]
+* [[https://hypersecu.com/products/hyperfido|Hypersecu]]
+* [[http://www.key-id.com/|Key-ID]]
+* [[https://www.neowave.fr/shop/fr/|Neowave]]
+
+===== FIDO 2 roadmap =====
+* [[https://www.w3.org/TR/webauthn/|W3C Web Authn specification]]: a new JavaScript API based on FIDO web API
+* Client to authenticator protocol (CTAP) : a new API that enables FIDO authentication from the platform

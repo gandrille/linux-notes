@@ -1,0 +1,35 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== imap ======
+**Pour regarder le statut d'une boite mail en ligne de commande, on peut utiliser IMAP**
+
+* Liste de commandes IMAP : ''https://donsutherland.org/crib/imap''
+* RFC : ''https://tools.ietf.org/html/rfc3501''
+
+**Exemple de commandes**
+
+* ''03 SELECT INBOX''
+* ''11 fetch 129 full''
+* ''12 fetch 129 ENVELOPE''
+* ''13 FETCH 1:* (FLAGS ENVELOPE)''
+* ''12 FETCH 1:* (FLAGS RFC822.HEADER)''
+
+
+'''
+#!/bin/sh
+
+imapscript () {
+  echo '01 LOGIN me@gmail.com onetimepassword'
+  echo '03 STATUS INBOX (MESSAGES UNSEEN RECENT)'
+  echo '04 SELECT INBOX'
+  echo '05 FETCH 1:* (FLAGS RFC822.HEADER)'
+  echo '06 LOGOUT'
+  while sleep 1; do
+    echo "05 logout"
+  done
+}
+	
+imapscript | openssl s_client -connect imap.gmail.com:993 -crlf 2> /dev/null | programmes/host-fangio/prog-natif/ldapformat --raw | sed "s/\r/ /g" | grep -E "^Subject|^From|^To|^ FLAGS|^\* " | perl -CS -MEncode -ne 'print decode("MIME-Header", $_)'
+'''

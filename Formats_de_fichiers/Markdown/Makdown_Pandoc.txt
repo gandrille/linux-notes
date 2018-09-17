@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Makdown Pandoc ======
+* ''pandoc -s Mouche.md -o Mouche.html''
+* ''pandoc Mouche.md -o Mouche.epub''
+* ''pandoc Mouche.md -o Mouche.docx''

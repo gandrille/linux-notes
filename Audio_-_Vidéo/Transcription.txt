@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== Transcription ======
+* logiciel pour Gnome : https://gkarsay.github.io/parlatype/
+* http://otranscribe.com/
+* https://github.com/oTranscribe/oTranscribe

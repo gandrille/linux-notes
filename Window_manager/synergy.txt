@@ -1,0 +1,54 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== Synergy ======
+**Attention :** le serveur ne doit pas s'exécuter en root, mais sous le login client.
+
+===== Points d'entrée =====
+http://synergy-foss.org/
+
+Fichier de configuration :
+
+* http://www.mattcutts.com/blog/how-to-configure-synergy-in-six-steps/
+* http://synergy2.sourceforge.net/faq.html
+* http://synergy2.sourceforge.net/configuration.html
+
+===== Exemple de fichier de config serveur =====
+'''
+section: screens
+  ubuntu:
+  windowspc:
+end
+
+section: aliases
+  windowspc:
+'''
+	'''
+	G-E6410-39
+	end
+	
+	section: aliases
+	  ubuntu:
+	'''
+	'''
+	g-del5500-18
+	end
+	
+	section: links
+	  ubuntu:
+	'''
+	'''
+	left = windowspc
+	  windowspc:
+	'''
+	'''
+	right = ubuntu
+	end
+	
+	section: options
+	  screenSaverSync = false
+	  keystroke(f12) = lockCursorToScreen(toggle)
+	end
+	'''
+

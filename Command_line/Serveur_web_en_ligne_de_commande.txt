@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== Serveur web en ligne de commande ======
+Pour savoir si un port est accessible depuis internet: https://ifconfig.co/port/8080
+
+**Netcat**
+
+* ''while true; do nc -l -p 8080 < index.html; done''
+* ''while true; do echo "< pre>$(ps aux)< /pre>" | nc -l 8080; done''
+
+**Python v2**
+
+* ''python -m SimpleHTTPServer''
+* ''python -m SimpleHTTPServer 8000''
+
+**Python v3**
+
+* ''python3 -m http.server''
+
+**Node.js**
+
+* ''npm install -g http-server''
+* ''executer simplement http-server''
+
+**websockets**
+
+* http://websocketd.com/
+
+→ Voir aussi : netcat

@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T17:27:07+02:00
+
+====== espaces dans les noms de fichiers ======
+**Ligne de commande**
+
+'''
+for fichier in "$@"; do
+  echo "$fichier"
+done
+'''
+
+**Avec un find et xargs**
+
+''find ... -print0 | xargs -0 ...''
+
+
+

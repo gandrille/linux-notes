@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== Backups ======
+**Chez Framasoft (en 2017)**
+
+* Backup de plusieurs postes : https://github.com/backuppc/backuppc
+* Sauvegardes incrémentales : https://borgbackup.readthedocs.io/en/stable/
+
+**Notes Duplicity**
+ 
+* plante de temps en temps
+* cache délirant
+* remarque : Déja-dup est une interface graphique pour duplicity
+

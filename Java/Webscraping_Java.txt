@@ -1,0 +1,85 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== Webscraping Java ======
+https://ksah.in/how-to-log-in-to-almost-any-websites/
+
+'''
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>fr.ksahin</groupId>
+  <artifactId>blog</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>Blog</name>
+ 
+  <dependencies>
+  	<dependency>
+  		<groupId>net.sourceforge.htmlunit</groupId>
+  		<artifactId>htmlunit</artifactId>
+  		<version>2.19</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>com.fasterxml.jackson.core</groupId>
+  		<artifactId>jackson-databind</artifactId>
+  		<version>2.7.0</version>
+  	</dependency>
+  </dependencies>
+</project>
+'''
+
+
+
+'''
+	public static void main(String[] args) {
+
+		String baseUrl = "https://news.ycombinator.com" ;
+		String loginUrl = baseUrl + "/login?goto=news" ; 
+		String login = "login";
+		String password = "password" ;
+		
+		try {
+			System.out.println("Starting autoLogin on " + loginUrl);
+			WebClient client = autoLogin(loginUrl, login, password);
+			HtmlPage page = client.getPage(baseUrl) ;
+			
+			HtmlAnchor logoutLink = page.getFirstByXPath(String.format("//a[@href='user?id=%s']", login)) ;
+			if(logoutLink != null ){
+				System.out.println("Successfuly logged in !");
+				// printing the cookies
+				for(Cookie cookie : client.getCookieManager().getCookies()){
+					System.out.println(cookie.toString());
+				}
+			} else {
+				System.err.println("Wrong credentials");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static WebClient autoLogin(String loginUrl, String login, String password) throws FailingHttpStatusCodeException, MalformedURLException, IOException{
+		WebClient client = new WebClient();
+		client.getOptions().setCssEnabled(false);
+		client.getOptions().setJavaScriptEnabled(false);
+		
+		HtmlPage page = client.getPage(loginUrl);
+		
+		HtmlInput inputPassword = page.getFirstByXPath("//input[@type='password']");
+		//The first preceding input that is not hidden
+		HtmlInput inputLogin = inputPassword.getFirstByXPath(".//preceding::input[not(@type='hidden')]");
+		
+		inputLogin.setValueAttribute(login);
+		inputPassword.setValueAttribute(password);
+		
+		//get the enclosing form
+		HtmlForm loginForm = inputPassword.getEnclosingForm() ;
+		
+		//submit the form
+		page = client.getPage(loginForm.getWebRequest(null));
+		
+		//returns the cookie filled client :)
+		return client;
+	}
+'''
+

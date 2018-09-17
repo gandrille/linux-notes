@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-12-20T09:33:34+01:00
+
+====== Wireless ======
+https://www.raspberrypi.org/documentation/configuration/wireless/wireless-cli.md
+https://www.linux.com/learn/how-configure-wireless-any-linux-desktop
+
+Vérifier que le réseau existe: ''iwlist wlp1s0 scan''

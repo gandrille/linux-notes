@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== Erreur too many open files ======
+Dans le fichier ''/etc/security/limits.conf'', ajouter les lignes :
+
+* ''hard nofile 50000''
+* ''soft nofile 50000''
+
+Voir commande ''ulimit -n''
+

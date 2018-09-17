@@ -1,0 +1,51 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== avconv et ffmpeg ======
+
+===== 1 image = 1 video =====
+If you want to create a video out of just one image, this will do (output video duration is set to 30 seconds with -t 30):
+
+''ffmpeg -loop 1 -i img.png -c:v libx264 -t 30 -pix_fmt yuv420p out.mp4''
+
+''avconv -i dys.mp4 -vcodec libx264 -acodec copy -dcodec copy -ss 00:10:21 -t 00:02:44 dys3.mp4''
+
+===== 1 image + 1 audio file = 1 video =====
+''ffmpeg -f image2 -loop 1 -i image.jpg -i audio.wav -c:v libx264 -tune stillimage -c:a aac -strict experimental -b:a 192k -shortest out.mp4''
+
+This would use the ''libx264'' encoder and provide you with better compression than the MJPEG codec used above. The audio is AAC, with the built-in ffmpeg AAC encoder.
+
+===== 1 video + 1 audio file = 1 video =====
+''ffmpeg -i son.wav -i video_origine.avi video_finale.mpg''
+
+===== Concat =====
+You can also use ffmpeg to concatenate multiple videos into one long video. Start by transcoding all the individual videos into MPEG format, all with exactly the same bit rates, codecs, image resolutions, frame rates etc. Mistakes can be avoided by using one of ffmpeg's predefined targets such as ntsc-dvd or pal-dvd. Once that's done, simply string the resulting .mpg files together using "cat" and redirect the output to another .mpg file. Now, the timestamps inside the resulting, big .mpg file are all going to be messed up, so you'll have to process the big .mpg file with ffmpeg again. This will have the effect of putting the timestamps right. 
+
+* http://ffmpeg.org/faq.html#How-can-I-concatenate-video-files
+* https://trac.ffmpeg.org/wiki/Concatenate
+
+===== Découper une vidéo =====
+''avconv -i source.mp4 -vcodec libx264 -acodec copy -dcodec copy -ss 00:10:21 -t 00:02:44 destination.mp4''
+
+ATTENTION : le video codec (vcodec) ne doit pas être copy… ça plante…
+
+* ''-ss'' instant de début
+* ''-t'' durée
+
+===== Retourner à 180° une vidéo =====
+''avconv -i original.mp4 -vf "hflip,vflip" -codec:v libx264 -preset slow -crf 20 -codec:a copy flipped.mp4''
+
+Notice the ''-crf'' option. That sets the output quality. It goes from 0 (lossless) upwards logarithmically. You'll probably want a value between 19 and 25 in most cases. -preset sets the speed of the encoding, either "slow", "medium", or "fast". Slow should get you smaller file sizes with an obvious tradeoff. You should adjust ''-codec:v'' to match the original. If you don't set these options you'll get the defaults, which don't work well when flipping iphone video.
+
+===== Conversion de formats =====
+
+==== flv to mp4 ====
+''avconv -i input.flv -codec copy output.mp4''
+
+http://sparcher.blogspot.fr/2013/03/howto-losslessly-convert-flv-to-mp4-in.html
+
+==== ogv to avi ====
+''avconv -i demo.ogv -qscale 1 a.avi''
+
+qscale : entre 1 (haute qualité) et 31 (basse qualité)

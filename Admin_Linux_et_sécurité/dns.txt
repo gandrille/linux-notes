@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== Configuration DNS ======
+* https://www.shaftinc.fr/arretez-google-dns.html
+* https://www.shaftinc.fr/mon-dns-ffdn.html
+
+===== Résolveurs FDN =====
+Résolveurs DNS ouverts : https://www.fdn.fr/actions/dns/
+
+===== add servers =====
+http://pgl.yoyo.org/adservers/
+
+===== DNS non menteurs =====
+* https://www.quad9.net
+* http://www.bortzmeyer.org/quad9.html

@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== Connaitre la configuration matérielle ======
+**lshw**
+
+* ''lshw''
+* ''lshw -html > file.html''
+
+**inxi**
+
+* ''inxi''
+* ''inxi -F''
+

@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2018-06-29T14:49:39+02:00
+
+====== wget images sur une page web ======
+
+''wget -nd --span-hosts --page-requisites --accept jpg,jpeg,png,gif -e robots=off https://korben.info''
+
+**Mirror d'un site web**
+
+''wget -m http://www.example.com/''
+
+
+
+
+
+

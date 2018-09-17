@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== disper ======
+Clonner ou étendre l'affichage sur plusieurs écrans ou vidéos projecteurs.
+
+* Vidéo projecteur : ''disper -c -d auto -r 1600x1200''
+* Dualscreen : ''disper -t left -d auto --resolution=1280x1024,1280x1024 -e''
