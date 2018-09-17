@@ -1,0 +1,417 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Package creation</title>
+	<meta name="generator" content="Zim 0.68-rc1">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="../../../_resources/style.css" type="text/css"/>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="navigation">
+			<ul>
+<li><a href="../../../Admin_Linux_et_sécurité.html" title="Admin Linux et sécurité" class="page">Admin Linux et sécurité</a>
+<ul>
+<li><a href="../../Backups.html" title="Backups" class="page">Backups</a></li>
+<li><a href="../../Certificat_X509_et_SSLTLS.html" title="Certificat X509 et SSLTLS" class="page">Certificat X509 et SSLTLS</a></li>
+<li><a href="../../dns.html" title="dns" class="page">dns</a></li>
+<li><a href="../../Erreur_too_many_open_files.html" title="Erreur too many open files" class="page">Erreur too many open files</a></li>
+<li><a href="../../Exif.html" title="Exif" class="page">Exif</a></li>
+<li><a href="../../FIDO.html" title="FIDO" class="page">FIDO</a></li>
+<li><a href="../../Hardware.html" title="Hardware" class="page">Hardware</a></li>
+<li><a href="../../Heure_et_NTP.html" title="Heure et NTP" class="page">Heure et NTP</a></li>
+<li><a href="../../htaccess.html" title="htaccess" class="page">htaccess</a></li>
+<li><a href="../../keys.html" title="keys" class="page">keys</a></li>
+<li><a href="../../mount_d'une_image_iso.html" title="mount d'une image iso" class="page">mount d'une image iso</a></li>
+<li><a href="../../Network.html" title="Network" class="page">Network</a></li>
+<li><a href="../../Open_SSL.html" title="Open SSL" class="page">Open SSL</a></li>
+<li><a href="../../Packaging.html" title="Packaging" class="page">Packaging</a>
+<ul>
+<li><a href="../Debian.html" title="Debian" class="page">Debian</a>
+<ul>
+<li><a href="./apt_and_dpkg.html" title="apt and dpkg" class="page">apt and dpkg</a></li>
+<li><a href="./debconf.html" title="debconf" class="page">debconf</a></li>
+<li><a href="./How_To_Fix_Broken_Package_manager.html" title="How To Fix Broken Package manager" class="page">How To Fix Broken Package manager</a></li>
+<li><b>Package creation</b></li>
+</ul>
+</li>
+<li><a href="../Flatpak.html" title="Flatpak" class="page">Flatpak</a></li>
+</ul>
+</li>
+<li><a href="../../Samba_et_cifs.html" title="Samba et cifs" class="page">Samba et cifs</a></li>
+<li><a href="../../Sécurité.html" title="Sécurité" class="page">Sécurité</a></li>
+<li><a href="../../ssh.html" title="ssh" class="page">ssh</a></li>
+<li><a href="../../systemd.html" title="systemd" class="page">systemd</a></li>
+</ul>
+</li>
+<li><a href="../../../Audio_-_Vidéo.html" title="Audio - Vidéo" class="page">Audio - Vidéo</a></li>
+<li><a href="../../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../../Formats_de_fichiers.html" title="Formats de fichiers" class="page">Formats de fichiers</a></li>
+<li><a href="../../../Java.html" title="Java" class="page">Java</a></li>
+<li><a href="../../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../../../Window_manager.html" title="Window manager" class="page">Window manager</a></li>
+</ul>
+
+		</div>
+		<div id="content">
+
+
+			<h1>Package creation <a name='Admin Linux et sécurité:Packaging:Debian:Package creation'></a></h1>
+			<div id="toc">			
+				<div class="toctitle">Contents</div>				
+				<ul id="tocdata"></ul>
+			</div>		
+
+			<p>
+Here are some info for building a Debian package.<br>
+Thoses notes are <b>NOT</b> in line with the best practices promoted by Debian since a package should be constructed from the sources. To that purpose, <tt>dpkg-buildpackage</tt> is the command to be used.
+</p>
+
+<p>
+<b>References</b><br>
+<ul>
+<li><a href="https://www.debian.org/doc/debian-policy/" title="Debian Policy Manual" class="https">Debian Policy Manual</a></li>
+<li><a href="https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.en.html" title="Basics of the Debian package management system" class="https">Basics of the Debian package management system</a></li>
+<li><a href="https://www.debian.org/doc/devel-manuals#maint-guide" title="Debian New Maintainers' Guide" class="https">Debian New Maintainers' Guide</a></li>
+</ul>
+</p>
+
+<h2>Package sources</h2>
+
+<h3>Directories layout (example)</h3>
+
+<pre>
+ProgramName-Version/
+ProgramName-Version/DEBIAN
+ProgramName-Version/DEBIAN/control
+ProgramName-Version/DEBIAN/copyright
+ProgramName-Version/DEBIAN/changelog
+ProgramName-Version/DEBIAN/postinst
+ProgramName-Version/DEBIAN/postrm
+ProgramName-Version/DEBIAN/preinst
+ProgramName-Version/DEBIAN/prerm
+ProgramName-Version/usr/
+ProgramName-Version/usr/bin/
+ProgramName-Version/usr/bin/your_script
+</pre>
+
+<h3>Control file</h3>
+
+<p>
+See : <br>
+<ul>
+<li><a href="https://www.debian.org/doc/manuals/debian-faq/ch-pkg_basics.en.html#s-controlfile" title="What is a Debian control file?" class="https">What is a Debian control file?</a></li>
+<li><a href="https://www.debian.org/doc/debian-policy/ch-controlfields.html" title="Control files and their fields, in Debian Policy Manual" class="https">Control files and their fields, in Debian Policy Manual</a></li>
+</ul>
+</p>
+
+<p>
+<b>Example</b>
+</p>
+
+<pre>
+Package: hello
+Version: 2.9-2+deb8u1
+Architecture: amd64
+Maintainer: Santiago Vila &lt;sanvila@debian.org&gt;
+Installed-Size: 145
+Depends: libc6 (&gt;= 2.14)
+Conflicts: hello-traditional
+Breaks: hello-debhelper (&lt;&lt; 2.9)
+Replaces: hello-debhelper (&lt;&lt; 2.9), hello-traditional
+Section: devel
+Priority: optional
+Homepage: http://www.gnu.org/software/hello/
+Description: example package based on GNU hello
+ The GNU hello program produces a familiar, friendly greeting.  It
+ allows non-programmers to use a classic computer science tool which 
+ would otherwise be unavailable to them.
+ .
+ Seriously, though: this is an example of how to do a Debian package.
+ It is the Debian version of the GNU Project's `hello world' program
+ (which is itself an example for the GNU Project).
+</pre>
+
+<p>
+<ul>
+<li><b>Package:</b> the name of the binary package.</li>
+<li><b>Version:</b> best practice is <tt>&lt;major version&gt;.&lt;minor version&gt;-&lt;package revision&gt;</tt></li>
+<li><b>Architecture:</b>
+<ul>
+<li><tt>all</tt> → same content on all architectures</li>
+<li><tt>any</tt> → It is needed to compile the sources for each architecture</li>
+<li><tt>amd64</tt>, <tt>i386</tt>… → only for a specific architecture</li>
+<li><tt>source</tt> → source package.</li>
+</ul>
+</li>
+<li><b>Installed-Size:</b> as an integer, in kilo-bytes. Used to ensure there is enough space left on the disk.</li>
+<li><b>Section:</b> <tt>section/category</tt>, but it's possible to provide only the <tt>category</tt> if section is <tt>main</tt>
+<ul>
+<li>Section
+<ul>
+<li><tt>main</tt>: the free software</li>
+<li><tt>non-free</tt>: the not really free software</li>
+<li><tt>contrib</tt>: free software that depends on non-free software</li>
+</ul>
+</li>
+<li>Category
+<ul>
+<li><tt>admin</tt> for administrator-only programs</li>
+<li><tt>devel</tt> for programmer tools</li>
+<li><tt>doc</tt> for documentation</li>
+<li><tt>libs</tt> for libraries</li>
+<li>…</li>
+</ul></li>
+</ul>
+</li>
+<li><b>Priority:</b> usualy, it is <tt>optional</tt>.</li>
+</ul>
+</p>
+
+<h3>Advanced packages dependencies</h3>
+
+<p>
+<b>Virtual packages dependencies</b> 
+</p>
+
+<p>
+<tt>Depends: openjdk-8-jre-headless | java7-runtime-headless | java8-runtime-headless</tt>
+</p>
+
+<p>
+In this example, we want to have a Java7 or Java8 runtime, and we provide a default (<tt>openjdk-8-jre-headless)</tt> in case we need to install a Java runtime.
+</p>
+
+<p>
+<ul>
+<li>According to the <a href="https://www.debian.org/doc/debian-policy/ch-relationships.html#virtual-packages-provides" title="Debian Policy Manual" class="https">Debian Policy Manual</a>: "To specify which of a set of real packages should be the default to satisfy a particular dependency on a virtual package, list the real package as an alternative before the virtual one."</li>
+<li>According to <a href="https://debian-handbook.info/browse/stable/sect.package-meta-information.html" title="The Debian Administrator's Handbook" class="https">The Debian Administrator's Handbook</a>: "Virtual packages used to suffer from some limitations, the most significant of which was the absence of a version number". The problem is that this feature is not (yet?) heavily used. That's why it's preferable listing the different virtual packages, instead of using a range operator.</li>
+</ul>
+</p>
+
+<p>
+<b>Usage of the tilde symbol (~)</b>
+</p>
+
+<p>
+According to the <a href="https://www.debian.org/doc/debian-policy/ch-controlfields.html#id22" title="Debian Policy Manual" class="https">Debian Policy Manual</a>: "One common use of ~ is for upstream pre-releases. For example, 1.0~beta1~svn1245 sorts earlier than 1.0~beta1, which sorts earlier than 1.0."
+</p>
+
+<p>
+The <tt>dpkg</tt> command can be used for trouble shooting:<br>
+<ul>
+<li><tt>dpkg --compare-versions '1.0~beta1~svn1245' '&gt;=' '1.0~beta1'; echo $?</tt></li>
+<li><tt>dpkg --compare-versions '1.0~beta1' '&gt;=' '1.0'; echo $?</tt></li>
+</ul>
+</p>
+
+<p>
+The tilde symbol can be used at the end of the string:<br>
+<ul>
+<li><tt>dpkg --compare-versions '1.0~beta1~svn1245' '&gt;=' '1.0~'; echo $?</tt></li>
+<li><tt>dpkg --compare-versions '1.0~beta1~svn1245' '&gt;=' '1.0'; echo $?</tt></li>
+</ul>
+</p>
+
+<h3>Copyright file</h3>
+
+<p>
+This file has to be both machine and human readable… so its syntax is very strict.<br>
+See : <a href="https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/" title="Machine-readable debian/copyright file" class="https">Machine-readable debian/copyright file</a>
+</p>
+
+<h3>Changelog file</h3>
+
+<p>
+This file has to be both machine and human readable… so its syntax is very strict.<br>
+See : <a href="https://www.debian.org/doc/debian-policy/ch-source.html#s-dpkgchangelog" title="Debian changelog, in the Debian Policy Manual" class="https">Debian changelog, in the Debian Policy Manual</a>
+</p>
+
+<p>
+Thats' why the <tt>devscripts</tt> packet provides the <tt>dch</tt> tool to manipulate the changelog file.
+</p>
+
+<p>
+<tt>dch --create</tt><br>
+<tt>dch --increment</tt>
+</p>
+
+<h3>{pre,post}{inst,rm}</h3>
+
+<p>
+preinst, postinst, prerm and postrm are called package maintainer scripts.
+</p>
+
+<p>
+<ul>
+<li><a href="https://www.debian.org/doc/debian-policy/ch-maintainerscripts.html" title="Package maintainer scripts and installation procedure, in the Debian Policy Manual" class="https">Package maintainer scripts and installation procedure, in the Debian Policy Manual</a></li>
+<li><a href="https://www.debian.org/doc/debian-policy/ap-flowcharts.html" title="Maintainer script flowcharts, in the Debian Poicy Manual" class="https">Maintainer script flowcharts, in the Debian Poicy Manual</a></li>
+</ul>
+</p>
+
+<table>
+<thead><tr>
+  <th align="left"> </th>
+  <th align="left">preinst</th>
+  <th align="left">postinst</th>
+  <th align="left">prerm</th>
+  <th align="left">postrm</th>
+</tr></thead>
+<tr>
+  <td align="left">1 Installation of foo (not installed)</td>
+  <td align="left">install</td>
+  <td align="left">configure</td>
+  <td align="left">&nbsp;</td>
+  <td align="left">abort-install</td>
+</tr>
+<tr>
+  <td align="left">2 Installation of foo 1.2-4 (Config-Files 1.2-3)</td>
+  <td align="left">install</td>
+  <td align="left">configure</td>
+  <td align="left">&nbsp;</td>
+  <td align="left">abort-install</td>
+</tr>
+<tr>
+  <td align="left">3 Upgrade of foo 1.2-3 to 1.2-4</td>
+  <td align="left">upgrade, abort-upgrade</td>
+  <td align="left">abort-upgrade, configure</td>
+  <td align="left">upgrade, failed-upgrade</td>
+  <td align="left">abort-upgrade, upgrade, failed-upgrade</td>
+</tr>
+<tr>
+  <td align="left">4 Removal of foo (installed)</td>
+  <td align="left">&nbsp;</td>
+  <td align="left">abort-remove</td>
+  <td align="left">remove</td>
+  <td align="left">remove</td>
+</tr>
+<tr>
+  <td align="left">5 Purge of foo (conf files)</td>
+  <td align="left">&nbsp;</td>
+  <td align="left">&nbsp;</td>
+  <td align="left">&nbsp;</td>
+  <td align="left">purge</td>
+</tr>
+<tr>
+  <td align="left">6 Removal+purge of foo (installed)</td>
+  <td align="left">&nbsp;</td>
+  <td align="left">abort-remove</td>
+  <td align="left">remove</td>
+  <td align="left">remove, purge</td>
+</tr>
+</table>
+
+<h2>Building the package</h2>
+
+<h3>Understanding the choices</h3>
+
+<p>
+<b>dpkg-deb</b><br>
+This is the very basic command for compiling. The one we are going to use<br>
+<tt>dpkg-deb --build helloworld_1.0-1</tt>
+</p>
+
+<p>
+<b>Using a debian/rules file</b><br>
+This is the modern way of doing things. <br>
+The debian/rules file acts as a Makefile for building the packet, using the <tt>debhelper</tt> tools under the hood.<br>
+The key command is <tt>dh</tt> (introduced in 2008), which orchestrates the usage of all the <tt>debhelper</tt> tools.<br>
+Before 2008, <tt>CDBS</tt> (Common Debian Build System, introduced in 2005) was the only approach to create a simple and clean debian/rules file. For new projects, <b>CDBS</b> should not be used.
+</p>
+
+<p>
+<b>Using dpkg-buildpackage</b><br>
+…
+</p>
+
+<h3>Lintian usage</h3>
+
+<p>
+<a href="https://lintian.debian.org/manual/index.html" title="https://lintian.debian.org/manual/index.html" class="https">https://lintian.debian.org/manual/index.html</a>
+</p>
+
+<h2>Debian repository</h2>
+
+<h3>Repository creation</h3>
+
+<p>
+Basically, a Debian repository is a folder accessible using HTTP protocol. This folder only needs to provides a descriptor named <tt>Packages.gz</tt>.
+</p>
+
+<p>
+<ul>
+<li>First, you need the <tt>dpkg-dev</tt> to be installed.</li>
+<li>Then, generate the <tt>Packages.gz</tt> file using the following command : <tt>dpkg-scanpackages /repository/root /dev/null | gzip -9c &gt; /repository/root/Packages.gz</tt></li>
+<li>Of course, the repository folder needs to be served by an HTTP server.</li>
+</ul>
+</p>
+
+<p>
+Source: <a href="https://askubuntu.com/questions/170348/how-to-create-a-local-apt-repository" title="https://askubuntu.com/questions/170348/how-to-create-a-local-apt-repository" class="https">https://askubuntu.com/questions/170348/how-to-create-a-local-apt-repository</a>
+</p>
+
+<p>
+On créé le package
+</p>
+
+<p>
+apt-ftparchive packages . &gt; Packages
+</p>
+
+<h3>Client configuration</h3>
+
+<p>
+Edit the <tt>/etc/apt/sources.list</tt> file (as an administrator) and add the following line : <tt>deb &lt;repo url&gt; ./</tt>
+</p>
+
+<p>
+<tt>deb [trusted=yes] &lt;repo url&gt; ./</tt>
+</p>
+
+<p>
+<tt>deb &lt;repo url&gt; ./</tt> by <tt>deb [trusted=yes] &lt;repo url&gt; ./</tt>
+</p>
+
+<p>
+<a href="https://help.ubuntu.com/community/CreateAuthenticatedRepository" title="https://help.ubuntu.com/community/CreateAuthenticatedRepository" class="https">https://help.ubuntu.com/community/CreateAuthenticatedRepository</a>
+</p>
+
+<h3>Using a certificate</h3>
+
+<p>
+<ul>
+<li>see : debsign</li>
+</ul>
+</p>
+
+
+			<div class="footblock">
+			</div>
+			<div class="footblock">
+			</div>
+			
+		</div>
+		<div id="credits">
+			<p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.68-rc1</a>.</p>
+			<p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+		</div>
+	</div>
+	
+	<script src="../../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+	<script src="../../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		if ($("h2").length != 0)
+			$("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+		else
+			$("#toc").hide();
+			$("#navigation").children("ul").prepend("<li class='index-item'><a href='../../../index.html'>Index</a></li>");
+	</script>
+
+</body>
+</html>
+

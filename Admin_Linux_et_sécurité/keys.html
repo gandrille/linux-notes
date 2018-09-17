@@ -1,0 +1,146 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>keys</title>
+	<meta name="generator" content="Zim 0.68-rc1">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="../_resources/style.css" type="text/css"/>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="navigation">
+			<ul>
+<li><a href="../Admin_Linux_et_sécurité.html" title="Admin Linux et sécurité" class="page">Admin Linux et sécurité</a>
+<ul>
+<li><a href="./Backups.html" title="Backups" class="page">Backups</a></li>
+<li><a href="./Certificat_X509_et_SSLTLS.html" title="Certificat X509 et SSLTLS" class="page">Certificat X509 et SSLTLS</a></li>
+<li><a href="./dns.html" title="dns" class="page">dns</a></li>
+<li><a href="./Erreur_too_many_open_files.html" title="Erreur too many open files" class="page">Erreur too many open files</a></li>
+<li><a href="./Exif.html" title="Exif" class="page">Exif</a></li>
+<li><a href="./FIDO.html" title="FIDO" class="page">FIDO</a></li>
+<li><a href="./Hardware.html" title="Hardware" class="page">Hardware</a></li>
+<li><a href="./Heure_et_NTP.html" title="Heure et NTP" class="page">Heure et NTP</a></li>
+<li><a href="./htaccess.html" title="htaccess" class="page">htaccess</a></li>
+<li><b>keys</b>
+<ul>
+<li><a href="./keys/GPG.html" title="GPG" class="page">GPG</a></li>
+<li><a href="./keys/key_pair.html" title="key pair" class="page">key pair</a></li>
+</ul>
+</li>
+<li><a href="./mount_d'une_image_iso.html" title="mount d'une image iso" class="page">mount d'une image iso</a></li>
+<li><a href="./Network.html" title="Network" class="page">Network</a></li>
+<li><a href="./Open_SSL.html" title="Open SSL" class="page">Open SSL</a></li>
+<li><a href="./Packaging.html" title="Packaging" class="page">Packaging</a></li>
+<li><a href="./Samba_et_cifs.html" title="Samba et cifs" class="page">Samba et cifs</a></li>
+<li><a href="./Sécurité.html" title="Sécurité" class="page">Sécurité</a></li>
+<li><a href="./ssh.html" title="ssh" class="page">ssh</a></li>
+<li><a href="./systemd.html" title="systemd" class="page">systemd</a></li>
+</ul>
+</li>
+<li><a href="../Audio_-_Vidéo.html" title="Audio - Vidéo" class="page">Audio - Vidéo</a></li>
+<li><a href="../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../Formats_de_fichiers.html" title="Formats de fichiers" class="page">Formats de fichiers</a></li>
+<li><a href="../Java.html" title="Java" class="page">Java</a></li>
+<li><a href="../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../Window_manager.html" title="Window manager" class="page">Window manager</a></li>
+</ul>
+
+		</div>
+		<div id="content">
+
+
+			<h1>keys <a name='Admin Linux et sécurité:keys'></a></h1>
+			<div id="toc">			
+				<div class="toctitle">Contents</div>				
+				<ul id="tocdata"></ul>
+			</div>		
+
+			<h2>Key management UI</h2>
+
+<p>
+<ul>
+<li>seahorse: default UI for GNOME</li>
+<li>GPA: GNU Privacy Assistant</li>
+</ul>
+</p>
+
+<h2>Quel type de clé</h2>
+
+<table>
+<thead><tr>
+  <th>type</th>
+  <th>info</th>
+  <th>taille de clé en 2018</th>
+  <th>signature creation</th>
+</tr></thead>
+<tr>
+  <td>DSA</td>
+  <td>INSECURE !!!!!!</td>
+  <td>max 1024bits by design</td>
+  <td>DO NOT USE IT</td>
+</tr>
+<tr>
+  <td>RSA</td>
+  <td>standard de fait</td>
+  <td>3072 ou 4096 bits</td>
+  <td>using random numbers</td>
+</tr>
+<tr>
+  <td>ECDSA</td>
+  <td>Bien</td>
+  <td>256 bits</td>
+  <td>using random numbers</td>
+</tr>
+<tr>
+  <td>EdDSA</td>
+  <td>standard de demain ?</td>
+  <td>256 bits</td>
+  <td>deterministic</td>
+</tr>
+</table>
+
+<p>
+<ul>
+<li>RSA repose sur la factorisation de nombre premiers. En 2017, 2048 bits n'est plus suffisant.</li>
+<li>ECDSA repose sur des courbes eliptiques (EC).</li>
+<li>En terme de "solidité" de clé, RSA 3248bits est comparable ECDSA 256 bits</li>
+<li>Les paramètres des courbes de EdDSA (Ed25519 est une implem de EdDSA qui utilise Twisted Edward curves) ont été choisis selon un processus ouvert (contrairement à ECDSA, poussé par le NIST). Notons qu'il est possible d'introduire des backdoors avec certaines valeurs…</li>
+</ul>
+</p>
+
+<p>
+→ en 2018, EdDSA (implem Ed25519) est un choix rationnel.
+</p>
+
+
+
+			<div class="footblock">
+			</div>
+			<div class="footblock">
+			</div>
+			
+		</div>
+		<div id="credits">
+			<p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.68-rc1</a>.</p>
+			<p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+		</div>
+	</div>
+	
+	<script src="../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+	<script src="../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		if ($("h2").length != 0)
+			$("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+		else
+			$("#toc").hide();
+			$("#navigation").children("ul").prepend("<li class='index-item'><a href='../index.html'>Index</a></li>");
+	</script>
+
+</body>
+</html>
+

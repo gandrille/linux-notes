@@ -1,0 +1,148 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>bash</title>
+	<meta name="generator" content="Zim 0.68-rc1">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="../_resources/style.css" type="text/css"/>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="navigation">
+			<ul>
+<li><a href="../Admin_Linux_et_sécurité.html" title="Admin Linux et sécurité" class="page">Admin Linux et sécurité</a></li>
+<li><a href="../Audio_-_Vidéo.html" title="Audio - Vidéo" class="page">Audio - Vidéo</a></li>
+<li><a href="../Command_line.html" title="Command line" class="page">Command line</a>
+<ul>
+<li><a href="./banner.html" title="banner" class="page">banner</a></li>
+<li><b>bash</b>
+<ul>
+<li><a href="./bash/bash_-_commandes_de_base.html" title="bash - commandes de base" class="page">bash - commandes de base</a></li>
+<li><a href="./bash/espaces_dans_les_noms_de_fichiers.html" title="espaces dans les noms de fichiers" class="page">espaces dans les noms de fichiers</a></li>
+<li><a href="./bash/ligne_infernale.html" title="ligne infernale" class="page">ligne infernale</a></li>
+</ul>
+</li>
+<li><a href="./Calculatrice.html" title="Calculatrice" class="page">Calculatrice</a></li>
+<li><a href="./Capture_d'écran.html" title="Capture d'écran" class="page">Capture d'écran</a></li>
+<li><a href="./cloc.html" title="cloc" class="page">cloc</a></li>
+<li><a href="./cURL.html" title="cURL" class="page">cURL</a></li>
+<li><a href="./disper.html" title="disper" class="page">disper</a></li>
+<li><a href="./GIT_prompt.html" title="GIT prompt" class="page">GIT prompt</a></li>
+<li><a href="./imagemagik.html" title="imagemagik" class="page">imagemagik</a></li>
+<li><a href="./imap.html" title="imap" class="page">imap</a></li>
+<li><a href="./JSON_parser.html" title="JSON parser" class="page">JSON parser</a></li>
+<li><a href="./ncurses.html" title="ncurses" class="page">ncurses</a></li>
+<li><a href="./read_line_wrapper.html" title="read line wrapper" class="page">read line wrapper</a></li>
+<li><a href="./Réseau.html" title="Réseau" class="page">Réseau</a></li>
+<li><a href="./sed.html" title="sed" class="page">sed</a></li>
+<li><a href="./Serveur_web_en_ligne_de_commande.html" title="Serveur web en ligne de commande" class="page">Serveur web en ligne de commande</a></li>
+<li><a href="./tldr.html" title="tldr" class="page">tldr</a></li>
+<li><a href="./unison.html" title="unison" class="page">unison</a></li>
+<li><a href="./Webscraping_XPath.html" title="Webscraping XPath" class="page">Webscraping XPath</a></li>
+<li><a href="./wget_images_sur_une_page_web.html" title="wget images sur une page web" class="page">wget images sur une page web</a></li>
+</ul>
+</li>
+<li><a href="../Formats_de_fichiers.html" title="Formats de fichiers" class="page">Formats de fichiers</a></li>
+<li><a href="../Java.html" title="Java" class="page">Java</a></li>
+<li><a href="../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../Window_manager.html" title="Window manager" class="page">Window manager</a></li>
+</ul>
+
+		</div>
+		<div id="content">
+
+
+			<h1>bash <a name='Command line:bash'></a></h1>
+			<div id="toc">			
+				<div class="toctitle">Contents</div>				
+				<ul id="tocdata"></ul>
+			</div>		
+
+			<p>
+<ul>
+<li><a href="https://google.github.io/styleguide/shell.xml" title="Guide de style de Google" class="https">Guide de style de Google</a></li>
+<li><a href="http://arturoherrero.com/2013/11/29/command-line-one-liners/" title="http://arturoherrero.com/2013/11/29/command-line-one-liners/" class="http">http://arturoherrero.com/2013/11/29/command-line-one-liners/</a></li>
+<li><a href="https://dev.to/thiht/shell-scripts-matter" title="https://dev.to/thiht/shell-scripts-matter" class="https">https://dev.to/thiht/shell-scripts-matter</a></li>
+<li><a href="http://mywiki.wooledge.org/BashFAQ/" title="Bash FAQ" class="http">Bash FAQ</a></li>
+<li><a href="http://www.caliban.org/bash/index.shtml" title="Working more productively with bash 2.x/3.x" class="http">Working more productively with bash 2.x/3.x</a></li>
+</ul>
+</p>
+
+<h2>Bash unofficial strict mode</h2>
+
+<pre>
+#!/bin/bash
+set -euo pipefail
+IFS=$'\n\t'
+</pre>
+
+<p>
+<ul>
+<li><tt>set -e</tt> will exit the script if any command returns a non-zero status code. To prevent the option from triggering on commands returning a non-zero status code even when no error occurred, there are two solutions:</li>
+<li>using the <tt>|| true</tt> pattern: <tt>command_returning_non_zero || true</tt></li>
+<li>temporary disabling the option:</li>
+</ul>
+</p>
+
+<pre>
+set +e
+command_returning_non_zero
+set -e
+</pre>
+
+<p>
+<ul>
+<li><tt>set -u</tt> will prevent using an undefined variable. In the case of undefined positional parameters (<tt>$1</tt>, <tt>$2</tt>,…), you can give them a default value with the parameter expansion construct: <tt> my_arg=${1:-"default"}</tt></li>
+<li><tt>set -o pipefail</tt> will force pipelines to fail on the first non-zero status code.</li>
+<li><tt>IFS=$'\n\t</tt>' makes iterations and splitting less surprising, in the case of loops mostly. The default for this variable is usually <tt>IFS=$' \n\t</tt>' but the space as a separator often gives confusing results.</li>
+</ul>
+</p>
+
+<h2>See also</h2>
+
+<p>
+<ul>
+<li><a href="https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html" title="Sell parameter expansion" class="https">Sell parameter expansion</a></li>
+</ul>
+</p>
+
+
+			<div class="footblock">
+				<hr class='footrule'>
+				<b>Attachments</b>
+				<ul>
+					<li><a href="./bash/2017 regular expressions cheat sheet.pdf">2017 regular expressions cheat sheet.pdf (195kb)</a></li>
+					<li><a href="./bash/Guide Bash.pdf">Guide Bash.pdf (2.05Mb)</a></li>
+					<li><a href="./bash/bash-substitution.png">bash-substitution.png (93.8kb)</a></li>
+					<li><a href="./bash/bash.png">bash.png (168kb)</a></li>
+					<li><a href="./bash/unix1.html">unix1.html (64.3kb)</a></li>
+				</ul>
+			</div>
+			<div class="footblock">
+			</div>
+			
+		</div>
+		<div id="credits">
+			<p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.68-rc1</a>.</p>
+			<p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+		</div>
+	</div>
+	
+	<script src="../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+	<script src="../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		if ($("h2").length != 0)
+			$("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+		else
+			$("#toc").hide();
+			$("#navigation").children("ul").prepend("<li class='index-item'><a href='../index.html'>Index</a></li>");
+	</script>
+
+</body>
+</html>
+

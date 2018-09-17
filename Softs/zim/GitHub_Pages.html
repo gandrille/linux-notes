@@ -1,0 +1,103 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>GitHub Pages</title>
+	<meta name="generator" content="Zim 0.68-rc1">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="../../_resources/style.css" type="text/css"/>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="navigation">
+			<ul>
+<li><a href="../../Admin_Linux_et_sécurité.html" title="Admin Linux et sécurité" class="page">Admin Linux et sécurité</a></li>
+<li><a href="../../Audio_-_Vidéo.html" title="Audio - Vidéo" class="page">Audio - Vidéo</a></li>
+<li><a href="../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../Formats_de_fichiers.html" title="Formats de fichiers" class="page">Formats de fichiers</a></li>
+<li><a href="../../Java.html" title="Java" class="page">Java</a></li>
+<li><a href="../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../Softs.html" title="Softs" class="page">Softs</a>
+<ul>
+<li><a href="../Atom_plugins.html" title="Atom plugins" class="page">Atom plugins</a></li>
+<li><a href="../Brave.html" title="Brave" class="page">Brave</a></li>
+<li><a href="../Firefox_plugins.html" title="Firefox plugins" class="page">Firefox plugins</a></li>
+<li><a href="../Thunderbird.html" title="Thunderbird" class="page">Thunderbird</a></li>
+<li><a href="../zim.html" title="zim" class="page">zim</a>
+<ul>
+<li><b>GitHub Pages</b></li>
+<li><a href="./HTML_templates.html" title="HTML templates" class="page">HTML templates</a></li>
+<li><a href="./style.conf.html" title="style.conf" class="page">style.conf</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="../../Window_manager.html" title="Window manager" class="page">Window manager</a></li>
+</ul>
+
+		</div>
+		<div id="content">
+
+
+			<h1>GitHub Pages <a name='Softs:zim:GitHub Pages'></a></h1>
+			<div id="toc">			
+				<div class="toctitle">Contents</div>				
+				<ul id="tocdata"></ul>
+			</div>		
+
+			<h2>The issue</h2>
+
+<p>
+Since Zim is building static website, you can host the generated content on <a href="https://pages.github.com/" title="GitHub pages" class="https">GitHub pages</a>.
+</p>
+
+<p>
+If you are using a template which provides <a href="http://zim-wiki.org/manual/Help/Templates.html" title="resources" class="http">resources</a>, all the resources will be copied to a <tt>_resources</tt> folder in the static website. And since GitHub pages is using <a href="https://jekyllrb.com/" title="Jekyll" class="https">Jekyll</a>, all the files and folder names starting with an underscore are ignored during the generation process… That's why, your <tt>_resource</tt> directory will be ignored in GitHub pages.
+</p>
+
+<h2>The "solution"… which does not work actually!</h2>
+
+<p>
+Since the issue is well known, <a href="https://help.github.com/articles/files-that-start-with-an-underscore-are-missing/" title="GitHub provides a walkaround" class="https">GitHub provides a walkaround</a>. You can turn off Jeckyll by adding a .nojekyll file in the root path of the repository. It solves our issue… but now, you can't use the compression anymore !<br>
+That's why all modern browsers will not be able to access some ressources… whereas curl can.<br>
+This souds incredible, but depending if you are using the <tt>--compress</tt> flag with curl, you obtain a 200 or 404 error code.
+</p>
+
+<h2>The solution</h2>
+
+<p>
+Fortunately, <a href="https://help.github.com/articles/files-that-start-with-an-underscore-are-missing/" title="GitHub provides another walkaround" class="https">GitHub provides another walkaround</a>. We can tell Jeckyll to parse <tt>_resources</tt> folder as any other standard folder. To do this, just add an <tt>_config.yml </tt>file in the root path of the repository with the following content : <tt>include: _resources</tt>
+</p>
+
+<p>
+And now, everything works as expected!
+</p>
+
+
+			<div class="footblock">
+			</div>
+			<div class="footblock">
+			</div>
+			
+		</div>
+		<div id="credits">
+			<p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.68-rc1</a>.</p>
+			<p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+		</div>
+	</div>
+	
+	<script src="../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+	<script src="../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		if ($("h2").length != 0)
+			$("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+		else
+			$("#toc").hide();
+			$("#navigation").children("ul").prepend("<li class='index-item'><a href='../../index.html'>Index</a></li>");
+	</script>
+
+</body>
+</html>
+

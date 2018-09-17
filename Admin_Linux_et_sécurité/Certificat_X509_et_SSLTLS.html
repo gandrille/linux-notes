@@ -1,0 +1,143 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Certificat X509 et SSLTLS</title>
+	<meta name="generator" content="Zim 0.68-rc1">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="../_resources/style.css" type="text/css"/>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="navigation">
+			<ul>
+<li><a href="../Admin_Linux_et_sécurité.html" title="Admin Linux et sécurité" class="page">Admin Linux et sécurité</a>
+<ul>
+<li><a href="./Backups.html" title="Backups" class="page">Backups</a></li>
+<li><b>Certificat X509 et SSLTLS</b></li>
+<li><a href="./dns.html" title="dns" class="page">dns</a></li>
+<li><a href="./Erreur_too_many_open_files.html" title="Erreur too many open files" class="page">Erreur too many open files</a></li>
+<li><a href="./Exif.html" title="Exif" class="page">Exif</a></li>
+<li><a href="./FIDO.html" title="FIDO" class="page">FIDO</a></li>
+<li><a href="./Hardware.html" title="Hardware" class="page">Hardware</a></li>
+<li><a href="./Heure_et_NTP.html" title="Heure et NTP" class="page">Heure et NTP</a></li>
+<li><a href="./htaccess.html" title="htaccess" class="page">htaccess</a></li>
+<li><a href="./keys.html" title="keys" class="page">keys</a></li>
+<li><a href="./mount_d'une_image_iso.html" title="mount d'une image iso" class="page">mount d'une image iso</a></li>
+<li><a href="./Network.html" title="Network" class="page">Network</a></li>
+<li><a href="./Open_SSL.html" title="Open SSL" class="page">Open SSL</a></li>
+<li><a href="./Packaging.html" title="Packaging" class="page">Packaging</a></li>
+<li><a href="./Samba_et_cifs.html" title="Samba et cifs" class="page">Samba et cifs</a></li>
+<li><a href="./Sécurité.html" title="Sécurité" class="page">Sécurité</a></li>
+<li><a href="./ssh.html" title="ssh" class="page">ssh</a></li>
+<li><a href="./systemd.html" title="systemd" class="page">systemd</a></li>
+</ul>
+</li>
+<li><a href="../Audio_-_Vidéo.html" title="Audio - Vidéo" class="page">Audio - Vidéo</a></li>
+<li><a href="../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../Formats_de_fichiers.html" title="Formats de fichiers" class="page">Formats de fichiers</a></li>
+<li><a href="../Java.html" title="Java" class="page">Java</a></li>
+<li><a href="../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../Window_manager.html" title="Window manager" class="page">Window manager</a></li>
+</ul>
+
+		</div>
+		<div id="content">
+
+
+			<h1>Certificat X509 et SSLTLS <a name='Admin Linux et sécurité:Certificat X509 et SSLTLS'></a></h1>
+			<div id="toc">			
+				<div class="toctitle">Contents</div>				
+				<ul id="tocdata"></ul>
+			</div>		
+
+			<p>
+<a href="https://doc.ubuntu-fr.org/tutoriel/comment_creer_un_certificat_ssl" title="https://doc.ubuntu-fr.org/tutoriel/comment_creer_un_certificat_ssl" class="https">https://doc.ubuntu-fr.org/tutoriel/comment_creer_un_certificat_ssl</a>
+</p>
+
+<h2>Certificate signing request (CSR)</h2>
+
+<p>
+Cela va permettre de générer une clé privée, ainsi que <br>
+<ul>
+<li>création : <tt>openssl req -new</tt>
+<ul>
+<li>affiche sur la sortie standard une demande de certificat encodée en base64, qui contient les informations demandées ainsi que la clé publique. </li>
+<li>créé un fichier <tt>privkey.pem</tt> avec la clé privée correspondante</li>
+</ul>
+</li>
+<li>affichage : <tt>openssl req -text -noout -in request.pem</tt></li>
+</ul>
+</p>
+
+<h2>Générer un certificat autosigné</h2>
+
+<p>
+<tt>openssl x509 -in request.csr -out new.cert.cert -req -signkey unlocked-privkey.key -days NNN</tt>
+</p>
+
+<h2>Afficher le contenu d'un certificat</h2>
+
+<p>
+<tt>openssl x509 -in cert.pem -noout -text</tt>
+</p>
+
+<h2>Récupérer la clé publique</h2>
+
+<p>
+<tt>openssl x509 -in ./snaThing.cert.pem -noout -pubkey</tt>
+</p>
+
+<h2>Récupérer un certificat sur un site web</h2>
+
+<p>
+<ul>
+<li><tt>echo -n | openssl s_client -connect mywebsite.com:443</tt></li>
+<li><tt>echo -n | openssl s_client -connect mywebsite.com:443 2&gt;/dev/null | openssl x509 -in /dev/stdin</tt></li>
+</ul>
+</p>
+
+<h2>Tester une config ssl</h2>
+
+<p>
+<ul>
+<li>web <a href="https://www.ssllabs.com/ssltest/" title="https://www.ssllabs.com/ssltest/" class="https">https://www.ssllabs.com/ssltest/</a></li>
+<li>script <a href="https://github.com/rbsec/sslscan" title="https://github.com/rbsec/sslscan" class="https">https://github.com/rbsec/sslscan</a></li>
+<li>plugin firefox <a href="https://addons.mozilla.org/fr/firefox/addon/calomel-ssl-validation/?src=ss" title="https://addons.mozilla.org/fr/firefox/addon/calomel-ssl-validation/?src=ss" class="https">https://addons.mozilla.org/fr/firefox/addon/calomel-ssl-validation/?src=ss</a></li>
+</ul>
+</p>
+
+<p>
+→ VOIR LE TRES BON DOCUMENT SUR SSL/TLS DANS LA BASE DOCUMENTAIRE
+</p>
+
+
+			<div class="footblock">
+			</div>
+			<div class="footblock">
+			</div>
+			
+		</div>
+		<div id="credits">
+			<p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.68-rc1</a>.</p>
+			<p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+		</div>
+	</div>
+	
+	<script src="../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+	<script src="../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		if ($("h2").length != 0)
+			$("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+		else
+			$("#toc").hide();
+			$("#navigation").children("ul").prepend("<li class='index-item'><a href='../index.html'>Index</a></li>");
+	</script>
+
+</body>
+</html>
+

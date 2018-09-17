@@ -1,0 +1,585 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>sed oneliners</title>
+	<meta name="generator" content="Zim 0.68-rc1">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="../../_resources/style.css" type="text/css"/>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="navigation">
+			<ul>
+<li><a href="../../Admin_Linux_et_sécurité.html" title="Admin Linux et sécurité" class="page">Admin Linux et sécurité</a></li>
+<li><a href="../../Audio_-_Vidéo.html" title="Audio - Vidéo" class="page">Audio - Vidéo</a></li>
+<li><a href="../../Command_line.html" title="Command line" class="page">Command line</a>
+<ul>
+<li><a href="../banner.html" title="banner" class="page">banner</a></li>
+<li><a href="../bash.html" title="bash" class="page">bash</a></li>
+<li><a href="../Calculatrice.html" title="Calculatrice" class="page">Calculatrice</a></li>
+<li><a href="../Capture_d'écran.html" title="Capture d'écran" class="page">Capture d'écran</a></li>
+<li><a href="../cloc.html" title="cloc" class="page">cloc</a></li>
+<li><a href="../cURL.html" title="cURL" class="page">cURL</a></li>
+<li><a href="../disper.html" title="disper" class="page">disper</a></li>
+<li><a href="../GIT_prompt.html" title="GIT prompt" class="page">GIT prompt</a></li>
+<li><a href="../imagemagik.html" title="imagemagik" class="page">imagemagik</a></li>
+<li><a href="../imap.html" title="imap" class="page">imap</a></li>
+<li><a href="../JSON_parser.html" title="JSON parser" class="page">JSON parser</a></li>
+<li><a href="../ncurses.html" title="ncurses" class="page">ncurses</a></li>
+<li><a href="../read_line_wrapper.html" title="read line wrapper" class="page">read line wrapper</a></li>
+<li><a href="../Réseau.html" title="Réseau" class="page">Réseau</a></li>
+<li><a href="../sed.html" title="sed" class="page">sed</a>
+<ul>
+<li><a href="./sed.html" title="sed" class="page">sed</a></li>
+<li><b>sed oneliners</b></li>
+</ul>
+</li>
+<li><a href="../Serveur_web_en_ligne_de_commande.html" title="Serveur web en ligne de commande" class="page">Serveur web en ligne de commande</a></li>
+<li><a href="../tldr.html" title="tldr" class="page">tldr</a></li>
+<li><a href="../unison.html" title="unison" class="page">unison</a></li>
+<li><a href="../Webscraping_XPath.html" title="Webscraping XPath" class="page">Webscraping XPath</a></li>
+<li><a href="../wget_images_sur_une_page_web.html" title="wget images sur une page web" class="page">wget images sur une page web</a></li>
+</ul>
+</li>
+<li><a href="../../Formats_de_fichiers.html" title="Formats de fichiers" class="page">Formats de fichiers</a></li>
+<li><a href="../../Java.html" title="Java" class="page">Java</a></li>
+<li><a href="../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../../Window_manager.html" title="Window manager" class="page">Window manager</a></li>
+</ul>
+
+		</div>
+		<div id="content">
+
+
+			<h1>sed oneliners <a name='Command line:sed:sed oneliners'></a></h1>
+			<div id="toc">			
+				<div class="toctitle">Contents</div>				
+				<ul id="tocdata"></ul>
+			</div>		
+
+			<p>
+HANDY ONE-LINERS FOR SED (Unix stream editor)              April 25, 1998<br>
+compiled by Eric Pement &lt;<a href="mailto:epement@jpusa.chi.il.us" title="epement@jpusa.chi.il.us" class="mailto">epement@jpusa.chi.il.us</a>&gt;             version 4.5<br>
+Latest version of this file is always at &lt;<a href="http://www.wollery.demon.co.uk" title="http://www.wollery.demon.co.uk" class="http">http://www.wollery.demon.co.uk</a>&gt;
+</p>
+
+<p>
+FILE SPACING:
+</p>
+
+<p>
+ # double space a file<br>
+ sed G
+</p>
+
+<p>
+ # triple space a file<br>
+ sed 'G;G'
+</p>
+
+<p>
+ # undo double-spacing (assumes even-numbered lines are always blank)<br>
+ sed 'n;d'
+</p>
+
+<p>
+NUMBERING:
+</p>
+
+<p>
+ # number each line of a file (simple left alignment). Using a tab (see<br>
+ # note on '\t' at end of file) instead of space will preserve margins.<br>
+ sed = filename | sed 'N;s/\n/\t/'
+</p>
+
+<p>
+ # number each line of a file (number on left, right-aligned)<br>
+ sed = filename | sed 'N; s/^/     /; s/ *\(.\{6,\}\)\n/\1  /'
+</p>
+
+<p>
+ # number each line of file, but only print numbers if line is not blank<br>
+ sed '/./=' filename | sed '/./N; s/\n/ /'
+</p>
+
+<p>
+ # count lines (emulates "wc -l")<br>
+ sed -n '$='
+</p>
+
+<p>
+TEXT CONVERSION AND SUBSTITUTION:
+</p>
+
+<p>
+ # IN UNIX ENVIRONMENT: convert DOS newlines (CR/LF) to Unix format<br>
+ sed 's/.$//'               # assumes that all lines end with CR/LF<br>
+ sed 's/^M$//'              # in bash/tcsh, press Ctrl-V then Ctrl-M<br>
+ sed 's/\x0D$//'            # sed v1.5 only
+</p>
+
+<p>
+ # IN DOS ENVIRONMENT: convert Unix newlines (LF) to DOS format<br>
+ sed 's/$//'                          # method 1<br>
+ sed -n p                             # method 2
+</p>
+
+<p>
+ # delete leading whitespace (spaces, tabs) from front of each line<br>
+ # aligns all text flush left<br>
+ sed 's/^[ \t]*//'                    # '\t'=tab (see note at end of file)
+</p>
+
+<p>
+ # delete trailing whitespace (spaces, tabs) from end of each line<br>
+ sed 's/[ \t]*$//'                    # '\t'=tab (see note at end of file)
+</p>
+
+<p>
+ # delete BOTH leading and trailing whitespace from each line<br>
+ sed 's/^[ \t]*<i>;s/[ \t]*$</i>'
+</p>
+
+<p>
+ # insert 5 blank spaces at beginning of each line (make page offset)<br>
+ sed 's/^/     /'
+</p>
+
+<p>
+ # align all text flush right on a 79-column width<br>
+ sed -e :a -e 's/^.\{1,78\}$/ &amp;/;ta'  # set at 78 plus 1 space
+</p>
+
+<p>
+ # center all text in the middle of 79-column width. In method 1,<br>
+ # spaces at the beginning of the line are significant, and trailing<br>
+ # spaces are appended at the end of the line. In method 2, spaces at<br>
+ # the beginning of the line are discarded in centering the line, and<br>
+ # no trailing spaces appear at the end of lines.<br>
+ sed  -e :a -e 's/^.\{1,77\}$/ &amp; /;ta'                     # method 1<br>
+ sed  -e :a -e 's/^.\{1,77\}$/ &amp;/;ta' -e 's/\( *\)\1/\1/'  # method 2
+</p>
+
+<p>
+ # substitute (find &amp; replace) "foo" with "bar" on each line<br>
+ sed 's/foo/bar/'             # replaces only 1st instance in a line<br>
+ sed 's/foo/bar/4'            # replaces only 4th instance in a line<br>
+ sed 's/foo/bar/g'            # replaces ALL instances in a line
+</p>
+
+<p>
+ # substitute "foo" with "bar" ONLY for lines which contain "baz"<br>
+ sed '/baz/s/foo/bar/g'
+</p>
+
+<p>
+ # substitute "foo" with "bar" EXCEPT for lines which contain "baz"<br>
+ sed '/baz/!s/foo/bar/g'
+</p>
+
+<p>
+ # reverse order of lines (emulates "tac")<br>
+ sed '1!G;h;$!d'
+</p>
+
+<p>
+ # reverse each character on the line (emulates "rev")<br>
+ sed '/\n/!G;s/\(.\)\(.*\n\)/&amp;\2\1/;<i>D;s/.</i>'
+</p>
+
+<p>
+ # join pairs of lines side-by-side (like "paste")<br>
+ sed 'N;s/\n/ /'
+</p>
+
+<p>
+SELECTIVE PRINTING OF CERTAIN LINES:
+</p>
+
+<p>
+ # print all but first line of file<br>
+ sed 1d infile &gt;&gt; outfile
+</p>
+
+<p>
+ # print first 10 lines of file (emulates behavior of "head")<br>
+ sed 10q
+</p>
+
+<p>
+ # print first line of file (emulates "head -1")<br>
+ sed q
+</p>
+
+<p>
+ # print last 10 lines of file (emulates "tail")<br>
+ sed -e :a -e '$q;N;11,$D;ba'
+</p>
+
+<p>
+ # print last line of file (emulates "tail -1")<br>
+ sed '$!d'
+</p>
+
+<p>
+ # print only lines which match regular expression (emulates "grep")<br>
+ sed -n '/regexp/p'           # method 1<br>
+ sed '/regexp/!d'             # method 2
+</p>
+
+<p>
+ # print only lines which do NOT match regexp (emulates "grep -v")<br>
+ sed -n '/regexp/!p'          # method 1, corresponds to above<br>
+ sed '/regexp/d'              # method 2, simpler syntax
+</p>
+
+<p>
+ # print 1 line of context before and after regexp, with line number<br>
+ # indicating where the regexp occurred (similar to "grep -A1 -B1")<br>
+ sed -n -e '/regexp/{=;x;1!p;g;$!N;p;D;}' -e h
+</p>
+
+<p>
+ # grep for AAA and BBB and CCC (in any order)<br>
+ sed '/AAA/!d; /BBB/!d; /CCC/!d'
+</p>
+
+<p>
+ # grep for AAA and BBB and CCC (in that order)<br>
+ sed '/AAA.*BBB.*CCC/!d'
+</p>
+
+<p>
+ # grep for AAA or BBB or CCC (emulates "egrep")<br>
+ sed -e '/AAA/b' -e '/BBB/b' -e '/CCC/b' -e d
+</p>
+
+<p>
+ # print paragraph if it contains AAA (blank lines separate paragraphs)<br>
+ # HHsed v1.5 must insert a 'G;' after 'x;' in the next 3 scripts below<br>
+ sed -e '/./{H;$!d;}' -e 'x;/AAA/!d;'
+</p>
+
+<p>
+ # print paragraph if it contains AAA and BBB and CCC (in any order)<br>
+ sed -e '/./{H;$!d;}' -e 'x;/AAA/!d;/BBB/!d;/CCC/!d'
+</p>
+
+<p>
+ # print paragraph if it contains AAA or BBB or CCC<br>
+ sed -e '/./{H;$!d;}' -e 'x;/AAA/b' -e '/BBB/b' -e '/CCC/b' -e d
+</p>
+
+<p>
+ # print only lines of 65 characters or longer<br>
+ sed -n '/^.\{65\}/p'
+</p>
+
+<p>
+ # print only lines of less than 65 characters<br>
+ sed -n '/^.\{65\}/!p'        # method 1, corresponds to above<br>
+ sed '/^.\{65\}/d'            # method 2, simpler syntax
+</p>
+
+<p>
+ # print section of file from regular expression to end of file<br>
+ sed -n '/regexp/,$p'
+</p>
+
+<p>
+ # print section of file based on line numbers (lines 8-12, inclusive)<br>
+ sed -n '8,12p'               # method 1<br>
+ sed '8,12!d'                 # method 2
+</p>
+
+<p>
+ # print line number 52<br>
+ sed -n '52p'                 # method 1<br>
+ sed '52!d'                   # method 2<br>
+ sed '52q;d'                  # method 3, efficient on large files
+</p>
+
+<p>
+ # print section of file between two regular expressions (inclusive)<br>
+ sed -n '/Iowa/,/Montana/p'             # case sensitive
+</p>
+
+<p>
+SELECTIVE DELETION OF CERTAIN LINES:
+</p>
+
+<p>
+ # print all of file EXCEPT section between 2 regular expressions<br>
+ sed '/Iowa/,/Montana/d'
+</p>
+
+<p>
+ # delete duplicate lines from a sorted file (emulates "uniq"). First<br>
+ # line in a set of duplicate lines is kept, the rest are deleted<br>
+ sed '$!N; /^\(.*\)\n\1$/!P; D'
+</p>
+
+<p>
+ # delete ALL blank lines from a file (same as "grep '.' ")<br>
+ sed '/^$/d'
+</p>
+
+<p>
+ # delete all CONSECUTIVE blank lines from file except the first; also<br>
+ # deletes all blank lines from top and end of file (emulates "cat -s")<br>
+ sed '/./,/^$/!d'          # method 1, allows 0 blanks at top, 1 at EOF<br>
+ sed '/^$/N;/\n$/D'        # method 2, allows 1 blank at top, 0 at EOF
+</p>
+
+<p>
+ # delete all CONSECUTIVE blank lines from file except the first 2:<br>
+ sed '/^$/N;/\n$/N;//D'
+</p>
+
+<p>
+ # delete all leading blank lines at top of file<br>
+ sed '/./,$!d'
+</p>
+
+<p>
+ # delete all trailing blank lines at end of file<br>
+ sed -e :a -e '/^\n*$/N;/\n$/ba'
+</p>
+
+<p>
+ # delete the last line of the file<br>
+ sed -e '$d' &lt;inputfile&gt;outputfile
+</p>
+
+<p>
+ # delete the last line of each paragraph<br>
+ sed -n '/^$/{p;h;};/./{x;/./p;}'
+</p>
+
+<p>
+SPECIAL APPLICATIONS:
+</p>
+
+<p>
+ # remove nroff overstrikes (char, backspace) from man pages. The 'echo'<br>
+ # command may need an -e switch if you use Unix System V or bash shell.<br>
+ sed "s/.<tt>echo \\\b</tt>//g"    # double quotes required for Unix environment<br>
+ sed 's/.^H//g'             # in bash/tcsh, press Ctrl-V and then Ctrl-H<br>
+ sed 's/.\x08//g'           # hex expression for sed v1.5
+</p>
+
+<p>
+ # get Usenet/e-mail message header<br>
+ sed '/^$/q'                # deletes everything after first blank line
+</p>
+
+<p>
+ # get Usenet/e-mail message body<br>
+ sed '1,/^$/d'              # deletes everything up to first blank line
+</p>
+
+<p>
+ # get Subject header, but remove initial "Subject: " portion<br>
+ sed '/^Subject: */!d; s///;q'
+</p>
+
+<p>
+ # get return address header<br>
+ sed '/^Reply-To:/q; /^From:/h; /./d;g;q'
+</p>
+
+<p>
+ # parse out the address proper. Pulls out the e-mail address by itself<br>
+ # from the 1-line return address header (see preceding script)<br>
+ sed 's/ *(.*)<i>; s/&gt;.*</i>; s/.*[:&lt;] *//'
+</p>
+
+<p>
+ # add a leading angle bracket and space to each line (quote a message)<br>
+ sed 's/^/&gt; /'
+</p>
+
+<p>
+ # delete leading angle bracket &amp; space from each line (unquote a message)<br>
+ sed 's/^&gt; //'
+</p>
+
+<p>
+ # remove most HTML tags (accommodates multiple-line tags)<br>
+ sed -e :a -e 's/&lt;[^&gt;]*&gt;<i>g;/&lt;/N;</i>ba'
+</p>
+
+<p>
+ # extract multi-part uuencoded binaries, removing extraneous header<br>
+ # info, so that only the uuencoded portion remains. Files passed to<br>
+ # sed must be passed in the proper order. Version 1 can be entered<br>
+ # from the command line; version 2 can be made into an executable<br>
+ # Unix shell script. (Modified from a script by Rahul Dhesi.)<br>
+ sed '/^end/,/^begin/d' file1 file2 ... fileX | uudecode   # vers. 1<br>
+ sed '/^end/,/^begin/d' $* | uudecode                      # vers. 2
+</p>
+
+<p>
+ # zip up each .TXT file individually, deleting the source file and<br>
+ # setting the name of each .ZIP file to the basename of the .TXT file<br>
+ # (under DOS: the "dir /b" switch returns bare filenames in all caps).<br>
+ echo <span class="zim-tag">@echo</span> off &gt;zipup.bat<br>
+ dir /b *.txt | sed "s/^\(.*\)\.TXT/pkzip -mo \1 \1.TXT/" &gt;&gt;zipup.bat
+</p>
+
+<p>
+TYPICAL USE: Sed takes one or more editing commands and applies all of<br>
+them, in sequence, to each line of input. After all the commands have<br>
+been applied to the first input line, that line is output and a second<br>
+input line is taken for processing, and the cycle repeats. The<br>
+preceding examples assume that input comes from the standard input<br>
+device (i.e, the console, normally this will be piped input). One or<br>
+more filenames can be appended to the command line if the input does<br>
+not come from stdin. Output is sent to stdout (the screen). Thus:
+</p>
+
+<p>
+ cat filename | sed '10q'        # uses piped input<br>
+ sed '10q' filename              # same effect, avoids a useless "cat"<br>
+ sed '10q' filename &gt; newfile    # redirects output to disk
+</p>
+
+<p>
+For additional syntax instructions, including the way to apply editing<br>
+commands from a disk file instead of the command line, consult "sed &amp;<br>
+awk, 2nd Edition," by Dale Dougherty and Arnold Robbins (O'Reilly,<br>
+1997; <a href="http://www.ora.com" title="http://www.ora.com" class="http">http://www.ora.com</a>), "UNIX Text Processing," by Dale Dougherty<br>
+and Tim O'Reilly (Hayden Books, 1987) or the tutorials by Mike Arst<br>
+distributed in U-SEDIT2.ZIP (many sites). To fully exploit the power<br>
+of sed, one must understand "regular expressions." For this, see<br>
+"Mastering Regular Expressions" by Jeffrey Friedl (O'Reilly, 1997).<br>
+The manual ("man") pages on Unix systems may be helpful (try "man<br>
+sed", "man regexp", or the subsection on regular expressions in "man<br>
+ed"), but man pages are notoriously difficult. They are not written to<br>
+teach sed use or regexps to first-time users, but as a reference text<br>
+for those already acquainted with these tools.
+</p>
+
+<p>
+QUOTING SYNTAX: The preceding examples use single quotes ('...')<br>
+instead of double quotes ("...") to enclose editing commands, since<br>
+sed is typically used on a Unix platform. Single quotes prevent the<br>
+Unix shell from intrepreting the dollar sign ($) and backquotes<br>
+(<tt>...</tt>), which are expanded by the shell if they are enclosed in<br>
+double quotes. Users of the "csh" shell and derivatives will also need<br>
+to quote the exclamation mark (!) with the backslash (i.e., \!) to<br>
+properly run the examples listed above, even within single quotes.<br>
+Versions of sed written for DOS invariably require double quotes<br>
+("...") instead of single quotes to enclose editing commands.
+</p>
+
+<p>
+USE OF '\t' IN SED SCRIPTS: For clarity in documentation, we have used<br>
+the expression '\t' to indicate a tab character (0x09) in the scripts.<br>
+However, most versions of sed do not recognize the '\t' abbreviation,<br>
+so when typing these scripts from the command line, you should press<br>
+the TAB key instead. '\t' is supported as a regular expression<br>
+metacharacter in awk, perl, and in a few implementations of sed.
+</p>
+
+<p>
+VERSIONS OF SED: Versions of sed do differ, and some slight syntax<br>
+variation is to be expected. In particular, most do not support the<br>
+use of labels (:name) or branch instructions (b,t) within editing<br>
+commands, except at the end of those commands. We have used the syntax<br>
+which will be portable to most users of sed, even though the popular<br>
+GNU versions of sed allow a more succinct syntax. When the reader sees<br>
+a fairly long command such as this:
+</p>
+
+<p>
+   sed -e '/AAA/b' -e '/BBB/b' -e '/CCC/b' -e d
+</p>
+
+<p>
+it is heartening to know that GNU sed will let you reduce it to:
+</p>
+
+<p>
+   sed '/AAA/b;/BBB/b;/CCC/b;d'
+</p>
+
+<p>
+In addition, remember that while many versions of sed accept a command<br>
+like "/one/ s/RE1/RE2/", some do NOT allow "/one/! s/RE1/RE2/", which<br>
+contains space before the 's'. Omit the space when typing the command.
+</p>
+
+<p>
+OPTIMIZING FOR SPEED: If execution speed needs to be increased (due to<br>
+large input files or slow processors or hard disks), substitution will<br>
+be executed more quickly if the "find" expression is specified before<br>
+giving the "s/.../.../" instruction. Thus:
+</p>
+
+<p>
+   sed 's/foo/bar/g' filename         # standard replace command<br>
+   sed '/foo/ s/foo/bar/g' filename   # executes more quickly<br>
+   sed '/foo/ s//bar/g' filename      # shorthand sed syntax
+</p>
+
+<p>
+On line selection or deletion in which you only need to output lines<br>
+from the first part of the file, a "quit" command (q) in the script<br>
+will drastically reduce processing time for large files. Thus:
+</p>
+
+<p>
+   sed -n '45,50p' filename           # print line nos. 45-50 of a file<br>
+   sed -n '51q;45,50p' filename       # same, but executes much faster
+</p>
+
+<p>
+If you have any additional scripts to contribute or if you find errors<br>
+in this document, please send e-mail to the compiler. Indicate the<br>
+version of sed you used, the operating system it was compiled for, and<br>
+the nature of the problem. Various scripts in this file were written<br>
+or contributed by:
+</p>
+
+<p>
+ Al Aab &lt;<a href="mailto:af137@freenet.toronto.on.ca" title="af137@freenet.toronto.on.ca" class="mailto">af137@freenet.toronto.on.ca</a>&gt;   # "seders" list moderator<br>
+ Yiorgos Adamopoulos &lt;<a href="mailto:adamo@softlab.ece.ntua.gr" title="adamo@softlab.ece.ntua.gr" class="mailto">adamo@softlab.ece.ntua.gr</a>&gt;<br>
+ Dale Dougherty &lt;<a href="mailto:dale@songline.com" title="dale@songline.com" class="mailto">dale@songline.com</a>&gt;     # author of "sed &amp; awk"<br>
+ Carlos Duarte &lt;<a href="mailto:cdua@algos.inesc.pt" title="cdua@algos.inesc.pt" class="mailto">cdua@algos.inesc.pt</a>&gt;    # author of "do it with sed"<br>
+ Eric Pement &lt;<a href="mailto:epement@jpusa.chi.il.us" title="epement@jpusa.chi.il.us" class="mailto">epement@jpusa.chi.il.us</a>&gt;  # author of this document<br>
+ S.G.Ravenhall &lt;<a href="mailto:S.G.Ravenhall@open.ac.uk" title="S.G.Ravenhall@open.ac.uk" class="mailto">S.G.Ravenhall@open.ac.uk</a>&gt; # great de-html script<br>
+ Greg Ubben &lt;<a href="mailto:gsu@romulus.ncsc.mil" title="gsu@romulus.ncsc.mil" class="mailto">gsu@romulus.ncsc.mil</a>&gt;      # many contributions &amp; much help
+</p>
+
+
+			<div class="footblock">
+			</div>
+			<div class="footblock">
+			</div>
+			
+		</div>
+		<div id="credits">
+			<p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.68-rc1</a>.</p>
+			<p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+		</div>
+	</div>
+	
+	<script src="../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+	<script src="../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		if ($("h2").length != 0)
+			$("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+		else
+			$("#toc").hide();
+			$("#navigation").children("ul").prepend("<li class='index-item'><a href='../../index.html'>Index</a></li>");
+	</script>
+
+</body>
+</html>
+

@@ -1,0 +1,156 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>OVH config</title>
+	<meta name="generator" content="Zim 0.68-rc1">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="../../_resources/style.css" type="text/css"/>
+</head>
+<body>
+	<div class="wrapper">
+		<div id="navigation">
+			<ul>
+<li><a href="../../Admin_Linux_et_sécurité.html" title="Admin Linux et sécurité" class="page">Admin Linux et sécurité</a></li>
+<li><a href="../../Audio_-_Vidéo.html" title="Audio - Vidéo" class="page">Audio - Vidéo</a></li>
+<li><a href="../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../Formats_de_fichiers.html" title="Formats de fichiers" class="page">Formats de fichiers</a></li>
+<li><a href="../../Java.html" title="Java" class="page">Java</a></li>
+<li><a href="../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../Softs.html" title="Softs" class="page">Softs</a>
+<ul>
+<li><a href="../Atom_plugins.html" title="Atom plugins" class="page">Atom plugins</a></li>
+<li><a href="../Brave.html" title="Brave" class="page">Brave</a></li>
+<li><a href="../Firefox_plugins.html" title="Firefox plugins" class="page">Firefox plugins</a></li>
+<li><a href="../Thunderbird.html" title="Thunderbird" class="page">Thunderbird</a>
+<ul>
+<li><b>OVH config</b></li>
+</ul>
+</li>
+<li><a href="../zim.html" title="zim" class="page">zim</a></li>
+</ul>
+</li>
+<li><a href="../../Window_manager.html" title="Window manager" class="page">Window manager</a></li>
+</ul>
+
+		</div>
+		<div id="content">
+
+
+			<h1>OVH config <a name='Softs:Thunderbird:OVH config'></a></h1>
+			<div id="toc">			
+				<div class="toctitle">Contents</div>				
+				<ul id="tocdata"></ul>
+			</div>		
+
+			<p>
+See: <a href="http://guides.ovh.com/ConfigurationEmail/" title="http://guides.ovh.com/ConfigurationEmail/" class="http">http://guides.ovh.com/ConfigurationEmail/</a>
+</p>
+
+<p>
+<b>Serveurs imap</b>
+</p>
+
+<p>
+Les identifiants à utiliser pour chaque compte e-mail sont de la forme
+</p>
+
+<p>
+<ul>
+<li>Utilisateur (login)     : <a href="mailto:compte@server.com" title="compte@server.com" class="mailto">compte@server.com</a> (remplacez "compte" par le compte existant à utiliser)</li>
+<li>Mot de passe (password) : indiquez le mot de passe défini lors de la création du compte</li>
+</ul>
+</p>
+
+<p>
+Accès SSL (sécurisé)
+</p>
+
+<p>
+<ul>
+<li>Serveur POP/IMAP : ssl0.ovh.net (port 995 au lieu de 110)</li>
+<li>Serveur SMTP     : ssl0.ovh.net (port 465 au lieu de 25)</li>
+</ul>
+</p>
+
+<p>
+Accès en clair (non sécurisé)
+</p>
+
+<p>
+<ul>
+<li>Serveur POP/IMAP :  pop3.username.com ou ns0.ovh.net (port 110)</li>
+<li>Serveur SMTP     : smtp.username.com ou ns0.ovh.net (port 587 au lieu de 25)</li>
+</ul>
+</p>
+
+<p>
+<b>Config dossiers imap</b>
+</p>
+
+<p>
+Dans les paramètres du serveur, bouton "Avancés…", mettre : 
+</p>
+
+<p>
+<ul>
+<li>Dossier sur le serveur IMAP : INBOX (sans guillemets)</li>
+<li>Espace de noms personnel : "INBOX." (avec guillemets)</li>
+</ul>
+</p>
+
+<p>
+Pour tous les mappings de dossier, mettre :
+</p>
+
+<p>
+<ul>
+<li>mettre dans ce dossier : "Corbeille sur…"</li>
+<li>Autre dossier "Envoyés sur…"</li>
+<li>Autre dossier "Archives sur…"</li>
+<li>Autre dossier "Brouillons sur…"</li>
+<li>Autre dossier "Modèle sur…"</li>
+</ul>
+</p>
+
+<p>
+<a href="http://forum.ovh.com/showthread.php?89381-Configuration-client-IMAP-chez-OVH-et-dossiers" title="http://forum.ovh.com/showthread.php?89381-Configuration-client-IMAP-chez-OVH-et-dossiers" class="http">http://forum.ovh.com/showthread.php?89381-Configuration-client-IMAP-chez-OVH-et-dossiers</a>
+</p>
+
+<p>
+<b>Webmail</b>
+</p>
+
+<p>
+<a href="https://ssl0.ovh.net/" title="https://ssl0.ovh.net/" class="https">https://ssl0.ovh.net/</a>
+</p>
+
+
+			<div class="footblock">
+			</div>
+			<div class="footblock">
+			</div>
+			
+		</div>
+		<div id="credits">
+			<p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.68-rc1</a>.</p>
+			<p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+		</div>
+	</div>
+	
+	<script src="../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+	<script src="../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+
+	<script type="text/javascript">
+		if ($("h2").length != 0)
+			$("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+		else
+			$("#toc").hide();
+			$("#navigation").children("ul").prepend("<li class='index-item'><a href='../../index.html'>Index</a></li>");
+	</script>
+
+</body>
+</html>
+
