@@ -1,0 +1,41 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Misc ======
+
+===== Banner =====
+''figlet "hello"''
+
+===== ncurses =====
+''whiptail --title "Tell me" --yesno "Tell me yes or no…" 20 30''
+
+===== Password generator =====
+''apg -a 1 -m 10 -M SNCL -n 10''
+
+* ''-a 1'' random character password generation (by contrast with pronounceable password generation)
+* ''-m 10'' minimum   length
+* ''-M SNCL'' generator must use for every generated password Special, Numeric, Capital symbol, Lower case letter
+* ''-n 10'' generates 10 passwords
+
+===== cloc =====
+count lines of code.
+
+===== entr =====
+[[http://eradman.com/entrproject/|entr]] est une alternative aux inotify tools qui permet de réagir plus facilement aux mises à jour d'un système de fichier.
+
+''ls *.css *.html | entr reload-browser Firefox''
+
+===== speedtest-cli =====
+Test en ligne de commande du débit d'upload et de download ainsi que du ping.
+
+===== free =====
+Pour connaitre l'état d'utilisation de la RAM.
+
+===== read line wrapper =====
+''rlwrap [rlwrap-options] command ...''
+
+''rlwrap'' runs the specified command, intercepting user input in order to provide readline's line editing, persistent history and completion.
+
+''rlwrap''  tries  to be completely transparent - you (or your shell) shouldn't notice any difference between command and rlwrap command - except the added readline functionality, of course.  This should even hold true when you are re-directing, piping and sending signals from and to command, or when command manipulates its terminal settings.
+
+There are many options to add (programmable) completion, handle multi-line input, colour and re-write prompts.

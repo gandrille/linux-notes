@@ -1,0 +1,50 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== pdf ======
+See: [[https://en.wikipedia.org/wiki/Poppler_(software)#poppler-utils|poppler-utils]]
+
+===== Pour faire des booklets =====
+* [[http://kjo.herbesfolles.org/bookletimposer/|bookletimposer]] (du package du même nom)
+* [[https://www.ctan.org/pkg/pdfbook2|pdfbook2]],qui utilise LaTeX (du package ''texlive-extra-utils'')
+* [[http://jpdftweak.sourceforge.net/|jPdf tweak]], un programme java ancien mais qui fonctionne bien
+
+===== Extraction simple de texte =====
+* package : ''poppler-utils''
+* ''pdftotext''
+
+===== Conversion de document Office en pdf avec Libre Office =====
+''lowriter --convert-to pdf filename.doc''
+''lowriter --convert-to pdf filename.docx''
+
+===== Planche de pdf =====
+**Avec pdfjam**
+* package: ''texlive-extra-utils''
+* ''pdfjam --suffix 3up --nup 1x3 --frame true --noautoscale false --delta "0cm 3cm" --a4paper --scale 0.7 --offset "-3cm 0.2cm" slides.pdf'' 
+
+**Avec pdfxup**
+* package: ''texlive-extra-utils''
+* ''pdfxup -x 2 -y 2 -im 0pt -m 30pt -is 10pt -fw .3pt slides.pdf'' 
+
+===== Extraire les pages d'un pdf =====
+**Avec qpdf**
+* package : ''qpdf''
+* [[http://qpdf.sourceforge.net/|website]]
+* [[http://qpdf.sourceforge.net/files/qpdf-manual.html|manual]]
+
+''qpdf input.pdf --pages . 1-10 -- output.pdf''
+* ''--pages'' → [[http://qpdf.sourceforge.net/files/qpdf-manual.html#ref.page-selection|see Page Selection Options]]
+* the shortcut ''.'' (instead of input.pdf) requires qpdf 8.4
+
+**Avec pdfjam**
+* package: ''texlive-extra-utils''
+* ''pdfjam all.pdf 5-10 -o output.pdf''
+
+**Avec pdfseparate**
+* package : ''poppler-utils''
+* ''pdfseparate -f 1 -l 1 all.pdf output.pdf''
+
+===== Concaténer des fichiers pdf =====
+**Avec pdfunite**
+* package : ''poppler-utils''
+* ''pdfunite source1.pdf source2.pdf source3.pdf destination.pdf''

@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Screen saver & Locker ======
+Documentation: [[https://wiki.archlinux.org/index.php/Xfce#Lock_the_screen|Lock the screen]]
+
+__Xfce intègre un screensaver avec 4.14, disponible sur XUbuntu 19.10.__
+__Cependant, de nombreux bugs sont présents... Pour le moment, il est préférable d'utiliser gnome-screensaver__
+
+**Testé avec :** ''xfce4-screensaver --version'' → ''xfce4-screensaver 0.1.8''
+([[https://github.com/xfce-mirror/xfce4-screensaver/releases|releases]])
+
+**IMPORTANT : there are two managers**
+* Xfce's power manager (activated by default)
+* systemd-logind
+
+===== Screen locker =====
+Commande de vérouillage : ''/usr/bin/xflock4''
+C'est en fait un simple script qui recherche un locker a qui il délègue la tâche de vérouiller l'écran. Pour cela il teste l'existence des lockers les uns après les autres jusqu'a ce que l'un d'entre eux réponde.
+**Important :** la commande de vérouillage peut lancer un screen saver... qui peut être différent du screensaver par défaut.
+
+**Notes**
+* ''gnome-screensaver-command'' fonctionne très bien avec XFCE.
+* sur les dernières versions, une propriété permet de choisir le screensaver : ''xfconf-query --channel xfce4-session --property /general/LockCommand --create --type string --set "gnome-screensaver-command --lock"''
+
+===== Xfce Screensaver =====
+[[https://www.xfce.org/about/news/?post=1565568000|Xfce 4.14]] intègre un [[https://docs.xfce.org/apps/screensaver/start|screensaver]]. Cette section ne fait que configurer le screensaver intégré à Xfce 4.14.
+* Source code : [[https://github.com/xfce-mirror/xfce4-screensaver|GitHub]] - [[https://bugzilla.xfce.org/|Forge Xfce]]
+* [[https://bugzilla.xfce.org/|Bug tracker]] ([[https://bugzilla.xfce.org/buglist.cgi?bug_status=__open__&no_redirect=1&order=Importance&product=Xfce4-screensaver&query_format=specific|Open bugs]]) [[https://bugzilla.xfce.org/show_bug.cgi?id=14782|#14782]]
+
+**Pour désactiver l'économiseur d'écran de Xfce**
+* ''xfconf-query --channel xfce4-screensaver --property /saver/enabled --set false''
+* ''xfconf-query --channel xfce4-screensaver --property /saver/idle-activation/enabled --set false''
+La première commande désactive l'économiseur d'écran à proprement parler. La seconde désactive l'extinction de l'écran.
+
+===== Suspend =====
+''xfce4-session-logout --suspend''
+
+Pour éviter DEUX logins en sortant de suspend
+''xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate -s false''
+Voir aussi (non utilisé) ''xfconf-query -c xfce4-session -p /shutdown/LockScreen -s false''
+
+===== Power management =====
+''xfconf-query --channel xfce4-power-manager -lv''
+
+See also
+* [[https://bugzilla.xfce.org/show_bug.cgi?id=15300|Bug #15300]]
+* [[https://forum.xfce.org/viewtopic.php?id=12970|Power Manager not respecting laptop lid switch]]

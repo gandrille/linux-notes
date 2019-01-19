@@ -1,9 +1,8 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
-Creation-Date: 2018-10-20T14:00:04+02:00
 
 ====== OVH config ======
-See: http://guides.ovh.com/ConfigurationEmail/
+([[http://guides.ovh.com/ConfigurationEmail/|source]])
 
 **Serveurs imap**
 

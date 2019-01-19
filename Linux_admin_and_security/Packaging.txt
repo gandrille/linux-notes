@@ -1,0 +1,49 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Packaging ======
+
+===== Legacy =====
+
+==== rpm : centos, fedora, suze ====
+* avant : ''yum''
+* maintenant : ''dnf''
+	* ''dnf clean expire-cache''
+	* ''dnf install''
+	* ''dnf remove''
+	* ''dnf update''
+	* ''dnf dearch''
+	* ''dnf repolist''
+
+==== deb : debian, ubuntu ====
+* avant : ''apt-get''
+* maintenant : ''apt''
+	* ''apt update''
+	* ''apt install''
+	* ''apt uninstall''
+	* ''apt search''
+
+==== Limites ====
+Le système de packaging actuel présente plusieurs limites
+* il faut packager pour chaque distribution
+* il faut être root
+* les librairies sont partagées sur le système
+* pas d'isolation des applications
+* les utilisateurs veulent de plus en plus un foctionnement app store
+
+===== appimage =====
+Un fichier ''appimage'' est une simple image iso qui va être montée. Un exécutable au sein de cette iso est ensuite lancé. L'image contient toutes les librairies nécessaires.
+Côté sécurité, les appimage sont aujourd'hui totalement **NON** sécurisées… mais l'avenir est à l'utilisation de ''bubblewrap'' ou ''firejail'' pour sandboxer l'exécution.
+
+===== flatpak =====
+''flatpak'' est poussé par RedHat. Cette solution est assez orientée desktop. 
+
+* il y a un set de librairies dans le runtime.
+* problème : il faut un runtime pour GNOME, un runtime pour KDE,…
+* portal : pour parler au système de notification,…
+
+===== snap =====
+''snap'' est poussé par Ubuntu, et orienté serveur.
+
+* utilise SquashFS
+* sécurité via apparmor

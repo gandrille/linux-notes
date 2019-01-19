@@ -1,6 +1,5 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
-Creation-Date: 2018-09-15T13:40:59+02:00
 
 ====== Command line ======
 

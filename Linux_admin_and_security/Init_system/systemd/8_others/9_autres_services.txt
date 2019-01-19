@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== 9 autres services ======
+/usr/bin/bootctl
+/usr/bin/busctl
+/usr/bin/hostnamectl
+/usr/bin/kernel-install
+/usr/bin/localectl
+/usr/bin/resolvectl
+/usr/bin/timedatectl
+
+* ''busctl'': introspect the bus (may be used to introspect and monitor the D-Bus bus)
+* ''bootctl'': Install, update or remove the systemd-boot EFI boot manager

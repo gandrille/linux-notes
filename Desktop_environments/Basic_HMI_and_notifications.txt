@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Basic HMI and notifications ======
+
+===== Notify-send =====
+''notify-send'' is a little, simple On-Screen Display (OSD) application.
+
+* package ''notify-osd''
+* command ''notify send''
+* démon pour afficher les notif sous Unity : ''notify osd''
+
+**Examples**
+* ''notify-send Test "Hello World"''
+* ''notify-send "Message Title" "Message body" -i /usr/share/pixmaps/filezilla.xpm -t 5000''
+
+A regarder : contenu des packages
+* ''notify-osd''
+* ''notify-osd-icons''
+* ''libnotify-bin''
+
+→ [[http://www.galago-project.org/specs/notification/|The Desktop Notification Spec Proposal]]
+
+===== yad =====
+Pour demander des informations avec une UI
+
+'''
+yad --form --width 300 --center \
+          --window-icon application-pdf --image application-pdf \
+          --separator=" " --title="PDFextract"\
+          --text "Please choose the page range and backend"\
+          --field="Start:NUM" 1[!1..$PAGECOUNT[!1]] --field="End:NUM" $PAGECOUNT[!1..$PAGECOUNT[!1]] \
+          --field="Backend":CB "$BACKENDSELECTION" \
+          --button="gtk-ok:0" --button="gtk-cancel:1"
+'''
+
+https://askubuntu.com/questions/221962/how-can-i-extract-a-page-range-a-part-of-a-pdf/672001#672001

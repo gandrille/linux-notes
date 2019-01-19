@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Image viewers ======
+
+| Feature               | Eye of Gnome | Shootwell Viewer | Viewnior | Xfce Ristretto | Deepin Image | KDE Gwenview |
+|:----------------------|:------------:|:----------------:|:--------:|:--------------:|:------------:|:------------:|
+| Crop image            |              |        ✔         |    ✔     |                |              |      ✔       |
+| Navigation window     |      ✔       |                  |          |       ✔        |              |      ✔       |
+| Print                 |      ✔       |        ✔         |          |                |      ✔       |      ✔       |
+| Resize image          |              |                  |          |                |              |      ✔       |
+| Rotate 90°            |      ✔       |        ✔         |    ✔     |       ✔        |      ✔       |      ✔       |
+| Rotate custom         |              |        ✔         |          |                |              |              |
+| Full Screen Slideshow |      ✔       |                  |    ✔     |       ✔        |      ✔       |      ✔       |
+| Full Screen           |      ✔       |        ✔         |    ✔     |       ✔        |      ✔       |      ✔       |
+| EXIF info             |      ✔       |                  |    ✔     |                |      ✔       |      ✔       |
+| Zoom                  |      ✔       |        ✔         |    ✔     |       ✔        |      ✔       |      ✔       |
+
+	
+
+
+ 

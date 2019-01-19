@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== CLI players ======
+* using ''sox'': ''play'' command
+* using ''mpg123''
+* ...
+
+et MPD...

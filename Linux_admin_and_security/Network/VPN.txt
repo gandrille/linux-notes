@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== VPN ======
+**Installer OpenVPN**
+https://korben.info/installer-openvpn.html
+
+
+
+
+
+

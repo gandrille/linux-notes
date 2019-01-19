@@ -1,0 +1,33 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Connaitre la configuration matérielle ======
+
+===== Command line =====
+**inxi**
+[[https://smxi.org/docs/inxi.htm|Official website]]
+[[https://github.com/smxi/inxi|GitHub]]
+package ''inxi''
+
+* ''inxi'' : basic infos
+* ''inxi -F'' : full infos
+
+**lshw**
+[[https://fr.wikipedia.org/wiki/Lshw|Wikipedia]]
+package ''lshw''
+
+* ''lshw''
+* ''lshw -html > file.html''
+
+Note : le frontend lshw-gtk n'est pas terrible...
+
+**neofetch**
+Basic infos with ascii art
+[[https://github.com/dylanaraps/neofetch|GitHub]]
+package ''neofetch''
+
+===== GUI =====
+**Hardinfo**
+[[https://github.com/lpereira/hardinfo|GitHub]]
+[[https://fr.wikipedia.org/wiki/Hardinfo|Wikipedia]]
+package ''hardinfo''

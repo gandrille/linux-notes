@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== 5 Sécurité ======
+Un vrai sujet complexe...
+
+**Plein d'options, dont**
+* RootDirectory: pour faire un équivalent d'un chroot
+* systemd-nspawn : "containeriser" un service (cf helper tool machinectl)
+

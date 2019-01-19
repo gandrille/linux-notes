@@ -1,0 +1,31 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== key pair ======
+
+===== Key pair creation =====
+**Génération de paire de clés**
+
+* ''ssh-keygen -a 100 -b 256 -t ed25519''
+	* ''-a 100'' : ajouter des itérations pour rendre la passphrase plus résistante aux attaques brute force
+	* "Ed25519 keys have a fixed length and the -b flag will be ignored" says ''man ssh-keygen''
+* ''ssh-keygen -b 8092 -t rsa''
+
+Note : début 2018, GitHub propose dans [[https://help.github.com/articles/connecting-to-github-with-ssh/|son guide]] l'utilisation de clé rsa de 4096 bits.
+
+**Générer clé publique**
+
+* ''openssl rsa -in private-key.key -pubout''
+* et pour ed25519 ?
+
+===== Fingerprint =====
+''ssh-keygen -lf ~/.ssh/id_rsa.pub''
+''ls /etc/ssh/*.pub | xargs -n 1 ssh-keygen -lf''
+
+===== Pass phrase =====
+* Retirer la pass phrase d'une clé privée : ''openssl rsa -in privkey.pem -out unlocked-privkey.key''
+
+
+
+
+

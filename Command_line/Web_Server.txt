@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Web Server ======
+Check for local open ports (reachable from the internet): https://ifconfig.co/port/8080
+
+**Python v2**
+
+* ''python -m SimpleHTTPServer''
+* ''python -m SimpleHTTPServer 8000''
+
+**Python v3**
+
+* ''python3 -m http.server''
+
+**Node.js**
+
+* ''npm install -g http-server''
+* ''executer simplement http-server''
+
+**websockets**
+
+* http://websocketd.com/
+
+→ See also: [[Command line:Network:Netcat|netcat]]

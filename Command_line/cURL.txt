@@ -1,15 +1,15 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
-Creation-Date: 2018-06-29T14:49:39+02:00
 
 ====== cURL ======
-[[https://ec.haxx.se|Everything cURL]]
+**References**
+* [[https://catonmat.net/cookbooks/curl|cURL Cookbook]]: TLDR tips
+* [[https://ec.haxx.se|Everything cURL:]] full documentation
+
+**Auth with Cookies**
+[[https://www.linuxjournal.com/video/use-curl-login-websites-script|source]] / [[https://www.youtube.com/watch?v=tCfB6BP-PN4|Youtube]]
 
 ''curl -k -A 'Mozilla/5.0' -u login:pass -b /tmp/cookie -c /tmp/cookie https://domain.tld''
- 
-Soit dans l'ordre : pas de verification de certificat SSL, user-agent == firefox, login:passwd on enregistre les cookies et on les lit…
- 
-http://www.linuxjournal.com/video/use-curl-login-websites-script
 
 ''curl --cookie-jar cjar --output /dev/null http://www.linuxjournal.com/user/login''
 

@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== duplicity ======
+* plante de temps en temps
+* cache délirant
+* remarque : Déja-dup est une interface graphique pour duplicity
+
+

@@ -1,0 +1,28 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== GPG ======
+ **Sources**
+* [[http://aplawrence.com/Basics/gpg.html|GPG Basic usage]]
+* [[https://www.gnupg.org/gph/en/manual.html|The GNU Privacy Handbook]]
+* [[https://gnupg.org/index.html|GnuPG website]]
+* [[https://gnupg.org/documentation/howtos.html|GnuPG HowTo]]
+* [[https://gnupg.org/documentation/guides.html|GnuPG User Guide]]
+
+===== Key pair creation =====
+* ''gpg --full-generate-key''
+* ''gpg --quick-gen-key 'John Doo <john@doo.com>' rsa4096 - 1y''
+
+===== Trousseau de clés publiques =====
+''~/.gnupg/pubring.kbx''
+
+**Lister les clés**
+''gpg --list-keys''
+
+**Export**
+''gpg --armor --export john@doo.com''
+* ''--armor'' ascii export (ASCII-armored), instead of binary
+
+**Two step import**
+* import: ''gpg --import myfriend.gpg''
+* signing the imported key (means the fingerprint has been validated by any way): ''gpg --edit-key myfiend@here.com''

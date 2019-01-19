@@ -1,14 +1,18 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
-Creation-Date: 2018-06-29T14:49:39+02:00
 
 ====== OCR ======
 
 ===== tesseract-ocr =====
+[[https://doc.ubuntu-fr.org/tesseract-ocr|Doc Ubuntu]]
+
+**Packages**
 * ''tesseract-ocr''
 * ''tesseract-ocr-fra''
 
-→ frontend ''gscan2pdf'' basic mais utilisable.
+**Usage**
+* directement [[https://doc.ubuntu-fr.org/tesseract-ocr#en_ligne_de_commande|en ligne de commande]] (testé avec succès) 
+* avec l'outil graphique ''gscan2pdf''
 
 ===== gocr et gocr-tk =====
 Logiciel en ligne de commande et graphique

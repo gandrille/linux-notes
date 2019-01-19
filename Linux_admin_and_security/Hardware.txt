@@ -1,0 +1,5 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Hardware ======
+see : https://en.wikipedia.org/wiki/List_of_interface_bit_rates

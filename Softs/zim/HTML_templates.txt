@@ -1,6 +1,5 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
-Creation-Date: 2018-09-17T09:45:30+02:00
 
 ====== HTML templates ======
 **Template list**
@@ -8,4 +7,4 @@ Creation-Date: 2018-09-17T09:45:30+02:00
 * [[https://github.com/alexivkin/VectorWiktor|Vector Wiktor Template]]
 * [[https://github.com/gandrille/zim-simple-web-template|Home made template (Simple Web)]]
 
-See also: http://zim-wiki.org/manual/Help/Templates.html
+[[http://zim-wiki.org/manual/Help/Templates.html|See also…]]

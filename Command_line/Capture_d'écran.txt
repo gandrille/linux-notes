@@ -1,9 +1,8 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
-Creation-Date: 2018-09-15T13:42:09+02:00
 
 ====== Capture d'écran ======
-Possible avec [[http://www.imagemagick.org/script/import.php|import]], un outil d'''imagemagik.''
+Possible avec [[http://www.imagemagick.org/script/import.php|import]], un outil d'''imagemagik''.
 
 **Tout l'écran**
 

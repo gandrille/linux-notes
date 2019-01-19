@@ -1,13 +1,12 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
-Creation-Date: 2018-06-29T14:49:39+02:00
 
 ====== QR code ======
+→ [[https://github.com/zxing/zxing/wiki/Barcode-Contents|Spec des contents]]
 
-===== Spec des contents =====
-https://github.com/zxing/zxing/wiki/Barcode-Contents
+===== Génération =====
 
-===== CLI qrencode =====
+==== CLI qrencode ====
 Pour afficher le png sur la sortie std (et le convertir par exemple en base 64 avec un pipe…) utiliser ''-o -'' où ''-'' est le nom de fichier désignant stdout.
 
 * vcard : ''echo -e "BEGIN:VCARD\nVERSION:3.0\nN:Doo;John;;Dr.\nFN:John Doo\nTEL;TYPE=WORK,VOICE:(33)649808080\nEMAIL;TYPE=PREF,INTERNET:john.doo@gmail.com\nEND:VCARD" | qrencode -t utf8''
@@ -19,9 +18,13 @@ base64 -w0 a.png
 '''
 
 
-===== GUI "qtqr" =====
+==== GUI "qtqr" ====
 
 Fait partie des ''qr-tools'', dont il peut être intéressant de suivre l'évolution…
 
-* page de développement : http://launchpad.net/qr-tools
+* [[http://launchpad.net/qr-tools|page de développement]]
 * package ''python-qrtools'' 
+
+===== Lecture =====
+Dans le package ''zbar-tools'' : utilitaire [[https://www.systutorials.com/docs/linux/man/1-zbarcam/|zbarcam]]
+

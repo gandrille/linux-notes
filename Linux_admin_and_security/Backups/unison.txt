@@ -1,0 +1,18 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== unison ======
+
+===== Télécharger une version spécifique =====
+* [[https://tracker.debian.org/pkg/unison|Page récapitulative]]
+* [[http://ftp.debian.org/debian/pool/main/u/unison/|FTP packages debian]]
+
+===== Bug =====
+Debian et Ubuntu ne compilent pas avec la même version de la librairie ''ocaml''. Du coup, la synchronisation ne fonctionne pas quand les fichiers de plus de 700ko sont modifiés d'un des deux côtés.
+
+La solution est d'installer la même version de chaque côté (ubuntu et debian) en téléchargeant le paquet à la main.
+
+Pour la version ''2.48.3.1''
+
+* [[https://packages.ubuntu.com/zesty/unison|Ubuntu Zesty]]
+* [[https://packages.debian.org/stretch/unison|Debian stretch]]

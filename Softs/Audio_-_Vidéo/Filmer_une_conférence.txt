@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Filmer une conférence ======
+* http://blog.loof.fr/2015/03/filmer-une-conference.html
+* http://blog.loof.fr/2015/06/filmer-une-conference-suite.html
+

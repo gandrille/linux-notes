@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2018-06-29T14:49:39+02:00
-
-====== GIT prompt ======
-http://www.git-attitude.fr/2013/05/22/prompt-git-qui-dechire/
-

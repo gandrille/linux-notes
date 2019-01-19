@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Images compression ======
+**Lossless optimization**
+GUI
+* ''trimage'' (jpeg & png)
+CLI
+* jpeg : ''jpegoptim''
+* png : ''pngcrush''
+
+

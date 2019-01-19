@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Shortcuts ======
+
+===== Desktop Shotcuts =====
+**App launchers**
+* ''Super + F'': File manager
+* ''Super + W'': Web browser
+* ''Super + M'': Mail reader
+* ''Super + T'': Terminal
+* ''Super + E'': Editor
+* ''Super + R'': Application finder (think Run)
+
+* ''Alt + F2'': Run cmd
+* ''Alt + F3'': Application finder (think Run)
+* ''Alt + F4'': Close curent app
+
+**Windows** 
+* ''Alt + F5'': Toggle maximize window horizontally
+* ''Alt + F6'': Toggle maximize window vertically
+* ''Alt + F7'': Toggle maximize window horizontally and vertically
+* ''Alt + F8'': Stick window (make it appear in all workspaces) 
+
+**Misc**
+* ''Alt + Tab'': Navigate between apps
+* ''Ctrl + Alt + Escape'': xkill
+* ''Alt + mose-scroll'': zoom in/out on desktop
+
+**Screenshot: <impr screen> config**
+* read: ''xfconf-query --channel xfce4-keyboard-shortcuts --property "/commands/custom/Print"''
+* write: ''xfconf-query --channel xfce4-keyboard-shortcuts --property "/commands/custom/Print" --set xfce4-screenshooter''
+
+===== Thunar shortcuts =====
+* ''F4'': open terminal in the current path
+* ''Ctrl + Shift + F'' / ''Cmd + Shift + F'': open Catfish in the current path
+
+**Thunar config (**[[https://docs.xfce.org/xfce/thunar/start|Documentation]])
+
+Change backspace behavior
+* In file ''.config/Thunar/accels.scm''
+* append the following line: ''(gtk_accel_path "<Actions>/ThunarWindow/open-parent" "BackSpace")''
+
+**Custom Launchers**
+''.config/Thunar/uca.xml''
+'''
+<action>
+	<icon>drive-network</icon>
+	<name>Start Webserver</name>
+	<unique-id>2574257978896168-8</unique-id>
+	<command>exo-open --working-directory %f --launch TerminalEmulator /usr/bin/python -m SimpleHTTPServer</command>
+	<description>Start Webserver on port 8000</description>
+	<patterns>*</patterns>
+	<directories/>
+</action>
+'''

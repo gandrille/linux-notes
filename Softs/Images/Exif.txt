@@ -1,0 +1,6 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Exif ======
+* [[:Softs:Images:Image viewers|Image Viewer]]
+* [[:Linux admin and security:Metadata|Metadata]]

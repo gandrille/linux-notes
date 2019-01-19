@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== CIDR notation ======
+See
+* [[https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing|Classless Inter-Domain Routing]]
+* [[https://en.wikipedia.org/wiki/Classful_network|Classful network]]
+
+CIDR notation is a compact representation of an IP address and its associated routing prefix. The notation is constructed from an IP address, a slash ('/') character, and a decimal number. The number is the count of leading 1 bits in the subnet mask.
+
+**Examples**
+* ''/8'' (Class A) → subnet mask 255.0.0.0
+* ''/16'' (Class B) → subnet mask 255.255.0.0
+* ''/24'' (Class C) → subnet mask 255.255.255.0
+
+

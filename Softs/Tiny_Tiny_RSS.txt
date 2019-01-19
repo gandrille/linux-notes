@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Tiny Tiny RSS ======
+https://tt-rss.org
+
+===== Cron with OVH hosting =====
+Since it's not possible to have args in OVH crontab, the solution is to run an intermediate launcher.php script:
+
+'''
+#!/usr/bin/env php
+<?php
+system('/usr/local/php7.2/bin/php /home/username/www/tt-rss/update.php  --feeds --quiet');
+?>
+'''
+
+
+In order to get the php path and the home dir path, try to run something in cron, then open the logs.
+
+===== Themes =====
+* [[https://git.tt-rss.org/fox/tt-rss/wiki/Themes|Official list]]
+* [[https://tt-rss.org/wiki/InstallationNotes|Installation Guide]] → ''git clone https://git.tt-rss.org/fox/tt-rss.git''
+* [[https://github.com/levito/tt-rss-feedly-theme|Feedly compact]]

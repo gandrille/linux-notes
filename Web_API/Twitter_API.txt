@@ -1,0 +1,9 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Twitter API ======
+see Twitter4J
+
+https://towardsdatascience.com/building-a-bitcoin-sentiment-analyzer-based-on-twitter-in-java-65e6fa619a19
+
+

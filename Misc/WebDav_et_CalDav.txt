@@ -1,48 +1,68 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
-Creation-Date: 2018-06-29T14:49:39+02:00
 
 ====== WebDav et CalDav ======
 
 ===== WebDAV =====
 
 ==== Spec ====
-* WebDav : https://tools.ietf.org/html/rfc3744
+* [[https://tools.ietf.org/html/rfc3744|WebDav]]
 
 ==== vdirsyncer ====
 * https://vdirsyncer.pimutils.org/en/stable/
 * https://github.com/pimutils/vdirsyncer
 
 ==== Davix ====
-* Davix home page : http://dmc.web.cern.ch/projects/davix/home
+* [[http://dmc.web.cern.ch/projects/davix/home|Davix home page]]
 
 Simple et efficace… mais il semble y avoir un souci avec les dernières versions.
 
 ''davix-get --userlogin xxxx --userpass xxxxx davs://user:pass@server.com/calendars/user/ /local/directory''
 
 ==== Sitecopy ====
-Sitecopy home page : http://www.manyfish.co.uk/sitecopy/
+* Package ''sitecopy''
+* [[http://www.manyfish.co.uk/sitecopy/|Home page]]
 
-Un peu plus puissant/complexe, sitecopy propose une synchro locale distante. Il faut mettre en place un fichier ''.sitecopyrc'' et un dossier ''.sitecopy''. Lire le man qui est très bien fait.
+Un peu plus puissant/complexe, sitecopy propose une synchro locale distante.
 
-Exemple de ''.sitecopyrc''
+**Initialisation**
+'''
+mkdir -m 700 ~/.sitecopy
+touch ~/.sitecopyrc
+chmod 600 ~/.sitecopyrc
+'''
+
+**Exemple de .sitecopyrc**
 
 '''
-site infomaniak
+site nomdusite
   server server.com
   protocol webdav
+  http secure
   local /home/me/tmp/
-  remote /calendars/user/
+  remote /remote.php/webdav/
   username toto
   password mysecret
 '''
 
 
+→ La page de man est très bien faite.
+
+**Initialiser le local avec le sontenu distant**
+'''
+sitecopy --fetch nomdusite
+sitecopy --synch nomdusite
+'''
+
+
+**Debug**
+ajouter ''--debug=files,rcfile,http,httpbody,ftp,xml,xmlparse,httpauth''  (et éventuellement ''cleartext'' pour afficher les mots de passe en clair).
+
 ===== CalDAV avec curl =====
 
 ==== Spec ====
-* Spec CalDav : https://tools.ietf.org/html/rfc4791
-* Exemples de la doc de Sabre : http://sabre.io/dav/building-a-caldav-client/
+* [[https://tools.ietf.org/html/rfc4791|Spec CalDav]]
+* [[http://sabre.io/dav/building-a-caldav-client/|Exemples de la doc de Sabre]]
 
 Note : le getetag, présent sur chaque fichier ics sert à savoir si un fichier a été modifié. Chez infomaniak, c'est juste le md5sum du fichier ics (mais l'algo de hashage n'est pas dans la spec).
 
@@ -68,15 +88,9 @@ Liste avec les display name
 
 ===== CLI Application =====
 Ces programmes utilisent un dossier local qui contient le WebDAV. Généralement, on utilise pour cela ''vdirsyncer''.
-
-==== khal : CLI calendar application ====
-* https://github.com/pimutils/khal
-* https://lostpackets.de/khal/
-
-==== khard : Console carddav client ====
-* https://github.com/scheibler/khard/
+* [[https://lostpackets.de/khal/|khal]] ([[https://github.com/pimutils/khal|GitHub]]) : CLI calendar application
+* [[https://github.com/scheibler/khard/|khard]] : Console carddav client
 
 ===== Java library =====
-* Pour parser les vcf : https://github.com/mangstadt/biweekly
-* pour parser les vcard : https://github.com/mangstadt/ez-vcard
-
+* [[https://github.com/mangstadt/biweekly|Biweekly ]]: pour parser les vcf
+* [[https://github.com/mangstadt/ez-vcard|Ez-vcard]] : pour parser les vcard
