@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Search Engines</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a></li>
+<li><a href="../../Linux_admin_and_security.html" title="Linux admin and security" class="page">Linux admin and security</a></li>
+<li><a href="../../Linux_devices.html" title="Linux devices" class="page">Linux devices</a></li>
+<li><a href="../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../Softs.html" title="Softs" class="page">Softs</a>
+<ul>
+<li><a href="../Audio_-_Vidéo.html" title="Audio - Vidéo" class="page">Audio - Vidéo</a></li>
+<li><a href="../Color_picker.html" title="Color picker" class="page">Color picker</a></li>
+<li><a href="../epub_readers.html" title="epub readers" class="page">epub readers</a></li>
+<li><a href="../ffsend.html" title="ffsend" class="page">ffsend</a></li>
+<li><a href="../Firefox.html" title="Firefox" class="page">Firefox</a>
+<ul>
+<li><a href="./Config.html" title="Config" class="page">Config</a></li>
+<li><a href="./Extensions.html" title="Extensions" class="page">Extensions</a></li>
+<li><a href="./Profile.html" title="Profile" class="page">Profile</a></li>
+<li><b>Search Engines</b></li>
+</ul>
+</li>
+<li><a href="../Images.html" title="Images" class="page">Images</a></li>
+<li><a href="../Jekyll.html" title="Jekyll" class="page">Jekyll</a></li>
+<li><a href="../Maps.html" title="Maps" class="page">Maps</a></li>
+<li><a href="../Night_light.html" title="Night light" class="page">Night light</a></li>
+<li><a href="../Plant_UML.html" title="Plant UML" class="page">Plant UML</a></li>
+<li><a href="../REST.html" title="REST" class="page">REST</a></li>
+<li><a href="../Thunderbird.html" title="Thunderbird" class="page">Thunderbird</a></li>
+<li><a href="../Tiny_Tiny_RSS.html" title="Tiny Tiny RSS" class="page">Tiny Tiny RSS</a></li>
+<li><a href="../vlc.html" title="vlc" class="page">vlc</a></li>
+<li><a href="../zim.html" title="zim" class="page">zim</a></li>
+</ul>
+</li>
+<li><a href="../../Web_API.html" title="Web API" class="page">Web API</a></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>Search Engines <a name='Softs:Firefox:Search Engines'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<p>
+<ul>
+<li><a href="https://wiki.mozilla.org/Firefox/Search" title="General documentation" class="https">General documentation</a></li>
+<li>Related topic : <a href="https://developer.mozilla.org/en-US/docs/Web/OpenSearch" title="Open Search" class="https">Open Search</a></li>
+</ul>
+</p>
+
+<h2>Introduction</h2>
+
+<p>
+In Firefox, search engines have been widely abused in the past. The curent complexity comes from hijacking-protection. (<a href="https://mail.mozilla.org/pipermail/firefox-dev/2013-August/000778.html" title="source" class="https">source</a>)
+</p>
+
+<p>
+<b>What does NOT work anymore</b><br>
+<ul>
+<li>user_pref <tt>Keyword.Url</tt> → <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=873734" title="BUG#873734" class="https">BUG#873734</a></li>
+<li>user_pref <tt>browser.search.selectedEngine</tt> → <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1029148" title="BUG#1029148" class="https">BUG#1029148</a></li>
+</ul>
+</p>
+
+<p>
+<b>So, how does it works?</b><br>
+<ul>
+<li>AT STARTUP, preferences "browser.urlbar.placeholderName" and "browser.search.defaultenginename" are used to display the search engine name... but it's ONLY a label (see <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=1449317" title="BUG #1449317" class="https">BUG #1449317</a>).</li>
+<li>THEN, when the <tt>search.json.mozlz4</tt> has been read from the profile, the full configuration is loaded and the previous preferences are not used anymore during the session.</li>
+</ul>
+</p>
+
+<h2>Decoding/Encoding search.json.mozlz4</h2>
+
+<p>
+<tt>search.json.mozlz4</tt> has a magic number header (<a href="https://dxr.mozilla.org/mozilla-central/source/toolkit/components/lz4/lz4.js#32" title="&quot;mozLz40\0&quot;" class="https">"mozLz40\0"</a>) followed by the content itself, encoded using LZ4 algorithm. That's why, in order to decompress the file, the magic number needs to be skiped, then the remaining bytes can be extracted using LZ4 algorithm.
+</p>
+
+<p>
+This python program does the job well (<a href="https://unix.stackexchange.com/questions/326897/how-to-decompress-jsonlz4-files-firefox-bookmark-backups-using-the-command-lin?rq=1" title="source" class="https">source</a>)
+</p>
+
+<pre>
+#!/usr/bin/env python
+from sys import stdin, stdout, argv, stderr
+import os
+try:
+    import lz4.block as lz4
+except ImportError:
+    import lz4
+
+stdin = os.fdopen(stdin.fileno(), 'rb')
+stdout = os.fdopen(stdout.fileno(), 'wb')
+
+if argv[1:] == ['-c']:
+    stdout.write(b'mozLz40\0' + lz4.compress(stdin.read()))
+elif argv[1:] == ['-d']:
+    assert stdin.read(8) == b'mozLz40\0'
+    stdout.write(lz4.decompress(stdin.read()))
+else:
+    stderr.write('Usage: %s -c|-d &lt; infile &gt; outfile\n' % argv[0])
+    stderr.write('Compress or decompress Mozilla-flavor LZ4 files.\n\n')
+    stderr.write('Examples:\n')
+    stderr.write('\t%s -d &lt; infile.json.mozlz4 &gt; outfile.json\n' % argv[0])
+    stderr.write('\t%s -c &lt; infile.json &gt; outfile.json.mozlz4\n' % argv[0])
+    exit(1)
+</pre>
+
+<p>
+<b>Requires</b><br>
+<ul>
+<li>Python2 : <tt>python-lz4</tt> package</li>
+<li>Python3 : <tt>python3-lz4tools</tt> package</li>
+</ul>
+</p>
+
+<h2>Json schema of search.json.mozlz4</h2>
+
+<p>
+<ul>
+<li><a href="https://hg.mozilla.org/mozilla-central/file/tip/browser/base/content/browser.js" title="browser.js file" class="https">browser.js file</a></li>
+<li><a href="https://hg.mozilla.org/mozilla-central/file/tip/browser/components/preferences/in-content/search.js" title="search.js file" class="https">search.js file</a></li>
+</ul>
+</p>
+
+<h2>Hash computation</h2>
+
+<p>
+Hashes are used to ensure that the file has been updated by Firefox itself. So computing hashes has been designed to be difficult, in order to prevent malicious program from updating silently <tt>search.json.mozlz4</tt> file.
+</p>
+
+<p>
+<b>Source code</b><br>
+<ul>
+<li><a href="https://hg.mozilla.org/mozilla-central/file/tip/toolkit/components/search/SearchService.jsm" title="SearchService.jsm" class="https">SearchService.jsm</a></li>
+<li><a href="https://hg.mozilla.org/mozilla-central/file/tip/toolkit/components/search/SearchEngine.jsm#l228" title="SearchEngine.jsm" class="https">SearchEngine.jsm</a> → <tt>function getVerificationHash(name)</tt></li>
+</ul>
+</p>
+
+<p>
+<b>Using jsconsole</b><br>
+<ul>
+<li>prerequisite: inside Firefox, set the <tt>devtools.chrome.enabled</tt> preference to <tt>true</tt> inside <tt>about:config</tt> to enable the browser console command line (<a href="https://developer.mozilla.org/en-US/docs/Tools/Browser_Console" title="source" class="https">source</a>).</li>
+<li>run <tt>firefox -jsconsole</tt> from the command line</li>
+<li>copy/paste <tt>getVerificationHash</tt> function from <a href="https://hg.mozilla.org/mozilla-central/file/tip/toolkit/components/search/SearchEngine.jsm#l228" title="SearchEngine.jsm" class="https">SearchEngine.jsm</a>.</li>
+<li>ask for <tt>getVerificationHash("Qwant")</tt></li>
+</ul>
+</p>
+
+<p>
+<b>Using Bash commands</b>
+</p>
+
+<pre>
+# getVerificationHash("Qwant")
+name=Qwant
+
+# OS.Path.basename(OS.Constants.Path.profileDir) → profile dependent, of course
+profileDir="fbhzwefm.default"
+
+# Services.appinfo.name
+appName="Firefox"
+
+# Copy/Pasted disclaimer from https://hg.mozilla.org/mozilla-central/file/tip/toolkit/components/search/SearchEngine.jsm#l228
+disclaimer="By modifying this file, I agree that I am doing so only within $appName itself, using official, user-driven search engine selection processes, and in a way which does not circumvent user consent. I acknowledge that any attempt to change this file from outside of $appName is a malicious act, and will be responded to accordingly."
+
+salt=$profileDir$name$(echo $disclaimer | sed "s/\$appName/$appName/g")
+
+printf "$salt" | openssl sha256 -binary | base64
+</pre>
+
+<h2>Appendix</h2>
+
+<p>
+Here is <tt>getVerificationHash</tt> function from <a href="https://hg.mozilla.org/mozilla-central/file/tip/toolkit/components/search/SearchEngine.jsm#l228" title="SearchEngine.jsm" class="https">SearchEngine.jsm</a>.
+</p>
+
+<pre>
+function getVerificationHash(name) {
+  let disclaimer =
+    "By modifying this file, I agree that I am doing so " +
+    "only within $appName itself, using official, user-driven search " +
+    "engine selection processes, and in a way which does not circumvent " +
+    "user consent. I acknowledge that any attempt to change this file " +
+    "from outside of $appName is a malicious act, and will be responded " +
+    "to accordingly.";
+
+  let salt =
+    OS.Path.basename(OS.Constants.Path.profileDir) +
+    name +
+    disclaimer.replace(/\$appName/g, Services.appinfo.name);
+
+  let converter = Cc[
+    "@mozilla.org/intl/scriptableunicodeconverter"
+  ].createInstance(Ci.nsIScriptableUnicodeConverter);
+  converter.charset = "UTF-8";
+
+  // Data is an array of bytes.
+  let data = converter.convertToByteArray(salt, {});
+  let hasher = Cc["@mozilla.org/security/hash;1"].createInstance(
+    Ci.nsICryptoHash
+  );
+  hasher.init(hasher.SHA256);
+  hasher.update(data, data.length);
+
+  return hasher.finish(true);
+}
+</pre>
+
+
+
+		
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+

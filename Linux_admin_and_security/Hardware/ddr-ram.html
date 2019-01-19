@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Les barettes de RAM de type DDR</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a></li>
+<li><a href="../../Linux_admin_and_security.html" title="Linux admin and security" class="page">Linux admin and security</a>
+<ul>
+<li><a href="../Admin_tools.html" title="Admin tools" class="page">Admin tools</a></li>
+<li><a href="../Ansible.html" title="Ansible" class="page">Ansible</a></li>
+<li><a href="../Backups.html" title="Backups" class="page">Backups</a></li>
+<li><a href="../Certificat_X509_et_SSLTLS.html" title="Certificat X509 et SSLTLS" class="page">Certificat X509 et SSLTLS</a></li>
+<li><a href="../CVE.html" title="CVE" class="page">CVE</a></li>
+<li><a href="../Distributions_et_kernel.html" title="Distributions et kernel" class="page">Distributions et kernel</a></li>
+<li><a href="../Erreur_too_many_open_files.html" title="Erreur too many open files" class="page">Erreur too many open files</a></li>
+<li><a href="../Guides_sécurité.html" title="Guides sécurité" class="page">Guides sécurité</a></li>
+<li><a href="../Hardware.html" title="Hardware" class="page">Hardware</a>
+<ul>
+<li><a href="./Battery_and_power_management.html" title="Battery and power management" class="page">Battery and power management</a></li>
+<li><a href="./Connaitre_la_configuration_matérielle.html" title="Connaitre la configuration matérielle" class="page">Connaitre la configuration matérielle</a></li>
+<li><b>ddr-ram</b></li>
+<li><a href="./Effacer_et_récupérer_un_disque_dur.html" title="Effacer et récupérer un disque dur" class="page">Effacer et récupérer un disque dur</a></li>
+<li><a href="./Expansion_cards.html" title="Expansion cards" class="page">Expansion cards</a></li>
+<li><a href="./Linux_Vendor_Firmware_Service.html" title="Linux Vendor Firmware Service" class="page">Linux Vendor Firmware Service</a></li>
+<li><a href="./Predictable_Network_Interface_Names.html" title="Predictable Network Interface Names" class="page">Predictable Network Interface Names</a></li>
+<li><a href="./SecureBoot_with_UEFI.html" title="SecureBoot with UEFI" class="page">SecureBoot with UEFI</a></li>
+<li><a href="./USB.html" title="USB" class="page">USB</a></li>
+<li><a href="./Video.html" title="Video" class="page">Video</a></li>
+</ul>
+</li>
+<li><a href="../Heure_et_NTP.html" title="Heure et NTP" class="page">Heure et NTP</a></li>
+<li><a href="../htaccess.html" title="htaccess" class="page">htaccess</a></li>
+<li><a href="../Init_system.html" title="Init system" class="page">Init system</a></li>
+<li><a href="../Keys.html" title="Keys" class="page">Keys</a></li>
+<li><a href="../Metadata.html" title="Metadata" class="page">Metadata</a></li>
+<li><a href="../Mount_d'une_image_iso.html" title="Mount d'une image iso" class="page">Mount d'une image iso</a></li>
+<li><a href="../Network.html" title="Network" class="page">Network</a></li>
+<li><a href="../Packaging.html" title="Packaging" class="page">Packaging</a></li>
+<li><a href="../Samba_et_cifs.html" title="Samba et cifs" class="page">Samba et cifs</a></li>
+<li><a href="../ssh.html" title="ssh" class="page">ssh</a></li>
+<li><a href="../top.html" title="top" class="page">top</a></li>
+<li><a href="../User_rights_management.html" title="User rights management" class="page">User rights management</a></li>
+</ul>
+</li>
+<li><a href="../../Linux_devices.html" title="Linux devices" class="page">Linux devices</a></li>
+<li><a href="../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../../Web_API.html" title="Web API" class="page">Web API</a></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>Les barettes de RAM de type DDR <a name='Linux admin and security:Hardware:ddr-ram'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<table>
+<thead><tr>
+  <th>Année</th>
+  <th>Type</th>
+  <th>I/O Rate</th>
+  <th>Bus Clock</th>
+  <th>Transfer Rate</th>
+  <th>Voltage</th>
+</tr></thead>
+<tr>
+  <td>2000</td>
+  <td>DDR</td>
+  <td>100-300 MHz</td>
+  <td>100-300 MHz</td>
+  <td>2.1-3.2 Go/s</td>
+  <td>2.5/2.6V</td>
+</tr>
+<tr>
+  <td>200X</td>
+  <td>DDR2</td>
+  <td>200-600 MHz</td>
+  <td>100-300 MHz</td>
+  <td>3.2-9.6 Go/s</td>
+  <td>1.8V/1.9V</td>
+</tr>
+<tr>
+  <td>2007</td>
+  <td>DDR3</td>
+  <td>400-1500 MHz</td>
+  <td>100-375 MHz</td>
+  <td>6.4-24 Go/s</td>
+  <td>1.5V/1.65</td>
+</tr>
+<tr>
+  <td>2010</td>
+  <td>DDR3L</td>
+  <td>idem ?</td>
+  <td>idem ?</td>
+  <td>idem ?</td>
+  <td>1.25/1.35V</td>
+</tr>
+<tr>
+  <td>2014</td>
+  <td>DDR4</td>
+  <td>800-1600 MHz</td>
+  <td>200-400 MHz</td>
+  <td>12.8-25.6 Go/s</td>
+  <td>1.05/1.2V?</td>
+</tr>
+<tr>
+  <td>2020?</td>
+  <td>DDR5</td>
+  <td>?</td>
+  <td>?</td>
+  <td>?</td>
+  <td>?</td>
+</tr>
+</table>
+
+<p>
+<ul>
+<li>L'année est celle de la disponibilité grand public.</li>
+<li>Les DDR/DDR2/DDR3/DDR4 sont physiquement incompatibles (détrompeurs)</li>
+<li>La DDR3 et la DDR3L diffèrent par leur tension d'alimentation (L=low voltage)</li>
+<li>on parle de format DIM pour les grandes barettes et de SoDIM pour les petites (small) barettes de portable. Attention, l'incompatibilité entre les versions demeure en raison du positionnement des détrompeurs !</li>
+</ul>
+</p>
+
+<h2>DDR-SDRAM</h2>
+
+<table>
+<thead><tr>
+  <th>Mémoire</th>
+  <th>Appellation</th>
+  <th>Fréquence E/S</th>
+  <th>Fréquence réelle</th>
+  <th>Débit</th>
+</tr></thead>
+<tr>
+  <td>DDR200</td>
+  <td>PC1600</td>
+  <td>100 MHz</td>
+  <td>100 MHz</td>
+  <td>1,6 Go/s</td>
+</tr>
+<tr>
+  <td>DDR266</td>
+  <td>PC2100</td>
+  <td>133 MHz</td>
+  <td>133 MHz</td>
+  <td>2,1 Go/s</td>
+</tr>
+<tr>
+  <td>DDR300</td>
+  <td>PC2400</td>
+  <td>150 MHz</td>
+  <td>150 MHz</td>
+  <td>2,4 Go/s</td>
+</tr>
+<tr>
+  <td>DDR333</td>
+  <td>PC2700</td>
+  <td>166 MHz</td>
+  <td>166 MHz</td>
+  <td>2,7 Go/s</td>
+</tr>
+<tr>
+  <td>DDR400</td>
+  <td>PC3200</td>
+  <td>200 MHz</td>
+  <td>200 MHz</td>
+  <td>3,2 Go/s</td>
+</tr>
+<tr>
+  <td>DDR433</td>
+  <td>PC3500</td>
+  <td>217 MHz</td>
+  <td>217 MHz</td>
+  <td>3,5 Go/s</td>
+</tr>
+<tr>
+  <td>DDR466</td>
+  <td>PC3700</td>
+  <td>233 MHz</td>
+  <td>233 MHz</td>
+  <td>3,7 Go/s</td>
+</tr>
+<tr>
+  <td>DDR500</td>
+  <td>PC4000</td>
+  <td>250 MHz</td>
+  <td>250 MHz</td>
+  <td>4 Go/s</td>
+</tr>
+<tr>
+  <td>DDR533</td>
+  <td>PC4200</td>
+  <td>266 MHz</td>
+  <td>266 MHz</td>
+  <td>4,2 Go/s</td>
+</tr>
+<tr>
+  <td>DDR538</td>
+  <td>PC4300</td>
+  <td>269 MHz</td>
+  <td>269 MHz</td>
+  <td>4,3 Go/s</td>
+</tr>
+<tr>
+  <td>DDR550</td>
+  <td>PC4400</td>
+  <td>275 MHz</td>
+  <td>275 MHz</td>
+  <td>4,4 Go/s</td>
+</tr>
+<tr>
+  <td>DDR600</td>
+  <td>PC4800</td>
+  <td>300 MHz</td>
+  <td>300 MHz</td>
+  <td>4,8 Go/s</td>
+</tr>
+</table>
+
+<h2>DDR2-SDRAM</h2>
+
+<table>
+<thead><tr>
+  <th>Mémoire</th>
+  <th>Appellation</th>
+  <th>Fréquence E/S</th>
+  <th>Fréquence réelle</th>
+  <th>Débit</th>
+</tr></thead>
+<tr>
+  <td>DDR2-400</td>
+  <td>PC2-3200</td>
+  <td>200 MHz</td>
+  <td>100 MHz</td>
+  <td>3,2 Go/s</td>
+</tr>
+<tr>
+  <td>DDR2-533</td>
+  <td>PC2-4300</td>
+  <td>266 MHz</td>
+  <td>133 MHz</td>
+  <td>4,3 Go/s</td>
+</tr>
+<tr>
+  <td>DDR2-667</td>
+  <td>PC2-5300</td>
+  <td>333 MHz</td>
+  <td>166 MHz</td>
+  <td>5,3 Go/s</td>
+</tr>
+<tr>
+  <td>DDR2-675</td>
+  <td>PC2-5400</td>
+  <td>337 MHz</td>
+  <td>168 MHz</td>
+  <td>5,4 Go/s</td>
+</tr>
+<tr>
+  <td>DDR2-800</td>
+  <td>PC2-6400</td>
+  <td>400 MHz</td>
+  <td>200 MHz</td>
+  <td>6,4 Go/s</td>
+</tr>
+<tr>
+  <td>DDR2-1066</td>
+  <td>PC2-8500</td>
+  <td>533 MHz</td>
+  <td>266 MHz</td>
+  <td>8,5 Go/s</td>
+</tr>
+<tr>
+  <td>DDR2-1100</td>
+  <td>PC2-8800</td>
+  <td>560 MHz</td>
+  <td>280 MHz</td>
+  <td>8,8 Go/s</td>
+</tr>
+<tr>
+  <td>DDR2-1200</td>
+  <td>PC2-9600</td>
+  <td>600 MHz</td>
+  <td>300 MHz</td>
+  <td>9,6 Go/s</td>
+</tr>
+</table>
+
+<h2>DDR3-SDRAM</h2>
+
+<table>
+<thead><tr>
+  <th>Mémoire</th>
+  <th>Appellation</th>
+  <th>Fréquence E/S</th>
+  <th>Fréquence réelle</th>
+  <th>Débit</th>
+</tr></thead>
+<tr>
+  <td>DDR3-800</td>
+  <td>PC3-6400</td>
+  <td>400 MHz</td>
+  <td>100 MHz</td>
+  <td>6,4 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-1066</td>
+  <td>PC3-8500</td>
+  <td>533 MHz</td>
+  <td>133 MHz</td>
+  <td>8,5 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-1333</td>
+  <td>PC3-10600</td>
+  <td>666 MHz</td>
+  <td>166 MHz</td>
+  <td>10,7 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-1600</td>
+  <td>PC3-12800</td>
+  <td>800 MHz</td>
+  <td>200 MHz</td>
+  <td>12,8 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-1800</td>
+  <td>PC3-14400</td>
+  <td>900 MHz</td>
+  <td>225 MHz</td>
+  <td>14,4 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-2000</td>
+  <td>PC3-16000</td>
+  <td>1000 MHz</td>
+  <td>250 MHz</td>
+  <td>16 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-2133</td>
+  <td>PC3-17000</td>
+  <td>1066 MHz</td>
+  <td>266 MHz</td>
+  <td>17 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-2200</td>
+  <td>PC3-17600</td>
+  <td>1100 MHz</td>
+  <td>275 MHz</td>
+  <td>17,6 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-2400</td>
+  <td>PC3-19200</td>
+  <td>1200 MHz</td>
+  <td>300 MHz</td>
+  <td>19,2 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-2500</td>
+  <td>PC3-20000</td>
+  <td>1250 MHz</td>
+  <td>312 MHz</td>
+  <td>20 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-2600</td>
+  <td>PC3-20800</td>
+  <td>1300 MHz</td>
+  <td>325 MHz</td>
+  <td>20,8 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-2666</td>
+  <td>PC3-21300</td>
+  <td>1333 MHz</td>
+  <td>333,25 MHz</td>
+  <td>21,3 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-2800</td>
+  <td>PC3-22400</td>
+  <td>1400 MHz</td>
+  <td>350 MHz</td>
+  <td>22,4 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-2933</td>
+  <td>PC3-23466</td>
+  <td>1466,5 MHz</td>
+  <td>366,6 MHz</td>
+  <td>23,4 Go/s</td>
+</tr>
+<tr>
+  <td>DDR3-3000</td>
+  <td>PC3-24000</td>
+  <td>1500 MHz</td>
+  <td>375 MHz</td>
+  <td>24 Go/s</td>
+</tr>
+</table>
+
+<h2>DDR4-SDRAM</h2>
+
+<p>
+table : <a href="https://fr.wikipedia.org/wiki/DDR4_SDRAM" title="https://fr.wikipedia.org/wiki/DDR4_SDRAM" class="https">https://fr.wikipedia.org/wiki/DDR4_SDRAM</a>
+</p>
+
+
+
+		
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+

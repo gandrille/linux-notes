@@ -1,54 +1,77 @@
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>QR code</title>
-	<meta name="generator" content="Zim 0.68-rc1">
-	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="../_resources/style.css" type="text/css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>QR code</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
 </head>
 <body>
-	<div class="wrapper">
-		<div id="navigation">
-			<ul>
-<li><a href="../Admin_Linux_et_sécurité.html" title="Admin Linux et sécurité" class="page">Admin Linux et sécurité</a></li>
-<li><a href="../Audio_-_Vidéo.html" title="Audio - Vidéo" class="page">Audio - Vidéo</a></li>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
 <li><a href="../Command_line.html" title="Command line" class="page">Command line</a></li>
-<li><a href="../Formats_de_fichiers.html" title="Formats de fichiers" class="page">Formats de fichiers</a></li>
-<li><a href="../Java.html" title="Java" class="page">Java</a></li>
+<li><a href="../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a></li>
+<li><a href="../Linux_admin_and_security.html" title="Linux admin and security" class="page">Linux admin and security</a></li>
+<li><a href="../Linux_devices.html" title="Linux devices" class="page">Linux devices</a></li>
 <li><a href="../Misc.html" title="Misc" class="page">Misc</a>
 <ul>
-<li><a href="./LinkedIn_API.html" title="LinkedIn API" class="page">LinkedIn API</a></li>
+<li><a href="./Documentaires.html" title="Documentaires" class="page">Documentaires</a></li>
 <li><a href="./OCR.html" title="OCR" class="page">OCR</a></li>
-<li><a href="./OpenStreetMap_(OSM).html" title="OpenStreetMap (OSM)" class="page">OpenStreetMap (OSM)</a></li>
+<li><a href="./OSM.html" title="OSM" class="page">OSM</a></li>
 <li><a href="./Police_de_caractères.html" title="Police de caractères" class="page">Police de caractères</a></li>
 <li><b>QR code</b></li>
+<li><a href="./RegExp.html" title="RegExp" class="page">RegExp</a></li>
 <li><a href="./WebDav_et_CalDav.html" title="WebDav et CalDav" class="page">WebDav et CalDav</a></li>
 </ul>
 </li>
 <li><a href="../Softs.html" title="Softs" class="page">Softs</a></li>
-<li><a href="../Window_manager.html" title="Window manager" class="page">Window manager</a></li>
+<li><a href="../Web_API.html" title="Web API" class="page">Web API</a></li>
 </ul>
 
-		</div>
-		<div id="content">
+        </div>
+
+        <div id="content">
 
 
-			<h1>QR code <a name='Misc:QR code'></a></h1>
-			<div id="toc">			
-				<div class="toctitle">Contents</div>				
-				<ul id="tocdata"></ul>
-			</div>		
-
-			<h2>Spec des contents</h2>
+                    <h1>QR code <a name='Misc:QR code'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
 
 <p>
-<a href="https://github.com/zxing/zxing/wiki/Barcode-Contents" title="https://github.com/zxing/zxing/wiki/Barcode-Contents" class="https">https://github.com/zxing/zxing/wiki/Barcode-Contents</a>
+→ <a href="https://github.com/zxing/zxing/wiki/Barcode-Contents" title="Spec des contents" class="https">Spec des contents</a>
 </p>
 
-<h2>CLI qrencode</h2>
+<h2>Génération</h2>
+
+<h3>CLI qrencode</h3>
 
 <p>
 Pour afficher le png sur la sortie std (et le convertir par exemple en base 64 avec un pipe…) utiliser <tt>-o -</tt> où <tt>-</tt> est le nom de fichier désignant stdout.
@@ -66,7 +89,7 @@ qrencode 'WIFI:T:WPA;S:mon_ssid;P:mon_password;;' -o a.png
 base64 -w0 a.png
 </pre>
 
-<h2>GUI "qtqr"</h2>
+<h3>GUI "qtqr"</h3>
 
 <p>
 Fait partie des <tt>qr-tools</tt>, dont il peut être intéressant de suivre l'évolution…
@@ -74,35 +97,43 @@ Fait partie des <tt>qr-tools</tt>, dont il peut être intéressant de suivre l'�
 
 <p>
 <ul>
-<li>page de développement : <a href="http://launchpad.net/qr-tools" title="http://launchpad.net/qr-tools" class="http">http://launchpad.net/qr-tools</a></li>
+<li><a href="http://launchpad.net/qr-tools" title="page de développement" class="http">page de développement</a></li>
 <li>package <tt>python-qrtools</tt> </li>
 </ul>
 </p>
 
+<h2>Lecture</h2>
 
-			<div class="footblock">
-			</div>
-			<div class="footblock">
-			</div>
-			
-		</div>
-		<div id="credits">
-			<p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.68-rc1</a>.</p>
-			<p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
-		</div>
-	</div>
+<p>
+Dans le package <tt>zbar-tools</tt> : utilitaire <a href="https://www.systutorials.com/docs/linux/man/1-zbarcam/" title="zbarcam" class="https">zbarcam</a>
+</p>
+
+
+
+		
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
 	
-	<script src="../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
-	<script src="../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
-
-	<script type="text/javascript">
-		if ($("h2").length != 0)
-			$("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
-		else
-			$("#toc").hide();
-			$("#navigation").children("ul").prepend("<li class='index-item'><a href='../index.html'>Index</a></li>");
-	</script>
-
+    <script src="../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
 </body>
 </html>
 

@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Config</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a></li>
+<li><a href="../../Linux_admin_and_security.html" title="Linux admin and security" class="page">Linux admin and security</a></li>
+<li><a href="../../Linux_devices.html" title="Linux devices" class="page">Linux devices</a></li>
+<li><a href="../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../Softs.html" title="Softs" class="page">Softs</a>
+<ul>
+<li><a href="../Audio_-_Vidéo.html" title="Audio - Vidéo" class="page">Audio - Vidéo</a></li>
+<li><a href="../Color_picker.html" title="Color picker" class="page">Color picker</a></li>
+<li><a href="../epub_readers.html" title="epub readers" class="page">epub readers</a></li>
+<li><a href="../ffsend.html" title="ffsend" class="page">ffsend</a></li>
+<li><a href="../Firefox.html" title="Firefox" class="page">Firefox</a>
+<ul>
+<li><b>Config</b></li>
+<li><a href="./Extensions.html" title="Extensions" class="page">Extensions</a></li>
+<li><a href="./Profile.html" title="Profile" class="page">Profile</a></li>
+<li><a href="./Search_Engines.html" title="Search Engines" class="page">Search Engines</a></li>
+</ul>
+</li>
+<li><a href="../Images.html" title="Images" class="page">Images</a></li>
+<li><a href="../Jekyll.html" title="Jekyll" class="page">Jekyll</a></li>
+<li><a href="../Maps.html" title="Maps" class="page">Maps</a></li>
+<li><a href="../Night_light.html" title="Night light" class="page">Night light</a></li>
+<li><a href="../Plant_UML.html" title="Plant UML" class="page">Plant UML</a></li>
+<li><a href="../REST.html" title="REST" class="page">REST</a></li>
+<li><a href="../Thunderbird.html" title="Thunderbird" class="page">Thunderbird</a></li>
+<li><a href="../Tiny_Tiny_RSS.html" title="Tiny Tiny RSS" class="page">Tiny Tiny RSS</a></li>
+<li><a href="../vlc.html" title="vlc" class="page">vlc</a></li>
+<li><a href="../zim.html" title="zim" class="page">zim</a></li>
+</ul>
+</li>
+<li><a href="../../Web_API.html" title="Web API" class="page">Web API</a></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>Config <a name='Softs:Firefox:Config'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<p>
+Note: Ubuntu installs <tt>xul-ext-ubufox</tt> to tweek firefox. Today, it acts as a placeholder for future updates (see <a href="https://packages.ubuntu.com/focal/xul-ext-ubufox" title="package content" class="https">package content</a>).
+</p>
+
+<h2>Basic infos</h2>
+
+<p>
+<b>Manual Config</b><br>
+<ul>
+<li><a href="http://kb.mozillazine.org/About:config_entries" title="key descriptions" class="http">key descriptions</a></li>
+<li>using <tt>about:config</tt> </li>
+<li>using <a href="http://kb.mozillazine.org/Editing_configuration" title="developer toolbar" class="http">developer toolbar</a></li>
+</ul>
+</p>
+
+<p>
+<b>Misc</b><br>
+<ul>
+<li>Firefox "obfuscation" : by default, Firefox expects obfuscated files to be byte shifted by 13 bytes (ROT13). Here is a <a href="http://www.alain.knaff.lu/howto/MozillaCustomization/cgi/byteshf.cgi" title="basic encoder/decoder" class="http">basic encoder/decoder</a>.</li>
+<li><a href="http://kb.mozillazine.org/Preferences_not_saved" title="Troubleshooting preferences" class="http">Troubleshooting preferences</a></li>
+</ul>
+</p>
+
+<p>
+<b>Deprecated documentation</b><br>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Enterprise_deployment_before_60" title="Deploying Firefox in an enterprise environment (before Firefox 60 ESR" class="https">Deploying Firefox in an enterprise environment (before Firefox 60 ESR</a><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Enterprise_deployment_before_60" title=")" class="https">)</a></li>
+<li>Using <tt>all.js</tt> file in the <tt>greprefs</tt> subfolder is deprecated (<a href="http://kb.mozillazine.org/Locking_preferences" title="source" class="http">source</a> - <a href="https://www-archive.mozilla.org/catalog/end-user/customizing/briefprefs.html" title="deprecated documentation" class="https">deprecated documentation</a>)!</li>
+</ul>
+</p>
+
+<h2>User defined preferences</h2>
+
+<p>
+All the following configuration is stored inside the user home folder (the profile folder, to be precise).
+</p>
+
+<p>
+<b>Documentation</b><br>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Mozilla/Preferences/A_brief_guide_to_Mozilla_preferences" title="A brief guide to Mozilla preferences" class="https">A brief guide to Mozilla preferences</a></li>
+<li><a href="http://kb.mozillazine.org/Resetting_preferences" title="Resetting preferences" class="http">Resetting preferences</a></li>
+<li><a href="http://web.mit.edu/~firefox/www/maintainers/config.html" title="OLD but interesting example" class="http">OLD but interesting example</a></li>
+<li><a href="https://github.com/pyllyukko/user.js" title="Example" class="https">Example</a> (do NOT use as it is)</li>
+</ul>
+</p>
+
+<p>
+<b>The following files are located inside the profile folder</b><br>
+<ul>
+<li><a href="http://kb.mozillazine.org/Prefs.js_file" title="prefs.js" class="http">prefs.js</a> stores the preferences. It MUST NOT be edited!</li>
+<li><a href="http://kb.mozillazine.org/User.js_file" title="user.js" class="http">user.js</a> stores a configuration which is written back to <tt>prefs.js</tt> file each time you restart your application.</li>
+</ul>
+→ Homemade <a href="./Config/user.js" title="user.js file" class="file">user.js file</a>
+</p>
+
+<h2>Simple system level config</h2>
+
+<p>
+Inside <tt>/etc/firefox/syspref.js</tt> → WARNING: This path may be installation dependant
+</p>
+
+<p>
+<b>Changes the default value : the user can update it</b><br>
+<tt>pref("browser.startup.homepage", "https://ubuntu.com/");</tt>
+</p>
+
+<p>
+<b>Forces the value (user can't change it!)</b><br>
+<tt>pref("browser.startup.homepage", "https://ubuntu.com", locked);</tt><br>
+NOTE : <tt>lockPref("browser.startup.homepage", "https://ubuntu.com");</tt> does NOT work on recent releases!
+</p>
+
+<h2>Advanced system level config</h2>
+
+<p>
+PRO tip : it is possible to reference a REMOTE file. See <tt>autoadmin.global_config_url</tt>
+</p>
+
+<p>
+<b>Sources</b><br>
+<ul>
+<li><a href="http://kb.mozillazine.org/Locking_preferences" title="Locking preferences" class="http">Locking preferences</a></li>
+<li><a href="https://support.mozilla.org/en-US/kb/customizing-firefox-using-autoconfig" title="Firefox AutoConfig" class="https">Firefox AutoConfig</a></li>
+<li><a href="https://doc.ubuntu-fr.org/tutoriel/verrouiller_les_parametres_de_firefox" title="Ubuntu documentation" class="https">Ubuntu documentation</a></li>
+</ul>
+</p>
+
+<pre>
+$ cat /usr/lib/firefox/defaults/pref/autoconfig.js
+// The first line MUST be a comment
+// a "good" name for this file can be local-settings.js or autoconfig.js
+pref("general.config.filename", "firefox.cfg");
+pref("general.config.obscure_value", 0);
+</pre>
+
+<pre>
+$ cat /usr/lib/firefox/firefox.cfg
+// the first line MUST be a comment
+...
+</pre>
+
+<p>
+<ul>
+<li><b>pref(prefName, value)</b> – sets the user value of a preference. This function explicitly sets the preference as a user preference. That means that if the user has changed the value, it will get reset every time the browser is started.</li>
+<li><b>defaultPref(prefName, value)</b> – sets the default value of a preference. This is the value that a preference has when the user has not set any value or the user resets the preference. It can be permanently changed by the user.</li>
+<li><b>lockPref(prefName, value)</b> – sets the default value of a preference and locks it. This is the most commonly used function. Locking a preference prevents a user from changing it, and in most cases, disables the UI in preferences so it is obvious to the user that the preference has been disabled.</li>
+<li><b>clearPref(prefName)</b> – removes the user value of a preference, resetting it to its default value. </li>
+</ul>
+</p>
+
+<h2>In an enterprise environment : using policies.json</h2>
+
+<p>
+<ul>
+<li><tt>about:policies</tt></li>
+<li><a href="https://github.com/mozilla/policy-templates/releases" title="List of policies" class="https">List of policies</a></li>
+<li><a href="https://support.mozilla.org/en-US/kb/customizing-firefox-using-policiesjson" title="Customizing Firefox Using policies.json" class="https">Customizing Firefox Using policies.json</a></li>
+</ul>
+</p>
+
+
+                        <div class="footblock">
+                            <hr class='footrule'>
+                            <b>Attachments</b>
+                            <ul>
+                    <li><a href="./Config/user.js">user.js (3.89kb)</a></li>
+                            </ul>
+                        </div>
+		
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+

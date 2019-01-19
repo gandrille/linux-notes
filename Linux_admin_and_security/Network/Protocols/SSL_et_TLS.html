@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>SSL et TLS</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../../../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../../../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a></li>
+<li><a href="../../../Linux_admin_and_security.html" title="Linux admin and security" class="page">Linux admin and security</a>
+<ul>
+<li><a href="../../Admin_tools.html" title="Admin tools" class="page">Admin tools</a></li>
+<li><a href="../../Ansible.html" title="Ansible" class="page">Ansible</a></li>
+<li><a href="../../Backups.html" title="Backups" class="page">Backups</a></li>
+<li><a href="../../Certificat_X509_et_SSLTLS.html" title="Certificat X509 et SSLTLS" class="page">Certificat X509 et SSLTLS</a></li>
+<li><a href="../../CVE.html" title="CVE" class="page">CVE</a></li>
+<li><a href="../../Distributions_et_kernel.html" title="Distributions et kernel" class="page">Distributions et kernel</a></li>
+<li><a href="../../Erreur_too_many_open_files.html" title="Erreur too many open files" class="page">Erreur too many open files</a></li>
+<li><a href="../../Guides_sécurité.html" title="Guides sécurité" class="page">Guides sécurité</a></li>
+<li><a href="../../Hardware.html" title="Hardware" class="page">Hardware</a></li>
+<li><a href="../../Heure_et_NTP.html" title="Heure et NTP" class="page">Heure et NTP</a></li>
+<li><a href="../../htaccess.html" title="htaccess" class="page">htaccess</a></li>
+<li><a href="../../Init_system.html" title="Init system" class="page">Init system</a></li>
+<li><a href="../../Keys.html" title="Keys" class="page">Keys</a></li>
+<li><a href="../../Metadata.html" title="Metadata" class="page">Metadata</a></li>
+<li><a href="../../Mount_d'une_image_iso.html" title="Mount d'une image iso" class="page">Mount d'une image iso</a></li>
+<li><a href="../../Network.html" title="Network" class="page">Network</a>
+<ul>
+<li><a href="../CIDR_notation.html" title="CIDR notation" class="page">CIDR notation</a></li>
+<li><a href="../DNS.html" title="DNS" class="page">DNS</a></li>
+<li><a href="../MAC_address_update.html" title="MAC address update" class="page">MAC address update</a></li>
+<li><a href="../Network_daemons.html" title="Network daemons" class="page">Network daemons</a></li>
+<li><a href="../Network_filtering.html" title="Network filtering" class="page">Network filtering</a></li>
+<li><a href="../Network_tools.html" title="Network tools" class="page">Network tools</a></li>
+<li><a href="../Predictable_Network_Interface_Names.html" title="Predictable Network Interface Names" class="page">Predictable Network Interface Names</a></li>
+<li><a href="../Protocols.html" title="Protocols" class="page">Protocols</a>
+<ul>
+<li><a href="./IPv6.html" title="IPv6" class="page">IPv6</a></li>
+<li><b>SSL et TLS</b></li>
+<li><a href="./TCP_and_UDP_ports.html" title="TCP and UDP ports" class="page">TCP and UDP ports</a></li>
+</ul>
+</li>
+<li><a href="../VPN.html" title="VPN" class="page">VPN</a></li>
+<li><a href="../Wireless.html" title="Wireless" class="page">Wireless</a></li>
+</ul>
+</li>
+<li><a href="../../Packaging.html" title="Packaging" class="page">Packaging</a></li>
+<li><a href="../../Samba_et_cifs.html" title="Samba et cifs" class="page">Samba et cifs</a></li>
+<li><a href="../../ssh.html" title="ssh" class="page">ssh</a></li>
+<li><a href="../../top.html" title="top" class="page">top</a></li>
+<li><a href="../../User_rights_management.html" title="User rights management" class="page">User rights management</a></li>
+</ul>
+</li>
+<li><a href="../../../Linux_devices.html" title="Linux devices" class="page">Linux devices</a></li>
+<li><a href="../../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../../../Web_API.html" title="Web API" class="page">Web API</a></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>SSL et TLS <a name='Linux admin and security:Network:Protocols:SSL et TLS'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<p>
+<a href="https://openweb.eu.org/articles/https-de-ssl-a-tls-1-3" title="source : cet article totalement génial" class="https">source : cet article totalement génial</a>
+</p>
+
+<p>
+HTTPS est apparu dans Netscape Navigator en 1995. Initialement c’est le protocole SSL —Secure Sockets Layer— qui était intercalé entre TCP et HTTP.<br>
+<a href="https://www.ssi.gouv.fr/guide/recommandations-de-securite-relatives-a-tls/" title="https://www.ssi.gouv.fr/guide/recommandations-de-securite-relatives-a-tls/" class="https">https://www.ssi.gouv.fr/guide/recommandations-de-securite-relatives-a-tls/</a>
+</p>
+
+<p>
+Le client web propose, le serveur web dispose : La règle de base est que le client propose, il va donc faire étalage de toutes ses capacités, parfois dans un ordre préférentiel. Puis c’est le serveur qui dispose vu que c’est lui qui va retenir quels algorithmes seront utilisés en fonction de ses propres capacités.
+</p>
+
+<p>
+Seuls des électrochocs comme BEAST, POODLE ou Heartbleed et certaines des révélations d’Edward Snowden ont eu pour effet d’accélérer l’adoption de technologies plus récentes. Le fait que la crypto sur le web n’évolue qu’en réaction à des incidents majeurs est plutôt inquiétant, on est loin d’une situation d’amélioration continue.
+</p>
+
+<h2>Test de site web</h2>
+
+<p>
+<ul>
+<li><a href="https://github.com/drwetter/testssl.sh" title="En ligne de commande" class="https">En ligne de commande</a></li>
+<li><a href="https://www.ssllabs.com/ssltest/" title="Via une interface web" class="https">Via une interface web</a></li>
+<li><a href="https://tls.imirhil.fr/" title="CryptCheck d’Aeris" class="https">CryptCheck d’Aeris</a></li>
+<li><a href="https://www.ssllabs.com/ssl-pulse/" title="Panorama des serveurs actuels" class="https">Panorama des serveurs actuels</a></li>
+</ul>
+</p>
+
+<h2>Les versions de SSL et TLS</h2>
+
+<h3>1995 SSLv2</h3>
+
+<p>
+Ne doit SURTOUT PAS être utilisé (cf RFC 6176 de 2011). A désactiver sur les serveurs.
+</p>
+
+<h3>1996 SSLv3 (RFC 6101)</h3>
+
+<p>
+Ne doit SURTOUT PAS être utilisé (cf RFC 7568 de 2015). La seule contre-mesure à l'attaque POODLE est la désactivation de SSL au profit de TLS
+</p>
+
+<h3>1999 TLS 1.0 (RFC 2246)</h3>
+
+<p>
+en sursis, planifier sa désactivation car la faiblesse de certains algo rend TRES difficile de le configurer correctement. Problème : en 2017 désactiver TLS 1.0 revient à tourner le dos à environ 5 à 10 % des navigateurs utilisés et plus particulièrement IE 8 et antérieurs sur Windows XP et IE 9 et antérieurs sur Windows Vista, les versions de Safari antérieures à la 7 sur OS X ainsi que le navigateur intégré (pas Chrome) des appareils Android antérieurs à 5.0.
+</p>
+
+<p>
+<ul>
+<li>2002 Chiffrement symétrique AES intégré dans TLS (RFC 3268). Aujourd'hui TRES utilisé.</li>
+<li>2003 SNI —Server Name Indication— (RFC 3546) pour mettre plusieurs serveurs derrière la même IP. Aujourd'hui TRES utilisé.</li>
+<li>2006 TLS 1.1 (RFC 4346) est une version de transition qui ne sert pratiquement à rien ;</li>
+<li>2006 ECC —Elliptic Curve Cryptography— (RFC 4492) C'est l'avenir car nécessite des nombres plus petits que les algos de type RSA.</li>
+<li>2008 TLS 1.2 (RFC 5246)ajoute le chiffrement authentifié AEAD —Authenticated Encryption with Associated Data— (RFC 5116) sous la forme des modes GCM et CCM. Malheureusement TLS 1.2 autorise l’usage de vieilles suites cryptographiques ce qui permet de réaliser des mélanges de modernité et d’archaïsme potentiellement dangereux. ATTENTION à la configuration ! (ordre et activation/désactivation des suites cryptographiques)</li>
+<li>2008 AES-GCM (RFC 5288) GCM —Galois Counter Mode— est le premier mode de chiffrement authentifié défini et le plus utilisé de nos jours…</li>
+<li>2008 HMAC SHA2, ECC et AES-GCM (RFC 5289) d'autres suites cryptoraphiques plus sûres</li>
+<li>2012 AES-CCM (RFC 6655) second mode de chiffrement… que personne n'utilise puisque AES-GCM fait déjà correctement le travail</li>
+<li>2014 extension ALPN —Application-Layer Protocol Negotiation— (RFC 7301) support HTTP/2 et SPDY + TLS 1.2 Cipher Suite Black List</li>
+<li>2014 Encrypt then MAC (RFC 7366) non utilisé pour des raisons de timing</li>
+<li>2015 TLS Fallback SCSV (RFC 7507) pour éviter des attaques man in the middle</li>
+<li>2015 Extended Master Secret (RFC 7627) amélioration pour prévenir un autre type d'attaque</li>
+<li>2016 Curve25519 et Curve448 (RFC 7748) courbes elliptiques NON issues du NIST (donc avec moins de suspission de faiblesses cachées)</li>
+<li>2016 ChaCha20-Poly1305 (RFC 7905) algo de chiffrement créé pour être tres efficace sur les processeurs ARM. Il a très vite été déployé (il faut OpenSSL 1.1.0 ou une version récente de LibreSSL pour en disposer côté serveur).</li>
+<li>2017 EdDSA —Edwards-curve Digital Signature Algorithm— (RFC 8032) courbes similaires à ECDSA mais est plus rapide et fait exclusivement usage des courbes Ed25519 et Ed448.</li>
+</ul>
+</p>
+
+<h3>2017 TLS 1.3</h3>
+
+<p>
+C'est l’avenir (simplicité, de vitesse et de sécurité). Contrairement à TLS 1.2 fait pour faire une transition en douceur depuis TLS 1.1, TLS 1.3 préfère retirer tout ce qui peut présenter des failles de sécurité, quitte à être moins rétro compatible.
+</p>
+
+<p>
+<ul>
+<li>vitesse accrue (en accélérant la négociation en réduisant les allers-retours entre le client et le serveur) ;</li>
+<li>sécurité renforcée (en désactivant ou améliorant tout ce qui pouvait être abusé dans TLS 1.2 et en incluant de nouveaux algorithmes).</li>
+</ul>
+<div style='padding-left: 30pt'>
+- le mode CBC disparait <br>
+- Triple DES disparait
+</div>
+</p>
+
+<p>
+Le seul point sensible, a priori, est la possibilité de faire du 0 RTT mais qui ne devrait pas être activé par défaut.
+</p>
+
+
+		
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../../../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,189 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Screen saver & Locker</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../../../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../../../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a>
+<ul>
+<li><a href="../../Basic_HMI_and_notifications.html" title="Basic HMI and notifications" class="page">Basic HMI and notifications</a></li>
+<li><a href="../../freedesktop.html" title="freedesktop" class="page">freedesktop</a>
+<ul>
+<li><a href="../GNOME.html" title="GNOME" class="page">GNOME</a></li>
+<li><a href="../Xfce.html" title="Xfce" class="page">Xfce</a>
+<ul>
+<li><a href="./Panel_configuration.html" title="Panel configuration" class="page">Panel configuration</a></li>
+<li><a href="./Releases.html" title="Releases" class="page">Releases</a></li>
+<li><b>Screen saver &amp; Locker</b></li>
+<li><a href="./Settings_management.html" title="Settings management" class="page">Settings management</a></li>
+<li><a href="./Shortcuts.html" title="Shortcuts" class="page">Shortcuts</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="../../LightDM_login_screen.html" title="LightDM login screen" class="page">LightDM login screen</a></li>
+<li><a href="../../synergy.html" title="synergy" class="page">synergy</a></li>
+<li><a href="../../Touchpad.html" title="Touchpad" class="page">Touchpad</a></li>
+<li><a href="../../X11_vs_Wayland.html" title="X11 vs Wayland" class="page">X11 vs Wayland</a></li>
+</ul>
+</li>
+<li><a href="../../../Linux_admin_and_security.html" title="Linux admin and security" class="page">Linux admin and security</a></li>
+<li><a href="../../../Linux_devices.html" title="Linux devices" class="page">Linux devices</a></li>
+<li><a href="../../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../../../Web_API.html" title="Web API" class="page">Web API</a></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>Screen saver & Locker <a name='Desktop environments:freedesktop:Xfce:Screen saver & Locker'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<p>
+Documentation: <a href="https://wiki.archlinux.org/index.php/Xfce#Lock_the_screen" title="Lock the screen" class="https">Lock the screen</a>
+</p>
+
+<p>
+<u>Xfce intègre un screensaver avec 4.14, disponible sur XUbuntu 19.10.</u><br>
+<u>Cependant, de nombreux bugs sont présents... Pour le moment, il est préférable d'utiliser gnome-screensaver</u>
+</p>
+
+<p>
+<b>Testé avec :</b> <tt>xfce4-screensaver --version</tt> → <tt>xfce4-screensaver 0.1.8</tt><br>
+(<a href="https://github.com/xfce-mirror/xfce4-screensaver/releases" title="releases" class="https">releases</a>)
+</p>
+
+<p>
+<b>IMPORTANT : there are two managers</b><br>
+<ul>
+<li>Xfce's power manager (activated by default)</li>
+<li>systemd-logind</li>
+</ul>
+</p>
+
+<h2>Screen locker</h2>
+
+<p>
+Commande de vérouillage : <tt>/usr/bin/xflock4</tt><br>
+C'est en fait un simple script qui recherche un locker a qui il délègue la tâche de vérouiller l'écran. Pour cela il teste l'existence des lockers les uns après les autres jusqu'a ce que l'un d'entre eux réponde.<br>
+<b>Important :</b> la commande de vérouillage peut lancer un screen saver... qui peut être différent du screensaver par défaut.
+</p>
+
+<p>
+<b>Notes</b><br>
+<ul>
+<li><tt>gnome-screensaver-command</tt> fonctionne très bien avec XFCE.</li>
+<li>sur les dernières versions, une propriété permet de choisir le screensaver : <tt>xfconf-query --channel xfce4-session --property /general/LockCommand --create --type string --set "gnome-screensaver-command --lock"</tt></li>
+</ul>
+</p>
+
+<h2>Xfce Screensaver</h2>
+
+<p>
+<a href="https://www.xfce.org/about/news/?post=1565568000" title="Xfce 4.14" class="https">Xfce 4.14</a> intègre un <a href="https://docs.xfce.org/apps/screensaver/start" title="screensaver" class="https">screensaver</a>. Cette section ne fait que configurer le screensaver intégré à Xfce 4.14.<br>
+<ul>
+<li>Source code : <a href="https://github.com/xfce-mirror/xfce4-screensaver" title="GitHub" class="https">GitHub</a> - <a href="https://bugzilla.xfce.org/" title="Forge Xfce" class="https">Forge Xfce</a></li>
+<li><a href="https://bugzilla.xfce.org/" title="Bug tracker" class="https">Bug tracker</a> (<a href="https://bugzilla.xfce.org/buglist.cgi?bug_status=__open__&no_redirect=1&order=Importance&product=Xfce4-screensaver&query_format=specific" title="Open bugs" class="https">Open bugs</a>) <a href="https://bugzilla.xfce.org/show_bug.cgi?id=14782" title="#14782" class="https">#14782</a></li>
+</ul>
+</p>
+
+<p>
+<b>Pour désactiver l'économiseur d'écran de Xfce</b><br>
+<ul>
+<li><tt>xfconf-query --channel xfce4-screensaver --property /saver/enabled --set false</tt></li>
+<li><tt>xfconf-query --channel xfce4-screensaver --property /saver/idle-activation/enabled --set false</tt></li>
+</ul>
+La première commande désactive l'économiseur d'écran à proprement parler. La seconde désactive l'extinction de l'écran.
+</p>
+
+<h2>Suspend</h2>
+
+<p>
+<tt>xfce4-session-logout --suspend</tt>
+</p>
+
+<p>
+Pour éviter DEUX logins en sortant de suspend<br>
+<tt>xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate -s false</tt><br>
+Voir aussi (non utilisé) <tt>xfconf-query -c xfce4-session -p /shutdown/LockScreen -s false</tt>
+</p>
+
+<h2>Power management</h2>
+
+<p>
+<tt>xfconf-query --channel xfce4-power-manager -lv</tt>
+</p>
+
+<p>
+See also<br>
+<ul>
+<li><a href="https://bugzilla.xfce.org/show_bug.cgi?id=15300" title="Bug #15300" class="https">Bug #15300</a></li>
+<li><a href="https://forum.xfce.org/viewtopic.php?id=12970" title="Power Manager not respecting laptop lid switch" class="https">Power Manager not respecting laptop lid switch</a></li>
+</ul>
+</p>
+
+
+		
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../../../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+

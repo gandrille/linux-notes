@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Yml parser</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../Command_line.html" title="Command line" class="page">Command line</a>
+<ul>
+<li><a href="./Bash.html" title="Bash" class="page">Bash</a></li>
+<li><a href="./Calculatrice.html" title="Calculatrice" class="page">Calculatrice</a></li>
+<li><a href="./Capture_d'écran.html" title="Capture d'écran" class="page">Capture d'écran</a></li>
+<li><a href="./cURL.html" title="cURL" class="page">cURL</a></li>
+<li><a href="./email.html" title="email" class="page">email</a></li>
+<li><a href="./fop.html" title="fop" class="page">fop</a></li>
+<li><a href="./JSON_parser.html" title="JSON parser" class="page">JSON parser</a></li>
+<li><a href="./Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="./Network.html" title="Network" class="page">Network</a></li>
+<li><a href="./Open_SSL.html" title="Open SSL" class="page">Open SSL</a></li>
+<li><a href="./pdf.html" title="pdf" class="page">pdf</a></li>
+<li><a href="./Screen_config.html" title="Screen config" class="page">Screen config</a></li>
+<li><a href="./sed.html" title="sed" class="page">sed</a></li>
+<li><a href="./Web_Server.html" title="Web Server" class="page">Web Server</a></li>
+<li><a href="./wget_images_sur_une_page_web.html" title="wget images sur une page web" class="page">wget images sur une page web</a></li>
+<li><a href="./XML_parser.html" title="XML parser" class="page">XML parser</a></li>
+<li><b>Yml parser</b></li>
+</ul>
+</li>
+<li><a href="../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a></li>
+<li><a href="../Linux_admin_and_security.html" title="Linux admin and security" class="page">Linux admin and security</a></li>
+<li><a href="../Linux_devices.html" title="Linux devices" class="page">Linux devices</a></li>
+<li><a href="../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../Web_API.html" title="Web API" class="page">Web API</a></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>Yml parser <a name='Command line:Yml parser'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<h2>yq</h2>
+
+<p>
+<ul>
+<li><a href="https://mikefarah.github.io/yq/" title="manual officiel" class="https">manual officiel</a></li>
+</ul>
+</p>
+
+<p>
+<b>Pretty print</b><br>
+<ul>
+<li><tt>yq r foo.yml</tt></li>
+<li><tt>cat foo.yml | yq r -</tt> </li>
+</ul>
+</p>
+
+<p>
+<b>Basic usage</b><br>
+<ul>
+<li><tt>yq r foo.yml "*.bar"</tt> → with a root table</li>
+<li><tt>cat foo.yml | yq r - ".bar"</tt> → with a root object</li>
+</ul>
+</p>
+
+
+		
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+

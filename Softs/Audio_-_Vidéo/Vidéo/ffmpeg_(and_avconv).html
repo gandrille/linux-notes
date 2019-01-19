@@ -1,0 +1,269 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ffmpeg (and avconv)</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../../../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../../../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a></li>
+<li><a href="../../../Linux_admin_and_security.html" title="Linux admin and security" class="page">Linux admin and security</a></li>
+<li><a href="../../../Linux_devices.html" title="Linux devices" class="page">Linux devices</a></li>
+<li><a href="../../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../../Softs.html" title="Softs" class="page">Softs</a>
+<ul>
+<li><a href="../../Audio_-_Vidéo.html" title="Audio - Vidéo" class="page">Audio - Vidéo</a>
+<ul>
+<li><a href="../Audio.html" title="Audio" class="page">Audio</a></li>
+<li><a href="../Enregistrer_l'écran.html" title="Enregistrer l'écran" class="page">Enregistrer l'écran</a></li>
+<li><a href="../Filmer_une_conférence.html" title="Filmer une conférence" class="page">Filmer une conférence</a></li>
+<li><a href="../Montage_vidéo.html" title="Montage vidéo" class="page">Montage vidéo</a></li>
+<li><a href="../Transcription.html" title="Transcription" class="page">Transcription</a></li>
+<li><a href="../Vidéo.html" title="Vidéo" class="page">Vidéo</a>
+<ul>
+<li><b>ffmpeg (and avconv)</b></li>
+<li><a href="./Formats.html" title="Formats" class="page">Formats</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="../../Color_picker.html" title="Color picker" class="page">Color picker</a></li>
+<li><a href="../../epub_readers.html" title="epub readers" class="page">epub readers</a></li>
+<li><a href="../../ffsend.html" title="ffsend" class="page">ffsend</a></li>
+<li><a href="../../Firefox.html" title="Firefox" class="page">Firefox</a></li>
+<li><a href="../../Images.html" title="Images" class="page">Images</a></li>
+<li><a href="../../Jekyll.html" title="Jekyll" class="page">Jekyll</a></li>
+<li><a href="../../Maps.html" title="Maps" class="page">Maps</a></li>
+<li><a href="../../Night_light.html" title="Night light" class="page">Night light</a></li>
+<li><a href="../../Plant_UML.html" title="Plant UML" class="page">Plant UML</a></li>
+<li><a href="../../REST.html" title="REST" class="page">REST</a></li>
+<li><a href="../../Thunderbird.html" title="Thunderbird" class="page">Thunderbird</a></li>
+<li><a href="../../Tiny_Tiny_RSS.html" title="Tiny Tiny RSS" class="page">Tiny Tiny RSS</a></li>
+<li><a href="../../vlc.html" title="vlc" class="page">vlc</a></li>
+<li><a href="../../zim.html" title="zim" class="page">zim</a></li>
+</ul>
+</li>
+<li><a href="../../../Web_API.html" title="Web API" class="page">Web API</a></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>ffmpeg (and avconv) <a name='Softs:Audio - Vidéo:Vidéo:ffmpeg (and avconv)'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<h2>ffmpeg help</h2>
+
+<p>
+<b>Online resources</b><br>
+<ul>
+<li><a href="https://trac.ffmpeg.org/wiki" title="Official Wiki" class="https">Official Wiki</a></li>
+<li><a href="https://trac.ffmpeg.org/wiki/Encode/H.264" title="H.264 Video Encoding Guide" class="https">H.264 Video Encoding Guide</a></li>
+<li><a href="https://www.reeltoreel.nl/wiki/index.php/Convert_an_AVCHD_/_MTS_file_to_MP4_using_ffmpeg" title="Convert an AVCHD / MTS file to MP4 using ffmpeg" class="https">Convert an AVCHD / MTS file to MP4 using ffmpeg</a></li>
+</ul>
+</p>
+
+<p>
+<b>Man pages</b><br>
+<ul>
+<li><tt>man ffmpeg</tt></li>
+<li><tt>man ffmpeg-all</tt></li>
+<li><tt>ffmpeg -h encoder=libx264 -hide_banner</tt></li>
+<li><tt>ffmpeg -h full</tt></li>
+</ul>
+</p>
+
+<p>
+<tt>ffmpeg -codecs</tt>
+</p>
+
+<pre>
+Codecs:
+ D..... = Decoding supported
+ .E.... = Encoding supported
+ ..V... = Video codec
+ ..A... = Audio codec
+ ..S... = Subtitle codec
+ ...I.. = Intra frame-only codec
+ ....L. = Lossy compression
+ .....S = Lossless compression
+</pre>
+
+<h2>File infos</h2>
+
+<p>
+<ul>
+<li>Avec <a href="https://ffmpeg.org/ffprobe.html" title="ffprobe" class="https">ffprobe</a>
+<ul>
+<li><tt>ffprobe -i file_name  -hide_banner</tt></li>
+<li><tt>ffprobe -i file_name -v quiet -print_format json -show_format -show_streams</tt></li>
+</ul></li>
+</ul>
+Sinon : <tt>ffmpeg -i file_name -hide_banner</tt>
+</p>
+
+<h2>1 image → 1 video</h2>
+
+<p>
+If you want to create a video out of just one image, this will do (output video duration is set to 30 seconds with <tt>-t 30</tt>)<br>
+<tt>ffmpeg -loop 1 -i img.png -c:v libx264 -t 30 -pix_fmt yuv420p out.mp4</tt>
+</p>
+
+<h2>1 image + 1 audio file → 1 video</h2>
+
+<p>
+<tt>ffmpeg -f image2 -loop 1 -i image.jpg -i audio.wav -c:v libx264 -tune stillimage -c:a aac -strict experimental -b:a 192k -shortest out.mp4</tt>
+</p>
+
+<p>
+This would use the <tt>libx264</tt> encoder and provide you with better compression than the MJPEG codec. The audio is AAC, with the built-in ffmpeg AAC encoder.
+</p>
+
+<h2>1 video + 1 audio file → 1 video</h2>
+
+<p>
+<tt>ffmpeg -i audio.wav -i video.avi final.mpg</tt>
+</p>
+
+<h2>Concat</h2>
+
+<p>
+You can also use ffmpeg to concatenate multiple videos into one long video. Start by transcoding all the individual videos into MPEG format, all with exactly the same bit rates, codecs, image resolutions, frame rates etc. Mistakes can be avoided by using one of ffmpeg's predefined targets such as ntsc-dvd or pal-dvd. Once that's done, simply string the resulting .mpg files together using "cat" and redirect the output to another .mpg file. Now, the timestamps inside the resulting, big .mpg file are all going to be messed up, so you'll have to process the big .mpg file with ffmpeg again. This will have the effect of putting the timestamps right. 
+</p>
+
+<p>
+<ul>
+<li><a href="http://ffmpeg.org/faq.html#How-can-I-concatenate-video-files" title="http://ffmpeg.org/faq.html#How-can-I-concatenate-video-files" class="http">http://ffmpeg.org/faq.html#How-can-I-concatenate-video-files</a></li>
+<li><a href="https://trac.ffmpeg.org/wiki/Concatenate" title="https://trac.ffmpeg.org/wiki/Concatenate" class="https">https://trac.ffmpeg.org/wiki/Concatenate</a></li>
+</ul>
+</p>
+
+<h2>Découper une vidéo</h2>
+
+<p>
+<tt>ffmpeg -i source.mp4 -codec:v libx264 -codec:a copy -codec:d copy -ss 00:10:21 -to 00:12:44.250 destination.mp4</tt>
+</p>
+
+<p>
+<ul>
+<li><tt>-i source.mp4</tt> source file</li>
+<li><tt>-codec:v libx264</tt> video codec. Important : <tt>copy</tt> does not reencodes the video... which may cause some issues during the first seconds of the video.</li>
+<li><tt>-codec:a copy</tt> audio codec</li>
+<li><tt>-codec:d copy</tt> data codec</li>
+<li><tt>-ss</tt> start timestamp</li>
+<li><tt>-to</tt> end timestamp. Can be replaced by <tt>-t &lt;duration&gt;</tt> </li>
+</ul>
+</p>
+
+<h2>Retourner à 180° une vidéo</h2>
+
+<p>
+<tt>avconv -i original.mp4 -vf "hflip,vflip" -codec:v libx264 -preset slow -crf 20 -codec:a copy flipped.mp4</tt>
+</p>
+
+<p>
+Notice the <tt>-crf</tt> option. That sets the output quality. It goes from 0 (lossless) upwards logarithmically. You'll probably want a value between 19 and 25 in most cases. -preset sets the speed of the encoding, either "slow", "medium", or "fast". Slow should get you smaller file sizes with an obvious tradeoff. You should adjust <tt>-codec:v</tt> to match the original. If you don't set these options you'll get the defaults, which don't work well when flipping iphone video.
+</p>
+
+<h2>Conversion de formats</h2>
+
+<h3>ogv to avi</h3>
+
+<p>
+<tt>ffmpeg -i input.ogv -qscale:v 1 output.avi</tt><br>
+<ul>
+<li><tt>-qscale:v</tt> 1 Note : qscale is codec-dependent. Ici entre 1 (haute qualité) et 31 (basse qualité)</li>
+</ul>
+</p>
+
+<h3>mov to mp4</h3>
+
+<p>
+<tt>ffmpeg -i input.mov -codec:v libx264 -b:v 1500k -g 30 output.mp4</tt>
+</p>
+
+<p>
+<b>to be tested...</b><br>
+<tt>ffmpeg -i input.mov -codec:v h264 -codec:a aac -strict -2 output.mp4</tt><br>
+<tt>ffmpeg -i input.mov -b 1500k -codec:v libx264 -vpre slow -vpre baseline -g 30 output.mp4</tt>
+</p>
+
+<h3>mov to WebM</h3>
+
+<p>
+<tt>ffmpeg -i input.mov -codec:v vp8 -c:a libvorbis output.webm</tt><br>
+<b>to be tested</b><br>
+<tt>ffmpeg -i input.mov -codec:v libvpx -crf 10 -b:v 1M -codec:a libvorbis output.webm</tt><br>
+<tt>ffmpeg -i input.mov -b 1500k -codec:v libvpx -codec:a libvorbis -ab 160000 -f webm -g 30 output.webm</tt>
+</p>
+
+<h3>mov to ogg</h3>
+
+<p>
+<b>to be tested...</b><br>
+<tt>ffmpeg -i input.mov -codec:v libtheora -qscale:v 7 -codec:a libvorbis -qscale:a 5 output.ogv</tt><br>
+<tt>ffmpeg -i input.mov -b 1500k -vcodec libtheora -acodec libvorbis -ab 160000 -g 30 output.ogv</tt>
+</p>
+
+
+		
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../../../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+
