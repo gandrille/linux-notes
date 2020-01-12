@@ -28,6 +28,9 @@ voir aussi : [[https://fr.wikipedia.org/wiki/Mod%C3%A8le:Palette_Format_de_compr
 * [[https://fr.wikipedia.org/wiki/X265|x265]] : codec H.265/HEVC sous licence GPLv2 
 
 ===== Projets Libres =====
+**Alliance for Open Media**
+* [[https://en.wikipedia.org/wiki/AV1|AV1]] 
+
 **Normes (± specification)**
 * [[https://fr.wikipedia.org/wiki/Vorbis|Vorbis]] : compression audio par le projet Ogg de la fondation Xiph.org
 * [[https://fr.wikipedia.org/wiki/Free_Lossless_Audio_Codec|FLAC]] : compression audio sans perte par la fondation Xiph.org

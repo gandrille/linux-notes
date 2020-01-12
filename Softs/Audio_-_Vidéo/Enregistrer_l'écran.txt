@@ -7,7 +7,7 @@ regarder : [[https://www.maartenbaert.be/simplescreenrecorder/|simplescreenrecor
 
 ===== Utilisé par Josh Long =====
 [[https://doc.ubuntu-fr.org/vokoscreen|Vokoscreen]] : non testé, mais certainement à regarder
-→ see https://vitux.com/how-to-use-vokoscreen-to-record-videos-on-ubuntu/
+→ see https://vitux.com/how-to-use-vokoscreen-to-record-videos-on-debian-10/
 
 ===== Comment j'ai fait en 2016 =====
 * Enregistrement de l'écran en continu : ''recordmydesktop'' avec ''gtk-recordmydesktop''

@@ -4,9 +4,11 @@ Wiki-Format: zim 0.4
 ====== Config ======
 Note: Ubuntu installs ''xul-ext-ubufox'' to tweek firefox. Today, it acts as a placeholder for future updates (see [[https://packages.ubuntu.com/focal/xul-ext-ubufox|package content]]).
 
+''about:certificate''
+
 ===== Basic infos =====
 **Manual Config**
-* [[http://kb.mozillazine.org/About:config_entries|key descriptions]]
+* [[https://hg.mozilla.org/mozilla-central/file/tip/modules/libpref/init/StaticPrefList.yaml|key descriptions]] → the MUST read file!
 * using ''about:config'' 
 * using [[http://kb.mozillazine.org/Editing_configuration|developer toolbar]]
 
@@ -16,7 +18,7 @@ Note: Ubuntu installs ''xul-ext-ubufox'' to tweek firefox. Today, it acts as a p
 
 **Deprecated documentation**
 * [[https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Enterprise_deployment_before_60|Deploying Firefox in an enterprise environment (before Firefox 60 ESR]][[https://developer.mozilla.org/en-US/docs/Mozilla/Firefox/Enterprise_deployment_before_60|)]]
-* Using ''all.js'' file in the ''greprefs'' subfolder is deprecated ([[http://kb.mozillazine.org/Locking_preferences|source]] - [[https://www-archive.mozilla.org/catalog/end-user/customizing/briefprefs.html|deprecated documentation]])!
+* Using ''all.js'' file in the ''greprefs'' subfolder is deprecated ([[http://kb.mozillazine.org/Locking_preferences|source]] - [[https://www-archive.mozilla.org/catalog/end-user/customizing/briefprefs.html|deprecated documentation]])
 
 ===== User defined preferences =====
 All the following configuration is stored inside the user home folder (the profile folder, to be precise).
@@ -30,7 +32,7 @@ All the following configuration is stored inside the user home folder (the profi
 **The following files are located inside the profile folder**
 * [[http://kb.mozillazine.org/Prefs.js_file|prefs.js]] stores the preferences. It MUST NOT be edited!
 * [[http://kb.mozillazine.org/User.js_file|user.js]] stores a configuration which is written back to ''prefs.js'' file each time you restart your application.
-→ Homemade [[./user.js|user.js file]]
+→ See homemade [[./user.js|user.js file]]
 
 ===== Simple system level config =====
 Inside ''/etc/firefox/syspref.js'' → WARNING: This path may be installation dependant

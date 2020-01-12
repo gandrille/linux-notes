@@ -2,6 +2,10 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 
 ====== ffmpeg (and avconv) ======
+2020 [[https://advancedweb.hu/generating-a-crossfaded-slideshow-video-from-images-with-ffmpeg-and-melt/|Generating a crossfaded slideshow video from images with ffmpeg and melt]]
+
+===== GUI frontend =====
+https://mystiqapp.com/
 
 ===== ffmpeg help =====
 **Online resources**
@@ -39,6 +43,27 @@ Sinon : ''ffmpeg -i file_name -hide_banner''
 ===== 1 image → 1 video =====
 If you want to create a video out of just one image, this will do (output video duration is set to 30 seconds with ''-t 30'')
 ''ffmpeg -loop 1 -i img.png -c:v libx264 -t 30 -pix_fmt yuv420p out.mp4''
+
+===== x images → 1 video (Stop motion) =====
+**In order to speedup image processing, you can first do the following**
+''mogrify -auto-orient -resize 1024x768! *.JPG''
+ 
+**Video generation**
+''ffmpeg -f image2 -i PC210%3d.JPG -r 4 -vcodec mpeg4 -b 15000k video.mp4''
+
+* ''-f image2'' not required, but maybe a good idea to write it (!?)
+* ''-i PC210%3d.JPG'' input file names pattern
+* ''-r 4'' number of images per second (rate)
+* ''-vcodec mpeg4'' video codec
+* ''-b 15000k'' bitrate. 30000k can be a nice value as well.
+
+Tip
+* ''-start_number 1'' default for file names interpolation
+
+**Sources**
+* [[https://ffmpeg.org/faq.html#How-do-I-encode-single-pictures-into-movies_003f|How do I encode single pictures into movies?]]
+* [[https://www.lemondedustopmotion.fr/news/voir/7/Transformer_une_squence_dimages_en_une_vido_avec_ffmpeg|Transformer une séquence d’images en une vidéo avec ffmpeg]]
+* [[https://lukecyca.com/2013/stop-motion-with-ffmpeg.html|Stop-motion with ffmpeg]]
 
 ===== 1 image + 1 audio file → 1 video =====
 ''ffmpeg -f image2 -loop 1 -i image.jpg -i audio.wav -c:v libx264 -tune stillimage -c:a aac -strict experimental -b:a 192k -shortest out.mp4''

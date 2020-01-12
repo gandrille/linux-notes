@@ -2,3 +2,12 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 
 ====== Audio ======
+**Infos générales**
+* [[https://doc.ubuntu-fr.org/audio|Le son sous Ubuntu]]
+* [[https://doc.ubuntu-fr.org/son_problemes|Problèmes de sons sous Ubuntu]]
+
+**Stack standard**
+* Le contrôleur de volume : [[https://doc.ubuntu-fr.org/pavucontrol|Pavucontrol]] (PulseAudio VolUme Control) → outil graphique de contrôle simplifié des volumes audio entrée/sortie pour le serveur de son PulseAudio.
+* Serveur de son : [[https://doc.ubuntu-fr.org/pulseaudio|PulseAudio.]] S'interface avec ALSA pour l'accès au matériel, mais peut également gérer des fux réseau.
+* Le pilote quasi-universel des cartes son : ALSA (mixer GUI [[https://en.wikipedia.org/wiki/Alsamixer|Alsamixer]])
+* La ou les carte(s) son

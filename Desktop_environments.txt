@@ -27,7 +27,7 @@ Wiki-Format: zim 0.4
 * [[https://github.com/ZorinOS|GitHub]]
 * [[https://distrowatch.com/table.php?distribution=zorin|Distro Watch]]
 
-[[https://www.deepin.org/en/dde/|Deepin]]
+[[https://www.deepin.org/en/dde/|Deepin]] → see also [[https://ubuntudde.com|UbuntuDDE]]
 * Deepin 15.10 est basé sur Debian stable
 * [[https://en.wikipedia.org/wiki/Deepin|Wikipedia]]
 * [[https://github.com/linuxdeepin|GitHub]]

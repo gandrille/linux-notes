@@ -11,7 +11,7 @@ Wiki-Format: zim 0.4
 * ''tesseract-ocr-fra''
 
 **Usage**
-* directement [[https://doc.ubuntu-fr.org/tesseract-ocr#en_ligne_de_commande|en ligne de commande]] (testé avec succès) 
+* directement [[https://doc.ubuntu-fr.org/tesseract-ocr#en_ligne_de_commande|en ligne de commande]] : ''tesseract input.png output -l fra''
 * avec l'outil graphique ''gscan2pdf''
 
 ===== gocr et gocr-tk =====

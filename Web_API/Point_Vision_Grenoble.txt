@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Point Vision Grenoble ======
+**Prochains créneaux disponibles pour un RDV**
+''curl -s 'https://www.pointvision.com/grenoble/wp-content/plugins/point-vision-network/includes/pointvision-ajax.php' --data-raw 'action=changeStep&centre=13&motif_g=238&motif_pv=1&motif_i=1&etape=3.0' | sed "s/daterdv/\ndaterdv/g" | grep daterdv | sed "s/\\\\//g" | cut -d '"' -f 2,4 | tr '"' ' ' | uniq | grep '[0-9]'''
+

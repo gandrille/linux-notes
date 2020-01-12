@@ -5,3 +5,4 @@ Wiki-Format: zim 0.4
 * http://blog.loof.fr/2015/03/filmer-une-conference.html
 * http://blog.loof.fr/2015/06/filmer-une-conference-suite.html
 
+[[https://obsproject.com/fr/download|OBS Studio]]

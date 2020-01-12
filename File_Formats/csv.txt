@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== csv ======
+**Pour manipuler des fichiers csv, utiliser csv kit : **[[https://github.com/wireservice/csvkit|GitHub]]** / **[[https://csvkit.readthedocs.io/en/latest/|Documentation]]
+
+**Recommandations (**[[http://infolabs.io/prod-csv|source]]**)**
+
+* est encodé en UTF-8,
+* utilise CRLF pour chaque fin de ligne,
+* utilise la virgule comme délimiteur,
+* encapsule entre guillemets les champs dont le contenu possède une ou plusieurs virgules, par exemple : Jean,Martin,”lundi, mardi, jeudi”
+* possède un en-tête (la première ligne du fichier) où chaque champ est décrit par un libellé,
+* est validé par l’outil en ligne [[http://csvlint.io/|CSVLint]],
+* est documenté.
+
+

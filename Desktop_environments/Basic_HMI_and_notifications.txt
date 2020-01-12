@@ -21,8 +21,12 @@ A regarder : contenu des packages
 
 → [[http://www.galago-project.org/specs/notification/|The Desktop Notification Spec Proposal]]
 
+===== Zenity =====
+Pour demander des informations basiques avec une UI.
+La page de man est très bien faite.
+
 ===== yad =====
-Pour demander des informations avec une UI
+Pour demander des informations avec une UI. Plus complet (et complexe) que Zenity.
 
 '''
 yad --form --width 300 --center \

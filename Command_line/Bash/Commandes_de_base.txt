@@ -11,7 +11,7 @@ Wiki-Format: zim 0.4
 * ''-l'' liste des infos
 * ''-g'' comme l sans le groupe  
 * ''-i'' affiche les i-noeuds
-* ''-p'' ajoute un slash apres les repertoires
+* ''-p'' ajoute un slash après les repertoires
 * ''-R'' recursif
 → [[https://the.exa.website|exa]] est une alternative très sympathique à ''ls''
 
@@ -41,12 +41,25 @@ Wiki-Format: zim 0.4
 ''chmod'' : modification des droits
 * syntaxe en trois morceaux : ogu +-= wrx
 
+===== Affichage de fichiers =====
+''more'' : affichage page par page
+
+''less''
+
+''cat'' : afficher sur la sortie standard le contenu d'un fichier passe en parametre
+
+''head''
+
+''tail''
+
 ===== commandes systemes =====
 ''nice'' : execute la commande en param avec une faible priorite
 * ''-nombre'' la priorite
 
 ''kill'' : envoyer un signal a un process dont on donne le PID
-* ''-9'' assassiner un process
+* ''-9'' assassiner un process (SIGKILL)
+
+''pidof firefox'' : trouver le pid
 
 ''ps'' : affichage des processus de l'utilisateur
 * ''-e'' tout plein de process de tout le monde
@@ -92,15 +105,15 @@ Wiki-Format: zim 0.4
 ===== commandes diverses =====
 ''man'' : obtenir des pages de manuel
 
-''more'' : affichage page par page
+''hostname'' : nom de la machine (''hostname -I'' les ip des interfaces) 
 
-''cat'' : editer un fichier passe en parametre sur la sortie standard
-
-''hostname'' : nom de la machine
+''id'' : infos sur un utilisateur
+* ''-u'' son UID
+* ...
 
 ''whoami'' : mon nom!!!
 
-who am i : mon nom + des infos
+''who am i'' : mon nom + des infos
 
 ''who'' : nom des utilisateurs connectes
 
@@ -118,55 +131,18 @@ who am i : mon nom + des infos
 * ''-u'' elimine les doublons
 * ''-r'' reverse
 
-''grep'' : recherche des occurences dans des lignes ou un fichier passe en param
+''grep'' : Global Regular Expressions Print - Recherche des occurences dans des lignes ou un fichier passe en param
 * ''-n'' affiche les numeros de ligne
 * ''[...]'' definition d'un intervale de carac
 * ''[!..]'' complement
 * ''^ $'' debut et fin de ligne 
+Note: ''grep -P "\x61"'' pattern Perl, caractère hexadécimal 61, cad 'a'. ''"\xa0"'' est un espace insécable.
 
 ''find'' : recherche sur le dur dans les rep passes en argument
 * ''-name'' pour specifier le nom de fichier
 * ''-print'' pour afficher
 * ''-type'' pour leur type (f pour plain file, d pour directory…)
 * ''-size'' pour la taille (faire un man…)
-
-===== vi =====
-'''
-+-----------+ --- <ESC> ---> +----------+ ------ : ----> +---------+           
-| insertion |                | commande |                | edition |
-+-----------+ <---- i ------ +----------+ <--- <ESC> --- +---------+
-'''
-
-edition
-
-* '':q''       sortie si pas de modifs
-* '':q!''      sortie sans sauvegarder
-* '':wq''      sortie en enregistrant (comme ZZ)
-* '':set nu''  numeros de ligne (:set nonu pour annuler)
-* '':r fic''   fusionne le fichier fic 
-* '':18''      goto line 18
-* '':0''       goto debut de fichier
-* '':$''       goto fin de fichier   
-
-commandes
-
-* ''0''   debut de ligne 
-* ''$''   fin de ligne
-* ''w''   avance mot par mot sur le debut
-* ''e''   avance mot a mot sur la fin
-* ''b''   reculle mot par mot
-* ''u''   undo
-* ''x''   efface un caractere
-* ''dw''  supprime un mot
-* ''dd''  efface une ligne
-* ''3dd'' efface 3 lignes
-* ''J''   joindre deux lignes
-* ''yy''  copie une ligne
-* ''p''   colle
-
-* ''i''   insertion avant le curseur
-* ''a''   insertion apres le curseur
-* ''A''   insertion en fin de ligne
 
 ===== variables du shell =====
 * ''HOME'' : le chemin d'acces du repertoire de l'utilisateur

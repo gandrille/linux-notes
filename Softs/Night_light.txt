@@ -17,4 +17,4 @@ sudo apt-get install fluxgui
 
 
 ===== Gnome =====
-See [[:Desktop environments:freedesktop:GNOME:Configuration|Gnome config]].
+See [[:Desktop environments:GNOME:Configuration|Gnome config]].

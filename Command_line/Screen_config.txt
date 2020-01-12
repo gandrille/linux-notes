@@ -23,5 +23,3 @@ CLI to RandR (resize and rotate)  extension of the X11 protocol.
 * ''xrandr --output <<display-name>> --size 4:3''
 * ''xrandr --output <<display-name>> --size 1366x768''
 * ''xrandr --output <<display-name>> --brightness 0.75'' brightness between 0 and 1
-
-

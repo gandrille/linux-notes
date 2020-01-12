@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== snap ======
+''snap'' est poussé par Ubuntu, et orienté serveur.
+
+* utilise SquashFS
+* sécurité via apparmor
+
+Pour masquer le dossier snap dans les filemanager :
+''echo snap > ~/.hidden''
+
+

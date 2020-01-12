@@ -3,6 +3,7 @@ Wiki-Format: zim 0.4
 
 ====== Extensions ======
 **See also**
+* https://bloquelapub.net
 * [[https://addons.mozilla.org/fr/firefox/search/?recommended=true&type=extension|Recommended extensions]]
 * [[https://addons.mozilla.org/fr/firefox/|ALL firefox extensions]]
 * https://addons.mozilla.org/firefox/downloads/latest/flagfox/ direct link to an XPI file (here an example with the flagfox module)
@@ -11,12 +12,12 @@ Wiki-Format: zim 0.4
 **Extensions de base**
 * [[https://addons.mozilla.org/fr/firefox/language-tools/|Dictionnaires]]
 * [[https://addons.mozilla.org/fr/firefox/addon/flagfox/|Flagfox]]
-* [[https://addons.mozilla.org/fr/firefox/addon/https-everywhere|HTTPS everywhere]] par l'EFF, force HTTPS quand il est disonible ([[https://fr.wikipedia.org/wiki/HTTPS_Everywhere|Wikipedia]])
+* [[https://addons.mozilla.org/fr/firefox/addon/https-everywhere|HTTPS everywhere]] par l'EFF, force HTTPS quand il est disonible ([[https://fr.wikipedia.org/wiki/HTTPS_Everywhere|Wikipedia]]) → see also [[https://blog.mozilla.org/security/2020/11/17/firefox-83-introduces-https-only-mode/|HTTPS only mode since FF83]].
 * [[https://addons.mozilla.org/fr/firefox/addon/enhancer-for-youtube/|Enhancer for YouTube]]
 
 **Formats de fichier**
 * [[https://addons.mozilla.org/en-US/firefox/addon/json-lite/|JSON lite]]
-* [[https://addons.mozilla.org/fr/firefox/addon/markdown-viewer-webext/|Markdown viewer]]
+* [[https://addons.mozilla.org/fr/firefox/addon/markdown-viewer-webext/|Markdown viewer]] (Under Linux, it may require [[https://addons.mozilla.org/en-US/firefox/addon/open-in-browser/|Open in browser]] extension)
 
 **Moteurs de recherche**
 * [[https://addons.mozilla.org/fr/firefox/addon/qwantcom-for-firefox/|Qwant]]

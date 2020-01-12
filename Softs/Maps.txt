@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== Maps ======
-* Desktop : [[https://marble.kde.org/|Marbl]][[https://marble.kde.org/|e (KDE project)]]
-* Android : [[https://f-droid.org/en/packages/net.osmand.plus/|F-Droid OsmAnd~ app]] 
-* Appli lourde java : [[https://josm.openstreetmap.de/|JOSM]]

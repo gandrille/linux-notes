@@ -27,4 +27,5 @@ Fait partie des ''qr-tools'', dont il peut être intéressant de suivre l'évolu
 
 ===== Lecture =====
 Dans le package ''zbar-tools'' : utilitaire [[https://www.systutorials.com/docs/linux/man/1-zbarcam/|zbarcam]]
+''qtqr'' permet aussi de scanner un qrcode.
 

@@ -3,19 +3,20 @@ Wiki-Format: zim 0.4
 
 ====== Misc ======
 
-===== Banner =====
-''figlet "hello"''
-
 ===== ncurses =====
 ''whiptail --title "Tell me" --yesno "Tell me yes or no…" 20 30''
+''whiptail --title "Tell me" --inputbox "Tell me something" 15 45''
 
 ===== Password generator =====
 ''apg -a 1 -m 10 -M SNCL -n 10''
 
 * ''-a 1'' random character password generation (by contrast with pronounceable password generation)
-* ''-m 10'' minimum   length
+* ''-m 10'' minimum length
 * ''-M SNCL'' generator must use for every generated password Special, Numeric, Capital symbol, Lower case letter
 * ''-n 10'' generates 10 passwords
+
+===== Random pin generator =====
+''shuf --random-source=/dev/urandom -i 0-9 -r -n 6 | paste -sd ''''
 
 ===== cloc =====
 count lines of code.
@@ -25,12 +26,6 @@ count lines of code.
 
 ''ls *.css *.html | entr reload-browser Firefox''
 
-===== speedtest-cli =====
-Test en ligne de commande du débit d'upload et de download ainsi que du ping.
-
-===== free =====
-Pour connaitre l'état d'utilisation de la RAM.
-
 ===== read line wrapper =====
 ''rlwrap [rlwrap-options] command ...''
 
@@ -39,3 +34,14 @@ Pour connaitre l'état d'utilisation de la RAM.
 ''rlwrap''  tries  to be completely transparent - you (or your shell) shouldn't notice any difference between command and rlwrap command - except the added readline functionality, of course.  This should even hold true when you are re-directing, piping and sending signals from and to command, or when command manipulates its terminal settings.
 
 There are many options to add (programmable) completion, handle multi-line input, colour and re-write prompts.
+
+===== Timeout =====
+If no signal is specified, send the ''TERM'' signal upon  timeout. 
+''-k'' aka ''--kill-after=DURATION'' also send a KILL signal if the command is still running this long after the initial signal was sent.
+
+**examples**
+* ''timeout 60 ping google.com''
+* ''timeout 60s ping google.com''
+* ''timeout 1m ping google.com''
+
+see also package ''timelimit''

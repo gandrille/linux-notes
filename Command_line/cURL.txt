@@ -3,7 +3,7 @@ Wiki-Format: zim 0.4
 
 ====== cURL ======
 **References**
-* [[https://catonmat.net/cookbooks/curl|cURL Cookbook]]: TLDR tips
+* [[https://catonmat.net/cookbooks/curl|cURL Cookbook]]: TLDR; tips
 * [[https://ec.haxx.se|Everything cURL:]] full documentation
 
 **Auth with Cookies**

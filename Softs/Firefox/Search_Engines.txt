@@ -51,9 +51,9 @@ else:
 * Python2 : ''python-lz4'' package
 * Python3 : ''python3-lz4tools'' package
 
-===== Json schema of search.json.mozlz4 =====
-* [[https://hg.mozilla.org/mozilla-central/file/tip/browser/base/content/browser.js|browser.js file]]
-* [[https://hg.mozilla.org/mozilla-central/file/tip/browser/components/preferences/in-content/search.js|search.js file]]
+===== Reverse engineering of search.json.mozlz4 Json schema =====
+* [[https://hg.mozilla.org/mozilla-central/file/tip/toolkit/components/search/SearchService.jsm#l659|SearchService.jsm]] → see comments!
+* [[https://hg.mozilla.org/mozilla-central/file/tip/toolkit/components/search/SearchEngine.jsm|SearchEngine.jsm]]
 
 ===== Hash computation =====
 Hashes are used to ensure that the file has been updated by Firefox itself. So computing hashes has been designed to be difficult, in order to prevent malicious program from updating silently ''search.json.mozlz4'' file.

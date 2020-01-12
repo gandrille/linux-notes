@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Network speed test ======
+Package: ''speedtest-cli''
+
+''speedtest-cli'' Command line interface for testing internet bandwidth using [[https://www.speedtest.net/|speedtest.net]]

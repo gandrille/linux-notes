@@ -1,0 +1,6 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Debian mirror ======
+[[https://korben.info/creer-depot-miroir-debian.html|Créer un dépôt miroir Debian]]
+

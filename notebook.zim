@@ -1,6 +1,6 @@
 [Notebook]
 version=0.4
-name=My notes about Linux
+name=My Linux notes
 interwiki=
 home=Admin Linux et sécurité
 icon=
@@ -9,4 +9,7 @@ shared=True
 endofline=unix
 disable_trash=False
 profile=
+
+[SpellPlugin]
+language=
 

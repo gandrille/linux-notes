@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Exodus Privacy ======
+**Méthodologie**
+* Pas le droit de décompiler → [[https://exodus-privacy.eu.org/en/post/exodus_static_analysis/|Analyse statique]]
+* On regarde uniquement la liste de classes
+
+**Outils utilisés**
+* Gplaycli: download the APK and get application details from Google Play
+* Androguard: get permissions, code version and certificates
+* Dexdump: extract list of classes from APK file
+
+**Liens**
+* [[https://reports.exodus-privacy.eu.org/fr/info/understand/|Mieux comprendre]]
+* Videos : [[https://www.youtube.com/channel/UC2bloZZpnRal5tMVuHk0EFQ/videos|youtube]] et [[https://peertube.tamanoir.foucry.net/video-channels/2ab4458d-0b3c-485a-aeaf-792cd0842bc8/videos|peertube]]
+
+**Analyses approfondies**
+* [[https://exodus-privacy.eu.org/en/post/deliveroorider/|Deleveroo rider]] - [[https://www.youtube.com/watch?v=qW8DmMqO6iE|Vidéo Youtube]] 
+* Baby+

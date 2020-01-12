@@ -1,0 +1,42 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Metadata ======
+__Using any tool for removing metadata does NOT mean that all metadata will be removed...__
+
+===== General purpose toolkit =====
+**MAT = Metadata Anonymisation Toolkit**
+
+* [[https://mat.boum.org/|MAT v1 (deprecated)]]
+* [[https://0xacab.org/jvoisin/mat2|MAT v2]] (debian package ''mat2'')
+
+===== Exif =====
+[[https://en.wikipedia.org/wiki/Exif|Exchangeable image file format]] 
+
+==== Exiv2 ====
+''exiv2 package''
+* Display metadata: ''exiv2 file.jpg''
+* Remove metadata: ''exiv2 rm file.jpg'' 
+
+==== Exiftool-perl ====
+To edit/remove Exif data from images: ''libimage-exiftool-perl'' package
+''sudo apt-get install libimage-exiftool-perl''
+
+To remove all Exif data from an image: ''exiftool -all= image.jpg''
+(there is a space after the equal symbol).
+
+==== Photini ====
+* [[https://photini.readthedocs.io|Read the docs]]
+* [[https://github.com/jim-easterbrook/Photini|GitHub]]
+
+**Installation**
+'''
+sudo apt install python3-pip
+sudo apt install gir1.2-gexiv2-0.10
+pip3 install -U photini
+'''
+
+
+===== Adobe XMP =====
+* [[https://en.wikipedia.org/wiki/Extensible_Metadata_Platform|Extensible Metadata Platform]]
+* https://www.adobe.com/products/xmp.html

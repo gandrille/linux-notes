@@ -1,0 +1,25 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Raspberry Pi ======
+**Comparatifs**
+* [[https://fr.wikipedia.org/wiki/Raspberry_Pi#Tableau_comparatif|Comparatif des versions]]
+* https://www.raspberrypi.org/magpi/raspberry-pi-4-specs-benchmarks/
+
+**Installation**
+* https://www.jbnet.fr/systeme/raspbian/raspberry-pi-installation-mode-serveur.html
+* https://linuxhandbook.com/raspberry-pi-headless-setup/
+* [[https://github.com/azlux/log2ram|log2ram]]
+
+**Misc**
+* [[https://ubuntu.com/download/raspberry-pi|Ubuntu Server on a Raspberry Pi 2, 3 or 4]]
+* [[https://bluesabre.org/2019/10/20/install-xubuntu-19-10-on-a-raspberry-pi-4/|XUbuntu on a Pi]]
+
+**Hacking**
+* [[https://www.pimusicbox.com/|Pi Musuc Box]]
+* [[https://kodi.tv/|Kodi]]
+* ...
+
+
+https://fr.wikipedia.org/wiki/Raspberry_Pi#Tableau_comparatif
+

@@ -1,0 +1,6 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Exif et XMP ======
+* [[:Softs:Images:Image viewers|Image Viewer]]
+* [[:Admin and security:Metadata|Metadata]]

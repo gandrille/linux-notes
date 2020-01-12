@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Rclone ======
+[[https://rclone.org|Rclone]] is a command line program to sync files and directories to and from cloud storages such as Amazon S3, Dropbox, Google Drive,…
+
+**Installation**
+* ''rclone'' package and https://rclone.org/downloads/
+* Front end: [[https://github.com/dimitrov-adrian/RcloneTray|rclone tray]]
+
+**Config file**
+* ''~/.config/rclone/rclone.conf''
+* populated with: ''rclone config''
+

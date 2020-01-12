@@ -2,49 +2,99 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 
 ====== pdf ======
-See: [[https://en.wikipedia.org/wiki/Poppler_(software)#poppler-utils|poppler-utils]]
+See also: [[https://en.wikipedia.org/wiki/Poppler_(software)#poppler-utils|poppler-utils]]
 
-===== Pour faire des booklets =====
-* [[http://kjo.herbesfolles.org/bookletimposer/|bookletimposer]] (du package du même nom)
-* [[https://www.ctan.org/pkg/pdfbook2|pdfbook2]],qui utilise LaTeX (du package ''texlive-extra-utils'')
-* [[http://jpdftweak.sourceforge.net/|jPdf tweak]], un programme java ancien mais qui fonctionne bien
+===== Booklet creation =====
 
-===== Extraction simple de texte =====
-* package : ''poppler-utils''
-* ''pdftotext''
+==== Using bookletimposer (GUI and CLI) ====
+* Package: ''bookletimposer''
+* [[http://kjo.herbesfolles.org/bookletimposer/|bookletimposer website]]
 
-===== Conversion de document Office en pdf avec Libre Office =====
-''lowriter --convert-to pdf filename.doc''
-''lowriter --convert-to pdf filename.docx''
+**Converts in.pdf into a booklet with two pages per sheet an saves the result as out.pdf**
+''bookletimposer --no-gui --booklet --pages-per-sheet=2x1 --output=out.pdf in.pdf''
 
-===== Planche de pdf =====
-**Avec pdfjam**
-* package: ''texlive-extra-utils''
+**Converts the two-pages-per-sheet booklet in.pdf into a page-by-page PDF**
+''bookletimposer --no-gui --linearise --pages-per-sheet=2x1 in.pdf''
+As the output file name is not defined, it will default to in-conv.pdf.
+
+==== Using pdfbook2 (CLI only) ====
+* Package ''texlive-extra-utils''
+* [[https://www.ctan.org/pkg/pdfbook2|pdfbook2 website]]
+
+''pdfbook2 input.pdf'' → generates input-book.pdf
+
+==== Using jPdf tweek (GUI only) ====
+* [[http://jpdftweak.sourceforge.net/|jPdf tweak website]]
+
+Old Java program, which still does it job well.
+
+
+===== Multiple pages per output page (for economical printing) =====
+
+==== Using pdfnup (CLI only) ====
+Package: ''texlive-extra-utils''
+''pdfnup'' is a simple wrapper for ''pdfjam''
+
+''pdfnup --nup 2x1 --landscape file.pdf''
+Default options: ''--nup 2x1 --landscape true --frame false''
+
+Options
+* ''--nup 2x1'' <columns>x<lines>
+* ''--landscape'' (by default) or ''--no-landscape''
+* ''--frame false'' draw border
+
+==== Using bookletimposer (GUI and CLI) ====
+* Package: ''bookletimposer''
+* [[http://kjo.herbesfolles.org/bookletimposer/|bookletimposer website]]
+
+__TODO...__
+
+===== Multiple pages per output page (for notes taking) =====
+**Using pdfjam**
+* Package: ''texlive-extra-utils''
 * ''pdfjam --suffix 3up --nup 1x3 --frame true --noautoscale false --delta "0cm 3cm" --a4paper --scale 0.7 --offset "-3cm 0.2cm" slides.pdf'' 
 
-**Avec pdfxup**
-* package: ''texlive-extra-utils''
+**Using pdfxup**
+* Package: ''texlive-extra-utils''
 * ''pdfxup -x 2 -y 2 -im 0pt -m 30pt -is 10pt -fw .3pt slides.pdf'' 
 
-===== Extraire les pages d'un pdf =====
-**Avec qpdf**
-* package : ''qpdf''
-* [[http://qpdf.sourceforge.net/|website]]
+===== Document generation containing only a subset of pages =====
+**Using qpdf**
+* Package: ''qpdf''
 * [[http://qpdf.sourceforge.net/files/qpdf-manual.html|manual]]
 
 ''qpdf input.pdf --pages . 1-10 -- output.pdf''
 * ''--pages'' → [[http://qpdf.sourceforge.net/files/qpdf-manual.html#ref.page-selection|see Page Selection Options]]
 * the shortcut ''.'' (instead of input.pdf) requires qpdf 8.4
 
-**Avec pdfjam**
-* package: ''texlive-extra-utils''
+**Using pdfjam**
+* Package: ''texlive-extra-utils''
 * ''pdfjam all.pdf 5-10 -o output.pdf''
 
-**Avec pdfseparate**
-* package : ''poppler-utils''
+**Using pdfseparate**
+* Package: ''poppler-utils''
 * ''pdfseparate -f 1 -l 1 all.pdf output.pdf''
 
-===== Concaténer des fichiers pdf =====
-**Avec pdfunite**
-* package : ''poppler-utils''
+===== Pages reordered =====
+''qpdf input.pdf --pages . 10,9,8,7,6,5,4,3,2,1 -- output.pdf''
+
+===== File concatenation =====
+**Using pdfunite**
+* Package: ''poppler-utils''
 * ''pdfunite source1.pdf source2.pdf source3.pdf destination.pdf''
+
+===== pdf → text =====
+* package: ''poppler-utils''
+* ''pdftotext''
+
+===== pdf → images =====
+See [[:Softs:Images:ImageMagick|ImageMagick page]].
+
+===== Images extraction from a pdf file =====
+As jpeg images : ''pdfimages -j file.pdf img-dir/''
+As png images : ''pdfimages -png file.pdf img-dir/''
+
+===== Office document → pdf (using Libre Office) =====
+Package: ''libreoffice-writer''
+''lowriter --convert-to pdf filename.doc''
+''lowriter --convert-to pdf filename.docx''

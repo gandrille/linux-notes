@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Firefox plugin ======
+In order to ease copy paste from firefox to Zim wiki, here is a hack to update [[https://addons.mozilla.org/en-US/firefox/addon/copy-selection-as-markdown/|Copy Selection as Markdown]] extension behaviour.
+
+First, download the latest zip release from the [[https://github.com/0x6b/copy-selection-as-markdown/tree/master/artifacts/firefox|github repository]].
+Inside the zip file, update ''copy.js''
+Replace ''function(t,e){return"["+t+"]("+e.getAttribute("href")+(e.title?' "'+e.title+'"':"")+")"}''
+With ''function(t,e){return"[["+e.getAttribute("href")+(e.title?' "'+e.title+'"':"")+"|"+t+"]]"}''
+
+Disable firefox signature checking (this is **VERY** bad!)
+→ inside ''about:config'' switch ''xpinstall.signatures.required'' to ''false''.
+
+Then, install the extension from the updated zip file ''about:addons''
+Don't forget to have a look at the extension parameters.

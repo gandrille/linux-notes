@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Dell Laptops ======
+**See**
+* https://www.dell.com/linux
+* https://www.dell.com/en-us/work/shop/overview/cp/linuxsystems
+
+**Models**
+* [[https://www.dell.com/fr-fr/shop/cty/pdp/spd/inspiron-14-3480-laptop|Dell Inspiron 14 série 3480]]  
+* [[https://www.dell.com/fr-fr/shop/laptops/15/spd/inspiron-15-3593-laptop|Dell Inspiron 15 série 3593]]
+* [[https://www.dell.com/fr-fr/shop/laptops/17/spd/inspiron-17-3793-laptop/cn37910sc|Dell Inspiron 17 série 3000 (core i5)]]
+
+**Processors**
+* [[https://ark.intel.com/content/www/us/en/ark/products/91832/intel-celeron-processor-n3060-2m-cache-up-to-2-48-ghz.html|Intel® Celeron® Processor N3060]]
+* [[https://ark.intel.com/content/www/us/en/ark/products/189309/intel-celeron-processor-4205u-2m-cache-1-80-ghz.html|Intel® Celeron® 4205U]]
+* [[https://ark.intel.com/content/www/us/en/ark/products/189310/intel-pentium-gold-5405u-processor-2m-cache-2-30-ghz.html|Intel® Pentium® Gold 5405U]]
+* [[https://ark.intel.com/content/www/us/en/ark/products/122590/intel-core-i3-7020u-processor-3m-cache-2-30-ghz.html|Intel® Core™ i3-7020U de 7e génération]]
+* [[https://ark.intel.com/content/www/fr/fr/ark/products/95443/intel-core-i5-7200u-processor-3m-cache-up-to-3-10-ghz.html|Intel® Core™ i5-7200U de 7e génération]]
+→ [[https://ark.intel.com/content/www/us/en/ark/compare.html?productIds=/91832,189309,189310,122590,95443|Comparison table]]

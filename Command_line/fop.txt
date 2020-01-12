@@ -8,6 +8,6 @@ Wiki-Format: zim 0.4
 **Running Fop 2.3 with Java 8 produces the following exception**
 ''Exception in thread "main" java.lang.NoSuchMethodError: java.nio.CharBuffer.limit(I)Ljava/nio/CharBuffer;''
 
-The ''limit'' method has been added in JDK 9… 
+Reason: the ''limit'' method has been added in JDK 9… 
 * No ''limit'' method in API : https://docs.oracle.com/javase/8/docs/api/java/nio/CharBuffer.html 
-* ''limit'' method present ! https://docs.oracle.com/javase/9/docs/api/java/nio/CharBuffer.html#limit-int-
+* ''limit'' method available! https://docs.oracle.com/javase/9/docs/api/java/nio/CharBuffer.html#limit-int-
