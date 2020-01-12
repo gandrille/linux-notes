@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Screen saver & Locker</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+
+<script type="text/javascript"> var _paq = window._paq = window._paq || []; /* tracker methods like "setCustomDimension" should be called before "trackPageView" */ _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function() { var u="//gandrille.com/matomo/"; _paq.push(['setTrackerUrl', u+'matomo.php']); _paq.push(['setSiteId', '3']); var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s); })(); </script> <noscript><p><img src="//gandrille.com/matomo/matomo.php?idsite=3</head>amp;rec=1" style="border:0;" alt="" /></p></noscript>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../../Admin_and_security.html" title="Admin and security" class="page">Admin and security</a></li>
+<li><a href="../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a>
+<ul>
+<li><a href="../Basic_HMI_and_notifications.html" title="Basic HMI and notifications" class="page">Basic HMI and notifications</a></li>
+<li><a href="../Freedesktop_specifications.html" title="Freedesktop specifications" class="page">Freedesktop specifications</a></li>
+<li><a href="../GNOME.html" title="GNOME" class="page">GNOME</a></li>
+<li><a href="../LightDM_login_screen.html" title="LightDM login screen" class="page">LightDM login screen</a></li>
+<li><a href="../Touchpad.html" title="Touchpad" class="page">Touchpad</a></li>
+<li><a href="../X11_vs_Wayland.html" title="X11 vs Wayland" class="page">X11 vs Wayland</a></li>
+<li><a href="../Xfce.html" title="Xfce" class="page">Xfce</a>
+<ul>
+<li><a href="./Desktop_Shortcuts.html" title="Desktop Shortcuts" class="page">Desktop Shortcuts</a></li>
+<li><a href="./Exo.html" title="Exo" class="page">Exo</a></li>
+<li><a href="./Panel_configuration.html" title="Panel configuration" class="page">Panel configuration</a></li>
+<li><a href="./Releases.html" title="Releases" class="page">Releases</a></li>
+<li><b>Screen saver &amp; Locker</b></li>
+<li><a href="./Settings_management.html" title="Settings management" class="page">Settings management</a></li>
+<li><a href="./Thunar.html" title="Thunar" class="page">Thunar</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="../../Devices.html" title="Devices" class="page">Devices</a></li>
+<li><a href="../../File_Formats.html" title="File Formats" class="page">File Formats</a></li>
+<li><a href="../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../../Web_API.html" title="Web API" class="page">Web API</a></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>Screen saver & Locker <a name='Desktop environments:Xfce:Screen saver & Locker'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<h2>Xfce Screensaver</h2>
+
+<p>
+<b>IMPORTANT </b><a href="https://docs.xfce.org/apps/screensaver/start" title="Xfce screensaver" class="https">Xfce screensaver</a> is available since <a href="https://www.xfce.org/about/news/?post=1565568000" title="Xfce 4.14" class="https">Xfce 4.14</a> (released in... 2019)
+</p>
+
+<p>
+<ul>
+<li><a href="https://github.com/xfce-mirror/xfce4-screensaver/releases" title="releases" class="https">releases</a></li>
+<li>Source code : <a href="https://github.com/xfce-mirror/xfce4-screensaver" title="GitHub" class="https">GitHub</a> - <a href="https://bugzilla.xfce.org/" title="Xfce forge" class="https">Xfce forge</a></li>
+<li><a href="https://bugzilla.xfce.org/" title="Bug tracker" class="https">Bug tracker</a> (<a href="https://bugzilla.xfce.org/buglist.cgi?bug_status=__open__&no_redirect=1&order=Importance&product=Xfce4-screensaver&query_format=specific" title="Open bugs" class="https">Open bugs</a>) <a href="https://bugzilla.xfce.org/show_bug.cgi?id=14782" title="#14782" class="https">#14782</a></li>
+<li><tt>xfce4-screensaver</tt></li>
+<li><tt>xfce4-screensaver-preferences</tt></li>
+</ul>
+</p>
+
+<p>
+<b>properties: xfce4-screensaver channel</b><br>
+<ul>
+<li><tt>/saver/enabled</tt> true/false → full kill switch</li>
+<li><tt>/saver/idle-activation/enabled</tt> true/false → autostart screensaver after idle time (delay)</li>
+<li><tt>/saver/idle-activation/delay</tt> &lt;number of minutes&gt;</li>
+</ul>
+→ Note: properties are not created by <tt>xfce4-screensaver-preferences</tt> when using default values
+</p>
+
+<h2>Screen locker</h2>
+
+<p>
+<ul>
+<li>The command: <tt>/usr/bin/xflock4</tt></li>
+<li><a href="https://wiki.archlinux.org/index.php/Xfce#Lock_the_screen" title="Lock the screen" class="https">Lock the screen</a></li>
+</ul>
+</p>
+
+<p>
+C'est en fait un simple script qui recherche un locker (généralement un screensaver avec l'option --lock) a qui il délègue la tâche de vérouiller l'écran. Pour cela il teste l'existence des lockers les uns après les autres jusqu'a ce que l'un d'entre eux réponde.
+</p>
+
+<p>
+A partir d'Ubuntu 19.10, une propriété permet de forcer le screensaver si besoin: <tt>xfconf-query --channel xfce4-session --property /general/LockCommand --create --type string --set "gnome-screensaver-command --lock"</tt>
+</p>
+
+<p>
+Voir aussi : <a href="../GNOME/Configuration.html" title="configuration de gnome-screensaver" class="page">configuration de gnome-screensaver</a>
+</p>
+
+<h2>Power management (suspend, hibernate,...)</h2>
+
+<h3>Understanding the mess</h3>
+
+<p>
+<a href="https://docs.xfce.org/xfce/xfce4-power-manager/faq" title="Source" class="https">Source</a>
+</p>
+
+<p>
+<b>There are two managers used at the same time...</b><br>
+<ul>
+<li><tt>systemd-logind</tt>
+<ul>
+<li>unit: <tt>systemd-logind.service</tt></li>
+<li>config: <tt>/etc/systemd/logind.conf</tt></li>
+<li>tool: <tt>loginclt</tt> (Send control commands to or query the login manager)</li>
+<li>documentation: <tt>man logind.conf</tt></li>
+</ul>
+</li>
+<li>Xfce's power manager
+<ul>
+<li>démarré avec <tt>xfce4-power-manager</tt></li>
+<li>config GUI <tt>xfce4-power-manager -c</tt></li>
+</ul></li>
+</ul>
+</p>
+
+<p>
+<b>By default</b><br>
+<ul>
+<li><tt>systemd-logind</tt> is started in daemon mode</li>
+<li>Xfce's power manager is NOT started... BUT xfce4-power-manager inhibits logind handling suspend/hibernate and its keys. This is to prevent conflicts that xfce4-power-manager and logind can have.</li>
+</ul>
+</p>
+
+<p>
+Xfce properties: <tt>xfconf-query --channel xfce4-power-manager -lv</tt>
+</p>
+
+<h3>Suspend</h3>
+
+<p>
+<ul>
+<li>The command: <tt>/usr/bin/xfce4-session-logout --suspend</tt></li>
+<li><a href="https://wiki.archlinux.org/index.php/Xfce#Suspend" title="Suspend" class="https">Suspend</a></li>
+</ul>
+</p>
+
+<p>
+BUG: if TWO login screens show up after suspend<br>
+<ul>
+<li><tt>xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate -s false</tt></li>
+<li>see also: <tt>xfconf-query -c xfce4-session -p /shutdown/LockScreen -s false</tt></li>
+</ul>
+</p>
+
+<h3>Lid switch control</h3>
+
+<p>
+<b>IMPORTANT</b><br>
+<ul>
+<li>XUbuntu 19.10 has a bug → lid switch MUST be namaged using systemd logind
+<ul>
+<li><a href="https://wiki.archlinux.org/index.php/Xfce#Laptop_lid_settings_ignored" title="Laptop lid settings ignored" class="https">Laptop lid settings ignored</a></li>
+<li><a href="https://bugzilla.xfce.org/show_bug.cgi?id=15300" title="Xfce Bug #15300" class="https">Xfce Bug #15300</a></li>
+</ul>
+</li>
+<li>XUbuntu 20.04 → lid switch management works out of the box using Xfce power manager ☺</li>
+</ul>
+</p>
+
+<p>
+<b>Who is controlling the lid switch?</b><br>
+<tt>xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-switch | sed -e "s/true/systemd logind/" -e "s/false/Xfce power manager/"</tt>
+</p>
+
+<p>
+<b>Using Xfce's power manager</b><br>
+<tt>xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-switch -s false</tt>
+</p>
+
+<p>
+<tt>xfce4-power-manager -c</tt><br>
+<tt>xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-ac -n -t uint -s 3</tt><br>
+<tt>xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lid-action-on-battery -n -t uint -s 3</tt><br>
+<ul>
+<li>0 = turn the screen off</li>
+<li>1 = suspend</li>
+<li>3 = lock screen</li>
+</ul>
+</p>
+
+<p>
+<b>Using systemd logind</b><br>
+<tt>xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/logind-handle-lid-switch -s true</tt><br>
+See <a href="../../Admin_and_security/Init_system/systemd/Units/loginctl.html" title="systemd logind lid configuration" class="page">systemd logind lid configuration</a>
+</p>
+
+
+		
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+

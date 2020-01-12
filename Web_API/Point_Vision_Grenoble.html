@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Point Vision Grenoble</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+
+<script type="text/javascript"> var _paq = window._paq = window._paq || []; /* tracker methods like "setCustomDimension" should be called before "trackPageView" */ _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function() { var u="//gandrille.com/matomo/"; _paq.push(['setTrackerUrl', u+'matomo.php']); _paq.push(['setSiteId', '3']); var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s); })(); </script> <noscript><p><img src="//gandrille.com/matomo/matomo.php?idsite=3</head>amp;rec=1" style="border:0;" alt="" /></p></noscript>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../Admin_and_security.html" title="Admin and security" class="page">Admin and security</a></li>
+<li><a href="../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a></li>
+<li><a href="../Devices.html" title="Devices" class="page">Devices</a></li>
+<li><a href="../File_Formats.html" title="File Formats" class="page">File Formats</a></li>
+<li><a href="../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../Web_API.html" title="Web API" class="page">Web API</a>
+<ul>
+<li><a href="./LinkedIn_API.html" title="LinkedIn API" class="page">LinkedIn API</a></li>
+<li><a href="./OVH_API.html" title="OVH API" class="page">OVH API</a></li>
+<li><a href="./Pastebin_API.html" title="Pastebin API" class="page">Pastebin API</a></li>
+<li><b>Point Vision Grenoble</b></li>
+<li><a href="./Slack_API.html" title="Slack API" class="page">Slack API</a></li>
+<li><a href="./Twitter_API.html" title="Twitter API" class="page">Twitter API</a></li>
+<li><a href="./URL_shortner_API.html" title="URL shortner API" class="page">URL shortner API</a></li>
+<li><a href="./X12_API.html" title="X12 API" class="page">X12 API</a></li>
+</ul></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>Point Vision Grenoble <a name='Web API:Point Vision Grenoble'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<p>
+<b>Prochains créneaux disponibles pour un RDV</b><br>
+<tt>curl -s 'https://www.pointvision.com/grenoble/wp-content/plugins/point-vision-network/includes/pointvision-ajax.php' --data-raw 'action=changeStep&amp;centre=13&amp;motif_g=238&amp;motif_pv=1&amp;motif_i=1&amp;etape=3.0' | sed "s/daterdv/\ndaterdv/g" | grep daterdv | sed "s/\\\\//g" | cut -d '"' -f 2,4 | tr '"' ' ' | uniq | grep '[0-9]</tt>'
+</p>
+
+
+
+		
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+

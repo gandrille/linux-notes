@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Exo</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+
+<script type="text/javascript"> var _paq = window._paq = window._paq || []; /* tracker methods like "setCustomDimension" should be called before "trackPageView" */ _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function() { var u="//gandrille.com/matomo/"; _paq.push(['setTrackerUrl', u+'matomo.php']); _paq.push(['setSiteId', '3']); var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s); })(); </script> <noscript><p><img src="//gandrille.com/matomo/matomo.php?idsite=3</head>amp;rec=1" style="border:0;" alt="" /></p></noscript>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../../Admin_and_security.html" title="Admin and security" class="page">Admin and security</a></li>
+<li><a href="../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a>
+<ul>
+<li><a href="../Basic_HMI_and_notifications.html" title="Basic HMI and notifications" class="page">Basic HMI and notifications</a></li>
+<li><a href="../Freedesktop_specifications.html" title="Freedesktop specifications" class="page">Freedesktop specifications</a></li>
+<li><a href="../GNOME.html" title="GNOME" class="page">GNOME</a></li>
+<li><a href="../LightDM_login_screen.html" title="LightDM login screen" class="page">LightDM login screen</a></li>
+<li><a href="../Touchpad.html" title="Touchpad" class="page">Touchpad</a></li>
+<li><a href="../X11_vs_Wayland.html" title="X11 vs Wayland" class="page">X11 vs Wayland</a></li>
+<li><a href="../Xfce.html" title="Xfce" class="page">Xfce</a>
+<ul>
+<li><a href="./Desktop_Shortcuts.html" title="Desktop Shortcuts" class="page">Desktop Shortcuts</a></li>
+<li><b>Exo</b></li>
+<li><a href="./Panel_configuration.html" title="Panel configuration" class="page">Panel configuration</a></li>
+<li><a href="./Releases.html" title="Releases" class="page">Releases</a></li>
+<li><a href="./Screen_saver_&_Locker.html" title="Screen saver &amp; Locker" class="page">Screen saver &amp; Locker</a></li>
+<li><a href="./Settings_management.html" title="Settings management" class="page">Settings management</a></li>
+<li><a href="./Thunar.html" title="Thunar" class="page">Thunar</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="../../Devices.html" title="Devices" class="page">Devices</a></li>
+<li><a href="../../File_Formats.html" title="File Formats" class="page">File Formats</a></li>
+<li><a href="../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../../Web_API.html" title="Web API" class="page">Web API</a></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>Exo <a name='Desktop environments:Xfce:Exo'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<p>
+Exo is a support library used in the Xfce desktop. It has some helper applications that are used throughout the entire desktop, to manage preferred applications and edit .desktop files. 
+</p>
+
+<h2>Preferred Apps</h2>
+
+<p>
+The <tt>exo-preferred-applications</tt> GUI allows to choose the default browser, mailer, file manager and terminal.
+</p>
+
+<p>
+Under the covers, it uses several desktop files :<br>
+<ul>
+<li><tt>/usr/share/applications/exo-web-browser.desktop</tt></li>
+<li><tt>/usr/share/applications/exo-mail-reader.desktop</tt></li>
+<li><tt>/usr/share/applications/exo-file-manager.desktop</tt></li>
+<li><tt>/usr/share/applications/exo-terminal-emulator.desktop</tt></li>
+</ul>
+</p>
+
+<p>
+Every desktop file delegates <tt>exo-open</tt> the execution using an exec statement such as this one: <tt>Exec=exo-open --launch WebBrowser %u</tt>
+</p>
+
+<h2>Exo-open</h2>
+
+<h3>Launching Prefered Apps</h3>
+
+<p>
+Here is a basic command: <tt>exo-open --launch WebBrowser %u</tt><br>
+Only 4 application types are allowed: <tt>WebBrowser</tt>, <tt>MailReader</tt>, <tt>TerminalEmulator</tt> and <tt>FileManager</tt>.
+</p>
+
+<p>
+<b>Storage backend</b><br>
+<ul>
+<li><tt>/etc/xdg/xfce4/helpers.rc</tt></li>
+<li><tt>/etc/xdg/xdg-xubuntu/xfce4/helpers.rc</tt></li>
+<li><tt>~/.config/xfce4/helpers.rc</tt></li>
+</ul>
+</p>
+
+<p>
+NOTE: <tt>xdg-settings get default-web-browser</tt> result is based on helpers.rc files content.
+</p>
+
+<h3>Launching URL or files</h3>
+
+<p>
+<tt>exo-open</tt> can be used with urls. For instance <tt>exo-open http://foo.fr</tt><br>
+In order to launch the relevant application, <tt>mimeapps.list</tt> files are parsed in order to find the desktop file corresponding to the relevant scheme handler.
+</p>
+
+<p>
+<tt>exo-open</tt> can also be used with files. For instance <tt>exo-open my-music.mp3</tt><br>
+<tt>mimeapps.list</tt> is then used to find the desktop file for the relevant mime type.
+</p>
+
+
+		
+                        <div class="footblock">
+                            <hr class='footrule'>
+                            <b>Backlinks:</b>
+                    <a href='../Freedesktop_specifications/Mime_types.html'>Desktop environments:Freedesktop specifications:Mime types</a>
+                    
+                        </div>
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+

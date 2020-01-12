@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Desktop Entries</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+
+<script type="text/javascript"> var _paq = window._paq = window._paq || []; /* tracker methods like "setCustomDimension" should be called before "trackPageView" */ _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function() { var u="//gandrille.com/matomo/"; _paq.push(['setTrackerUrl', u+'matomo.php']); _paq.push(['setSiteId', '3']); var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s); })(); </script> <noscript><p><img src="//gandrille.com/matomo/matomo.php?idsite=3</head>amp;rec=1" style="border:0;" alt="" /></p></noscript>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../../Admin_and_security.html" title="Admin and security" class="page">Admin and security</a></li>
+<li><a href="../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a>
+<ul>
+<li><a href="../Basic_HMI_and_notifications.html" title="Basic HMI and notifications" class="page">Basic HMI and notifications</a></li>
+<li><a href="../Freedesktop_specifications.html" title="Freedesktop specifications" class="page">Freedesktop specifications</a>
+<ul>
+<li><a href="./Clipboard.html" title="Clipboard" class="page">Clipboard</a></li>
+<li><b>Desktop Entries</b></li>
+<li><a href="./Mime_types.html" title="Mime types" class="page">Mime types</a></li>
+<li><a href="./XDG_Base_Directory_specification.html" title="XDG Base Directory specification" class="page">XDG Base Directory specification</a></li>
+</ul>
+</li>
+<li><a href="../GNOME.html" title="GNOME" class="page">GNOME</a></li>
+<li><a href="../LightDM_login_screen.html" title="LightDM login screen" class="page">LightDM login screen</a></li>
+<li><a href="../Touchpad.html" title="Touchpad" class="page">Touchpad</a></li>
+<li><a href="../X11_vs_Wayland.html" title="X11 vs Wayland" class="page">X11 vs Wayland</a></li>
+<li><a href="../Xfce.html" title="Xfce" class="page">Xfce</a></li>
+</ul>
+</li>
+<li><a href="../../Devices.html" title="Devices" class="page">Devices</a></li>
+<li><a href="../../File_Formats.html" title="File Formats" class="page">File Formats</a></li>
+<li><a href="../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../../Web_API.html" title="Web API" class="page">Web API</a></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>Desktop Entries <a name='Desktop environments:Freedesktop specifications:Desktop Entries'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<p>
+Desktop Entries store application metadata.
+</p>
+
+<p>
+<b>Sources</b><br>
+<ul>
+<li><a href="https://www.freedesktop.org/wiki/Specifications/desktop-entry-spec/" title="Freedesktop.org Specification" class="https">Freedesktop.org Specification</a></li>
+<li><a href="https://www.freedesktop.org/wiki/Software/desktop-file-utils/" title="Freedesktop.org Wiki" class="https">Freedesktop.org Wiki</a></li>
+<li><a href="https://developer.gnome.org/integration-guide/stable/desktop-files.html.en" title="Gnome Developer Wiki" class="https">Gnome Developer Wiki</a></li>
+<li><a href="https://venam.nixers.net/blog/unix/2016/11/25/default-programs.html" title="venam.nixers.net article" class="https">venam.nixers.net article</a></li>
+</ul>
+</p>
+
+<h2>Desktop file content</h2>
+
+<p>
+<a href="https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html" title="Desktop entry keys" class="https">Desktop entry keys</a>
+</p>
+
+<p>
+<b>A simple example</b>
+</p>
+
+<pre>
+[Desktop Entry]
+Name=MyProg
+Comment=A life saver program
+Exec=/foo/bar/baz
+StartupNotify=true
+Terminal=false
+Type=Application
+Icon=/foo/bar/icon
+</pre>
+
+<p>
+<b>A more complex example (from the specification)</b>
+</p>
+
+<pre>
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Foo Viewer
+Comment=The best viewer for Foo objects available!
+TryExec=fooview
+Exec=fooview %F
+Icon=fooview
+MimeType=image/x-foo;
+Actions=Gallery;Create;
+
+[Desktop Action Gallery]
+Exec=fooview --gallery
+Name=Browse Gallery
+
+[Desktop Action Create]
+Exec=fooview --create-new
+Name=Create a new Foo!
+Icon=fooview-new
+</pre>
+
+<h2>Desktop files databases</h2>
+
+<p>
+The desktop files are stored inside well known directories: the desktop files databases.
+</p>
+
+<p>
+Databases locations <br>
+<ul>
+<li>at system level : <tt>$XDG_DATA_DIRS/applications</tt> →  <tt>/usr/local/share/applications</tt> and <tt>/usr/share/applications</tt></li>
+<li>at user level : <tt>$XDG_DATA_HOME/applications</tt> → <tt>~/.local/share/applications</tt> </li>
+</ul>
+</p>
+
+<p>
+And also...<br>
+<ul>
+<li><tt>/usr/share/xfce4/applications</tt></li>
+<li><tt>/usr/share/xubuntu/applications</tt></li>
+</ul>
+</p>
+
+<h2>mimeinfo.cache</h2>
+
+<p>
+Each database ows a <tt>mimeinfo.cache</tt> file, generated by <tt>update-desktop-database</tt> command which parses all the desktop entries files inside the database. This lookup table provides:<br>
+<ul>
+<li>the list of desktop files associated for every MIME type. Here are a few examples:
+<ul>
+<li><tt>application/csv=libreoffice-calc.desktop;</tt></li>
+<li><tt>application/ogg=audacity.desktop;org.xfce.Parole.desktop;vlc.desktop;</tt></li>
+<li><tt>application/rss+xml=firefox.desktop;</tt></li>
+</ul>
+</li>
+<li>the list of desktop files associated for every scheme handler (a particulat MIME type, which uses the special <tt>x</tt> tree). Here are a few examples:
+<ul>
+<li><tt>x-scheme-handler/http=firefox.desktop;</tt></li>
+<li><tt>x-scheme-handler/https=firefox.desktop;</tt></li>
+<li><tt>x-scheme-handler/magnet=transmission-gtk.desktop;</tt></li>
+<li><tt>x-scheme-handler/mailto=thunderbird.desktop;</tt></li>
+</ul></li>
+</ul>
+</p>
+
+<h2>Other files</h2>
+
+<p>
+<b>defaults.list</b><br>
+<ul>
+<li>defines default desktop file for every mimetype</li>
+<li>to be updated by hand</li>
+<li>IMPORTANT : it's often a symbolic link!
+<ul>
+<li><tt>/usr/share/applications/defaults.list</tt> → <tt>/etc/gnome/defaults.list</tt></li>
+<li><tt>/usr/share/xfce4/applications/defaults.list</tt> → <tt>/etc/xfce4/defaults.list</tt></li>
+<li><tt>/usr/share/xubuntu/applications/defaults.list</tt></li>
+</ul></li>
+</ul>
+→ I'm not sure it is used intensively...
+</p>
+
+<p>
+<b>bamf-2.index</b><br>
+<ul>
+<li><a href="https://launchpad.net/bamf" title="website" class="https">website</a></li>
+<li>file for the <tt>bamfdaemon</tt> (aka <tt>Window matching library</tt>)</li>
+<li>probably used by Unity...</li>
+</ul>
+</p>
+
+<h2>Executables</h2>
+
+<p>
+<ul>
+<li><tt>update-desktop-database</tt>: generates <tt>mimeinfo.cache</tt> file</li>
+<li><tt>desktop-file-edit</tt>: helper tool for updating fields inside a desktop file</li>
+<li><tt>desktop-file-install</tt>: installs/updates a desktop file</li>
+<li><tt>desktop-file-validate</tt>: validate desktop entry files according to the Desktop Entry specification</li>
+</ul>
+</p>
+
+<p>
+<tt>exo-utils</tt> package provides <tt>exo-desktop-item-edit</tt>, which eases a lot desktop entries editing.
+</p>
+
+
+		
+                        <div class="footblock">
+                            <hr class='footrule'>
+                            <b>Backlinks:</b>
+                    <a href='./Mime_types.html'>Desktop environments:Freedesktop specifications:Mime types</a>
+                    
+                        </div>
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+

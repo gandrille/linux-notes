@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ssh avec 2fa</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+
+<script type="text/javascript"> var _paq = window._paq = window._paq || []; /* tracker methods like "setCustomDimension" should be called before "trackPageView" */ _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function() { var u="//gandrille.com/matomo/"; _paq.push(['setTrackerUrl', u+'matomo.php']); _paq.push(['setSiteId', '3']); var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s); })(); </script> <noscript><p><img src="//gandrille.com/matomo/matomo.php?idsite=3</head>amp;rec=1" style="border:0;" alt="" /></p></noscript>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../../Admin_and_security.html" title="Admin and security" class="page">Admin and security</a>
+<ul>
+<li><a href="../Ansible.html" title="Ansible" class="page">Ansible</a></li>
+<li><a href="../Backups.html" title="Backups" class="page">Backups</a></li>
+<li><a href="../Certificat_X509_et_SSLTLS.html" title="Certificat X509 et SSLTLS" class="page">Certificat X509 et SSLTLS</a></li>
+<li><a href="../CVE.html" title="CVE" class="page">CVE</a></li>
+<li><a href="../Debug_tools_and_monitoring.html" title="Debug tools and monitoring" class="page">Debug tools and monitoring</a></li>
+<li><a href="../Distributions_et_kernel.html" title="Distributions et kernel" class="page">Distributions et kernel</a></li>
+<li><a href="../email.html" title="email" class="page">email</a></li>
+<li><a href="../Filesystem.html" title="Filesystem" class="page">Filesystem</a></li>
+<li><a href="../Hardware.html" title="Hardware" class="page">Hardware</a></li>
+<li><a href="../Heure_et_NTP.html" title="Heure et NTP" class="page">Heure et NTP</a></li>
+<li><a href="../htaccess.html" title="htaccess" class="page">htaccess</a></li>
+<li><a href="../Init_system.html" title="Init system" class="page">Init system</a></li>
+<li><a href="../iso_images.html" title="iso images" class="page">iso images</a></li>
+<li><a href="../Keys.html" title="Keys" class="page">Keys</a></li>
+<li><a href="../Metadata.html" title="Metadata" class="page">Metadata</a></li>
+<li><a href="../Network.html" title="Network" class="page">Network</a></li>
+<li><a href="../Packaging.html" title="Packaging" class="page">Packaging</a></li>
+<li><a href="../Privacy_and_tracking.html" title="Privacy and tracking" class="page">Privacy and tracking</a></li>
+<li><a href="../Process_management.html" title="Process management" class="page">Process management</a></li>
+<li><a href="../Samba_et_cifs.html" title="Samba et cifs" class="page">Samba et cifs</a></li>
+<li><a href="../ssh.html" title="ssh" class="page">ssh</a>
+<ul>
+<li><a href="./Rebond_ssh.html" title="Rebond ssh" class="page">Rebond ssh</a></li>
+<li><b>ssh avec 2fa</b></li>
+<li><a href="./sshd_sécurisation.html" title="sshd sécurisation" class="page">sshd sécurisation</a></li>
+<li><a href="./ssh_et_sshfs.html" title="ssh et sshfs" class="page">ssh et sshfs</a></li>
+<li><a href="./VPN_via_ssh_using_sshuttle.html" title="VPN via ssh using sshuttle" class="page">VPN via ssh using sshuttle</a></li>
+</ul>
+</li>
+<li><a href="../User_rights_management.html" title="User rights management" class="page">User rights management</a></li>
+</ul>
+</li>
+<li><a href="../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a></li>
+<li><a href="../../Devices.html" title="Devices" class="page">Devices</a></li>
+<li><a href="../../File_Formats.html" title="File Formats" class="page">File Formats</a></li>
+<li><a href="../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../../Web_API.html" title="Web API" class="page">Web API</a></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>ssh avec 2fa <a name='Admin and security:ssh:ssh avec 2fa'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<p>
+2017 <a href="https://www.rosehosting.com/blog/secure-your-ssh-using-two-factor-authentication-on-ubuntu-16-04/" title="Secure SSH using two-factor authentication on Ubuntu 16.04" class="https">Secure SSH using two-factor authentication on Ubuntu 16.04</a><br>
+2020 <a href="https://wiki.ubuntu.com/FocalFossa/ReleaseNotes#OpenSSH_updates_with_U2F_Support" title="OpenSSH updates with U2F Support" class="https">OpenSSH updates with U2F Support</a><br>
+2020 <a href="https://hackersonlineclub.com/openssh-8-2-released-with-fido-u2f-hardware-authentication/" title="OpenSSH 8.2 Released With FIDO/U2F Hardware Authentication" class="https">OpenSSH 8.2 Released With FIDO/U2F Hardware Authentication</a>
+</p>
+
+<h2>Configuration du compte utilisateur</h2>
+
+<pre>
+sudo apt-get install libpam-google-authenticator
+google-authenticator
+</pre>
+
+<h2>Configuration de sshd</h2>
+
+<p>
+<ul>
+<li>dans le fichier <tt>/etc/pam.d/sshd</tt></li>
+<li>ajouter la ligne <tt>auth required pam_google_authenticator.so</tt></li>
+</ul>
+</p>
+
+<p>
+<ul>
+<li>dans le fichier <tt>/etc/ssh/sshd_config</tt></li>
+<li>mettre <tt>ChallengeResponseAuthentication yes</tt></li>
+</ul>
+</p>
+
+<p>
+Relancer ssh : <tt>sudo /etc/init.d/ssh restart</tt>
+</p>
+
+<p>
+<b>IMPORTANT !!!!</b> Pour le premier essai de connexion, lancer une <b>nouvelle</b> connexion ssh en gardant la connexion ssh courante active pour récupérer la situation si le login est impossible ☺
+</p>
+
+<h2>Créer un QR code</h2>
+
+<p>
+<tt>echo "otpauth://totp/monDisplayName?secret=mySecret" | qrencode -t utf8 -l</tt> 
+</p>
+
+<p>
+Voir le format complet de l'URL dans la documentation de Google : <a href="https://github.com/google/google-authenticator/wiki/Key-Uri-Format" title="https://github.com/google/google-authenticator/wiki/Key-Uri-Format" class="https">https://github.com/google/google-authenticator/wiki/Key-Uri-Format</a>
+</p>
+
+<p>
+<b>ATTENTION</b> le scan des QR code de Free OTP n'accepte pas tous les paramètres.
+</p>
+
+<h2>Clients OTP</h2>
+
+<p>
+<ul>
+<li>app : <tt>FreeOTP</tt>, l'app de RedHat</li>
+<li>app : <tt>andOTP</tt>, une nouvelle application plus jolie…</li>
+<li>app : <tt>Sophos Authenticator</tt></li>
+<li>app : <tt>google authenticator</tt></li>
+<li><tt>oathtool --totp --base32 MA_CLE</tt></li>
+</ul>
+</p>
+
+<h2>Achat de tokens time based et event based</h2>
+
+<p>
+<ul>
+<li><a href="http://www.dongleauth.info/dongles/" title="http://www.dongleauth.info/dongles/" class="http">http://www.dongleauth.info/dongles/</a></li>
+<li><a href="http://www.dongleauth.info/" title="http://www.dongleauth.info/" class="http">http://www.dongleauth.info/</a></li>
+</ul>
+</p>
+
+<p>
+<b>Faire attention</b>
+</p>
+
+<p>
+<ul>
+<li>au nombre de chiffres de l'afficheur (6 ou 8)</li>
+<li>event based ou time based</li>
+<li>si time based, 30 secondes (le défaut) ou 60 secondes entre deux codes</li>
+</ul>
+</p>
+
+<p>
+<b>Format token</b>
+</p>
+
+<p>
+<a href="https://www.microcosm.com/pdf/products/oath-otp-authentication-tokens?target=tokens" title="https://www.microcosm.com/pdf/products/oath-otp-authentication-tokens?target=tokens" class="https">https://www.microcosm.com/pdf/products/oath-otp-authentication-tokens?target=tokens</a><br>
+<ul>
+<li>OTP c100 : event based</li>
+<li>OTP c200 : time based</li>
+</ul>
+</p>
+
+<p>
+<b>Format carte de crédit</b>
+</p>
+
+<p>
+OTP Cards VC-N200L - Mini und Standard
+</p>
+
+<p>
+<b>Exemples de sites d'achat de tokens</b>
+</p>
+
+<p>
+<ul>
+<li><a href="http://www.usbtoken.ro/shop_en/otp-tokens-server-authentication/c200-otptoken" title="http://www.usbtoken.ro/shop_en/otp-tokens-server-authentication/c200-otptoken" class="http">http://www.usbtoken.ro/shop_en/otp-tokens-server-authentication/c200-otptoken</a></li>
+<li><a href="https://www.microcosm.co.uk/order/product.php?ProductID=346" title="https://www.microcosm.co.uk/order/product.php?ProductID=346" class="https">https://www.microcosm.co.uk/order/product.php?ProductID=346</a></li>
+<li><a href="https://www.proteccionsoftware.es/otp-authentication-token/one-time-password-authentication-token-c200.html" title="https://www.proteccionsoftware.es/otp-authentication-token/one-time-password-authentication-token-c200.html" class="https">https://www.proteccionsoftware.es/otp-authentication-token/one-time-password-authentication-token-c200.html</a></li>
+</ul>
+</p>
+
+
+		
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+

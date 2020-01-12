@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>DNS query</title>
+    <meta name="generator" content="Zim 0.72.0">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="../../../_resources/style.css" type="text/css"/>
+    <style type="text/css">
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 300;
+            font-display: swap;
+            src: local('Roboto Light'), local('Roboto-Light'), url(../../../_resources/Roboto/Roboto-Light.ttf) format('truetype');
+        }
+        @font-face {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Roboto'), local('Roboto-Regular'), url(../../../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
+        }
+    </style>
+
+<script type="text/javascript"> var _paq = window._paq = window._paq || []; /* tracker methods like "setCustomDimension" should be called before "trackPageView" */ _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function() { var u="//gandrille.com/matomo/"; _paq.push(['setTrackerUrl', u+'matomo.php']); _paq.push(['setSiteId', '3']); var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s); })(); </script> <noscript><p><img src="//gandrille.com/matomo/matomo.php?idsite=3</head>amp;rec=1" style="border:0;" alt="" /></p></noscript>
+</head>
+<body>
+    <div class="wrapper">
+        <div id="navigation">
+            <svg class="toggle">
+                <line x1="10" y1="10" x2="40" y2="10" />
+                <line x1="10" y1="20" x2="40" y2="20" />
+                <line x1="10" y1="30" x2="40" y2="30" />
+            </svg> 
+            <ul>
+<li><a href="../../../Admin_and_security.html" title="Admin and security" class="page">Admin and security</a>
+<ul>
+<li><a href="../../Ansible.html" title="Ansible" class="page">Ansible</a></li>
+<li><a href="../../Backups.html" title="Backups" class="page">Backups</a></li>
+<li><a href="../../Certificat_X509_et_SSLTLS.html" title="Certificat X509 et SSLTLS" class="page">Certificat X509 et SSLTLS</a></li>
+<li><a href="../../CVE.html" title="CVE" class="page">CVE</a></li>
+<li><a href="../../Debug_tools_and_monitoring.html" title="Debug tools and monitoring" class="page">Debug tools and monitoring</a></li>
+<li><a href="../../Distributions_et_kernel.html" title="Distributions et kernel" class="page">Distributions et kernel</a></li>
+<li><a href="../../email.html" title="email" class="page">email</a></li>
+<li><a href="../../Filesystem.html" title="Filesystem" class="page">Filesystem</a></li>
+<li><a href="../../Hardware.html" title="Hardware" class="page">Hardware</a></li>
+<li><a href="../../Heure_et_NTP.html" title="Heure et NTP" class="page">Heure et NTP</a></li>
+<li><a href="../../htaccess.html" title="htaccess" class="page">htaccess</a></li>
+<li><a href="../../Init_system.html" title="Init system" class="page">Init system</a></li>
+<li><a href="../../iso_images.html" title="iso images" class="page">iso images</a></li>
+<li><a href="../../Keys.html" title="Keys" class="page">Keys</a></li>
+<li><a href="../../Metadata.html" title="Metadata" class="page">Metadata</a></li>
+<li><a href="../../Network.html" title="Network" class="page">Network</a>
+<ul>
+<li><a href="../CIDR_notation.html" title="CIDR notation" class="page">CIDR notation</a></li>
+<li><a href="../DNS.html" title="DNS" class="page">DNS</a>
+<ul>
+<li><b>DNS query</b></li>
+<li><a href="./DNS_server_(Public_Instance).html" title="DNS server (Public Instance)" class="page">DNS server (Public Instance)</a></li>
+<li><a href="./DNS_server_(Software).html" title="DNS server (Software)" class="page">DNS server (Software)</a></li>
+<li><a href="./Local_DNS_resolution.html" title="Local DNS resolution" class="page">Local DNS resolution</a></li>
+</ul>
+</li>
+<li><a href="../MAC_address_update.html" title="MAC address update" class="page">MAC address update</a></li>
+<li><a href="../Network_daemons.html" title="Network daemons" class="page">Network daemons</a></li>
+<li><a href="../Network_filtering.html" title="Network filtering" class="page">Network filtering</a></li>
+<li><a href="../Network_speed_test.html" title="Network speed test" class="page">Network speed test</a></li>
+<li><a href="../Network_tools.html" title="Network tools" class="page">Network tools</a></li>
+<li><a href="../Predictable_Network_Interface_Names.html" title="Predictable Network Interface Names" class="page">Predictable Network Interface Names</a></li>
+<li><a href="../Protocols.html" title="Protocols" class="page">Protocols</a></li>
+<li><a href="../VPN.html" title="VPN" class="page">VPN</a></li>
+<li><a href="../Wireless.html" title="Wireless" class="page">Wireless</a></li>
+</ul>
+</li>
+<li><a href="../../Packaging.html" title="Packaging" class="page">Packaging</a></li>
+<li><a href="../../Privacy_and_tracking.html" title="Privacy and tracking" class="page">Privacy and tracking</a></li>
+<li><a href="../../Process_management.html" title="Process management" class="page">Process management</a></li>
+<li><a href="../../Samba_et_cifs.html" title="Samba et cifs" class="page">Samba et cifs</a></li>
+<li><a href="../../ssh.html" title="ssh" class="page">ssh</a></li>
+<li><a href="../../User_rights_management.html" title="User rights management" class="page">User rights management</a></li>
+</ul>
+</li>
+<li><a href="../../../Command_line.html" title="Command line" class="page">Command line</a></li>
+<li><a href="../../../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a></li>
+<li><a href="../../../Devices.html" title="Devices" class="page">Devices</a></li>
+<li><a href="../../../File_Formats.html" title="File Formats" class="page">File Formats</a></li>
+<li><a href="../../../Misc.html" title="Misc" class="page">Misc</a></li>
+<li><a href="../../../Softs.html" title="Softs" class="page">Softs</a></li>
+<li><a href="../../../Web_API.html" title="Web API" class="page">Web API</a></li>
+</ul>
+
+        </div>
+
+        <div id="content">
+
+
+                    <h1>DNS query <a name='Admin and security:Network:DNS:DNS query'></a></h1>
+                    <div id="toc">			
+                        <div class="toctitle">Contents</div>				
+                        <ul id="tocdata"></ul>
+                    </div>		
+
+<h2>High level CLI : nslookup</h2>
+
+<pre>
+nslookup google.com
+Server:		127.0.0.53
+Address:	127.0.0.53#53
+
+Non-authoritative answer:
+Name:	google.com
+Address: 216.58.213.142
+Name:	google.com
+Address: 2a00:1450:4007:810::200e
+</pre>
+
+<h2>Low level CLI : dig</h2>
+
+<p>
+<a href="https://toolbox.googleapps.com/apps/dig/" title="Online dig with Google web interface" class="https">Online dig with Google web interface</a>
+</p>
+
+<p>
+Parameters<br>
+<ul>
+<li><tt>ANY</tt> : all infos</li>
+<li><tt>@1.1.1.1</tt> use a given DNS resolver instead of the default one</li>
+</ul>
+</p>
+
+<pre>
+dig ANY google.com
+
+; &lt;&lt;&gt;&gt; DiG 9.11.3-1ubuntu1.10-Ubuntu &lt;&lt;&gt;&gt; ANY google.com
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 25037
+;; flags: qr rd ra; QUERY: 1, ANSWER: 18, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;google.com.			IN	ANY
+
+;; ANSWER SECTION:
+google.com.		300	IN	AAAA	2a00:1450:4007:805::200e
+google.com.		300	IN	TXT	"facebook-domain-verification=22rm551cu4k0ab0bxsw536tlds4h95"
+google.com.		300	IN	TXT	"docusign=1b0a6754-49b1-4db5-8540-d2c12664b289"
+google.com.		300	IN	TXT	"v=spf1 include:_spf.google.com ~all"
+google.com.		300	IN	TXT	"globalsign-smime-dv=CDYX+XFHUw2wml6/Gb8+59BsH31KzUr6c1l2BPvqKX8="
+google.com.		300	IN	TXT	"docusign=05958488-4752-4ef2-95eb-aa7ba8a3bd0e"
+google.com.		600	IN	MX	10 aspmx.l.google.com.
+google.com.		600	IN	MX	20 alt1.aspmx.l.google.com.
+google.com.		600	IN	MX	30 alt2.aspmx.l.google.com.
+google.com.		600	IN	MX	40 alt3.aspmx.l.google.com.
+google.com.		600	IN	MX	50 alt4.aspmx.l.google.com.
+google.com.		86400	IN	CAA	0 issue "pki.goog"
+google.com.		60	IN	SOA	ns1.google.com. dns-admin.google.com. 279181558 900 900 1800 60
+google.com.		273	IN	A	172.217.18.206
+google.com.		3817	IN	NS	ns1.google.com.
+google.com.		3817	IN	NS	ns3.google.com.
+google.com.		3817	IN	NS	ns4.google.com.
+google.com.		3817	IN	NS	ns2.google.com.
+
+;; Query time: 113 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53)
+;; WHEN: Fri Nov 09 17:42:56 CET 2019
+;; MSG SIZE  rcvd: 649
+</pre>
+
+<p>
+Flags<br>
+<ul>
+<li><tt>A</tt> IPv4</li>
+<li><tt>AAAA</tt> IPv6</li>
+<li><tt>PTR</tt> recupérer le nom d'hôte depuis l'adresseIP</li>
+<li><tt>MX</tt> serveur de mail</li>
+<li><tt>TXT</tt> chaîne de caractères libres</li>
+<li><tt>SOA</tt> Serveur Maitre du domaine</li>
+<li><tt>NS</tt> serveur de noms pour la zone</li>
+</ul>
+</p>
+
+
+		
+
+                
+        </div>
+
+        <div id="credits">
+            <p>Proudly Powered by <a href="http://zim-wiki.org">Zim 0.72.0</a>.</p>
+            <p>Template by <a href="https://github.com/gandrille/zim-simple-web-template">Etienne Gandrille</a>, based on <a href="https://github.com/jaap-karssenberg/zim-desktop-wiki/blob/master/data/templates/html/ZeroFiveEight.html">ZeroFiveEight</a> and using <a href="https://ndabas.github.io/toc/">JQuery Toc Plugin</a>.</p>
+        </div>
+
+    </div>
+	
+    <script src="../../../_resources/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="../../../_resources/jquery-toc-0.4.0.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        if ($("h2").length != 0)
+            $("#tocdata").toc({content: "div#content", headings: "h2,h3,h4"});
+        else
+            $("#toc").hide();
+        $("#navigation").children("ul").prepend("<li class='index-item'><a href='../../../index.html'>Index</a></li>");
+        $(".toggle").click(function(){
+            $("#navigation").children("ul").toggle();
+        });
+    </script>
+</body>
+</html>
+

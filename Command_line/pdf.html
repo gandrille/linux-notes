@@ -25,6 +25,8 @@
             src: local('Roboto'), local('Roboto-Regular'), url(../_resources/Roboto/Roboto-Regular.ttf) format('truetype');
         }
     </style>
+
+<script type="text/javascript"> var _paq = window._paq = window._paq || []; /* tracker methods like "setCustomDimension" should be called before "trackPageView" */ _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function() { var u="//gandrille.com/matomo/"; _paq.push(['setTrackerUrl', u+'matomo.php']); _paq.push(['setSiteId', '3']); var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s); })(); </script> <noscript><p><img src="//gandrille.com/matomo/matomo.php?idsite=3</head>amp;rec=1" style="border:0;" alt="" /></p></noscript>
 </head>
 <body>
     <div class="wrapper">
@@ -35,30 +37,33 @@
                 <line x1="10" y1="30" x2="40" y2="30" />
             </svg> 
             <ul>
+<li><a href="../Admin_and_security.html" title="Admin and security" class="page">Admin and security</a></li>
 <li><a href="../Command_line.html" title="Command line" class="page">Command line</a>
 <ul>
 <li><a href="./Bash.html" title="Bash" class="page">Bash</a></li>
 <li><a href="./Calculatrice.html" title="Calculatrice" class="page">Calculatrice</a></li>
 <li><a href="./Capture_d'écran.html" title="Capture d'écran" class="page">Capture d'écran</a></li>
 <li><a href="./cURL.html" title="cURL" class="page">cURL</a></li>
+<li><a href="./Data_exchange_format.html" title="Data exchange format" class="page">Data exchange format</a></li>
+<li><a href="./Editors.html" title="Editors" class="page">Editors</a></li>
 <li><a href="./email.html" title="email" class="page">email</a></li>
 <li><a href="./fop.html" title="fop" class="page">fop</a></li>
-<li><a href="./JSON_parser.html" title="JSON parser" class="page">JSON parser</a></li>
 <li><a href="./Misc.html" title="Misc" class="page">Misc</a></li>
 <li><a href="./Network.html" title="Network" class="page">Network</a></li>
+<li><a href="./One-liner_servers.html" title="One-liner servers" class="page">One-liner servers</a></li>
 <li><a href="./Open_SSL.html" title="Open SSL" class="page">Open SSL</a></li>
 <li><b>pdf</b></li>
+<li><a href="./Regular_Expressions.html" title="Regular Expressions" class="page">Regular Expressions</a></li>
 <li><a href="./Screen_config.html" title="Screen config" class="page">Screen config</a></li>
 <li><a href="./sed.html" title="sed" class="page">sed</a></li>
-<li><a href="./Web_Server.html" title="Web Server" class="page">Web Server</a></li>
+<li><a href="./Typography.html" title="Typography" class="page">Typography</a></li>
+<li><a href="./UTF8,_UNICODE_et_encodage_des_caractères.html" title="UTF8, UNICODE et encodage des caractères" class="page">UTF8, UNICODE et encodage des caractères</a></li>
 <li><a href="./wget_images_sur_une_page_web.html" title="wget images sur une page web" class="page">wget images sur une page web</a></li>
-<li><a href="./XML_parser.html" title="XML parser" class="page">XML parser</a></li>
-<li><a href="./Yml_parser.html" title="Yml parser" class="page">Yml parser</a></li>
 </ul>
 </li>
 <li><a href="../Desktop_environments.html" title="Desktop environments" class="page">Desktop environments</a></li>
-<li><a href="../Linux_admin_and_security.html" title="Linux admin and security" class="page">Linux admin and security</a></li>
-<li><a href="../Linux_devices.html" title="Linux devices" class="page">Linux devices</a></li>
+<li><a href="../Devices.html" title="Devices" class="page">Devices</a></li>
+<li><a href="../File_Formats.html" title="File Formats" class="page">File Formats</a></li>
 <li><a href="../Misc.html" title="Misc" class="page">Misc</a></li>
 <li><a href="../Softs.html" title="Softs" class="page">Softs</a></li>
 <li><a href="../Web_API.html" title="Web API" class="page">Web API</a></li>
@@ -76,60 +81,116 @@
                     </div>		
 
 <p>
-See: <a href="https://en.wikipedia.org/wiki/Poppler_(software)#poppler-utils" title="poppler-utils" class="https">poppler-utils</a>
+See also: <a href="https://en.wikipedia.org/wiki/Poppler_(software)#poppler-utils" title="poppler-utils" class="https">poppler-utils</a>
 </p>
 
-<h2>Pour faire des booklets</h2>
+<h2>Booklet creation</h2>
+
+<h3>Using bookletimposer (GUI and CLI)</h3>
 
 <p>
 <ul>
-<li><a href="http://kjo.herbesfolles.org/bookletimposer/" title="bookletimposer" class="http">bookletimposer</a> (du package du même nom)</li>
-<li><a href="https://www.ctan.org/pkg/pdfbook2" title="pdfbook2" class="https">pdfbook2</a>,qui utilise LaTeX (du package <tt>texlive-extra-utils</tt>)</li>
-<li><a href="http://jpdftweak.sourceforge.net/" title="jPdf tweak" class="http">jPdf tweak</a>, un programme java ancien mais qui fonctionne bien</li>
+<li>Package: <tt>bookletimposer</tt></li>
+<li><a href="http://kjo.herbesfolles.org/bookletimposer/" title="bookletimposer website" class="http">bookletimposer website</a></li>
 </ul>
 </p>
 
-<h2>Extraction simple de texte</h2>
+<p>
+<b>Converts in.pdf into a booklet with two pages per sheet an saves the result as out.pdf</b><br>
+<tt>bookletimposer --no-gui --booklet --pages-per-sheet=2x1 --output=out.pdf in.pdf</tt>
+</p>
+
+<p>
+<b>Converts the two-pages-per-sheet booklet in.pdf into a page-by-page PDF</b><br>
+<tt>bookletimposer --no-gui --linearise --pages-per-sheet=2x1 in.pdf</tt><br>
+As the output file name is not defined, it will default to in-conv.pdf.
+</p>
+
+<h3>Using pdfbook2 (CLI only)</h3>
 
 <p>
 <ul>
-<li>package : <tt>poppler-utils</tt></li>
-<li><tt>pdftotext</tt></li>
+<li>Package <tt>texlive-extra-utils</tt></li>
+<li><a href="https://www.ctan.org/pkg/pdfbook2" title="pdfbook2 website" class="https">pdfbook2 website</a></li>
 </ul>
 </p>
 
-<h2>Conversion de document Office en pdf avec Libre Office</h2>
-
 <p>
-<tt>lowriter --convert-to pdf filename.doc</tt><br>
-<tt>lowriter --convert-to pdf filename.docx</tt>
+<tt>pdfbook2 input.pdf</tt> → generates input-book.pdf
 </p>
 
-<h2>Planche de pdf</h2>
+<h3>Using jPdf tweek (GUI only)</h3>
 
 <p>
-<b>Avec pdfjam</b><br>
 <ul>
-<li>package: <tt>texlive-extra-utils</tt></li>
+<li><a href="http://jpdftweak.sourceforge.net/" title="jPdf tweak website" class="http">jPdf tweak website</a></li>
+</ul>
+</p>
+
+<p>
+Old Java program, which still does it job well.
+</p>
+
+<h2>Multiple pages per output page (for economical printing)</h2>
+
+<h3>Using pdfnup (CLI only)</h3>
+
+<p>
+Package: <tt>texlive-extra-utils</tt><br>
+<tt>pdfnup</tt> is a simple wrapper for <tt>pdfjam</tt>
+</p>
+
+<p>
+<tt>pdfnup --nup 2x1 --landscape file.pdf</tt><br>
+Default options: <tt>--nup 2x1 --landscape true --frame false</tt>
+</p>
+
+<p>
+Options<br>
+<ul>
+<li><tt>--nup 2x1</tt> &lt;columns&gt;x&lt;lines&gt;</li>
+<li><tt>--landscape</tt> (by default) or <tt>--no-landscape</tt></li>
+<li><tt>--frame false</tt> draw border</li>
+</ul>
+</p>
+
+<h3>Using bookletimposer (GUI and CLI)</h3>
+
+<p>
+<ul>
+<li>Package: <tt>bookletimposer</tt></li>
+<li><a href="http://kjo.herbesfolles.org/bookletimposer/" title="bookletimposer website" class="http">bookletimposer website</a></li>
+</ul>
+</p>
+
+<p>
+<u>TODO...</u>
+</p>
+
+<h2>Multiple pages per output page (for notes taking)</h2>
+
+<p>
+<b>Using pdfjam</b><br>
+<ul>
+<li>Package: <tt>texlive-extra-utils</tt></li>
 <li><tt>pdfjam --suffix 3up --nup 1x3 --frame true --noautoscale false --delta "0cm 3cm" --a4paper --scale 0.7 --offset "-3cm 0.2cm" slides.pdf</tt> </li>
 </ul>
 </p>
 
 <p>
-<b>Avec pdfxup</b><br>
+<b>Using pdfxup</b><br>
 <ul>
-<li>package: <tt>texlive-extra-utils</tt></li>
+<li>Package: <tt>texlive-extra-utils</tt></li>
 <li><tt>pdfxup -x 2 -y 2 -im 0pt -m 30pt -is 10pt -fw .3pt slides.pdf</tt> </li>
 </ul>
 </p>
 
-<h2>Extraire les pages d'un pdf</h2>
+<h2>Document generation containing only a subset of pages</h2>
 
 <p>
-<b>Avec qpdf</b><br>
+<b>Using qpdf</b><br>
 <ul>
-<li>package : <tt>qpdf</tt></li>
-<li><a href="http://qpdf.sourceforge.net/" title="website" class="http">website</a></li>
+<li>Package: <tt>qpdf</tt></li>
 <li><a href="http://qpdf.sourceforge.net/files/qpdf-manual.html" title="manual" class="http">manual</a></li>
 </ul>
 </p>
@@ -143,29 +204,65 @@ See: <a href="https://en.wikipedia.org/wiki/Poppler_(software)#poppler-utils" ti
 </p>
 
 <p>
-<b>Avec pdfjam</b><br>
+<b>Using pdfjam</b><br>
 <ul>
-<li>package: <tt>texlive-extra-utils</tt></li>
+<li>Package: <tt>texlive-extra-utils</tt></li>
 <li><tt>pdfjam all.pdf 5-10 -o output.pdf</tt></li>
 </ul>
 </p>
 
 <p>
-<b>Avec pdfseparate</b><br>
+<b>Using pdfseparate</b><br>
 <ul>
-<li>package : <tt>poppler-utils</tt></li>
+<li>Package: <tt>poppler-utils</tt></li>
 <li><tt>pdfseparate -f 1 -l 1 all.pdf output.pdf</tt></li>
 </ul>
 </p>
 
-<h2>Concaténer des fichiers pdf</h2>
+<h2>Pages reordered</h2>
 
 <p>
-<b>Avec pdfunite</b><br>
+<tt>qpdf input.pdf --pages . 10,9,8,7,6,5,4,3,2,1 -- output.pdf</tt>
+</p>
+
+<h2>File concatenation</h2>
+
+<p>
+<b>Using pdfunite</b><br>
 <ul>
-<li>package : <tt>poppler-utils</tt></li>
+<li>Package: <tt>poppler-utils</tt></li>
 <li><tt>pdfunite source1.pdf source2.pdf source3.pdf destination.pdf</tt></li>
 </ul>
+</p>
+
+<h2>pdf → text</h2>
+
+<p>
+<ul>
+<li>package: <tt>poppler-utils</tt></li>
+<li><tt>pdftotext</tt></li>
+</ul>
+</p>
+
+<h2>pdf → images</h2>
+
+<p>
+See <a href="../Softs/Images/ImageMagick.html" title="ImageMagick page" class="page">ImageMagick page</a>.
+</p>
+
+<h2>Images extraction from a pdf file</h2>
+
+<p>
+As jpeg images : <tt>pdfimages -j file.pdf img-dir/</tt><br>
+As png images : <tt>pdfimages -png file.pdf img-dir/</tt>
+</p>
+
+<h2>Office document → pdf (using Libre Office)</h2>
+
+<p>
+Package: <tt>libreoffice-writer</tt><br>
+<tt>lowriter --convert-to pdf filename.doc</tt><br>
+<tt>lowriter --convert-to pdf filename.docx</tt>
 </p>
 
 
