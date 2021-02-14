@@ -10,8 +10,6 @@ Wiki-Format: zim 0.4
 ''-i'' update source file
 
 
-
-
 ===== Pattern building =====
 * ''\x...'' hexadecimal caracter.
 	* ''\xC2\xA0'' → non breaking space

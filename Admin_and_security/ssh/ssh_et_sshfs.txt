@@ -2,7 +2,7 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 
 ====== Ssh et sshfs ======
-[[Keys:Key pair|Key pair creation]]
+[[Certs and keys:Key pair|Key pair creation]]
 
 ===== Regarder les logs d'un serveur ssh =====
 ''grep sshd /var/log/auth.log''

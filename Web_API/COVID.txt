@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== COVID ======
+**Dataviz**
+''https://dashboard.covid19.data.gouv.fr/suivi-indicateurs?location=FRA''
+
+**Pour un jour donné**
+''https://dashboard.covid19.data.gouv.fr/data/date-2021-01-15.json''
+
+**Tendances long terme**
+''https://dashboard.covid19.data.gouv.fr/data/code-FRA.json''

@@ -36,7 +36,7 @@ Voir le format complet de l'URL dans la documentation de Google : https://github
 * app : ''andOTP'', une nouvelle application plus jolie…
 * app : ''Sophos Authenticator''
 * app : ''google authenticator''
-* ''oathtool --totp --base32 MA_CLE''
+* ''oathtool --totp --base32 MA_CLE'' (du package ''oathtool)''
 
 ===== Achat de tokens time based et event based =====
 * http://www.dongleauth.info/dongles/

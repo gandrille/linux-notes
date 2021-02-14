@@ -1,0 +1,14 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== LibreOffice ======
+
+Available PPA repositories: https://launchpad.net/~libreoffice/+archive/ubuntu/ppa
+
+**In order to use a PPA repository (example with release 7.0)**
+'''
+sudo add-apt-repository ppa:libreoffice/libreoffice-7-0
+sudo apt-get update
+'''
+
+

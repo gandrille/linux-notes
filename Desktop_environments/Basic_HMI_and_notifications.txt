@@ -7,8 +7,7 @@ Wiki-Format: zim 0.4
 ''notify-send'' is a little, simple On-Screen Display (OSD) application.
 
 * package ''notify-osd''
-* command ''notify send''
-* démon pour afficher les notif sous Unity : ''notify osd''
+* command ''notify-send''
 
 **Examples**
 * ''notify-send Test "Hello World"''
@@ -20,6 +19,23 @@ A regarder : contenu des packages
 * ''libnotify-bin''
 
 → [[http://www.galago-project.org/specs/notification/|The Desktop Notification Spec Proposal]]
+
+===== Utilisation de D-Bus =====
+https://developer.gnome.org/notification-spec/
+
+'''
+gdbus call --session --dest org.freedesktop.Notifications --object-path /org/freedesktop/Notifications --method org.freedesktop.Notifications.Notify \
+"" 0 \
+/usr/share/icons/deepin/apps/16/deepin-feedback.svg \
+Subject \
+Message \
+"[\"id_action1\", \"Pif\", \"id_action2\", \"Paf\"]" \
+"{\"urgency\": <byte 1>}" \
+"int32 -1"
+'''
+
+
+''gdbus monitor --session --dest org.freedesktop.Notifications --object-path /org/freedesktop/Notifications''
 
 ===== Zenity =====
 Pour demander des informations basiques avec une UI.

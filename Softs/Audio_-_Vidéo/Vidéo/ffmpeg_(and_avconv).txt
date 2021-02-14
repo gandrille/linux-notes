@@ -49,11 +49,12 @@ If you want to create a video out of just one image, this will do (output video 
 ''mogrify -auto-orient -resize 1024x768! *.JPG''
  
 **Video generation**
-''ffmpeg -f image2 -i PC210%3d.JPG -r 4 -vcodec mpeg4 -b 15000k video.mp4''
+''ffmpeg -f image2 -pattern_type glob -r 4 -i '*.JPG' -vcodec mpeg4 -b 15000k video.mp4''
 
 * ''-f image2'' not required, but maybe a good idea to write it (!?)
-* ''-i PC210%3d.JPG'' input file names pattern
+* ''-pattern_type glob'' use blob pattern for input files
 * ''-r 4'' number of images per second (rate)
+* ''-i '*.JPG''' input file names with glob pattern
 * ''-vcodec mpeg4'' video codec
 * ''-b 15000k'' bitrate. 30000k can be a nice value as well.
 

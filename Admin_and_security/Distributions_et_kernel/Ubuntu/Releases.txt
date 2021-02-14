@@ -7,6 +7,9 @@ Pour connaitre la version installée : ''lsb_release -a'' ou ''hostnamectl''
 [[https://en.wikipedia.org/wiki/Ubuntu_version_history|Ubuntu Versions history on Wikipedia]]
 
 **Ubuntu 21.04 (Hirsute Hippo)**
+* no GTK4 in Ubuntu 21.04 either, at least not by default.
+
+
 
 **Ubuntu 20.10 (Groovy Gorilla)**
 [[https://discourse.ubuntu.com/t/groovy-gorilla-release-notes/15533|Ubuntu Release Notes]]

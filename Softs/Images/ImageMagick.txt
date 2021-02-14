@@ -56,6 +56,9 @@ Without changing the size of the image, the density changes the number of pixels
 ===== Format conversion =====
 ''convert source.png destination.jpeg''
 
+**PNG background : remove alpha and replace with white**
+''convert raw-footage.png -background white -alpha remove -flatten -alpha off test1.jpeg''
+
 ===== Border =====
 * [[https://www.imagemagick.org/script/command-line-options.php#border|border documentation]]
 * [[https://www.imagemagick.org/script/command-line-options.php#bordercolor|bordercolor documentation]]

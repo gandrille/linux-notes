@@ -14,6 +14,14 @@ Les protocoles de niveau 3 comme Ipsec ou Mpls
 SSL (Secure Sockets Layer) est un protocole de couche 4 (niveau transport)
 
 ===== OpenVPN =====
+OpenVPN Connect is a free VPN Client.
+
+**Network manager GNOME client**
+''apt install network-manager-openvpn-gnome network-manager-openvpn''
+
+sudo /etc/init.d/networking restart
+
+
 * 2014 [[https://korben.info/installer-openvpn.html|Installer OpenVPN (Korben)]]
 * [[https://openvpn.net/vpn-server-resources/installing-openvpn-access-server-on-a-linux-system/|Installing OpenVPN Access Server on a Linux system]]
 * [[https://openvpn.net/faq/what-is-openvpn-access-server/|What is OpenVPN Access Server?]]

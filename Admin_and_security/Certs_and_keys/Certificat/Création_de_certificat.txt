@@ -1,7 +1,7 @@
 Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 
-====== Certificat X509 et SSLTLS ======
+====== Création de certificat ======
 https://doc.ubuntu-fr.org/tutoriel/comment_creer_un_certificat_ssl
 
 **CertBot**
@@ -20,22 +20,3 @@ Cela va permettre de générer une clé privée, ainsi que
 
 ===== Générer un certificat autosigné =====
 ''openssl x509 -in request.csr -out new.cert.cert -req -signkey unlocked-privkey.key -days NNN''
-
-===== Afficher le contenu d'un certificat =====
-''openssl x509 -in cert.pem -noout -text''
-
-===== Récupérer la clé publique =====
-''openssl x509 -in ./snaThing.cert.pem -noout -pubkey''
-
-===== Récupérer un certificat sur un site web =====
-* ''echo -n | openssl s_client -connect mywebsite.com:443''
-* ''echo -n | openssl s_client -connect mywebsite.com:443 2>/dev/null | openssl x509 -in /dev/stdin''
-
-[[https://www.grc.com/fingerprints.htm|Liste des certificats des sites web]]
-
-===== Tester une config ssl =====
-* [[https://www.ssllabs.com/ssltest/|ssltest]] : web 
-* [[https://github.com/rbsec/sslscan|ssl scan]] : script
-* [[https://addons.mozilla.org/fr/firefox/addon/calomel-ssl-validation/?src=ss|calomel ssl validation]] : plugin firefox 
-
-→ VOIR LE TRES BON DOCUMENT SUR SSL/TLS DANS LA BASE DOCUMENTAIRE

@@ -5,6 +5,8 @@ Wiki-Format: zim 0.4
 https://www.debian.org
 
 [[https://fr.wikipedia.org/wiki/Historique_des_versions_de_Debian|Releases]]
+* Version 13 Trixie
+* Version 12 Bookworm
 * 2021 ? Version 11 Bullseye
 
 * 06/07/2019 Version 10 Buster - [[https://www.debian.org/News/2019/20190706|Release announcement]]
