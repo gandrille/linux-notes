@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Key pair</title>
+    <title>Certificat</title>
     <meta name="generator" content="Zim 0.72.0">
     <meta name="viewport" content="width=device-width">
 
@@ -41,7 +41,22 @@
 <ul>
 <li><a href="../Ansible.html" title="Ansible" class="page">Ansible</a></li>
 <li><a href="../Backups.html" title="Backups" class="page">Backups</a></li>
-<li><a href="../Certificat_X509_et_SSLTLS.html" title="Certificat X509 et SSLTLS" class="page">Certificat X509 et SSLTLS</a></li>
+<li><a href="../Certs_and_keys.html" title="Certs and keys" class="page">Certs and keys</a>
+<ul>
+<li><b>Certificat</b>
+<ul>
+<li><a href="./Certificat/Création_de_certificat.html" title="Création de certificat" class="page">Création de certificat</a></li>
+<li><a href="./Certificat/Inspection_certificat.html" title="Inspection certificat" class="page">Inspection certificat</a></li>
+<li><a href="./Certificat/Web_et_certificats.html" title="Web et certificats" class="page">Web et certificats</a></li>
+</ul>
+</li>
+<li><a href="./GPG.html" title="GPG" class="page">GPG</a></li>
+<li><a href="./GUI.html" title="GUI" class="page">GUI</a></li>
+<li><a href="./Key_pair.html" title="Key pair" class="page">Key pair</a></li>
+<li><a href="./pem.html" title="pem" class="page">pem</a></li>
+<li><a href="./pkcs12.html" title="pkcs12" class="page">pkcs12</a></li>
+</ul>
+</li>
 <li><a href="../CVE.html" title="CVE" class="page">CVE</a></li>
 <li><a href="../Debug_tools_and_monitoring.html" title="Debug tools and monitoring" class="page">Debug tools and monitoring</a></li>
 <li><a href="../Distributions_et_kernel.html" title="Distributions et kernel" class="page">Distributions et kernel</a></li>
@@ -52,12 +67,6 @@
 <li><a href="../htaccess.html" title="htaccess" class="page">htaccess</a></li>
 <li><a href="../Init_system.html" title="Init system" class="page">Init system</a></li>
 <li><a href="../iso_images.html" title="iso images" class="page">iso images</a></li>
-<li><a href="../Keys.html" title="Keys" class="page">Keys</a>
-<ul>
-<li><a href="./GPG.html" title="GPG" class="page">GPG</a></li>
-<li><b>Key pair</b></li>
-</ul>
-</li>
 <li><a href="../Metadata.html" title="Metadata" class="page">Metadata</a></li>
 <li><a href="../Network.html" title="Network" class="page">Network</a></li>
 <li><a href="../Packaging.html" title="Packaging" class="page">Packaging</a></li>
@@ -82,66 +91,19 @@
         <div id="content">
 
 
-                    <h1>Key pair <a name='Admin and security:Keys:Key pair'></a></h1>
+                    <h1>Certificat <a name='Admin and security:Certs and keys:Certificat'></a></h1>
                     <div id="toc">			
                         <div class="toctitle">Contents</div>				
                         <ul id="tocdata"></ul>
                     </div>		
 
-<h2>Key pair creation</h2>
-
 <p>
-<b>Génération de paire de clés</b>
+Créée le dimanche 10 janvier 2021
 </p>
 
-<p>
-<ul>
-<li><tt>ssh-keygen -a 100 -b 256 -t ed25519</tt>
-<ul>
-<li><tt>-a 100</tt> : ajouter des itérations pour rendre la passphrase plus résistante aux attaques brute force</li>
-<li>"Ed25519 keys have a fixed length and the -b flag will be ignored" says <tt>man ssh-keygen</tt></li>
-</ul>
-</li>
-<li><tt>ssh-keygen -b 8092 -t rsa</tt></li>
-</ul>
-</p>
-
-<p>
-Note : début 2020, GitHub propose dans <a href="https://help.github.com/articles/connecting-to-github-with-ssh/" title="son guide" class="https">son guide</a> l'utilisation de clé rsa de 4096 bits.
-</p>
-
-<p>
-<b>Générer clé publique</b>
-</p>
-
-<p>
-<ul>
-<li><tt>openssl rsa -in private-key.key -pubout</tt></li>
-<li>et pour ed25519 ?</li>
-</ul>
-</p>
-
-<h2>Fingerprint</h2>
-
-<p>
-<tt>ssh-keygen -lf ~/.ssh/id_rsa.pub</tt><br>
-<tt>ls /etc/ssh/*.pub | xargs -n 1 ssh-keygen -lf</tt>
-</p>
-
-<h2>Pass phrase</h2>
-
-<p>
-Retirer la pass phrase d'une clé privée : <tt>openssl rsa -in privkey.pem -out unlocked-privkey.key</tt>
-</p>
 
 
 		
-                        <div class="footblock">
-                            <hr class='footrule'>
-                            <b>Backlinks:</b>
-                    <a href='../ssh/ssh_et_sshfs.html'>Admin and security:ssh:ssh et sshfs</a>
-                    
-                        </div>
 
                 
         </div>

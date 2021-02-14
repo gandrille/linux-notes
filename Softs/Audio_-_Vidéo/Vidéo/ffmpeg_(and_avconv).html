@@ -69,6 +69,7 @@
 <li><a href="../../geographic.html" title="geographic" class="page">geographic</a></li>
 <li><a href="../../Images.html" title="Images" class="page">Images</a></li>
 <li><a href="../../Jekyll.html" title="Jekyll" class="page">Jekyll</a></li>
+<li><a href="../../LibreOffice.html" title="LibreOffice" class="page">LibreOffice</a></li>
 <li><a href="../../List.html" title="List" class="page">List</a></li>
 <li><a href="../../Marp.html" title="Marp" class="page">Marp</a></li>
 <li><a href="../../Midi.html" title="Midi" class="page">Midi</a></li>
@@ -172,14 +173,15 @@ If you want to create a video out of just one image, this will do (output video 
 
 <p>
 <b>Video generation</b><br>
-<tt>ffmpeg -f image2 -i PC210%3d.JPG -r 4 -vcodec mpeg4 -b 15000k video.mp4</tt>
+<tt>ffmpeg -f image2 -pattern_type glob -r 4 -i '*.JPG' -vcodec mpeg4 -b 15000k video.mp4</tt>
 </p>
 
 <p>
 <ul>
 <li><tt>-f image2</tt> not required, but maybe a good idea to write it (!?)</li>
-<li><tt>-i PC210%3d.JPG</tt> input file names pattern</li>
+<li><tt>-pattern_type glob</tt> use blob pattern for input files</li>
 <li><tt>-r 4</tt> number of images per second (rate)</li>
+<li><tt>-i '*.JPG</tt>' input file names with glob pattern</li>
 <li><tt>-vcodec mpeg4</tt> video codec</li>
 <li><tt>-b 15000k</tt> bitrate. 30000k can be a nice value as well.</li>
 </ul>

@@ -77,8 +77,7 @@
 <p>
 <ul>
 <li>package <tt>notify-osd</tt></li>
-<li>command <tt>notify send</tt></li>
-<li>démon pour afficher les notif sous Unity : <tt>notify osd</tt></li>
+<li>command <tt>notify-send</tt></li>
 </ul>
 </p>
 
@@ -101,6 +100,27 @@ A regarder : contenu des packages<br>
 
 <p>
 → <a href="http://www.galago-project.org/specs/notification/" title="The Desktop Notification Spec Proposal" class="http">The Desktop Notification Spec Proposal</a>
+</p>
+
+<h2>Utilisation de D-Bus</h2>
+
+<p>
+<a href="https://developer.gnome.org/notification-spec/" title="https://developer.gnome.org/notification-spec/" class="https">https://developer.gnome.org/notification-spec/</a>
+</p>
+
+<pre>
+gdbus call --session --dest org.freedesktop.Notifications --object-path /org/freedesktop/Notifications --method org.freedesktop.Notifications.Notify \
+"" 0 \
+/usr/share/icons/deepin/apps/16/deepin-feedback.svg \
+Subject \
+Message \
+"[\"id_action1\", \"Pif\", \"id_action2\", \"Paf\"]" \
+"{\"urgency\": &lt;byte 1&gt;}" \
+"int32 -1"
+</pre>
+
+<p>
+<tt>gdbus monitor --session --dest org.freedesktop.Notifications --object-path /org/freedesktop/Notifications</tt>
 </p>
 
 <h2>Zenity</h2>

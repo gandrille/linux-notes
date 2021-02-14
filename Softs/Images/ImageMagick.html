@@ -61,6 +61,7 @@
 </ul>
 </li>
 <li><a href="../Jekyll.html" title="Jekyll" class="page">Jekyll</a></li>
+<li><a href="../LibreOffice.html" title="LibreOffice" class="page">LibreOffice</a></li>
 <li><a href="../List.html" title="List" class="page">List</a></li>
 <li><a href="../Marp.html" title="Marp" class="page">Marp</a></li>
 <li><a href="../Midi.html" title="Midi" class="page">Midi</a></li>
@@ -174,6 +175,11 @@ Without changing the size of the image, the density changes the number of pixels
 
 <p>
 <tt>convert source.png destination.jpeg</tt>
+</p>
+
+<p>
+<b>PNG background : remove alpha and replace with white</b><br>
+<tt>convert raw-footage.png -background white -alpha remove -flatten -alpha off test1.jpeg</tt>
 </p>
 
 <h2>Border</h2>
