@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Chronomètre - compte à rebours ======
+''gnome-clock''
+* chronomètre
+* compte à rebours
+* alarme
+* fuseaux horaires
+* ...

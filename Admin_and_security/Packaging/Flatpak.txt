@@ -1,0 +1,61 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+====== Flatpak ======
+https://flatpak.org/setup
+
+''flatpak'' est poussé par RedHat. Cette solution est assez orientée desktop. 
+
+* il y a un set de librairies dans le runtime.
+* problème : il faut un runtime pour GNOME, un runtime pour KDE,…
+* portal : pour parler au système de notification,…
+
+**Quick Start**
+
+* Installation : ''sudo apt-get install flatpak''
+* Plugin Flatpak pour GNOME : ''sudo apt install gnome-software-plugin-flatpak''
+* Desktop integration : ''sudo apt install xdg-desktop-portal''
+
+* Ajout d'un dépôt Flatpak de flathub : ''flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo''
+
+**Utilisation**
+
+* Installation : ''flatpak install nom_du_flatpak''
+* Ajout d'un dépôt Flatpak
+	* ''flatpak remote-add une_adresse_url''
+	* ''flatpak remote-add --gpg-import=repo-key.gpg une_adresse_url''
+* Lancement : ''flatpak run nom_de_l_appli''
+* Désinstallation : ''flatpak uninstall nom_du_flatpak''
+
+**Portals**
+
+http://flatpak.org/xdg-desktop-portal/portal-docs.html
+
+* xdg-desktop-portal
+* Network Monitor
+* proxy resolver
+* notification portal 
+* file chooser
+* open URI
+* printing
+* Screenshot
+* Device
+
+**GUI for managing Flatpak permissions**
+[[https://flathub.org/apps/io.github.flattool.Warehouse|Warehouse]]
+'''
+flatpak install flathub io.github.flattool.Warehouse
+flatpak run io.github.flattool.Warehouse
+'''
+[[https://github.com/tchx84/flatseal|Flatseal]]
+
+**Ressources**
+
+* http://flatpak.org/getting.html
+* https://github.com/flatpak/flatpak/tags
+* http://flatpak.org/flatpak/flatpak-docs.html
+* http://flatpak.org/flatpak/reference/html/index.html
+* http://flatpak.org/apps.html
+* https://github.com/flatpak/flatpak/releases
+* [[https://flathub.org/home|Flathub]]
+* Builder un flatpak : http://docs.flatpak.org/en/latest/first-build.html

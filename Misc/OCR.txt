@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== OCR ======
+
+===== tesseract-ocr =====
+[[https://doc.ubuntu-fr.org/tesseract-ocr|Doc Ubuntu]]
+
+**Packages**
+* ''tesseract-ocr''
+* ''tesseract-ocr-fra''
+
+**Usage**
+* directement [[https://doc.ubuntu-fr.org/tesseract-ocr#en_ligne_de_commande|en ligne de commande]] : ''tesseract input.png output -l fra''
+* avec l'outil graphique ''gscan2pdf''
+
+===== gocr et gocr-tk =====
+Logiciel en ligne de commande et graphique
+
+===== ocrad =====
+
+===== ocrfeeder =====
+système d'analyse de mise en page et de reconnaissance optique de caractères
+
+===== cuneiform =====
+multi-language OCR system
+
+===== Misc =====
+* ''yagf''
+* ''simple-scan''
+* ''xsane''
+* ''gimagereader''

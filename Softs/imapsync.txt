@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== imapsync ======
+Download: https://github.com/imapsync/imapsync/tags
+
+
+
+REX: https://www.claudiokuenzler.com/blog/1038/email-migration-transfer-sync-using-imap-mailbox-imapsync
+

@@ -1,0 +1,67 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Formats ======
+voir aussi : [[https://fr.wikipedia.org/wiki/Mod%C3%A8le:Palette_Format_de_compression_multim%C3%A9dia|Format de compression multiméd]][[https://fr.wikipedia.org/wiki/Mod%C3%A8le:Palette_Format_de_compression_multim%C3%A9dia|i]][[https://fr.wikipedia.org/wiki/Mod%C3%A8le:Palette_Format_de_compression_multim%C3%A9dia|a]]
+
+===== Consortium MPEG =====
+
+==== MPEG-1/MPEG-2 ====
+**Normes**
+* [[https://fr.wikipedia.org/wiki/MPEG-1|MPEG-1]]
+* [[https://fr.wikipedia.org/wiki/MPEG-2|MPEG-2]] 
+* [[https://fr.wikipedia.org/wiki/MP3|MPEG-1/2 Audio Layer III]], aka MP3 est la spécification audio du standard MPEG-1/MPEG-2
+
+==== MPEG 4 ====
+**Normes (± specification)**
+* [[https://fr.wikipedia.org/wiki/MPEG-4_Part_2|MPEG-4 Part 2]] : compression vidéo
+* MPEG-4 Part 10 aka [[https://fr.wikipedia.org/wiki/H.264|H]][[https://fr.wikipedia.org/wiki/H.264|.264]] : compression vidéo
+* [[https://fr.wikipedia.org/wiki/MPEG-4_Part_14|MPEG-4 Part 14]] : format de conteneur mp4 
+* [[https://fr.wikipedia.org/wiki/Advanced_Audio_Coding|AAC]] : extension du MPEG-2 Partie 7 améliorée avec le MPEG-4 Partie 3. 
+
+**Codec (logiciel qui fait l'encodage/décodage)**
+* [[https://fr.wikipedia.org/wiki/DivX|DivX]] : freeware propriétaire
+	* 3 à 6 : codec MPEG-4 Part 2 
+	* 7 : codex H.264  
+* [[https://fr.wikipedia.org/wiki/Xvid|Xvid]] : codec MPEG-4 Part 2 sous licence GPL
+* [[https://fr.wikipedia.org/wiki/X264|x264]] : codec H.264 de VLC sous licence GPL
+* [[https://fr.wikipedia.org/wiki/X265|x265]] : codec H.265/HEVC sous licence GPLv2 
+
+===== Projets Libres =====
+**Alliance for Open Media**
+* [[https://en.wikipedia.org/wiki/AV1|AV1]] 
+
+**Normes (± specification)**
+* [[https://fr.wikipedia.org/wiki/Vorbis|Vorbis]] : compression audio par le projet Ogg de la fondation Xiph.org
+* [[https://fr.wikipedia.org/wiki/Free_Lossless_Audio_Codec|FLAC]] : compression audio sans perte par la fondation Xiph.org
+* [[https://fr.wikipedia.org/wiki/Theora|Théora]] : compression vidéo par le projet Ogg de la fondation Xiph.org
+* [[https://fr.wikipedia.org/wiki/Opus_Interactive_Audio_Codec|Opus]] :  compression audio avec pertes par l'IETF (→ meilleur que mp3 ou vorbis) 
+* [[https://fr.wikipedia.org/wiki/Ogg|Ogg]] : conteneur souvent utilisé avec Vorbis pour le son (d'où Ogg Vorbis) et Theora pour la vidéo
+
+**Normes promues par Google (± specification)**
+* [[https://fr.wikipedia.org/wiki/VP8|VP8]] / [[https://fr.wikipedia.org/wiki/VP9|VP9]] : compression vidéo, chalengers de H.264
+* [[https://fr.wikipedia.org/wiki/WebP|WebP]] : compression d'image matricielle (utilise des algos de VP8)
+* [[https://fr.wikipedia.org/wiki/WebM|WebM]] : conteneur dérivé de Matroska, pour encapsuler du VP8/VP9 (vidéo) et Vorbis/Opus (audio)
+
+**Codec (logiciel qui fait l'encodage/décodage)**
+* libopus : implémentation de référence de Opus
+* libFLAC et libFLAC++ sont disponibles sous licence BSD
+
+===== Microsoft =====
+* [[https://en.wikipedia.org/wiki/Advanced_Systems_Format|ASF]] : conteneur
+* [[https://en.wikipedia.org/wiki/Windows_Media_Audio|WMA]] / [[https://en.wikipedia.org/wiki/Windows_Media_Video|WMV]] : format ET codec audio/vidéo développé pour concurencer [[https://en.wikipedia.org/wiki/RealVideo|RealVideo]]
+
+===== Autres =====
+**Conteneurs**
+* [[https://fr.wikipedia.org/wiki/Matroska|Matroska]] : conteneur libre pouvant embarquer une très grande quantité de formats audio et vidéo.
+* [[https://fr.wikipedia.org/wiki/QuickTime|Quiktime]] : le conteneur d'Apple, multiformats
+* [[https://fr.wikipedia.org/wiki/Audio_Video_Interleave|AVI]] : initialement promu par Microsoft
+
+**Cinéma**
+* [[https://en.wikipedia.org/wiki/Dolby_Digital|Dolby Digital]], aka Dolby AC-3
+* [[https://fr.wikipedia.org/wiki/Digital_Theater_System|DTS]] (son 5.1)
+
+**PCM**
+* [[https://fr.wikipedia.org/wiki/Modulation_d%27impulsion_cod%C3%A9e|PCM]]
+* [[https://fr.wikipedia.org/wiki/Waveform_Audio_File_Format|WAV]]
+* [[https://fr.wikipedia.org/wiki/WavPack|WV (WavPack)]]

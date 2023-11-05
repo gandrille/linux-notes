@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== bootctl ======
+''bootctl'': Install, update or remove the systemd-boot EFI boot manager
+
+

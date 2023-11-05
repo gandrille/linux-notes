@@ -1,0 +1,113 @@
+# ===================================
+name: Deploy Zim site to GitHub Pages
+# ===================================
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    env:
+      ZIM_VERSION: 0.75.2
+      GENERATE_PDF: false
+    steps:
+    
+      - name: Install Zim
+        run: |
+          wget -O ${{ runner.temp }}/zim.deb https://zim-wiki.org/downloads/zim_${ZIM_VERSION}_all.deb \
+          && sudo apt install --yes ${{ runner.temp }}/zim.deb
+
+      - name: Checkout Source
+        uses: actions/checkout@v4
+        with:
+          path: 'source'
+
+      - name: Checkout Web Template
+        uses: actions/checkout@v4
+        with:
+          repository: 'gandrille/zim-simple-web-template'
+          path: 'zim-simple-web-template'
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+
+      - name: Generate website
+        run: mkdir ./pages && zim --export --output ./pages --template ./zim-simple-web-template/SimpleWeb.html --overwrite --index-page index ./source
+
+      - name: Checkout latex Template
+        if: ${{ env.GENERATE_PDF == 'true' }}
+        uses: actions/checkout@v4
+        with:
+          repository: 'gandrille/zim-simple-latex-template'
+          path: 'zim-simple-latex-template'
+
+      - name: Generate latex sources
+        if: ${{ env.GENERATE_PDF == 'true' }}
+        run: mkdir ./latex && zim --export --format latex --output ./latex/notebook.tex --template ./zim-simple-latex-template/Template.tex --overwrite --singlefile ./source/notebook.zim
+
+      - name: Install Latex
+        if: ${{ env.GENERATE_PDF == 'true' }}
+        run: sudo apt install --yes texlive texlive-latex-extra
+      
+      - name: Build pdf from latex
+        if: ${{ env.GENERATE_PDF == 'true' }}
+        run: pdflatex -halt-on-error -output-directory latex ./latex/notebook.tex && pdflatex -halt-on-error -output-directory latex ./latex/notebook.tex && mv ./latex/notebook.pdf ./pages/${GITHUB_REPOSITORY##*/}.pdf && echo "Rename notebook.pdf => ${GITHUB_REPOSITORY##*/}.pdf"
+
+      - name: Patch intex in order to reference pdf file
+        if: ${{ env.GENERATE_PDF == 'true' }}
+        run: sed -i "s|</body>|<script type=\"text/javascript\">\$(\"#content\").append(\"<div><a href='https://${GITHUB_REPOSITORY%%/*}.github.io/${GITHUB_REPOSITORY##*/}/${GITHUB_REPOSITORY##*/}.pdf'>Full content exported as a pdf file.</a></div>\")</script>\n</body>|" ./pages/index.html
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./pages
+
+
+  # Deploy job
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+

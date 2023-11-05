@@ -1,0 +1,102 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Expansion cards ======
+[[https://www.dell.com/support/article/us/en/19/sln308295/caract%C3%A9ristiques-des-disques-nvme-m-2-et-exigences-de-mise-%C3%A0-niveau-pour-les-syst%C3%A8mes-precision-optiplex-latitude-et-xps?lang=fr|Dans les PC DELL]]
+
+**Il faut distinguer**
+* les bus : [[https://en.wikipedia.org/wiki/Conventional_PCI|PCI]], [[https://fr.wikipedia.org/wiki/Port_AGP|AGP]], [[https://fr.wikipedia.org/wiki/Serial_ATA|SATA]], [[https://en.wikipedia.org/wiki/PCI_Express|PCIe]], USB,...
+* le protocole de transfert de données (l'interface logique) : [[https://fr.wikipedia.org/wiki/Advanced_Host_Controller_Interface|AHCI]], [[https://en.wikipedia.org/wiki/NVM_Express|NVMe]],...
+* l'interface physique : [[https://fr.wikipedia.org/wiki/Serial_ATA|SATA]], [[https://en.wikipedia.org/wiki/SATA_Express|SATAe]], [[https://en.wikipedia.org/wiki/M.2|M.2]], [[https://en.wikipedia.org/wiki/U.2|U.2]],...
+
+===== Historiquement : IDE et PCI =====
+**IDE**
+L'interface [[https://fr.wikipedia.org/wiki/Parallel_ATA|IDE (Parallel ATA)]] était historiquement utilisée pour le stockage de masse. Elle utilise des nappes larges avec détrompeur, et les équipements ont des cavaliers pour régler la configuration maitre/escave,...
+
+Côté protocole de transfert des données
+* ATA : disques durs IDE 
+* [[https://en.wikipedia.org/wiki/ATA_Packet_Interface|ATAPI (ATA with Packet Interface extension)]] :  lecteurs et graveurs de CD-ROM et DVD-ROM ainsi que par quelques lecteurs de disquettes spéciales de type ZIP par exemple. 
+
+**PCI**
+Le [[https://en.wikipedia.org/wiki/Conventional_PCI|bus PCI]] (qui remplace le [[https://en.wikipedia.org/wiki/Industry_Standard_Architecture|bus ISA]]) est le bus d'extension générique historique. Introduit en 1992, il a été très populaire de 1995 à 2005.
+
+===== Le port AGP =====
+Le [[https://fr.wikipedia.org/wiki/Port_AGP|port AGP]], exclusivement destiné aux cartes graphiques est introduit pour remplacer les cartes graphiques PCI (même si le [[https://en.wikipedia.org/wiki/Conventional_PCI|bus PCI]] continue d'être utilisé pour d'autres usages).
+* lancé par Intel en 1997
+* déclin à partir de 2004 au profit de [[https://en.wikipedia.org/wiki/PCI_Express|PCIe]]
+* quasi disparition en 2009-2010
+
+===== de IDE vers SATA =====
+__→ regarder également__ [[https://fr.wikipedia.org/wiki/Serial_Attached_SCSI|Serial Attached SCSI (SAS)]]
+
+Le port [[https://fr.wikipedia.org/wiki/Serial_ATA|SATA]] se diffuse à partir de 2003 en remplacement de l'[[https://fr.wikipedia.org/wiki/Parallel_ATA|IDE]]. [[https://fr.wikipedia.org/wiki/Serial_ATA|SATA]] est optimisé pour les disques durs mécaniques à plateaux.
+
+**Protocoles de transfert**
+* IDE (legacy)
+* [[https://fr.wikipedia.org/wiki/Advanced_Host_Controller_Interface|AHCI]] à privilégier
+
+**Versions**
+* SATA 1 - 1.5 Gbit/s
+* SATA 2 - 3 Gbit/s
+* SATA 3 - 6 Gbit/s
+
+**Interfaces physiques**
+* [[https://fr.wikipedia.org/wiki/Serial_ATA#eSATA|eSATA]] : external SATA
+* [[https://en.wikipedia.org/wiki/ESATAp|eSATAp]] : avec power
+* [[https://en.wikipedia.org/wiki/Serial_ATA#Mini-SATA_(mSATA)|mSATA]] : Mini-SATA data storage for netbooks and laptops → remplacé depuis 2015 par [[https://en.wikipedia.org/wiki/M.2|M.2]], plus polyvalent.
+
+===== PCIe : vers le nouveau couteau suisse? =====
+**Le bus PCI Express (PCIe)**
+* v1 publiée en 2003
+* initialement pour remplacer le [[https://fr.wikipedia.org/wiki/Port_AGP|port AGP]] et le [[https://en.wikipedia.org/wiki/Conventional_PCI|bus PCI]] → devenu le standard des cartes graphiques depuis 2010 (à la place du [[https://fr.wikipedia.org/wiki/Port_AGP|port AGP]])
+* depuis la v3 qui propose plusieurs voies, le PCIe vient remplacer SATA pour le stockage de masse
+* Most laptop computers built after 2005 use [[https://en.wikipedia.org/wiki/PCI_Express|PCI Express]] for expansion cards
+
+**Protocole de transfert de données**
+* [[https://fr.wikipedia.org/wiki/Advanced_Host_Controller_Interface|AHCI]] pour la partie legacy 
+* [[https://en.wikipedia.org/wiki/NVM_Express|NVM Express (NVMe)]] : spécification d'interface permettant à un ordinateur d'accéder à un périphérique de stockage permanent à travers un bus PCI Express. Cette interface à tout son sens avec des disques SSD car:
+	* la bande passante passante des SSD dépasse ce que peut offrir un port SATA
+	* SATA est optimisé pour des disques mécaniques ; au contraire, NVMe peut demander des lectures et écritures à chaque "bout" de l'espace d'adressage de manière concurrente.
+
+**Interface physique**
+* Interface standard : les connecteurs existent en version ×1, ×2, ×4, ×8, ×16 et ×32 selon leur nombre de lignes (voir [[https://fr.wikipedia.org/wiki/PCI_Express#Tableau_r%C3%A9capitulatif|tableau récapitulatif]] pour la bande passante)
+* [[https://en.wikipedia.org/wiki/PCI_Express#PCI_Express_Mini_Card|PCI Express Mini Card]] : diffusées depuis 2005 pour les portables (carte bluetooth, wifi,...). Remplacées depuis 2015 par [[https://en.wikipedia.org/wiki/M.2|M.2]].
+
+===== Connecteurs multi-bus =====
+
+==== SATA Express connector ====
+[[https://en.wikipedia.org/wiki/SATA_Express|SATA Express]]
+
+**Buses**
+* Serial ATA (SATA)
+* 2 x PCI Express (PCIe)
+
+**Notes**
+* initially standardized in the SATA 3.2 specification
+* peu de devices ?
+
+==== M.2 connector ====
+[[https://en.wikipedia.org/wiki/M.2|M.2]] remplaces [[https://en.wikipedia.org/wiki/Serial_ATA#Mini-SATA_(mSATA)|mSATA]] et [[https://en.wikipedia.org/wiki/PCI_Express#PCI_Express_Mini_Card|PCI Express Mini Card]].
+
+=== Form factor ===
+**Card size**
+* widths of 12, 16, 22 and 30 mm
+* lengths of 16, 26, 30, 38, 42, 60, 80 and 110 mm
+→ 2280 denotes a module 22 mm wide and 80 mm long
+
+**Key (other may come later....)**
+* Key A : 2x PCI Express x1, USB 2.0, I2C or Display Port x4 
+* Key B : PCI Express x2, S-ATA, USB 2.0/3.0 (with HSIC/SSIC), I2C or Audio
+* Key E : 2x PCI Express x1,USB 2.0, SDIO, UART and PCM
+* Key M : PCI Express x4 or S-ATA
+
+==== U.2 connector ====
+[[https://en.wikipedia.org/wiki/U.2|U.2]]
+
+**Buses**
+* 4xPCIe
+* 2xSATA
+
+===== Note : stockage "de masse" pour les tablettes et équipements grand public =====
+* [[https://en.wikipedia.org/wiki/MultiMediaCard#eMMC|eMMC]] : chip de mémoire flash soudé sur la carte mère.
+* [[https://en.wikipedia.org/wiki/Universal_Flash_Storage|UFS]] : UFS is positioned as a replacement for eMMCs and SD cards.

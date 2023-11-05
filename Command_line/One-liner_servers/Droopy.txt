@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Droopy ======
+A web server which is not a one-liner... but it's great!
+
+* [[https://github.com/stackp/Droopy|GitHub]]
+* [[http://stackp.online.fr/?p=28|Original Web page]]
+
+
+''python ~/droopy.py -m "Hi, it's me Bob. You can send me a file." -p ~/avatar.png''
+
+''http://localhost:8000''

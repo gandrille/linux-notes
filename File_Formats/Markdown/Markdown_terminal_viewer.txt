@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Markdown terminal viewer ======
+* ''sudo apt install python-pip''
+* ''sudo pip install mdv''
+
+[[https://github.com/axiros/terminal_markdown_viewer|Terminal Markdown Viewer]]

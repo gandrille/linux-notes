@@ -1,0 +1,22 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2023-05-16T21:36:05+02:00
+
+====== inotify ======
+
+===== inotify =====
+''inotifywait --quiet --monitor --format "%e %w%f" --event modify,move,create,delete /home/foo''
+
+* ''--monitor'' Instead of exiting after receiving a single event, execute indefinitely.  The default behaviour is to exit after the first event occurs.
+* ''--recursive''
+* ''--quiet'' If specified once, the program will be less verbose.  Specifically, it will not state when it has completed establishing all inotify watches.
+
+===== entr =====
+[[http://eradman.com/entrproject/|entr]] est une alternative aux inotify tools qui permet de réagir plus facilement aux mises à jour d'un système de fichier.
+
+''ls *.css *.html | entr reload-browser Firefox''
+
+
+===== Watchexec =====
+https://watchexec.github.io/
+package: ''watchexec-cli''

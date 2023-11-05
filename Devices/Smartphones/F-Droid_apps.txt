@@ -1,0 +1,37 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== F-Droid apps ======
+[[https://f-droid.org|F-Droid]]
+
+* [[https://f-droid.org/fr/packages/at.bitfire.davdroid/|DAVx5]] CalDAV / CardDAV sync client
+* [[https://f-droid.org/packages/ws.xsoh.etar/|Etar]] better calendar
+* [[https://f-droid.org/fr/packages/org.sufficientlysecure.viewer/|Document Viewer]] supported filetypes : PDF, DjVu, XPS, CBZ et FB2.
+* [[https://f-droid.org/fr/packages/org.mozilla.fennec_fdroid/|Fennec F-Droid]] Firefox for Android
+* [[https://f-droid.org/fr/packages/com.kunzisoft.keepass.libre/|KeePass DX]] password safe
+* [[https://f-droid.org/fr/packages/trikita.obsqr/|Obsqr]] or [[https://f-droid.org/fr/packages/com.google.zxing.client.android/|Barcode Scanner]] QR code scanner
+* [[https://f-droid.org/fr/packages/net.osmand.plus/|OsmAnd~]] Openstreetmap based navigation software
+* [[https://f-droid.org/fr/packages/org.primftpd/|Primitive ftpd]] a simple FTP and SFTP (SSH file transfer) server
+* [[https://f-droid.org/fr/packages/com.vonglasow.michael.satstat/|SatStat]] a diagnostic tool that displays data reported by sensors in the phone
+* [[https://f-droid.org/fr/packages/mn.tck.semitone/|Semitone]] tuner, metronome, and piano
+* [[https://f-droid.org/fr/packages/com.plusonelabs.calendar/|Todo Agenda]] home screen agenda widget 
+* [[https://f-droid.org/fr/packages/org.videolan.vlc/|VLC]] video and audio player
+* [[https://f-droid.org/fr/packages/de.j4velin.wifiAutoOff/|WiFi Automatic]] automatically disables WiFi radio
+* [[https://f-droid.org/fr/packages/org.blokada.alarm/|Blokada]] add blocker
+ 
+
+===== MAXS =====
+http://projectmaxs.org/documentation/quickstart.html
+http://projectmaxs.org/documentation/
+
+MAXS Main
+MAXS XMPP Transport
+MAXS Module SmsNotify
+[[http://projectmaxs.org/documentation/module-smssend/user_guide.html|MAXS Module SmsSend]]
+* ''sms send 061122334455  hello'' **IMPORTANT!!! **there are TWO spaces after the name/phone
+
+[[http://projectmaxs.org/documentation/module-contactsread/user_guide.html|MAXS Module ContactsRead]]
+* ''contact lookup <name>''
+* ''contact num <number>''
+
+

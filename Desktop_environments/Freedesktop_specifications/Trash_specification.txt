@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+====== Trash specification ======
+[[https://specifications.freedesktop.org/trash-spec/trashspec-latest.html|Specification]]
+
+See ''trash-cli'' package
+* https://github.com/andreafrancia/trash-cli
+* https://doc.ubuntu-fr.org/trash-cli
+
+
+

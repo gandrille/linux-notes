@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== DNS server (Software) ======
+[[https://en.wikipedia.org/wiki/Comparison_of_DNS_server_software|Wikipedia : Comparison of DNS server software]]
+
+Seveur DNS menteur... pour bloquer les publicités : https://pi-hole.net
+
+
+===== BIND =====
+* [[https://www.isc.org/bind/|Official website]]
+* [[https://fr.wikipedia.org/wiki/BIND|Wikipedia]]
+
+**Features**
+[*] Authoritative name server
+[*] Recursive name server
+[*] Caching
+
+BIND is the de facto standard DNS server on the Internet.
+
+===== Unbound =====
+* [[https://nlnetlabs.nl/projects/unbound/about/|Official website]]
+* [[https://en.wikipedia.org/wiki/Unbound_(DNS_server)|Wikipedia]]
+
+**Features**
+[ ] Authoritative name server
+[*] Recursive name server
+[*] Caching
+
+→ Installation guide ([[https://www.shaftinc.fr/arretez-google-dns.html|source1]], [[https://korben.info/installer-serveur-dns-unbound.html|source2]])
+
+===== Dnsmasq =====
+* [[http://www.thekelleys.org.uk/dnsmasq/doc.html|Official website]]
+* [[https://en.wikipedia.org/wiki/Dnsmasq|Wikipedia]]
+
+**Provides**
+[ ] Authoritative name server
+[ ] Recursive name server
+[*] Caching
+→ Delegates the resolution to upstream recursive DNS servers
+
+**Note:** provides as well a DHCP server... and more...
+
+===== And also... =====
+* [[https://github.com/getdnsapi/stubby|Stubby]]
+* [[https://www.dnscrypt.org/|DNSCrypt]]
+* [[https://www.knot-resolver.cz/|Knot Resolver]]
+* [[Init system:systemd:Units:resolvectl|systemd-resolved]]

@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== GUI ======
+* [[https://wiki.gnome.org/Apps/Seahorse|seahorse]]: GNOME encryption interface
+* [[https://www.gnupg.org/related_software/gpa/|GPA]]: The GNU Privacy Assistant (GPA) is a graphical user interface for the GnuPG (GNU Privacy Guard)
+* [[https://keystore-explorer.org/|KeyStore Explorer]]: nice java based GUI ([[https://github.com/kaikramer/keystore-explorer|GitHub]])
+
+
+

@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== rdiff ======
+* [[https://rdiff-backup.net/|rdiff-backup website]]
+* [[https://github.com/rdiff-backup/rdiff-backup|GitHub]]
+* [[https://www.guyrutenberg.com/2018/05/04/creating-local-backups-using-rdiff-backup/|Blog article]]
+
+
+

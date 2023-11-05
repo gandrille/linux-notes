@@ -1,0 +1,10 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2023-07-12T22:20:01+02:00
+
+====== just ======
+just is a handy way to save and run project-specific commands.
+https://just.systems/
+
+This is an alternative to the great quicklink tool.
+

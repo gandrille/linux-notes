@@ -1,0 +1,36 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Enregistrer l'écran ======
+regarder : [[https://www.maartenbaert.be/simplescreenrecorder/|simplescreenrecorder]] 
+
+
+===== Utilisé par Josh Long =====
+[[https://doc.ubuntu-fr.org/vokoscreen|Vokoscreen]] : non testé, mais certainement à regarder
+→ see https://vitux.com/how-to-use-vokoscreen-to-record-videos-on-debian-10/
+
+===== Comment j'ai fait en 2016 =====
+* Enregistrement de l'écran en continu : ''recordmydesktop'' avec ''gtk-recordmydesktop''
+* Enregstrement du son : dictaphone
+
+TIP : Pour arrêter la capture : ''Alt_de_gauche+Ctrl+s''
+
+Montage : installer le package ''libfdk-aac1''
+
+**Solution 1**
+
+'''
+avconv -i video1.WMA -b 128k video1.mp3
+avconv -i demo1.ogv -i demo1.wma -y -strict experimental -b:a 128k -codec:v libx264 -preset slow -crf 20 video1.mp4
+'''
+
+**Solution 2**
+
+''avconv -i demo2.ogv -i demo2.wma -y -strict experimental -b:a 128k -codec:v libx264 -preset slow -crf 20 demo2.mp4''
+
+===== Autre logiciels =====
+* [[http://www.debugmode.com/wink/|Wink]]
+* [[http://camstudio.org/|CamStudio]]
+* [[http://www.techsmith.com/camtasia.asp|Camtasia Studio]]
+* [[http://www.jingproject.com/?requestsource=productredirect&amp;redirlang=&amp;redirproduct=jing&amp;redirver=|Jing]]
+* Kazam

@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Autostart Specification ======
+[[https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html|Desktop Application Autostart Specification]]
+
+By default, ''~/.config/autostart/'' and ''/etc/xdg/autostart/'' can hold .desktop files that will be lauched at session startup.

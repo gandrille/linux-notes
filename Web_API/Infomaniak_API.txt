@@ -1,0 +1,57 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+====== Infomaniak API ======
+**Documentation:** https://developer.infomaniak.com/getting-started
+**Token generation:** https://manager.infomaniak.com/v3/ng/accounts/token/list
+
+Notes:
+1. even if a user is allowed to edit aliases, he is not allowed to use the API to manage them. Admin is required.
+2. mail_hosting_id can be found in the URL of the admin mail management interface
+
+'''
+INFOMANIAK_TOKEN="my_token_with_mail_scope"
+INFOMANIAK_MAIL_HOSTING_ID=0123456
+INFOMANIAK_MAILBOX=part_before_the_@
+alias=foo
+'''
+
+
+===== Aliases =====
+**Aliases list**
+
+'''
+curl \
+ -H "Authorization: Bearer $INFOMANIAK_TOKEN" \
+ -H "Content-Type: application/json" \
+https://api.infomaniak.com/1/mail_hostings/$INFOMANIAK_MAIL_HOSTING_ID/mailboxes/$INFOMANIAK_MAILBOX/aliases
+'''
+
+**Alias creation**
+
+'''
+curl -X POST \
+ -H "Authorization: Bearer $INFOMANIAK_TOKEN" \
+ -H "Content-Type: application/json" \
+ -d '{ "alias": "foo" }' \
+https://api.infomaniak.com/1/mail_hostings/$INFOMANIAK_MAIL_HOSTING_ID/mailboxes/$INFOMANIAK_MAILBOX/aliases
+'''
+
+**Alias removal**
+
+'''
+curl -X DELETE \
+ -H "Authorization: Bearer $INFOMANIAK_TOKEN" \
+ -H "Content-Type: application/json" \
+https://api.infomaniak.com/1/mail_hostings/$INFOMANIAK_MAIL_HOSTING_ID/mailboxes/$INFOMANIAK_MAILBOX/aliases/foo
+'''
+
+
+===== Filters =====
+**List filters**
+'''
+curl \
+ -H "Authorization: Bearer $INFOMANIAK_TOKEN" \
+ -H "Content-Type: application/json" \
+https://api.infomaniak.com/1/mail_hostings/$INFOMANIAK_MAIL_HOSTING_ID/mailboxes/$INFOMANIAK_MAILBOX/auth/filters
+'''

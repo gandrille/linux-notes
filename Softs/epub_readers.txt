@@ -1,0 +1,15 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== epub readers ======
+
+===== Foliate =====
+* [[https://github.com/johnfactotum/foliate|GitHub]]
+* [[https://johnfactotum.github.io/foliate/|Website]]
+* [[https://flathub.org/apps/details/com.github.johnfactotum.Foliate|FlatHub]]
+* installation : ''flatpak install flathub com.github.johnfactotum.Foliat''
+* execution : ''flatpak run com.github.johnfactotum.Foliat''
+
+===== Calibre =====
+* [[https://calibre-ebook.com|Website]]
+* installation : ''apt install calibre''

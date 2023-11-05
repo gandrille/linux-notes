@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+====== Gandi API ======
+https://api.gandi.net/docs/
+https://api.gandi.net/docs/email/
+
+===== Retreive Mailbox ID =====
+'''
+APIKEY=...
+DOMAIN=...
+curl -X GET https://api.gandi.net/v5/email/mailboxes/$DOMAIN -H "authorization: Apikey $APIKEY"
+'''
+
+===== Retrieve alias list =====
+'''
+APIKEY=...
+DOMAIN=...
+MAILBOX_ID=...
+curl -X GET https://api.gandi.net/v5/email/mailboxes/$DOMAIN/$MAILBOX_ID -H "authorization: Apikey $APIKEY"
+'''
+
+===== Update alias list =====
+'''
+APIKEY=...
+DOMAIN=...
+MAILBOX_ID=...
+curl -X PATCH https://api.gandi.net/v5/email/mailboxes/$DOMAIN/$MAILBOX_ID -H "authorization: Apikey $APIKEY" -H 'content-type: application/json' -d '{"aliases":["hello","world", "foo-987654"]}'
+'''

@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== iso images ======
+
+===== Mount command =====
+''mount -o loop foo.iso /my/mount/point''
+
+===== Flashing iso files to usb keys =====
+* [[https://www.balena.io/etcher/|balnea Etcher]] - [[https://github.com/balena-io/etcher|GitHub]]
+* [[https://unetbootin.github.io/|UNetbootin]] - [[https://github.com/unetbootin/unetbootin|GitHub]]
+* [[https://www.ventoy.net/en/index.html|Ventoy]] - [[https://github.com/ventoy/Ventoy|GitHub]] → several iso on a single usb key with a nice startup menu for choosing the one to be executed at boot time ☺ 

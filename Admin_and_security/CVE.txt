@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== CVE ======
+* [[https://github.com/speed47/spectre-meltdown-checker|Spectre & Meltdown Checker]]
+
+https://blog.octo.com/avec-trivy-cest-trivial-didentifier-les-vulnerabilites-de-vos-conteneurs/

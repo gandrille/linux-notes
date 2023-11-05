@@ -1,0 +1,8 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== LaTeX ======
+* [[http://www.grappa.univ-lille3.fr/FAQ-LaTeX/index.php#index|FAQ Grappa]] ([[https://2001-faq-latex.fr/|mirror]])
+* [[http://www.ctan.org/|CTAN]]
+* [[https://en.wikibooks.org/wiki/LaTeX|Wiki book]]
+* [[http://math.et.info.free.fr/TikZ/index.html|TikZ]]

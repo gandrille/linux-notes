@@ -1,0 +1,6 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== GUI players ======
+* Clones de Winamp : [[http://www.qmmp.ylsoftware.com/|qmmp]] / [[http://www.xmms.org/|xmms]]
+* Table de mixage : [[https://mixxx.org/|mixxx]] ([[https://github.com/mixxxdj/mixxx|GitHub]])

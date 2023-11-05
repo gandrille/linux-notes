@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+====== Firefox ======
+[[https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04|How to Install Firefox as a .Deb on Ubuntu 22.04 (Not a Snap)]]
+
+[[https://github.com/unode/firefox_decrypt|How to export passwords]]

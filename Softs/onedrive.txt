@@ -1,0 +1,32 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+====== onedrive ======
+===== Installation =====
+The ''onedrive'' package in universe is deprecated. Please add an external repository followin [[https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md|Ubuntu installation.]]
+
+===== Set up =====
+Run ''onedrive'' command and follow the instructions. This will authorize the cli to access a specific onedrive account.
+
+If needed, create and edit ''~/.config/onedrive/config''
+For instance, to change the lication of the drive : ''sync_dir = "/srv/foo/onedrive"''
+
+All the configartion points can be displayed using ''onedrive --display-config''
+
+===== Run sync =====
+''onedrive --synchronize --verbose''
+
+
+https://www.linuxuprising.com/2020/02/how-to-keep-onedrive-in-sync-with.html#:~:text=The%20OneDrive%20Free%20Client%20fork,validation%20to%20ensure%20data%20integrity
+https://github.com/abraunegg/onedrive/blob/master/docs/USAGE.md#onedrive-service-running-as-a-non-root-user-via-systemd-all-linux-distributions
+
+===== Enable user service =====
+''systemctl --user enable onedrive''
+''systemctl --user start onedrive''
+
+''cat ~/.config/systemd/user/default.target.wants/onedrive.service''
+
+
+
+
+

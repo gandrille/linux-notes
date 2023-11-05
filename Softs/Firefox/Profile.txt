@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Profile ======
+[[https://support.mozilla.org/fr/kb/profils-la-ou-firefox-conserve-donnees-utilisateur|Profile introduction]]
+
+* By default, profiles are stored into ''~/.mozilla/firefox/'' folder.
+* The file ''~/.mozilla/firefox/profiles.ini'' describes the available profiles. Here is [[http://kb.mozillazine.org/Profiles.ini_file|its specification]].
+* TIP : ''firefox -silent'': initialize a default profile ([[https://developer.mozilla.org/fr/docs/Mozilla/Command_Line_Options|cli options]]) but does not creates everything.
+* [[https://support.mozilla.org/en-US/kb/recovering-important-data-from-an-old-profile|Important files used by a profile]]
+* In a running instance, use ''Menu -> Help -> Troubleshooting Information'' to find location
+
+* [[http://kb.mozillazine.org/Profile_folder_-_Firefox|Documentation]]
+
+
+
+
+
+
+
+

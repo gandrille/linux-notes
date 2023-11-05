@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== firewalld ======
+https://www.microlinux.fr/firewalld-1/
+
+

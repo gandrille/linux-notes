@@ -1,0 +1,46 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Desktop environments ======
+**Icon theme**
+* [[https://github.com/vinceliuice/Tela-icon-theme|Tela]]
+* Arc (''arc-theme'' package)
+
+**Distributions avec un beau desktop**
+
+[[https://elementary.io/|Elementary OS]]
+* Juno 0.5 est basé sur Ubuntu 18.04
+* [[https://en.wikipedia.org/wiki/Elementary_OS|Wikipedia]]
+* [[https://github.com/elementary|GitHub]]
+* [[https://www.distrowatch.com/table.php?distribution=Elementary|Distro Watch]]
+* [[https://www.elementaryos-fr.org/|Communauté fr]]
+
+[[https://getsol.us/home/|Solus]] 
+* [[https://en.wikipedia.org/wiki/Solus_(operating_system)|Wikipedia]]
+* [[https://github.com/solus-project|GitHub]]
+* [[https://www.distrowatch.com/table.php?distribution=Solus|Distro Watch]]
+* Desktop env : [[https://en.wikipedia.org/wiki/Budgie_(desktop_environment)|Budgie]] / GNOME 3.32 / Mate 1.22.1
+
+[[https://zorinos.com/|Zorin OS]] 
+* Zorin OS 15 is based on Ubuntu 18.04.2 LTS
+* [[https://en.wikipedia.org/wiki/Zorin_OS|Wikipedia]]
+* [[https://github.com/ZorinOS|GitHub]]
+* [[https://distrowatch.com/table.php?distribution=zorin|Distro Watch]]
+
+[[https://www.deepin.org/en/dde/|Deepin]] → see also [[https://ubuntudde.com|UbuntuDDE]]
+* Deepin 15.10 est basé sur Debian stable
+* [[https://en.wikipedia.org/wiki/Deepin|Wikipedia]]
+* [[https://github.com/linuxdeepin|GitHub]]
+* [[https://distrowatch.com/table.php?distribution=deepin|Distro Watch]]
+* Desktop env : Deepin Desktop Environment, basé sur QT
+
+[[http://enso-os.site/|Enso OS]]
+* Enso 0.3.1 is a custom build of Xubuntu 16.04.03, which incorporates Xfce over the top of Ubuntu
+* [[https://github.com/nick92/Enso-OS|GitHub]]
+* [[https://distrowatch.com/table.php?distribution=enso|Distro Watch]]
+
+[[https://manjaro.org/|Manjaro]]
+* Basé sur Arch Linux
+* [[https://fr.wikipedia.org/wiki/Manjaro_Linux|Wikipedia]]
+* [[https://gitlab.manjaro.org/explore/groups|GitLab]]
+* [[https://distrowatch.com/table.php?distribution=manjaro|Distro Watch]]

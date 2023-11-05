@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== OVH API ======
+* [[https://eu.api.ovh.com/console/|OVH API]] ([[https://eu.api.ovh.com/1.0/|json format]])
+* [[https://github.com/ovh/php-ovh/#supported-apis|Supported API (per location)]]
+* [[https://docs.ovh.com/gb/en/customer/first-steps-with-ovh-api/|First Steps with the API]]
+
+
+
+**Time**
+Instead of using ''$(date +%s)'': https://eu.api.ovh.com/1.0/auth/time

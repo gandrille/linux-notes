@@ -1,0 +1,158 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+====== Mime types ======
+**Here, we are NOT talking about EMAIL MIME types and**
+* ''mime-support'' package
+* ''/etc/mime.types'' and ''~/.mime.types'' configuration files
+* ''/usr/sbin/update-mime'' executable file
+
+
+__TODO__: see how to use ''/usr/share/mime-info'' dir.
+
+See alos: [[:Desktop environments:Freedesktop specifications:Desktop Entries|desktop entries]] chapter.
+
+{{./mime.png}}
+
+
+
+
+===== Understanding media types (MIME types) =====
+[[https://fr.wikipedia.org/wiki/Type_de_m%C3%A9dias|Media type (aka MIME type)]]
+
+A type identifier that uses a standard format called RFC 2045.
+''type "/" [tree "."] sub-type ["+" suffix] *[";" parameter]''
+
+Ten types are available: ''application'', ''audio'', ''example'', ''font'', ''image'', ''message'', ''model'', ''multipart'', ''text'' and ''video''.
+Four trees are defined: standard tree (without prefix), vendor tree (''vnd.'' prefix), personal tree (''prs.'' prefix) and unregistered tree (''x.'' prefix).
+
+Example ''text/html; charset=UTF-8''
+* ''text'' type
+* ''html'' subtype of the standard tree
+* ''charset=UTF-8'' parameter
+
+Exemples
+* ''application/javascript''
+* ''application/pdf''
+* ''application/json''
+* ''application/ld+json''
+* ''application/xml''
+* ''application/zip''
+* ''application/vnd.oasis.opendocument.spreadsheet'' : feuille de calcul OpenDocument 
+* ''image/gif''
+* ''image/jpeg''
+* ''text/css''
+* ''text/csv''
+* ''text/html''
+* ''text/plain''
+* ''text/xml''
+
+===== Detection of type : Shared MIME info spec database =====
+Single way to store static information about MIME types and rules for determining a type for a given file.
+
+**Sources**
+* [[https://specifications.freedesktop.org/shared-mime-info-spec/latest/|Freedesktop.org Shared mime info spec]] 
+* [[https://docs.oracle.com/cd/E37927_01/html/E36692/glvax.html|Oracle documentation]]
+
+According to the specs, the databses are located into the ''mime'' subdirectory of every directory in ''XDG_DATA_HOME:XDG_DATA_DIRS''. By default, this means:
+* ''/usr/share/mime/''
+* ''/usr/local/share/mime/''
+* ''~/.local/share/mime/''
+
+A ''packages'' directory holds a set of files. Each of them is describing a way to label files with a given type.
+
+Here is a basic example:
+'''
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+ <mime-type type="application/x-extension-html">
+  <comment>html document</comment>
+  <glob pattern="*.html"/>
+ </mime-type>
+</mime-info>
+'''
+
+Note: a lot of options are available in order to assign a type to a file based on its content or path.
+
+According to the specs, « Each application that wishes to contribute to the MIME database will install a single XML file, named after the application, into one of the three ''<MIME>/packages/'' directories (depending on where the user requested the application be installed). After installing, uninstalling or modifying this file, the application **MUST** run the ''update-mime-database'' command. » 
+
+The ''update-mime-database'' command is processing a database in order to build several files ([[https://specifications.freedesktop.org/shared-mime-info-spec/latest/ar01s02.html#s2_layout|full list]]) using the ones stored into the ''packages'' folder.
+Example: ''update-mime-database ~/.local/share/mime''
+
+**IMPORTANT**
+« Any file named ''Override.xml'' takes precedence over all other files in the same packages directory ». « Users should never edit the database. If they wish to make corrections or provide MIME entries for software that doesn't provide these itself, they should do so by means of the ''Override.xml'' ». 
+
+===== Linking MIME types to applications =====
+[[https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-latest.html|Association between MIME types and applications]] : « this specification solves the remaining issues: which application should open a file by default, how to let the user change the default application, and how to let the user add or remove associations between applications and mimetypes. » 
+
+==== mimeapps.list file location ====
+The information is located into a file called ''mimeapps.list''.
+
+**user overrides, desktop-specific (for advanced users)**
+* ''$XDG_CONFIG_HOME/$desktop-mimeapps.list''
+* example: ''~/.config/xfce-mimeapps.list''
+
+**user overrides (recommended location for user configuration GUIs)**
+* ''$XDG_CONFIG_HOME/mimeapps.list''
+* example: ''~/.config/mimeapps.list''
+→ Best place for user defined config.
+
+**sysadmin and ISV overrides, desktop-specific**
+* ''$XDG_CONFIG_DIRS/$desktop-mimeapps.list''
+* example: ''/etc/xdg/xdg-xubuntu/xfce-mimeapps.list'' and ''/etc/xdg/xfce-mimeapps.list''
+
+**sysadmin and ISV overrides**
+* ''$XDG_CONFIG_DIRS/mimeapps.list''
+* example: ''/etc/xdg/xdg-xubuntu/mimeapps.list'' and ''/etc/xdg/mimeapps.list''
+
+**DEPRECATED For completeness, desktop-specific**
+* ''$XDG_DATA_HOME/applications/$desktop-mimeapps.list''
+* example: ''~/.local/share/applications/xfce-mimeapps.list''
+
+**DEPRECATED For compatibility**
+* ''$XDG_DATA_HOME/applications/mimeapps.list''
+* example: ''~/.local/share/applications/mimeapps.list''
+
+**distribution-provided defaults, desktop-specific**
+* ''$XDG_DATA_DIRS/applications/$desktop-mimeapps.list''
+* example: ''/usr/local/share/applications/xfce-mimeapps.list'' and ''/usr/share/applications/xfce-mimeapps.list''
+
+**distribution-provided defaults**
+* ''$XDG_DATA_DIRS/applications/mimeapps.list''
+* example: ''/usr/local/share/applications/mimeapps.list'' and ''/usr/share/applications/mimeapps.list''
+
+==== mimeapps.list file format ====
+''mimeapps.list'' can contain the following groups
+* ''[Default Applications]''
+* ''[Added Associations]''
+* ''[Removed Associations]'' for blacklisting (someting added by a ''mimeapps.list'' file can be blacklisted by another one)
+
+Here is a basic example
+'''
+[Added Associations]
+image/jpeg=org.gnome.gThumb.desktop;shotwell-viewer.desktop;gimp.desktop;ristretto.desktop;
+audio/mpeg=vlc.desktop;
+
+[Default Applications]
+text/html=firefox.desktop
+image/jpeg=org.gnome.gThumb.desktop
+'''
+
+
+===== Executables from xdg-utils package =====
+**xdg-mime command**
+* ''query''
+	* ''xdg-mime query filetype myfile.jpg'' → ''image/jpeg''
+	* ''xdg-mime query default image/jpeg'' → ''org.gnome.gThumb.desktop''
+* ''default'' Ask the desktop environment to make application the default application for opening files of type mimetype
+	* ''xdg-mime default vlc.desktop video/mp4''
+* ''install'' Adds the file type descriptions provided in mimetypes-file to the desktop environment.
+* ''uninstall'' Removes the file type descriptions provided in mimetypes-file and previously added with xdg-mime install from the desktop environment. 
+
+**xdg-open command**
+Opens a file or URL in the user's preferred application
+''xdg-open myfile.jpg''
+
+**NOTE : here are some alternatives to xdg-utils package**
+* [[https://wiki.archlinux.org/index.php/Default_applications|List of alternatives]]
+* [[:Desktop environments:Xfce:Exo|Exo]]

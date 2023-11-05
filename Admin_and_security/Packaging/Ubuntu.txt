@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Ubuntu ======
+https://korben.info/comment-activer-le-live-patching-ubuntu.html
+
+

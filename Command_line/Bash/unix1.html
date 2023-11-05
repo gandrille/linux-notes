@@ -1,0 +1,1436 @@
+<!-- X-URL: http://www.ecole.eu.org/doc/cours2/breviaire_cmd/ -->
+<!-- Date: Wed, 22 Nov 2000 22:19:41 GMT -->
+<BASE HREF="http://www.ecole.eu.org/doc/cours2/breviaire_cmd/">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//FR">
+<!--Converted with LaTeX2HTML 97.1 (release) (July 13th, 1997)
+ by Nikos Drakos (nikos@cbl.leeds.ac.uk), CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippman, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Résumé des commandes UNIX Extrait du guide : ``Courte information sur le système UNIX et les réseaux téléinformatiques'' </TITLE>
+<META NAME="description" CONTENT="Résumé des commandes UNIX Extrait du guide : ``Courte information sur le système UNIX et les réseaux téléinformatiques'' ">
+<META NAME="keywords" CONTENT="index">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso_8859_1">
+<LINK REL="STYLESHEET" HREF="index.css">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif_gr.gif"> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif_gr.gif"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif_gr.gif">   
+<BR>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+<H1 ALIGN="CENTER">Résumé des commandes UNIX <BR>
+<BR>
+<BR>
+<SMALL>Extrait du guide : ``Courte information sur le système UNIX <BR>
+et les réseaux téléinformatiques''</SMALL> </H1>
+<P ALIGN="LEFT"></P>
+<BR>
+<BR>
+<HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><strong>Table des matières</strong></A>
+<UL>
+<LI><A NAME="tex2html12"
+ HREF="index.html#SECTION00001000000000000000">
+Syntaxe</A>
+<LI><A NAME="tex2html13"
+ HREF="index.html#SECTION00002000000000000000">
+Principales commandes</A>
+<UL>
+<LI><A NAME="tex2html14"
+ HREF="index.html#SECTION00002100000000000000">
+<TT>a2ps</TT>, <TT>mp</TT>, <TT>enscript</TT>, mise en page de listings</A>
+<LI><A NAME="tex2html15"
+ HREF="index.html#SECTION00002200000000000000">
+<TT>alias</TT>, définition de synonymes de commandes</A>
+<LI><A NAME="tex2html16"
+ HREF="index.html#SECTION00002300000000000000">
+<TT>awk</TT>, interprète de scripts</A>
+<LI><A NAME="tex2html17"
+ HREF="index.html#SECTION00002400000000000000">
+<TT>cat</TT>, affichage ininterrompu d'un fichier</A>
+<LI><A NAME="tex2html18"
+ HREF="index.html#SECTION00002500000000000000">
+<TT>cd</TT>, changement de répertoire</A>
+<LI><A NAME="tex2html19"
+ HREF="index.html#SECTION00002600000000000000">
+<TT>chmod</TT>, changement des protections d'un fichier</A>
+<LI><A NAME="tex2html20"
+ HREF="index.html#SECTION00002700000000000000">
+<TT>compress, uncompress, gzip, gunzip, zip, unzip,
+                 unarj</TT>, compression et d&#233;compression d'un fichier</A>
+<LI><A NAME="tex2html21"
+ HREF="index.html#SECTION00002800000000000000">
+<TT>crontab</TT>, opérations à heures fixes</A>
+<LI><A NAME="tex2html22"
+ HREF="index.html#SECTION00002900000000000000">
+<TT>df</TT>, disponibilité des systèmes de fichiers</A>
+<LI><A NAME="tex2html23"
+ HREF="index.html#SECTION000021000000000000000">
+<TT>diff</TT>, affichage des différences entre fichiers</A>
+<LI><A NAME="tex2html24"
+ HREF="index.html#SECTION000021100000000000000">
+<TT>du</TT>, usage disque</A>
+<LI><A NAME="tex2html25"
+ HREF="index.html#SECTION000021200000000000000">
+<TT>emacs</TT>, éditeur pleine page multi-fonctions</A>
+<UL>
+<LI><A NAME="tex2html26"
+ HREF="index.html#SECTION000021210000000000000">
+<TT>uemacs</TT>, éditeur pleine page simplifié </A>
+<LI><A NAME="tex2html27"
+ HREF="index.html#SECTION000021220000000000000">
+<TT>ne</TT>, éditeur pleine page avec menus déroulants</A>
+</UL>
+<LI><A NAME="tex2html28"
+ HREF="index.html#SECTION000021300000000000000">
+<TT>find</TT>, recherche de fichiers</A>
+<LI><A NAME="tex2html29"
+ HREF="index.html#SECTION000021400000000000000">
+<TT>grep</TT>, recherche de motif dans un fichier</A>
+<LI><A NAME="tex2html30"
+ HREF="index.html#SECTION000021500000000000000">
+<TT>gzip</TT>, compression et décompression de fichiers</A>
+<LI><A NAME="tex2html31"
+ HREF="index.html#SECTION000021600000000000000">
+<TT>head</TT>, affichage des premières lignes d'un fichier</A>
+<LI><A NAME="tex2html32"
+ HREF="index.html#SECTION000021700000000000000">
+<TT>kill</TT>, destruction d'un processus ou communication de signaux</A>
+<LI><A NAME="tex2html33"
+ HREF="index.html#SECTION000021800000000000000">
+<TT>lpq</TT> liste des documents en cours d'impression</A>
+<LI><A NAME="tex2html34"
+ HREF="index.html#SECTION000021900000000000000">
+<TT>lpr</TT> envoit à l'imprimante</A>
+<LI><A NAME="tex2html35"
+ HREF="index.html#SECTION000022000000000000000">
+<TT>lprm</TT> retire un document de la queue d'impression</A>
+<LI><A NAME="tex2html36"
+ HREF="index.html#SECTION000022100000000000000">
+<TT>lpspr</TT>, mise en page de documents <B>PostScript</B></A>
+<LI><A NAME="tex2html37"
+ HREF="index.html#SECTION000022200000000000000">
+<TT>ls</TT>, liste d'un répertoire</A>
+<LI><A NAME="tex2html38"
+ HREF="index.html#SECTION000022300000000000000">
+<TT>man</TT>, manuels en ligne</A>
+<LI><A NAME="tex2html39"
+ HREF="index.html#SECTION000022400000000000000">
+<TT>mkdir</TT>, création d'un répertoire</A>
+<LI><A NAME="tex2html40"
+ HREF="index.html#SECTION000022500000000000000">
+<TT>more</TT>, affichage page par page d'un fichier</A>
+<LI><A NAME="tex2html41"
+ HREF="index.html#SECTION000022600000000000000">
+<TT>mv</TT>, d&#233;placer, renomer un fichier ou r&#233;pertoire</A>
+<LI><A NAME="tex2html42"
+ HREF="index.html#SECTION000022700000000000000">
+<TT>nice</TT>, changement de priorité</A>
+<LI><A NAME="tex2html43"
+ HREF="index.html#SECTION000022800000000000000">
+<TT>nroff</TT>, mise en page de manuels</A>
+<LI><A NAME="tex2html44"
+ HREF="index.html#SECTION000022900000000000000">
+<TT>passwd</TT>, changement du mot de passe</A>
+<LI><A NAME="tex2html45"
+ HREF="index.html#SECTION000023000000000000000">
+<TT>pico</TT>, éditeur pleine page simplifié</A>
+<LI><A NAME="tex2html46"
+ HREF="index.html#SECTION000023100000000000000">
+<TT>ps</TT>, affichage les processus en cours</A>
+<LI><A NAME="tex2html47"
+ HREF="index.html#SECTION000023200000000000000">
+<TT>pwd</TT>, affichage du répertoire courant</A>
+<LI><A NAME="tex2html48"
+ HREF="index.html#SECTION000023300000000000000">
+<TT>quota</TT>, information sur l'utilisation disque autorisée</A>
+<LI><A NAME="tex2html49"
+ HREF="index.html#SECTION000023400000000000000">
+<TT>rm</TT>, destruction d'un fichier</A>
+<LI><A NAME="tex2html50"
+ HREF="index.html#SECTION000023500000000000000">
+<TT>rmdir</TT> efface un r&#233;pertoire</A>
+<LI><A NAME="tex2html51"
+ HREF="index.html#SECTION000023600000000000000">
+<TT>rz</TT>, réception d'un fichier via ZModem</A>
+<LI><A NAME="tex2html52"
+ HREF="index.html#SECTION000023700000000000000">
+<TT>screen</TT>, gestionnaire de fenêtres virtuelles</A>
+<LI><A NAME="tex2html53"
+ HREF="index.html#SECTION000023800000000000000">
+<TT>sed</TT>, éditeur de flots</A>
+<LI><A NAME="tex2html54"
+ HREF="index.html#SECTION000023900000000000000">
+<TT>stty</TT>, changement de modes du terminal</A>
+<LI><A NAME="tex2html55"
+ HREF="index.html#SECTION000024000000000000000">
+<TT>sz</TT>, envoi d'un fichier via ZModem</A>
+<LI><A NAME="tex2html56"
+ HREF="index.html#SECTION000024100000000000000">
+<TT>tail</TT>, affichage des dernières lignes d'un fichier</A>
+<LI><A NAME="tex2html57"
+ HREF="index.html#SECTION000024200000000000000">
+<TT>tar</TT>, gestion d'archives portables</A>
+<LI><A NAME="tex2html58"
+ HREF="index.html#SECTION000024300000000000000">
+<TT>top</TT>, présente en temps réel l'activité de la
+machine</A>
+<LI><A NAME="tex2html59"
+ HREF="index.html#SECTION000024400000000000000">
+<TT>uuencode</TT>, codage de fichiers binaires pour transmission
+via courrier électronique</A>
+<LI><A NAME="tex2html60"
+ HREF="index.html#SECTION000024500000000000000">
+<TT>vi</TT>, éditeur pleine page</A>
+<UL>
+<LI><A NAME="tex2html61"
+ HREF="index.html#SECTION000024510000000000000">
+Mode de déplacement</A>
+<LI><A NAME="tex2html62"
+ HREF="index.html#SECTION000024520000000000000">
+Mode de commande</A>
+<LI><A NAME="tex2html63"
+ HREF="index.html#SECTION000024530000000000000">
+Mode d'insertion</A>
+</UL>
+<LI><A NAME="tex2html64"
+ HREF="index.html#SECTION000024600000000000000">
+<TT>w, who</TT>, qui fait quoi ?</A>
+<LI><A NAME="tex2html65"
+ HREF="index.html#SECTION000024700000000000000">
+<TT>wc</TT>, comptage du nombre de lignes, de mots ou de
+caractères d'un fichier</A>
+</UL>
+<LI><A NAME="tex2html66"
+ HREF="index.html#SECTION00003000000000000000">
+&Agrave;propos de ce document... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<P><H2><A NAME="SECTION00001000000000000000">
+Syntaxe</A>
+</H2>
+<P>
+La syntaxe générale des commandes est la suivante:
+<TT>commande -options paramètre<SUB>1</SUB> ... paramètre<SUB><I>n</I></SUB></TT>
+<BR>
+<BR>
+<BR>
+<P>
+Il est important de remarquer qu'un espace sépare chacun des paramètres
+et les paramètres de la commande elle-même. On remarquera
+également que certains paramètres peuvent commencer par un tiret,
+noté <TT>-</TT>. En général, ces paramètres spéciaux (options) sont à
+spécifier comme premier paramètre.
+<P><H2><A NAME="SECTION00002000000000000000">
+Principales commandes</A>
+</H2>
+<P>
+Quelques-unes des commandes disponibles seront expliquées, dans leurs
+aspects les plus simples. Les commandes de messagerie et de
+communication sont décrites en deuxième partie de ce guide en page
+<A HREF="#reseaux_informatiques"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="cross_ref_motif.gif"></A>.  Pour une aide plus complète,
+utilisez la commande <TT>man</TT><A NAME="732">&#160;</A>, comme expliqué ci-après
+<EM>(voir section commande_man)</EM>.
+<P><H3><A NAME="SECTION00002100000000000000">&#160;</A><A NAME="737">&#160;</A><A NAME="739">&#160;</A><A NAME="741">&#160;</A>
+<BR>
+<TT>a2ps</TT>, <TT>mp</TT>, <TT>enscript</TT>, mise en page de listings
+</H3>
+<P>
+Ces commandes permettent de transformer un texte, usuellement
+un listing, en un document
+<B>PostScript</B><A NAME="743">&#160;</A> pour une meilleure mise en page. Il existe de nombreuses
+options, les plus classiques 
+transforment un fichier texte en un fichier
+<B>PostScript</B><A NAME="745">&#160;</A> comportant deux colonnes, en mode
+paysage (anglais: <I>landscape</I><A NAME="747">&#160;</A>), soit tourné de 90 degrés. La
+sortie est ensuite stockée dans le fichier <TT>listing.ps</TT> (ou,
+suivant la configuration, directement à l'imprimante avec <TT>a2ps</TT>
+si on n'utilise pas l'option <TT>-nP</TT>).
+<P>
+<DIV ALIGN="CENTER">
+<TT>enscript -plisting.ps -2rh programme.c</TT> <BR>
+<BR>
+<TT>a2ps -nP programme.c &gt; plisting.ps</TT>
+</DIV><H3><A NAME="SECTION00002200000000000000"><TT>alias</TT>, définition de synonymes de commandes</A>
+<A NAME="754">&#160;</A>
+</H3>
+<P>
+Elle permet la création de raccourcis ou de synonymes de commandes
+qui existent par exemple sur d'autres systèmes.
+<DL>
+<DT><STRONG><TT>alias dir ls -lagF</TT></STRONG>
+<DD>la commande <TT>dir</TT> est un synonyme pour
+<TT>ls -lagF</TT>
+</DL><H3><A NAME="SECTION00002300000000000000"><TT>awk</TT>, interprète de scripts</A>
+<A NAME="759">&#160;</A>
+</H3>
+<P>
+Cet interprète (on dit aussi abusivement interpréteur) est surtout
+utilisé pour la conversion de formats textuels (tables, tableaux) et
+pour l'extraction de données.  Par exemple, on peut extraire la
+troisième colonne d'un tableau et sommer les deux dernières colonnes:
+<P>
+<DIV ALIGN="CENTER">
+<TT>awk '{print $3 &quot; &quot; ($(NF-1) + $NF)}' &lt; entree &gt; sortie</TT>
+</DIV>
+<P>
+Ce script utilise le concept de séparateurs de
+<TT>awk</TT><A NAME="762">&#160;</A>. <TT>NF</TT><A NAME="764">&#160;</A> représente le nombre de champs
+(anglais: <I>field number</I><A NAME="766">&#160;</A>). Le caractère <I>$</I> précède toute
+expansion de variable (comme dans un <B>shell</B><A NAME="769">&#160;</A>). Notez la
+présence d'apostrophes afin d'éviter l'expansion des variables
+directement par le shell.
+<P><H3><A NAME="SECTION00002400000000000000"><TT>cat</TT>, affichage ininterrompu d'un fichier</A>
+<A NAME="771">&#160;</A>
+</H3>
+<P>
+Permet d'afficher sans interruption possible un fichier dont le nom
+est communiqué en paramètre. La commande <TT>more</TT><A NAME="773">&#160;</A>
+<EM>(voir section more)</EM> permet quant à elle un affichage page par page. Une
+utilisation intéressante de cette commande est pour concaténer des
+fichiers. Par exemple,
+<TT>cat a b c d &gt; tous</TT> crée un fichier <TT>tous</TT> contenant la
+concaténation (mise bout à bout) des fichiers <TT>a</TT> à <TT>d</TT>,
+grâce à une <B>redirection</B><A NAME="782">&#160;</A>.
+<P><H3><A NAME="SECTION00002500000000000000"><TT>cd</TT>, changement de répertoire</A>
+<A NAME="784">&#160;</A>
+</H3>
+<P>
+La commande cd permet de se déplacer dans l'arborescence des répertoires.
+Il y a trois cas intéressants:
+<DL>
+<DT><STRONG><TT>cd ..</TT></STRONG>
+<DD>revenir au répertoire précédent dans l'arborescence.
+<DT><STRONG><TT>cd /</TT></STRONG>
+<DD>revenir à la racine.
+<DT><STRONG><TT>cd</TT></STRONG>
+<DD>revenir au répertoire par défaut de l'utilisateur, ~
+ou $HOME.
+</DL><H3><A NAME="SECTION00002600000000000000"><TT>chmod</TT>, changement des protections d'un fichier</A>
+<A NAME="789">&#160;</A>
+</H3>
+<A NAME="commande_chmod">&#160;</A>
+Elle permet de modifier les attributs, ou protections, d'un fichier ou
+d'un répertoire, seulement si vous en êtes le créateur. Elle permet
+également de protéger vos données <EM>(voir section lim_acces)</EM>.
+<P>
+Son format est le suivant: chmod <IMG WIDTH="15" HEIGHT="24" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.gif"
+ ALT="$\pm$"> quoi fichiers
+<P>
+Par exemple:
+<P><DL>
+<DT><STRONG><TT>chmod u+r .</TT></STRONG>
+<DD>autorise vous-même à lister le répertoire courant (.)
+<DT><STRONG><TT>chmod g+w bin</TT></STRONG>
+<DD>autorise les gens de votre groupe à écrire dans bin.
+Si bin est un répertoire, l'accès en création et effacement de fichiers<A NAME="tex2html1"
+ HREF="footnode.html#649"><SUP><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="foot_motif.gif"></SUP></A> est autorisé.
+<DT><STRONG><TT>chmod o+x bin</TT></STRONG>
+<DD>autorise n'importe qui à entrer dans le répertoire bin,
+ou à exécuter bin si bin est un fichier.
+</DL>
+<P>
+Notez que la création de répertoires ou de fichiers se fait avec un
+mode par défaut qui dépend de la commande <TT>umask</TT><A NAME="800">&#160;</A> <EM>(voir section conf_comm)</EM>.
+Le paramètre de mode de la commande <TT>chmod</TT><A NAME="805">&#160;</A> peut être également
+exprimé sous forme absolue en numérique, en exprimant les protections utilisateur, groupe
+et autres de gauche à droite par trois<A NAME="tex2html2"
+ HREF="footnode.html#650"><SUP><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="foot_motif.gif"></SUP></A>
+valeurs de 0 à 7. Sachant que l'exécution<A NAME="tex2html3"
+ HREF="footnode.html#135"><SUP><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="foot_motif.gif"></SUP></A>
+l'écriture et la lecture sont symbolisées respectivement par les valeurs 1, 2 et 4,
+on a, par exemple:
+<P><DL>
+<DT><STRONG><TT>chmod 664 fichier</TT></STRONG>
+<DD>comme 6 = 2 + 4, on autorise l'accès en
+écriture et en lecture pour nous et notre groupe, tandis que seule la lecture
+est possible pour les autres utilisateurs qui ne sont pas membres du groupe.
+</DL><H3><A NAME="SECTION00002700000000000000">&#160;</A><A NAME="819">&#160;</A>
+<BR>
+<TT>compress, uncompress, gzip, gunzip, zip, unzip,
+                 unarj</TT>, compression et d&#233;compression d'un fichier
+</H3>
+<P>
+Ces commandes permettent la compression de fichiers textuels ou binaires,
+ainsi que la décompression d'archives.
+Toutes ces commandes s'utilisent de la même fa&#231;on, elles diffèrent 
+seulement par le type de compression. La syntaxe g&#233;n&#233;rale est
+<DIV ALIGN="CENTER">
+<TT>compression fichier</TT> <BR>
+<BR>
+<TT>uncompression fichier.xxx</TT>
+</DIV>
+avec <TT>xxx</TT> l'extension d&#233;pendant du type de compression utilis&#233;e :
+<DL COMPACT>
+<DT>Z
+<DD>compression avec <TT>compress</TT>. &#201;tait utilis&#233; sur les
+système UNIX, est remplacer maintenant pas <TT>gzip</TT> qui est
+plus preformant et sans droit.
+<DT>gz
+<DD>compression avec <TT>gzip</TT> (GNU Zip). Le logiciel de compression
+le plus utilis&#233; sous UNIX :
+<DT>zip
+<DD>compression avec <TT>zip</TT>. Utilis&#233; principalement dans le
+monde DOS ou Windows.
+<DT>arj
+<DD>compression avec <TT>arj</TT>. Aussi utilis&#233; dans le monde DOS
+ou Windows.
+</DL>
+Ainsi on a pour <TT>gzip</TT> :
+<DL COMPACT>
+<DT><TT>gzip fichier</TT>
+<DD>compresse <TT>fichier</TT> en <TT>fichier.gz</TT>
+<DT><TT>gunzip fichier.gz</TT>
+<DD>décompresse <TT>fichier.gz</TT> en <TT>fichier</TT>
+</DL>
+Notez que,dans ce cas, on peut aussi spécifier <TT>gzip -d fichier.gz</TT> pour
+décompresser un fichier.
+<P><H3><A NAME="SECTION00002800000000000000"><TT>crontab</TT>, opérations à heures fixes</A>
+<A NAME="836">&#160;</A>
+</H3>
+<A NAME="crontab">&#160;</A>
+La commande <TT>crontab</TT> permet d'effectuer des opérations à
+heures fixes, comme par exemple compresser des fichiers, mettre à jour
+des informations, envoyer des messages. Son utilisation est très
+complexe et son utilité très minime pour des utilisateurs non
+expérimentés<A NAME="tex2html5"
+ HREF="footnode.html#655"><SUP><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="foot_motif.gif"></SUP></A>.
+<P>
+On configure cette commande en lui donnant en entrée standard un
+fichier de configuration contenant les commandes à exécuter ainsi que
+les spécifications temporelles (quand exécuter). Il est conseillé
+d'éditer un fichier que l'on nomme par exemple
+<TT>crontab</TT><A NAME="841">&#160;</A>, afin d'éviter de perdre sa configuration en
+cas de mauvaise manipulation. Ensuite, il suffit de taper la commande
+<TT>crontab &lt; crontab</TT> pour changer la configuration. On peut
+entrer <TT>crontab -l</TT> pour conna&#238;tre la configuration
+courante. Le format de chacune des lignes peut sembler compliqué et
+est détaillé à la figurefigcrontab. La configuration décrite lance
+chaque 8 du mois à 3 heures 20 minutes du matin un <B>script</B><A NAME="847">&#160;</A>.
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="figcrontab">&#160;</A><A NAME="656">&#160;</A>
+<TABLE>
+<CAPTION><STRONG>Figure:</STRONG>
+Détail d'une entrée <B>crontab</B><A NAME="849">&#160;</A></CAPTION>
+<TR><TD><IMG WIDTH="590" HEIGHT="318"
+ SRC="img2.gif"
+ ALT="\begin{figure}
+ \begin{center}
+ \leavevmode
+ 
+ 
+\epsfbox {schemas/crontab.eps}
+
+ \end{center}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+<BR>
+<P>
+Il faut savoir que souvent le <B>shell</B><A NAME="851">&#160;</A> utilisé pour lancer les
+commandes spécifiées est <B>sh</B><A NAME="853">&#160;</A>. On peut spécifier <TT>#! /bin/csh</TT>
+par exemple au début d'un script dont le nom est donné en paramètre pour
+changer d'interprète. Il ne faut pas oublier de spécifier les sentiers
+complets: l'environnement n'est probablement pas initialisé parfaitement.
+<P>
+Une commande similaire, beaucoup plus simple à utiliser, et qui permet
+cette fois de retarder l'exécution de travaux (par exemple pendant la
+nuit ou le week-end) est la commande
+<TT>at</TT><A NAME="856">&#160;</A>.
+<P>
+<DIV ALIGN="CENTER">
+<TT>at now + 5 min &lt; fichier_commande</TT>
+</DIV><H3><A NAME="SECTION00002900000000000000"><TT>df</TT>, disponibilité des systèmes de fichiers</A>
+<A NAME="859">&#160;</A>
+</H3>
+<P>
+Celle-ci permet de connaître les systèmes de fichier accessibles, 
+leur point de montage dans l'arborescence, leur capacité et
+leur taux d'occupation. On peut spécifier un répertoire en 
+argument, par exemple <TT>df &nbsp;</TT><A NAME="861">&#160;</A> permet de connaître l'espace
+disponible sur le disque où se trouve le compte de l'utilisateur. 
+En général, un pourcentage (de 5 à 10 %,
+configurable) de chaque système de fichier est réservé à
+<TT>root</TT><A NAME="863">&#160;</A>. Il est donc possible que le total ne corresponde pas.
+<P><H3><A NAME="SECTION000021000000000000000"><TT>diff</TT>, affichage des différences entre fichiers</A>
+<A NAME="865">&#160;</A>
+</H3>
+<P>
+Cette commande affiche les différences entre deux fichiers. Cela est parfois
+utilisé par des utilitaires stockant des modifications incrémentales
+dans des sources ou textes sous leur contrôle, permettant de retrouver
+des versions antérieures ou le travail à plusieurs, comme avec
+<B>RCS</B><A NAME="867">&#160;</A> ou <B>SCCS</B><A NAME="869">&#160;</A>. La commande <B>patch</B><A NAME="871">&#160;</A> permet de
+retrouver le fichier modifié à l'aide du résultat de <B>diff</B><A NAME="873">&#160;</A>
+et du texte original.
+<P><H3><A NAME="SECTION000021100000000000000"><TT>du</TT>, usage disque</A>
+<A NAME="875">&#160;</A>
+</H3>
+<P>
+Cette commande permet de connaître l'espace disque utilisé par un
+sous-répertoire. L'unité dépend du système (parfois 512 octets, parfois
+1 Koctet, ou d'autres valeurs).  Un paramètre très souvent utilisé est
+<TT>-s *</TT>, qui permet d'obtenir la taille de tous les objets du
+répertoire courant (fichiers et répertoires).
+<P><H3><A NAME="SECTION000021200000000000000"><TT>emacs</TT>, éditeur pleine page multi-fonctions</A>
+<A NAME="878">&#160;</A>
+</H3>
+<P>
+Emacs est un éditeur <B>VT100</B><A NAME="880">&#160;</A> offrant des possibilités de
+macros et de scripts inégalées. Une description sommaire de cet
+éditeur se trouve dans la section <A HREF="#emacs_guide"><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="cross_ref_motif.gif"></A>.
+<P><H4><A NAME="SECTION000021210000000000000"><TT>uemacs</TT>, éditeur pleine page simplifié </A>
+<A NAME="882">&#160;</A>
+</H4>
+<P>
+Micro-emacs est un sous-ensemble de l'éditeur <B>Emacs</B><A NAME="884">&#160;</A>.
+<P><H4><A NAME="SECTION000021220000000000000"><TT>ne</TT>, éditeur pleine page avec menus déroulants</A>
+<A NAME="886">&#160;</A>
+</H4>
+<P>
+Nice-Editor est un éditeur ressemblant à <B>Emacs</B><A NAME="888">&#160;</A>, à part une caractéristique
+intéressante: il permet l'affichage de menus déroulants sur un
+terminal <B>VT100</B><A NAME="890">&#160;</A> ou similaire par simple pression de la touche
+<I>PF1</I> ou équivalente.
+<P><H3><A NAME="SECTION000021300000000000000"><TT>find</TT>, recherche de fichiers</A>
+<A NAME="893">&#160;</A>
+</H3>
+<P>
+Cette commande permet de trouver des fichiers depuis une racine spécifiée.
+Par exemple, la commande suivante affichera tous les fichiers ayant un
+<TT>t</TT> dans leur nom, et ceci dans tous les sous-répertoires du répertoire
+courant, y compris ce dernier:   
+<DIV ALIGN="CENTER">
+<TT>find . -name '*t*' -print</TT>
+</DIV>
+<P>
+Notez les guillemets qui empêchent une interprétation de la <B>regexp</B><A NAME="897">&#160;</A>
+par le <B>shell</B><A NAME="899">&#160;</A><A NAME="tex2html6"
+ HREF="footnode.html#664"><SUP><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="foot_motif.gif"></SUP></A>.
+<P>
+Cette commande est très puissante. On peut lui faire rechercher des
+fichiers en fonction d'un utilisateur ou d'un groupe particulier, en
+connaissant une partie du nom, en fonction de sa taille, de sa date de
+création ou de dernière modification ou de son <B>mode</B><A NAME="901">&#160;</A> (les
+protections UNIX, voir <B>chmod</B><A NAME="903">&#160;</A>). On peut également exécuter
+une commande (ce qui sera souvent peu rapide mais fort utile) sur les
+fichiers trouvés.
+<P>
+Voici un exemple un peu plus complexe qui recherche depuis la racine
+tous les fichiers <TT>core</TT><A NAME="905">&#160;</A> appartenant à l'utilisateur
+<TT>schaefer</TT> et qui sont plus gros que 500 kilo-octets ou
+modifiés il y a plus de 7 jours, sauf s'ils appartiennent au groupe
+<TT>keep</TT>. Les fichiers trouvés sont automatiquement effacés. 
+Notez l'usage des parenthèses (précédées d'un <B>backslash</B><A NAME="909">&#160;</A> pour
+éviter leur interprétation par le <B>shell</B><A NAME="911">&#160;</A>). Remarquez
+également la notation utilisée pour le <EM>ou</EM> et le fait que la
+conditionnelle <EM>et</EM> s'exprime par simple juxtaposition. Enfin
+admirez la syntaxe très particulière de l'exécution d'une commande.
+<P><PRE>
+find / -name 'core' -user schaefer \( -size +500k -o -mtime +7 \) \! -group keep -exec rm {} \;
+</PRE>
+<P><H3><A NAME="SECTION000021400000000000000"><TT>grep</TT>, recherche de motif dans un fichier</A>
+<A NAME="913">&#160;</A>
+</H3>
+<P><TT>grep</TT> est une commande permettant de trouver rapidement et facilement des
+motifs (expressions régulières) dans un ou plusieurs
+fichiers. Typiquement, pour trouver la chaine <TT>Bonjour</TT>
+(différente de la chaîne <TT>bonjour</TT> si l'argument <TT>-i</TT>
+n'est pas spécifié) dans les fichiers du répertoire courant, on écrira
+<P>
+<DIV ALIGN="CENTER">
+<TT>grep Bonjour *</TT>
+</DIV>
+<P>
+Il existe plusieurs variantes à cette commande, dont <B>egrep</B><A NAME="920">&#160;</A>, qui
+permet de spécifier des conditions plus générales. L'option <TT>-i</TT> permet
+d'ignorer la casse, ce qui est parfois bien pratique.
+<P>
+Le nom <TT>grep</TT><A NAME="923">&#160;</A> vient de <EM>global regular expression
+print</EM> ou <TT>g/re/p</TT> une commande de l'éditeur ligne
+<TT>ed</TT><A NAME="926">&#160;</A> qui a été transformée en un programme externe.
+<P><H3><A NAME="SECTION000021500000000000000"><TT>gzip</TT>, compression et décompression de fichiers</A>
+<A NAME="928">&#160;</A>
+</H3>
+<P>
+Voir <TT>compress, ...</TT>
+<P><H3><A NAME="SECTION000021600000000000000"><TT>head</TT>, affichage des premières lignes d'un fichier</A>
+<A NAME="931">&#160;</A>
+</H3>
+<P>
+Avec cette commande on affiche les premières lignes d'un fichier.
+<P><H3><A NAME="SECTION000021700000000000000">&#160;</A><A NAME="933">&#160;</A>
+<BR>
+<TT>kill</TT>, destruction d'un processus ou communication de signaux
+</H3>
+<A NAME="kill_cmd">&#160;</A>
+Cette commande permet de détruire un processus ou de lui transmettre des
+signaux (conditions exceptionnelles, comme par exemple le raccrochage
+du modem, un délai dépassé, etc.). Si le processus cible est le numéro
+5346,
+<P><DL>
+<DT><STRONG><TT>kill 5346</TT></STRONG>
+<DD>Tente de détruire le processus 5346
+<DT><STRONG><TT>kill -9 5346</TT></STRONG>
+<DD>Force la destruction du processus 5346
+</DL>
+<P>
+Un aspect intéressant de cette commande est la possibilité de détruire
+un groupe de processus. Par exemple, pour détruire tous les processus
+vous appartenant, sauf le <B>shell</B><A NAME="937">&#160;</A> courant, il suffit de donner
+les commandes suivantes:
+<P><DL>
+<DT><STRONG><TT>kill -15 -1</TT></STRONG>
+<DD>Tente de détruire tous vos processus
+<DT><STRONG><TT>kill -9 -1</TT></STRONG>
+<DD>Force la destruction de tous vos processus
+</DL><H3><A NAME="SECTION000021800000000000000"><TT>lpq</TT> liste des documents en cours d'impression</A>
+<A NAME="941">&#160;</A>
+</H3>
+<P>
+Permet de connaitre la liste des documents dans la queue de
+l'imprimante par d&#233;faut (<TT>lpq</TT> est Line Printer Queue). L'option
+<TT>-P</TT> permet d'ajouter le nom de l'imprimante : <TT>lpq -P laser1</TT>
+<P><H3><A NAME="SECTION000021900000000000000"><TT>lpr</TT> envoit à l'imprimante</A>
+<A NAME="945">&#160;</A>
+</H3>
+<P>
+Il existe principalement deux fa&#231;ons d'envoyer quelque chose à l'imprimante.
+<UL>
+<LI>
+Soit on envoit un fichier <TT>toto</TT>, la commande est <TT>lpr toto</TT>
+ou <TT>lpr -Plaser1 toto</TT> si on veux sp&#233;cifier l'imprimante 
+(<TT>laser1</TT> ici),
+<LI> Soit en utilisant une pipe pour afficher le r&#233;sultat d'une
+commande : <TT>ls /tmp | lpr</TT> imprime le contenu du r&#233;pertoire <TT>/tmp</TT>.
+</UL><H3><A NAME="SECTION000022000000000000000"><TT>lprm</TT> retire un document de la queue d'impression</A>
+<A NAME="950">&#160;</A>
+</H3>
+<P>
+Lorsqu'un document à été envoyé à l'impression, un numéro l'identifiant lui
+est attribué. Im est possible de connaitre ce numéro à l'aide de la
+commande <TT>lpq</TT> :
+<PRE>
+(hermes)../ecole/cours&gt;lpq
+lphp is ready and printing
+Rank   Owner      Job             Files                       Total Size
+active ricou      343             cours1.ps                   129096 bytes
+</PRE>
+et de retirer le document de la file d'attente de 
+l'imprimante à l'aide de la commande <TT>lprm</TT> :
+<PRE>
+(hermes)../ecole/cours&gt;lprm 343
+aldebaran: lphp-343 dequeued
+</PRE>
+L'option <TT>-P</TT> est a utiliser pour retirer un document d'une autre imprimante
+que de l'imprimante par défaut.
+<P><H3><A NAME="SECTION000022100000000000000"><TT>lpspr</TT>, mise en page de documents <B>PostScript</B></A>
+<A NAME="954">&#160;</A><A NAME="956">&#160;</A>
+</H3>
+Certains systèmes UNIX (principalement <B>OSF/1</B><A NAME="958">&#160;</A> et
+<B>Solaris</B><A NAME="960">&#160;</A> avec les imprimantes <B>DEC</B><A NAME="962">&#160;</A>) offrent une
+commande permettant d'imprimer des documents en format
+<B>PostScript</B><A NAME="964">&#160;</A> recto-verso (option
+<TT>-K2</TT>) ou plusieurs pages par côté (par exemple <TT>-N2</TT> pour
+deux pages par côté). Il
+suffit ensuite de transmettre via un <B>pipe</B><A NAME="968">&#160;</A> à la commande
+d'impression proprement dite, soit
+<P>
+<DIV ALIGN="CENTER">
+<TT>lpspr -K2 -N2 | lpr</TT>
+</DIV>
+<P>
+Des variantes libres de cette commande existent, parmi elles citons
+<TT>pstops</TT><A NAME="971">&#160;</A> et <TT>psnup</TT><A NAME="973">&#160;</A>.
+<P><H3><A NAME="SECTION000022200000000000000"><TT>ls</TT>, liste d'un répertoire</A>
+<A NAME="975">&#160;</A>
+</H3>
+<P>
+Elle permet de lister le contenu d'un répertoire. Beaucoup d'options
+sont disponibles, parmi elles, certaines sont intéressantes:
+<P><DL>
+<DT><STRONG><TT>ls -lag | more</TT></STRONG>
+<DD>lister tous les fichiers de façon complète
+avec les modes, les groupes, les créateurs et les dates, ainsi que les
+fichiers spéciaux commençant par . et faire afficher par la commande
+<TT>more</TT><A NAME="979">&#160;</A>.  Il s'agit d'un exemple d'utilisation des
+pipes.
+<DT><STRONG><TT>ls -F</TT></STRONG>
+<DD>lister les fichiers avec des indications de type
+de fichier (fichier, répertoire/, lien@, exécutable*).
+</DL>
+<P>
+La figurefigls détaille la sortie de la commande
+<TT>ls -laF</TT><A NAME="tex2html8"
+ HREF="footnode.html#676"><SUP><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="foot_motif.gif"></SUP></A>.
+<P>
+<BR>
+<DIV ALIGN="CENTER"><A NAME="figls">&#160;</A><A NAME="677">&#160;</A>
+<TABLE>
+<CAPTION><STRONG>Figure:</STRONG>
+Détail d'une sortie de <TT>ls -laF</TT></CAPTION>
+<TR><TD><IMG WIDTH="596" HEIGHT="480"
+ SRC="img3.gif"
+ ALT="\begin{figure}
+ \begin{center}
+ \leavevmode
+ 
+ 
+\epsfbox {schemas/ls.eps}
+
+ \end{center}\end{figure}"></TD></TR>
+</TABLE>
+</DIV>
+<BR><H3><A NAME="SECTION000022300000000000000"><TT>man</TT>, manuels en ligne</A>
+<A NAME="989">&#160;</A>
+</H3>
+<A NAME="commande_man">&#160;</A>
+La commande <TT>man</TT><A NAME="991">&#160;</A> permet d'obtenir des informations sur des
+commandes. Dans une première approche, il suffit de taper <TT>man
+foo</TT> si <TT>foo</TT> est la commande à expliciter. Les manuels
+systèmes sont organisés en sections et utilisent un format
+standard<A NAME="tex2html9"
+ HREF="footnode.html#679"><SUP><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="foot_motif.gif"></SUP></A>
+(commandes utilisateurs 1, administrateur 1M, appels systèmes 2,
+bibliothèques 3, formats de fichiers 4, fichiers systèmes 5, jeux 6,
+services réseau 7).  Par exemple, pour obtenir des informations sur la
+commande <TT>ls</TT><A NAME="996">&#160;</A><A NAME="tex2html10"
+ HREF="footnode.html#680"><SUP><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="foot_motif.gif"></SUP></A>, on peut écrire <TT>man 1
+ls</TT><A NAME="tex2html11"
+ HREF="footnode.html#681"><SUP><IMG  ALIGN="BOTTOM" BORDER="1" ALT="[*]" SRC="foot_motif.gif"></SUP></A> ou encore <TT>man ls</TT> ce qui est moins précis (toutes
+les pages disponibles seront présentées, une par une). Une option
+intéressante est <TT>-k</TT> qui permet d'obtenir les noms des
+différents manuels contenant le mot-clé passé en paramètre. Ainsi si
+l'on désire connaître la liste des pages de manuel qui parlent de
+<TT>tcp</TT>, on entrera <TT>man -k tcp</TT>.
+<P><H3><A NAME="SECTION000022400000000000000"><TT>mkdir</TT>, création d'un répertoire</A>
+<A NAME="1005">&#160;</A>
+</H3>
+<P>
+Crée des répertoires. L'option <TT>-p</TT> permet de créer
+automatiquement toute une hiérarchie. On peut donner
+comme argument un chemin complet à créer. Les répertoires
+déjà existants dans ce chemin seront ignorés.
+<P><H3><A NAME="SECTION000022500000000000000"><TT>more</TT>, affichage page par page d'un fichier</A>
+<A NAME="1008">&#160;</A>
+</H3>
+<A NAME="more">&#160;</A>
+Permet d'afficher un fichier avec arrêt à chaque page, ainsi que
+d'autres fonctions spéciales. On passe d'une page à l'autre avec les
+touches <I>ESPACE</I> (page suivante) et <I>b</I> (page précédente).
+On quitte avec <I>q</I> et on demande de l'aide avec <I>h</I>. Notez
+que certaines versions de cette commande (notamment la variante
+<TT>less</TT><A NAME="1014">&#160;</A>) ont besoin d'un <I>q</I> final pour sortir
+du programme.
+<P><H3><A NAME="SECTION000022600000000000000">&#160;</A><A NAME="1017">&#160;</A>
+<BR>
+<TT>mv</TT>, d&#233;placer, renomer un fichier ou r&#233;pertoire
+</H3>
+<P>
+Cette commande permet de d&#233;placer (move) un fichier. La syntaxe est
+la suivante :
+<DIV ALIGN="CENTER">
+<TT>mv fichier1 fichier2</TT> renome le fichier <TT>fichier1</TT> en 
+                              <TT>fichier2</TT>, <BR>
+<BR>
+<TT>mv fichier1 /tmp</TT> d&#233;place le fichier <TT>fichier1</TT> dans le 
+  r&#233;pertoire (d&#233;jà existant) <TT>/tmp</TT>, <BR>
+<BR>
+<TT>mv repertoire1 repertoire2</TT> renome le r&#233;pertoire <TT>repertoire1</TT>
+en <TT>repertoire2</TT>.
+</DIV><H3><A NAME="SECTION000022700000000000000"><TT>nice</TT>, changement de priorité</A>
+<A NAME="1022">&#160;</A>
+</H3>
+<P>
+La commande <TT>nice</TT><A NAME="1024">&#160;</A> permet de diminuer la priorité d'un
+processus à son lancement afin de ne pas gêner les autres processus (it's
+nice, isn't it ?).
+<P>
+<DIV ALIGN="CENTER">
+<TT>nice</TT> commande
+</DIV>
+<P>
+Pour voir le niveau de priorité d'un processus ainsi que son niveau
+de ``gentillesse'', on peut utiliser la commande <TT>ps -l</TT>.
+Plus la valeur est importante, moins la priorité est forte.
+<P>
+La commande <TT>renice</TT><A NAME="1028">&#160;</A> permet de diminuer la priorité d'un
+processus actif (vous appartenant). Augmenter la priorité n'est en
+général possible que pour <TT>root</TT><A NAME="1030">&#160;</A>.
+<P><H3><A NAME="SECTION000022800000000000000"><TT>nroff</TT>, mise en page de manuels</A>
+<A NAME="1032">&#160;</A>
+</H3>
+<P>
+Il arrive souvent que les documentations soient disponibles sous une forme non
+facilement visualisable: on le remarque à l'extension numérique du
+fichier (p.ex. foo.1). On peut les transformer en un texte formaté
+à l'aide de cette commande. Pour les manuels, on utilise une <B>macro</B><A NAME="1034">&#160;</A>
+spécifique: <TT>nroff -man foo.1 &gt; foo.txt</TT>. Cette commande produit un
+fichier <TT>foo.txt</TT> qui peut ensuite être affiché page par page avec
+<TT>more</TT><A NAME="1038">&#160;</A>. On pourrait aussi utiliser un <B>pipe</B><A NAME="1040">&#160;</A> à la place
+de la redirection.
+<P><H3><A NAME="SECTION000022900000000000000"><TT>passwd</TT>, changement du mot de passe</A>
+<A NAME="1042">&#160;</A>
+</H3>
+<P>
+Cette commande permet de changer de mot de passe
+<EM>(voir section mot_de_passe)</EM>. Certaines restrictions seront imposées par le
+système quant à la longueur du mot de passe et à son contenu pour
+diminuer les risques de piratage. L'ancien mot de passe est toujours
+demandé. Il n'y a pas d'écho pendant les demandes de mot de passe.
+<P><H3><A NAME="SECTION000023000000000000000"><TT>pico</TT>, éditeur pleine page simplifié</A>
+<A NAME="1047">&#160;</A>
+</H3>
+<P>
+Cet éditeur est très simple à utiliser et malgré cela relativement puissant.
+Il est disponible en standard sous environnement <B>PINE</B><A NAME="1049">&#160;</A> (cet
+environnement permet de lire le <B>mail</B><A NAME="1051">&#160;</A> et les <B>news</B><A NAME="1053">&#160;</A> de
+façon similaire et intégrée sous interface <B>VT100</B><A NAME="1055">&#160;</A>), ou
+séparément.
+<P><H3><A NAME="SECTION000023100000000000000"><TT>ps</TT>, affichage les processus en cours</A>
+<A NAME="1057">&#160;</A>
+</H3>
+<P>
+Les options de cette commande varient suivant les systèmes UNIX. Pour
+avoir l'ensemble des processus tournant sur la machine, sous Linux je
+tape : <TT>ps -aux</TT> mais sous Solaris ou HP-UX il faut taper
+<TT>ps -edalf</TT>. Il est conseiller de se référer à son manuel (<TT>man</TT>).
+<P><H3><A NAME="SECTION000023200000000000000"><TT>pwd</TT>, affichage du répertoire courant</A>
+<A NAME="1061">&#160;</A>
+</H3>
+<P>
+Elle permet d'afficher le répertoire courant.
+<P><H3><A NAME="SECTION000023300000000000000">&#160;</A><A NAME="1063">&#160;</A>
+<BR>
+<TT>quota</TT>, information sur l'utilisation disque autorisée
+</H3>
+<P>
+Lorsque l'espace disque devient limité, il se peut que l'administrateur
+décide d'attribuer un quota à tous les utilisateurs, n'autorisant qu'un
+certain nombre de fichiers et un volume maximum. Pour connaître votre
+quota actuel, il suffit de taper <TT>quota -v</TT>.
+Les valeurs sont en kilooctets, donc par exemple 10000 signifie 10
+megaoctets. Si au <B>login</B><A NAME="1066">&#160;</A> (à votre prochaine connexion) le système vous
+indique quelque chose ressemblant à <I>QUOTA EXCEEDED</I>, vous devez supprimer
+des fichiers sinon vous risquez des pertes de données car toute tentative de
+création de nouveaux fichiers ou d'extension de fichiers existants se
+soldera par un échec. Ce message peut également s'afficher au cours d'une
+session.
+<P><H3><A NAME="SECTION000023400000000000000"><TT>rm</TT>, destruction d'un fichier</A>
+<A NAME="1069">&#160;</A>
+</H3>
+<P>
+Permet de détruire un fichier. <TT>rmdir</TT><A NAME="1071">&#160;</A> permet quant à
+elle de détruire un répertoire préalablement vidé. Certaines options de
+ces commandes sont pratiques mais dangereuses, et ne sont donc pas
+décrites ici, à part les options suivante:
+<P><DL>
+<DT><STRONG><TT>rm -i fichier<SUB>1</SUB> ... fichier<SUB><I>n</I></SUB></TT></STRONG>
+<DD>permet de détruire tous les fichiers indiqués
+avec confirmation pour chacun. On appelle cela le mode interactif de
+<B>rm</B><A NAME="1074">&#160;</A>. Certains ajoutent un <B>alias</B><A NAME="1076">&#160;</A> dans leur
+<B>.cshrc</B><A NAME="1078">&#160;</A> afin de remplacer <TT>rm</TT><A NAME="1080">&#160;</A> par
+<TT>rm -i</TT>. Cela peut parfois s'avérer plus dangereux qu'utile: le
+risque est grand alors de prendre l'habitude de confirmer sans
+vraiment lire. Une erreur à ne pas faire est de mettre l'option
+<TT>-i</TT> ailleurs qu'au début de la commande: le système n'en
+tiendrait pas compte et détruirait sans confirmation.
+<DT><STRONG><TT>rm -r répertoire<SUB>1</SUB> ... répertoire<SUB><I>n</I></SUB></TT></STRONG>
+<DD>permet de supprimer récursivement
+une arborescence (répertoires, sous-répertoires et fichiers). Inutile d'insister
+sur le danger d'une telle commande.
+</DL>
+<P>
+Il faut donc noter que par défaut, la commande <TT>rm</TT><A NAME="1085">&#160;</A> ne
+demande aucune confirmation. Les fichiers sont donc irrémédiablement
+perdus, à moins que le fichier ait été créé le jour précédent, au
+moins, dans ce cas, il existe sur les copies automatiques journalières
+de sécurité (vérifiez cependant avec votre administrateur système si
+des copies de vos données sont effectuées régulièrement). Il faut
+noter que vouloir récupérer un fichier préalablement effacé à l'aide
+des structures de répertoires est une opération la plupart du temps
+vouée à l'échec, en particulier sous UNIX en raison du caractère
+multi-utilisateur et de la création fréquente de fichiers.
+<P>
+Selon les caractères présents dans le nom de fichier, il peut être
+nécessaire d'utiliser le <IMG WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\backslash$"> ou la complétion de la ligne
+de commande. Si le premier caractère du nom de fichier est <TT>-</TT><A NAME="1087">&#160;</A>,
+utilisez <TT>rm ./-nom</TT>.
+<P><H3><A NAME="SECTION000023500000000000000"><TT>rmdir</TT> efface un r&#233;pertoire</A>
+<A NAME="1090">&#160;</A>
+</H3>
+<P>
+Permet d'effacer un r&#233;pertoire vide (attention aux fichiers cach&#233;s,
+faire <TT>ls -a</TT> pour être sûr) : <TT>rmdir rep</TT> efface
+le r&#233;pertoire <TT>rep</TT>.
+<P><H3><A NAME="SECTION000023600000000000000"><TT>rz</TT>, réception d'un fichier via ZModem</A>
+<A NAME="1094">&#160;</A>
+</H3>
+<P>
+On tape simplement <TT>rz</TT><A NAME="1096">&#160;</A> et on configure son programme de terminal pour
+l'émission d'un fichier.
+<P><H3><A NAME="SECTION000023700000000000000"><TT>screen</TT>, gestionnaire de fenêtres virtuelles</A>
+<A NAME="1098">&#160;</A>
+</H3>
+<A NAME="screen_cmd">&#160;</A>
+Cet utilitaire permet d'ouvrir plusieurs fenêtres virtuelles sur un seul
+terminal. On passe d'un écran à l'autre avec des séquences de contrôle.
+Il est possible, avec un simple terminal <B>VT100</B><A NAME="1100">&#160;</A> d'ouvrir jusqu'à dix
+fenêtres indépendantes. Des fonctions spéciales, comme la sauvegarde des
+entrées sorties, sont possibles. On commence une session <B>screen</B><A NAME="1102">&#160;</A>
+en tapant <TT>screen</TT><A NAME="1104">&#160;</A> ou <TT>screen -r</TT>. La deuxième forme est
+employée quand on désire continuer (anglais: <I>to resume</I><A NAME="1107">&#160;</A>) une
+session détachée préalablement.
+<P>
+Le mode de contrôle s'obtient avec <I>CTRL-A</I>, puis un caractère de
+commande. Taper un chiffre dénote la fenêtre (de <I>0</I> à
+<I>9</I>). Par exemple (en supposant que <I>CTRL-A</I> a déjà
+été pressée). Attention, les commandes sont sensibles à la casse.
+<P><DL>
+<DT><STRONG>&nbsp;<I>?</I></STRONG>
+<DD>Aide
+<DT><STRONG><I>c</I></STRONG>
+<DD>créer une nouvelle fenêtre.
+<DT><STRONG><I>k</I></STRONG>
+<DD>détruire de façon sauvage la fenêtre courante. Il est mieux de
+fermer le shell avec <TT>exit</TT><A NAME="1116">&#160;</A> ou <I>CTRL-D</I>.
+<DT><STRONG><I>0</I></STRONG>
+<DD>aller sur la fenêtre 0.
+<DT><STRONG><I>H</I></STRONG>
+<DD>sauver/ne pas sauver la session en cours dans cette fenêtre dans
+un fichier <TT>screenlog.x</TT>, où <TT>x</TT> est le numéro de la fenêtre.
+<DT><STRONG><I>h</I></STRONG>
+<DD>copie d'écran dans fichier <TT>hardcopy.x</TT>.
+<DT><STRONG><I>w</I></STRONG>
+<DD>liste des fenêtres.
+<DT><STRONG><I>m</I></STRONG>
+<DD>contrôle d'activité allumé/éteint.
+</DL><H3><A NAME="SECTION000023800000000000000"><TT>sed</TT>, éditeur de flots</A>
+<A NAME="1127">&#160;</A>
+</H3>
+<P>
+Cet interprète permet de gérer des flots de données en exécutant des
+opérations de substitution. Par exemple, pour remplacer les noms de
+<B>forum</B><A NAME="1129">&#160;</A>s de la notation pointée (<B>rec.humor.funny</B><A NAME="1131">&#160;</A>)
+en la notation UNIX de stockage interne
+(<TT>rec/humour/funny</TT>), on pourrait utiliser cette commande:
+<P>
+<DIV ALIGN="CENTER">
+<TT>sed 'y%.%/%' &lt; entree &gt; sortie</TT>
+</DIV>
+<P>
+Ce script demande de remplacer les occurences de points par des barres
+obliques (anglais: <I>slash</I><A NAME="1135">&#160;</A>). Les pourcents sont des caractères
+délimiteurs qui peuvent être quelconques tant qu'ils ne figurent pas
+ni dans le motif ni dans la chaîne remplaçante. Une description
+extensive de ce logiciel peut être trouvée dans [#!oreilly:sedandawk!#].
+<P><H3><A NAME="SECTION000023900000000000000"><TT>stty</TT>, changement de modes du terminal</A>
+<A NAME="1137">&#160;</A>
+</H3>
+<A NAME="stty">&#160;</A>
+Cette commande est très complexe mais également très puissante. Elle
+permet de redéfinir des paramètres du terminal, comme par exemple
+la touche d'interruption <TT>intr</TT><A NAME="1139">&#160;</A> (défaut: <I>CTRL-C</I>), 
+ou la touche d'effacement <TT>erase</TT><A NAME="1142">&#160;</A>
+(défaut: <I>BACKSPACE</I>) <EM>(voir section personnaliser_son_environnement)</EM>.
+Dans le cas où la touche <I>BACKSPACE</I> n'a pas le comportement
+voulu il suffit donc de taper <TT>stty erase </TT><I>BACKSPACE</I>.
+<P><H3><A NAME="SECTION000024000000000000000"><TT>sz</TT>, envoi d'un fichier via ZModem</A>
+<A NAME="1151">&#160;</A>
+</H3>
+<P>
+Elle permet d'envoyer des fichiers via le protocole
+<B>ZModem</B><A NAME="1153">&#160;</A>, en général à travers un <B>modem</B><A NAME="1155">&#160;</A>. On indique
+simplement le(s) nom(s) du (des) fichier(s) à envoyer sur la ligne de
+commande.  Si votre programme de terminal ne supporte pas ZModem, vous
+pouvez essayer <B>XModem</B><A NAME="1157">&#160;</A> ou un protocole similaire. En dernier
+recours, la commande <B>kermit</B><A NAME="1159">&#160;</A> permet d'utiliser le protocole
+kermit. Elle existe sur la plupart des systèmes UNIX. Dans certains
+cas, il faut renommer le fichier avant l'envoi avec <B>mv</B><A NAME="1161">&#160;</A>,
+pour que le nom de fichier soit compatible avec le système de fichiers
+distant.
+<P><H3><A NAME="SECTION000024100000000000000"><TT>tail</TT>, affichage des dernières lignes d'un fichier</A>
+<A NAME="1163">&#160;</A>
+</H3>
+<P>
+On peut afficher les dernières lignes d'un fichier ou afficher en continu
+les ajouts à un fichier, ce qui peut &#234;tre très utile pour surveiller
+un fichier de <B>log</B><A NAME="1165">&#160;</A> (anglais: <I>logfile</I><A NAME="1167">&#160;</A>), respectivement:
+<DIV ALIGN="CENTER">
+<TT>tail nom_fichier</TT>
+<BR>
+<TT>tail -f nom_fichier
+<BR></TT>
+</DIV>
+<P>
+Dans ce dernier cas, on interrompt la commande avec <I>CTRL-C</I>.
+<P><H3><A NAME="SECTION000024200000000000000"><TT>tar</TT>, gestion d'archives portables</A>
+<A NAME="1172">&#160;</A>
+</H3>
+<A NAME="tar_example">&#160;</A>
+Cette commande permet de rassembler plusieurs fichiers en une seule archive.
+Il n'y a cependant aucune compression. On peut ensuite compresser le fichier
+résultant avec <B>gzip</B><A NAME="1174">&#160;</A> par exemple.
+<P><DL>
+<DT><STRONG><TT>tar cvf - . | gzip -9 &gt; truc.tar.gz</TT></STRONG>
+<DD>archive tous les fichier du répertoire courant et de ses
+sous-répertoires, compresse cette archive avec <B>gzip</B><A NAME="1178">&#160;</A> (l'argument -9
+sélectionne la meilleure (mais plus lente) compression) et stocke le résultat
+dans <TT>truc.tar.gz</TT>. La version <B>GNU</B><A NAME="1181">&#160;</A> de cette commande permet
+de simplifier en <TT>tar&nbsp;cvfz&nbsp;truc.tar.gz&nbsp;.</TT>, sans toutefois pouvoir
+spécifier la force de la compression.
+<DT><STRONG><TT>tar tvf truc.tar</TT></STRONG>
+<DD>liste le contenu d'un fichier <B>tar</B><A NAME="1185">&#160;</A>
+<TT>truc.tar</TT>.
+<DT><STRONG><TT>gzip -d &lt; truc.tar.gz | tar oxvf -</TT></STRONG>
+<DD>extrait le contenu d'un fichier <B>tar</B><A NAME="1189">&#160;</A> compressé avec
+<B>gzip</B><A NAME="1191">&#160;</A>. De nouveau, la version <B>GNU</B><A NAME="1193">&#160;</A> est plus puissante et
+incorpore ce mécanisme: <TT>tar oxvfz truc.tar.gz</TT>.
+</DL>
+<P>
+Note: le <TT>-</TT> dans la commande tar désigne la sortie ou l'entrée standard au
+lieu d'un fichier. Il faut aussi signaler qu'une commande similaire, parfois
+plus puissante pour certaines applications, est <B>cpio</B><A NAME="1197">&#160;</A>. Notez toutefois
+que son utilisation est légèrement plus complexe.
+<P><H3><A NAME="SECTION000024300000000000000">&#160;</A><A NAME="1199">&#160;</A>
+<BR>
+<TT>top</TT>, présente en temps réel l'activité de la
+machine
+</H3>
+<P>À l'aide de <TT>top</TT> on peut surveiller l'activité des processus lancés
+sur la machine. Pour quitter <TT>top</TT>, tapez <TT>q</TT>.
+<P><H3><A NAME="SECTION000024400000000000000">&#160;</A><A NAME="1203">&#160;</A>
+<BR>
+<TT>uuencode</TT>, codage de fichiers binaires pour transmission
+via courrier électronique
+</H3>
+<A NAME="uuencode_cmd">&#160;</A>
+Grâce à cette commande, on peut envoyer des fichiers binaires par
+courrier électronique <EM>(voir section encoding_mail)</EM>. Ils sont reconnaissables très
+facilement par leur en-tête <TT>begin 644 nom_de_fichier</TT>. On
+les décode à l'aide de <TT>uudecode</TT><A NAME="1209">&#160;</A>.
+<P><DL>
+<DT><STRONG><TT>uuencode &lt; fichier fichier &gt; fichier.uu</TT></STRONG>
+<DD>crée le
+fichier uuencodé <TT>fichier.uu</TT> qui pourra être transmis par <B>mail</B><A NAME="1213">&#160;</A>.
+<DT><STRONG><TT>uudecode fichier.uu</TT></STRONG>
+<DD>décode le fichier uuencodé après réception et
+sauvegarde le résultat dans le fichier spécifié dans <TT>fichier.uu</TT> en paramètre
+de la ligne <I>begin</I>.
+</DL><H3><A NAME="SECTION000024500000000000000"><TT>vi</TT>, éditeur pleine page</A>
+<A NAME="1218">&#160;</A>
+</H3>
+<P>
+Cette commande permet d'éditer des fichiers de façon plein-écran. Cet
+éditeur peut sembler compliqué à utiliser, mais il est très puissant,
+et de plus a l'avantage de fonctionner sur tous les systèmes UNIX
+quelle que soit leur taille et leur niveau d'installation.
+<P>
+Il possède trois modes:
+<P><DL>
+<DT><STRONG>déplacement</STRONG>
+<DD>C'est le mode par défaut. Il permet le déplacement
+à l'aide des touches du curseur sur n'importe quel caractère de l'écran.
+On le quitte généralement en tapant <I>i</I> (insertion) ou <I>a</I> (ajout) pour
+le mode d'insertion, et en tapant <I>:</I> ou <I>/</I> pour le mode de commande.
+<DT><STRONG>commande</STRONG>
+<DD>Il permet d'entrer des commandes similaires à celles
+de <B>ed</B><A NAME="1224">&#160;</A>, l'éditeur par ligne. Il est par exemple possible de substituer
+des caractères dans tout le fichier. On quitte ce mode avec <I>RETURN</I>.
+<DT><STRONG>insertion</STRONG>
+<DD>Ce mode permet d'entrer des caractères. Pour le quitter,
+il faut taper <I>ESCAPE</I>
+</DL><H4><A NAME="SECTION000024510000000000000">
+Mode de déplacement</A>
+</H4>
+<A NAME="mode_de_deplacement">&#160;</A>
+Il est possible de se déplacer avec les touches du curseur, la touche
+espace, la touche <I>RETURN</I> et la touche <I>BACKSPACE</I>. D'autres fonctions
+sont disponibles:
+<P><DL>
+<DT><STRONG><I>CTRL-G</I></STRONG>
+<DD>information sur le fichier courant et la position dans ce
+fichier
+<DT><STRONG><I>i</I></STRONG>
+<DD>passage en mode insertion (avant le curseur)
+<DT><STRONG><I>a</I></STRONG>
+<DD>passage mode ajout/insertion (après le curseur)
+<DT><STRONG><I>d</I> <I>puis</I> <I>d</I></STRONG>
+<DD>destruction d'une ligne, mise
+dans le tampon
+<DT><STRONG><I>J</I></STRONG>
+<DD>concaténation de deux lignes
+<DT><STRONG><I>x</I></STRONG>
+<DD>destruction du caractère courant
+<DT><STRONG><I>$</I></STRONG>
+<DD>se positionner à la fin de la ligne
+<DT><STRONG><I>0</I></STRONG>
+<DD>se positionner au début de la ligne
+<DT><STRONG><I>&amp;</I></STRONG>
+<DD>répéter la substitution précédente
+<DT><STRONG><I>p</I></STRONG>
+<DD>ajouter à l'endroit du curseur le contenu du tampon,
+(<I>P</I> insère avant le curseur)
+<DT><STRONG><I>D</I></STRONG>
+<DD>détruire jusqu'à la fin de la ligne, mise
+dans le tampon
+<DT><STRONG><I>Y</I></STRONG>
+<DD>mettre la ligne courante dans le tampon
+<DT><STRONG><I>CTRL-U</I></STRONG>
+<DD>Une demi-page plus haut
+<DT><STRONG><I>CTRL-D</I></STRONG>
+<DD>Une demi-page plus bas
+<DT><STRONG><I>CTRL-B</I></STRONG>
+<DD>Une page plus haut
+<DT><STRONG><I>CTRL-F</I></STRONG>
+<DD>Une page plus bas
+<DT><STRONG><I>CTRL-L</I></STRONG>
+<DD>Rafraîchir l'écran
+<DT><STRONG><I>.</I></STRONG>
+<DD>Répéter la commande précédente
+</DL>
+<P>
+On notera que l'on peut précéder ces commandes par un nombre (par exemple
+<I>32Y</I> mettra dans le tampon les 32 lignes suivantes, que
+l'on pourra insérer avec <I>p</I>).
+<P><H4><A NAME="SECTION000024520000000000000">
+Mode de commande</A>
+</H4>
+<P>
+Les commandes, qui doivent toutes être terminées par un <I>RETURN</I> et commencer
+par un <I>:</I>, sont très nombreuses. La plupart acceptent un argument numérique
+qui permet de répéter n fois l'opération (par exemple <TT>5d</TT> détruit cinq
+lignes depuis la position courante).  En voici un échantillon:
+<P><DL>
+<DT><STRONG><TT>j</TT></STRONG>
+<DD>concaténation de lignes
+<DT><STRONG><TT>d</TT></STRONG>
+<DD>destruction de lignes
+<DT><STRONG><TT>x</TT></STRONG>
+<DD>sauver et quitter. Attention, cette commande est
+dangereuse car très similaire à une commande de chiffrement (celle-ci
+en majuscule). De plus,
+elle est parfois spécialement implémentée si on force la sortie avec
+le point d'exclamation (certaines versions ne sauvegardent pas dans
+ce cas). Il est recommandé d'utiliser plutôt la combinaison <TT>wq</TT>.
+<DT><STRONG><TT>w</TT></STRONG>
+<DD>sauver
+<DT><STRONG><TT>q</TT></STRONG>
+<DD>quitter
+<DT><STRONG><TT>n</TT></STRONG>
+<DD>passer au fichier suivant si plusieurs fichiers
+<DT><STRONG><TT>$</TT></STRONG>
+<DD>se déplacer à la fin du fichier
+<DT><STRONG><TT>set ic</TT></STRONG>
+<DD>ignorer la casse en recherche. Annuler avec 
+<TT>set noic</TT>
+<DT><STRONG><TT>set nu</TT></STRONG>
+<DD>numéroter les lignes. Annuler avec <TT>set nonu</TT>
+</DL>
+<P>
+<DIV ALIGN="CENTER">
+<EM>N'oubliez pas que dans le mode de commande, toute commande commence
+par <I>:</I> et finit par un <I>RETURN</I>.</EM>
+</DIV>
+<P>
+Si l'éditeur refuse une opération (par exemple il refusera la commande
+<TT>q</TT> si le texte courant n'est pas sauvé), on peut forcer l'exécution
+par un point d'exclamation ajouté (par exemple <TT>q!</TT>).
+De plus, en tapant directement le numéro d'une ligne, on peut s'y déplacer.
+Cela est également possible d'ailleurs en lançant l'éditeur avec un
+argument commençant par <I>+</I> suivi d'un numéro de ligne.
+<P>
+Pour montrer quelques exemples de commandes complexes (il faut toujours
+ajouter un <I>:</I> avant et un <I>RETURN</I> après). On notera que
+<I>$</I> représente la dernière ligne et <I>.</I> la ligne courante
+dans les spécifications d'adresse de ligne.
+<P><DL>
+<DT><STRONG><TT>1,$s/foo/bar/g</TT></STRONG>
+<DD>Remplace toutes les occurences de foo par bar.
+<DT><STRONG><TT>%s/foo/bar/g</TT></STRONG>
+<DD>Equivalent.
+<DT><STRONG><TT>.,$s/foo/bar/g</TT></STRONG>
+<DD>Remplace toutes les occurences de foo par bar,
+depuis la ligne courante.
+<DT><STRONG><TT>3,7s%foo/bar%bar/foo%g</TT></STRONG>
+<DD>Remplace aux lignes 3 à 7 les
+occurences de la sous-cha&#238;ne foo/bar par bar/foo. Cela montre que l'on
+peut utiliser un autre caractère séparateur que /.
+<DT><STRONG><TT>1,$s/foo/bar/c</TT></STRONG>
+<DD>Remplace toutes les occurences de foo par bar, avec
+confirmation à chacune (répondre par <TT>y</TT> pour oui et <TT>n</TT> pour
+non.
+<DT><STRONG><TT>1,$s/<I>CTRL-V</I><I>CTRL-M</I>//g</TT></STRONG>
+<DD>Supprimer les retours
+de ligne indésirables: conversion MS-DOS vers UNIX.<A NAME="remove_cr">&#160;</A>Notez que le remplacement est séparé par un caractère, ici
+<I>/</I>, mais qui peut être quelconque. Il faut également faire
+attention car certains caractères, notamment <I>.</I>, <I>*</I>,
+<I>[</I> et <I>]</I> ont des
+significations particulières, il faut les précéder du caractère
+d'échappement <I><IMG WIDTH="11" HEIGHT="28" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.gif"
+ ALT="$\backslash$"></I> <EM>(voir section regexp)</EM>. Ce dernier doit
+être doublé s'il doit être utilisé tel quel. Voyez également la
+signification de <I>CTRL-V</I> qui permet d'entrer un caractère de
+contrôle.
+</DL>
+<P>
+Certaines opérations se font sans <I>:</I> ni <I>RETURN</I>, celles-ci
+sont donc exécutées en mode déplacement.
+<P>
+Noter que pour rechercher des chaînes, on doit utiliser la construction
+<TT>/chaîne</TT> puis <I>RETURN</I>, ceci sans <I>:</I> initial. Voyez
+l'état <TT>ic</TT> décrit plus haut.
+<P><H4><A NAME="SECTION000024530000000000000">
+Mode d'insertion</A>
+</H4>
+<P>
+Le mode d'insertion n'autorise ni déplacement ni commande, et doit être
+terminé par un <I>ESCAPE</I>. C'est dans ce mode que l'on ajoute
+effectivement du texte.
+<P><H3><A NAME="SECTION000024600000000000000"><TT>w, who</TT>, qui fait quoi ?</A>
+<A NAME="1308">&#160;</A>
+</H3>
+<P>
+La commande <TT>w</TT> montre quelles sont les personnes connectées 
+sur la machine et ce qu'elles font. La commande <TT>who</TT> est 
+similaire mais moins riche en informations.
+<P><H3><A NAME="SECTION000024700000000000000">&#160;</A><A NAME="1312">&#160;</A>
+<BR>
+<TT>wc</TT>, comptage du nombre de lignes, de mots ou de
+caractères d'un fichier
+</H3>
+<P>
+On peut compter les lignes d'un fichier:
+<DL>
+<DT><STRONG><TT>wc -l mon_fichier</TT></STRONG>
+<DD>compte les lignes de mon_fichier
+</DL><H2><A NAME="SECTION00003000000000000000">
+&Agrave;propos de ce document... </A>
+</H2> 
+ <STRONG>Résumé des commandes UNIX <BR>
+<BR>
+<BR>
+<SMALL>Extrait du guide : ``Courte information sur le système UNIX <BR>
+et les réseaux téléinformatiques''</SMALL> </STRONG><P>
+This document was generated using the
+<A HREF="http://www-dsed.llnl.gov/files/programs/unix/latex2html/manual/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 97.1 (release) (July 13th, 1997)
+<P>
+Copyright &#169; 1993, 1994, 1995, 1996, 1997,
+<A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, 
+Computer Based Learning Unit, University of Leeds.
+<P>
+The command line arguments were: <BR>
+ <STRONG>latex2html</STRONG> <tt>-split 4 -local_icons index.tex</tt>.
+<P>
+The translation was initiated by Olivier Ricou on 6/9/1998
+<BR><HR>
+<!--Table of Child-Links-->
+<A NAME="CHILD_LINKS"><strong>Subsections</strong></A>
+<UL>
+<LI><A NAME="tex2html12"
+ HREF="index.html#SECTION00001000000000000000">
+Syntaxe</A>
+<LI><A NAME="tex2html13"
+ HREF="index.html#SECTION00002000000000000000">
+Principales commandes</A>
+<UL>
+<LI><A NAME="tex2html14"
+ HREF="index.html#SECTION00002100000000000000">
+<TT>a2ps</TT>, <TT>mp</TT>, <TT>enscript</TT>, mise en page de listings</A>
+<LI><A NAME="tex2html15"
+ HREF="index.html#SECTION00002200000000000000">
+<TT>alias</TT>, définition de synonymes de commandes</A>
+<LI><A NAME="tex2html16"
+ HREF="index.html#SECTION00002300000000000000">
+<TT>awk</TT>, interprète de scripts</A>
+<LI><A NAME="tex2html17"
+ HREF="index.html#SECTION00002400000000000000">
+<TT>cat</TT>, affichage ininterrompu d'un fichier</A>
+<LI><A NAME="tex2html18"
+ HREF="index.html#SECTION00002500000000000000">
+<TT>cd</TT>, changement de répertoire</A>
+<LI><A NAME="tex2html19"
+ HREF="index.html#SECTION00002600000000000000">
+<TT>chmod</TT>, changement des protections d'un fichier</A>
+<LI><A NAME="tex2html20"
+ HREF="index.html#SECTION00002700000000000000">
+<TT>compress, uncompress, gzip, gunzip, zip, unzip,
+                 unarj</TT>, compression et d&#233;compression d'un fichier</A>
+<LI><A NAME="tex2html21"
+ HREF="index.html#SECTION00002800000000000000">
+<TT>crontab</TT>, opérations à heures fixes</A>
+<LI><A NAME="tex2html22"
+ HREF="index.html#SECTION00002900000000000000">
+<TT>df</TT>, disponibilité des systèmes de fichiers</A>
+<LI><A NAME="tex2html23"
+ HREF="index.html#SECTION000021000000000000000">
+<TT>diff</TT>, affichage des différences entre fichiers</A>
+<LI><A NAME="tex2html24"
+ HREF="index.html#SECTION000021100000000000000">
+<TT>du</TT>, usage disque</A>
+<LI><A NAME="tex2html25"
+ HREF="index.html#SECTION000021200000000000000">
+<TT>emacs</TT>, éditeur pleine page multi-fonctions</A>
+<UL>
+<LI><A NAME="tex2html26"
+ HREF="index.html#SECTION000021210000000000000">
+<TT>uemacs</TT>, éditeur pleine page simplifié </A>
+<LI><A NAME="tex2html27"
+ HREF="index.html#SECTION000021220000000000000">
+<TT>ne</TT>, éditeur pleine page avec menus déroulants</A>
+</UL>
+<LI><A NAME="tex2html28"
+ HREF="index.html#SECTION000021300000000000000">
+<TT>find</TT>, recherche de fichiers</A>
+<LI><A NAME="tex2html29"
+ HREF="index.html#SECTION000021400000000000000">
+<TT>grep</TT>, recherche de motif dans un fichier</A>
+<LI><A NAME="tex2html30"
+ HREF="index.html#SECTION000021500000000000000">
+<TT>gzip</TT>, compression et décompression de fichiers</A>
+<LI><A NAME="tex2html31"
+ HREF="index.html#SECTION000021600000000000000">
+<TT>head</TT>, affichage des premières lignes d'un fichier</A>
+<LI><A NAME="tex2html32"
+ HREF="index.html#SECTION000021700000000000000">
+<TT>kill</TT>, destruction d'un processus ou communication de signaux</A>
+<LI><A NAME="tex2html33"
+ HREF="index.html#SECTION000021800000000000000">
+<TT>lpq</TT> liste des documents en cours d'impression</A>
+<LI><A NAME="tex2html34"
+ HREF="index.html#SECTION000021900000000000000">
+<TT>lpr</TT> envoit à l'imprimante</A>
+<LI><A NAME="tex2html35"
+ HREF="index.html#SECTION000022000000000000000">
+<TT>lprm</TT> retire un document de la queue d'impression</A>
+<LI><A NAME="tex2html36"
+ HREF="index.html#SECTION000022100000000000000">
+<TT>lpspr</TT>, mise en page de documents <B>PostScript</B></A>
+<LI><A NAME="tex2html37"
+ HREF="index.html#SECTION000022200000000000000">
+<TT>ls</TT>, liste d'un répertoire</A>
+<LI><A NAME="tex2html38"
+ HREF="index.html#SECTION000022300000000000000">
+<TT>man</TT>, manuels en ligne</A>
+<LI><A NAME="tex2html39"
+ HREF="index.html#SECTION000022400000000000000">
+<TT>mkdir</TT>, création d'un répertoire</A>
+<LI><A NAME="tex2html40"
+ HREF="index.html#SECTION000022500000000000000">
+<TT>more</TT>, affichage page par page d'un fichier</A>
+<LI><A NAME="tex2html41"
+ HREF="index.html#SECTION000022600000000000000">
+<TT>mv</TT>, d&#233;placer, renomer un fichier ou r&#233;pertoire</A>
+<LI><A NAME="tex2html42"
+ HREF="index.html#SECTION000022700000000000000">
+<TT>nice</TT>, changement de priorité</A>
+<LI><A NAME="tex2html43"
+ HREF="index.html#SECTION000022800000000000000">
+<TT>nroff</TT>, mise en page de manuels</A>
+<LI><A NAME="tex2html44"
+ HREF="index.html#SECTION000022900000000000000">
+<TT>passwd</TT>, changement du mot de passe</A>
+<LI><A NAME="tex2html45"
+ HREF="index.html#SECTION000023000000000000000">
+<TT>pico</TT>, éditeur pleine page simplifié</A>
+<LI><A NAME="tex2html46"
+ HREF="index.html#SECTION000023100000000000000">
+<TT>ps</TT>, affichage les processus en cours</A>
+<LI><A NAME="tex2html47"
+ HREF="index.html#SECTION000023200000000000000">
+<TT>pwd</TT>, affichage du répertoire courant</A>
+<LI><A NAME="tex2html48"
+ HREF="index.html#SECTION000023300000000000000">
+<TT>quota</TT>, information sur l'utilisation disque autorisée</A>
+<LI><A NAME="tex2html49"
+ HREF="index.html#SECTION000023400000000000000">
+<TT>rm</TT>, destruction d'un fichier</A>
+<LI><A NAME="tex2html50"
+ HREF="index.html#SECTION000023500000000000000">
+<TT>rmdir</TT> efface un r&#233;pertoire</A>
+<LI><A NAME="tex2html51"
+ HREF="index.html#SECTION000023600000000000000">
+<TT>rz</TT>, réception d'un fichier via ZModem</A>
+<LI><A NAME="tex2html52"
+ HREF="index.html#SECTION000023700000000000000">
+<TT>screen</TT>, gestionnaire de fenêtres virtuelles</A>
+<LI><A NAME="tex2html53"
+ HREF="index.html#SECTION000023800000000000000">
+<TT>sed</TT>, éditeur de flots</A>
+<LI><A NAME="tex2html54"
+ HREF="index.html#SECTION000023900000000000000">
+<TT>stty</TT>, changement de modes du terminal</A>
+<LI><A NAME="tex2html55"
+ HREF="index.html#SECTION000024000000000000000">
+<TT>sz</TT>, envoi d'un fichier via ZModem</A>
+<LI><A NAME="tex2html56"
+ HREF="index.html#SECTION000024100000000000000">
+<TT>tail</TT>, affichage des dernières lignes d'un fichier</A>
+<LI><A NAME="tex2html57"
+ HREF="index.html#SECTION000024200000000000000">
+<TT>tar</TT>, gestion d'archives portables</A>
+<LI><A NAME="tex2html58"
+ HREF="index.html#SECTION000024300000000000000">
+<TT>top</TT>, présente en temps réel l'activité de la
+machine</A>
+<LI><A NAME="tex2html59"
+ HREF="index.html#SECTION000024400000000000000">
+<TT>uuencode</TT>, codage de fichiers binaires pour transmission
+via courrier électronique</A>
+<LI><A NAME="tex2html60"
+ HREF="index.html#SECTION000024500000000000000">
+<TT>vi</TT>, éditeur pleine page</A>
+<UL>
+<LI><A NAME="tex2html61"
+ HREF="index.html#SECTION000024510000000000000">
+Mode de déplacement</A>
+<LI><A NAME="tex2html62"
+ HREF="index.html#SECTION000024520000000000000">
+Mode de commande</A>
+<LI><A NAME="tex2html63"
+ HREF="index.html#SECTION000024530000000000000">
+Mode d'insertion</A>
+</UL>
+<LI><A NAME="tex2html64"
+ HREF="index.html#SECTION000024600000000000000">
+<TT>w, who</TT>, qui fait quoi ?</A>
+<LI><A NAME="tex2html65"
+ HREF="index.html#SECTION000024700000000000000">
+<TT>wc</TT>, comptage du nombre de lignes, de mots ou de
+caractères d'un fichier</A>
+</UL>
+<LI><A NAME="tex2html66"
+ HREF="index.html#SECTION00003000000000000000">
+&Agrave;propos de ce document... </A>
+</UL>
+<!--End of Table of Child-Links-->
+<HR>
+<!--Navigation Panel-->
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next" SRC="next_motif_gr.gif"> 
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up" SRC="up_motif_gr.gif"> 
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous" SRC="previous_motif_gr.gif">   
+<BR>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Olivier Ricou</I>
+<BR><I>6/9/1998</I>
+</ADDRESS>
+</BODY>
+</HTML>
+

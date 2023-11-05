@@ -1,0 +1,20 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+====== CSV parser ======
+
+===== Miller =====
+* [[http://johnkerl.org/miller/doc/|Website]]
+* [[https://github.com/johnkerl/miller|GitHub]]
+
+
+
+See also:
+https://linuxfr.org/users/jben/journaux/csvspoon-et-csvformatmail-l-industrialisation-de-la-manipulation-de-fichiers-csv
+
+
+**Pour manipuler des fichiers csv:**
+* **csvkit** **:** [[https://github.com/wireservice/csvkit|GitHub]] **/** [[https://csvkit.readthedocs.io/en/latest/|Documentation]]
+* [[https://github.com/BurntSushi/xsv|xsv]]
+* [[https://github.com/jqnatividad/qsv|qsv]]
+

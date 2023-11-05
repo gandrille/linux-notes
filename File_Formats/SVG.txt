@@ -1,0 +1,6 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+====== SVG ======
+**VERY basic** online svg editor
+https://github.com/SVG-Edit/svgedit

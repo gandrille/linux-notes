@@ -1,0 +1,6 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+====== Point Vision Grenoble ======
+''curl 'https://rdv.pointvision.com/ajax/rdv_disponible_calendar_ajax.php?token_rdv=&idtyperdv=19&idlieux=41&idp=0&datesemaine=2023-06-26&nbpersonne=1&provenance=web&partenaire=&useAnonyme=ok'''
+''curl 'https://rdv.pointvision.com/ajax/rdv_disponible_calendar_ajax.php?token_rdv=&idtyperdv=19&idlieux=41&idp=0&datesemaine=2023-07-10&nbpersonne=1&provenance=web&partenaire=&useAnonyme=ok'''

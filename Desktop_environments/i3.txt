@@ -1,0 +1,13 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== i3 ======
+**Youtube Tutorial**
+* [[https://www.youtube.com/watch?v=j1I63wGcvU4|Part 1]]
+* [[https://www.youtube.com/watch?v=8-S0cWnLBKg|Part 2]]
+* [[https://www.youtube.com/watch?v=ARKIwOlazKI|Part 3]]
+
+**Default config file**
+''/home/etienne/.config/i3/config''
+https://i3wm.org/docs/userguide.html
+https://i3wm.org/docs/refcard.html

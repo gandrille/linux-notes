@@ -1,0 +1,7 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== Releases ======
+GNOME 3.36 will be released on March 11, 2020.
+
+

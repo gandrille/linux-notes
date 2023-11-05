@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+
+====== VPN via ssh using sshuttle ======
+
+===== References =====
+* [[https://github.com/sshuttle/sshuttle|GitHub repo]]
+* [[https://sshuttle.readthedocs.io/en/latest/|Documentation]]
+
+===== Installation =====
+''apt-get install sshuttle'' 
+
+**Requirements**
+* Client side: sudo, or root access on your client machine. (The server doesn’t need admin access.). Python 2 or 3 ([[https://sshuttle.readthedocs.io/en/latest/requirements.html|see supported versions)]].
+* Server side: The server can run in Python 2 or 3 ([[https://sshuttle.readthedocs.io/en/latest/requirements.html|see supported versions)]].
+
+===== Usage =====
+''sshuttle [options] [-r [username@]sshserver[:port]] <subnets …>''
+
+**Example **''sshuttle --dns -r username@sshserver 0/0''
+* ''--dns'' DNS queries will be proxied through the DNS server of the server you are connect to
+* ''-r username@sshserver'' the remote server
+* ''0/0'' the networks to be proxied. In this case, ''0/0'' is a shorthand for ''0.0.0.0/0'', meaning every network.
