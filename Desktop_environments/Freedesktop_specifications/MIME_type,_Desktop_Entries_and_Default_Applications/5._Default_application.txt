@@ -1,0 +1,53 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2024-05-27T10:26:08+02:00
+
+====== 5. Default application ======
+
+[[https://specifications.freedesktop.org/mime-apps-spec/mime-apps-spec-latest.html|Association between MIME types and applications]] : « this specification solves the remaining issues: which application should open a file by default, how to let the user change the default application, and how to let the user add or remove associations between applications and mimetypes. » 
+
+===== ''mimeapps.list'' file format =====
+The information is located into a file called ''mimeapps.list''.
+
+''mimeapps.list'' can contain the following groups
+* ''[Default Applications]''
+* ''[Added Associations]''
+* ''[Removed Associations]'' for blacklisting (someting added by a ''mimeapps.list'' file can be blacklisted by another one)
+
+Here is a basic example
+'''
+[Added Associations]
+image/jpeg=org.gnome.gThumb.desktop;shotwell-viewer.desktop;gimp.desktop;ristretto.desktop;
+audio/mpeg=vlc.desktop;
+
+[Default Applications]
+text/html=firefox.desktop
+image/jpeg=org.gnome.gThumb.desktop
+'''
+
+===== ''mimeapps.list'' file location =====
+* **user overrides, desktop-specific (for advanced users)** ''$XDG_CONFIG_HOME/$desktop-mimeapps.list'' → ''~/.config/xfce-mimeapps.list''
+* **user overrides (recommended location for user configuration GUIs)** ''$XDG_CONFIG_HOME/mimeapps.list'' → ''~/.config/mimeapps.list''
+* **sysadmin and ISV overrides, desktop-specific** ''$XDG_CONFIG_DIRS/$desktop-mimeapps.list'' → ''/etc/xdg/xdg-xubuntu/xfce-mimeapps.list'' and ''/etc/xdg/xfce-mimeapps.list''
+* **sysadmin and ISV overrides** ''$XDG_CONFIG_DIRS/mimeapps.list'' → ''/etc/xdg/xdg-xubuntu/mimeapps.list'' and ''/etc/xdg/mimeapps.list''
+* **distribution-provided defaults, desktop-specific** ''$XDG_DATA_DIRS/applications/$desktop-mimeapps.list'' → ''/usr/local/share/applications/xfce-mimeapps.list'' and ''/usr/share/applications/xfce-mimeapps.list''
+**distribution-provided defaults** ''$XDG_DATA_DIRS/applications/mimeapps.list'' → ''/usr/local/share/applications/mimeapps.list'' and ''/usr/share/applications/mimeapps.list''
+
+* **DEPRECATED For completeness, desktop-specific** ''$XDG_DATA_HOME/applications/$desktop-mimeapps.list'' → ''~/.local/share/applications/xfce-mimeapps.list''
+* **DEPRECATED For compatibility** ''$XDG_DATA_HOME/applications/mimeapps.list'' →  ''~/.local/share/applications/mimeapps.list''
+
+===== Programs =====
+**ASK for the default application for managing a mime type**
+''xdg-mime query default text/plain'' → ''org.gnome.gedit.desktop''
+
+**UPDATE the default application for managing a mime type**
+''xdg-mime default org.gnome.gedit.desktop text/plain''
+
+**Opens a file or URL in the user's preferred application**
+''xdg-open myfile.jpg''
+
+**xdg-utils package alternatives**
+* [[https://wiki.archlinux.org/title/Default_applications|List of alternatives]]
+* [[:Desktop environments:Xfce:Exo|Exo]] exo-open - XFCE
+* mimeopen
+* handlr https://github.com/chmln/handlr

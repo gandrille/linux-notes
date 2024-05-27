@@ -4,6 +4,10 @@ Wiki-Format: zim 0.6
 ====== pdf ======
 See also: [[https://en.wikipedia.org/wiki/Poppler_(software)#poppler-utils|poppler-utils]]
 
+https://github.com/Stirling-Tools/Stirling-PDF
+
+
+
 ===== Booklet creation =====
 
 ==== Using bookletimposer (GUI and CLI) ====
@@ -116,8 +120,8 @@ Other solution: ''img2pdf input1.png input2.png -o output.pdf''
 See [[:Softs:Images:ImageMagick|ImageMagick page]].
 
 ===== Images extraction from a pdf file =====
-As jpeg images : ''pdfimages -j file.pdf img-dir/''
-As png images : ''pdfimages -png file.pdf img-dir/''
+As jpeg images : ''pdfimages -j file.pdf perfix-for-images''
+As png images : ''pdfimages -png file.pdf perfix-for-images''
 
 ===== Office document → pdf (using Libre Office) =====
 Package: ''libreoffice-writer''

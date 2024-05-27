@@ -11,6 +11,15 @@ See [[https://github.com/charmbracelet/gum#tutorial|README]] file for examples.
 ''whiptail --title "Tell me" --yesno "Tell me yes or no…" 20 30''
 ''whiptail --title "Tell me" --inputbox "Tell me something" 15 45''
 
+'''
+dialog \
+	--backtitle "This is an options panel" \
+	--menu "Please select" \
+	10 40 3 \
+	1 "First option" \
+	2 "Second option"
+'''
+
 ===== read line wrapper =====
 ''rlwrap [rlwrap-options] command ...''
 

@@ -1,0 +1,48 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+Creation-Date: 2024-05-27T11:03:11+02:00
+
+====== 2. Mime Database ======
+In order to assign a mime type to a file based on its name, content or path, info spec databases are used.
+They are basically a set of xml files that need to be processed after modification in order to build the database.
+
+**Sources**
+* [[https://specifications.freedesktop.org/shared-mime-info-spec/latest/|Freedesktop.org Shared mime info spec]] 
+* [[https://docs.oracle.com/cd/E37927_01/html/E36692/glvax.html|Oracle documentation]]
+
+{{./mimeDB.png}}
+
+===== Database location and source files =====
+According to the specs, the databses are located into the ''mime'' subdirectory of every directory in ''XDG_DATA_HOME:XDG_DATA_DIRS''. By default, this means:
+* ''/usr/share/mime/''
+* ''/usr/local/share/mime/''
+* ''~/.local/share/mime/''
+
+A ''packages'' directory holds a set of files. Each of them is describing a way to label files with a given type.
+
+Here is a basic example:
+'''
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+ <mime-type type="application/x-extension-html">
+  <comment>html document</comment>
+  <glob pattern="*.html"/>
+ </mime-type>
+</mime-info>
+'''
+
+According to the specs, « Each application that wishes to contribute to the MIME database will install a single XML file, named after the application, into one of the three ''<MIME>/packages/'' directories (depending on where the user requested the application be installed). 
+
+Note: « Any file named ''Override.xml'' takes precedence over all other files in the same packages directory ». « Users should never edit the database. If they wish to make corrections or provide MIME entries for software that doesn't provide these itself, they should do so by means of the ''Override.xml'' ». 
+
+===== Lookuptable ''mime.cache'' =====
+After installing, uninstalling or modifying xml file, the database lookuptable ''mime.cache'' **MUST** be updated using ''update-mime-database'' command.
+Example: ''update-mime-database ~/.local/share/mime''
+
+Note : The ''update-mime-database'' command does not only build the ''mime.cache'' file. See [[https://specifications.freedesktop.org/shared-mime-info-spec/latest/ar01s02.html#s2_layout|full list]].
+
+===== Lookuptable queries =====
+**In order to know the mime type of a file**
+* using ''xdg-utils'' package: ''xdg-mime query filetype <filename>''
+* using ''libfile-mimeinfo-perl'' package:  mimetype <filename>
+→ see man pages, since a lot of options are available for advanced queries and troubleshooting purpose.

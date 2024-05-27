@@ -1,5 +1,5 @@
 Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
+Wiki-Format: zim 0.6
 
 ====== apt and dpkg ======
 In order to mitigate [[https://security-tracker.debian.org/tracker/CVE-2019-3462|CVE-2019-3462]], use https inside  ''/etc/apt/sources.list'' thanks to ''apt-transport-https'' packet.
@@ -46,7 +46,7 @@ https://lists.debian.org/debian-devel-announce/2015/08/msg00006.html
 **List already answered questions**
 ''debconf-get-selections'' (package ''debconf-utils'')
 
-**Register an answer **
+**Register an answer** 
 ''echo "wireshark-common wireshark-common/install-setuid boolean true" | debconf-set-selections -v''
 
 ===== Using package version =====

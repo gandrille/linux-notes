@@ -5,7 +5,7 @@ Wiki-Format: zim 0.6
 * uses SquashFS for the compresed filesystem
 * security managed by apparmor
 
-Pour masquer le dossier snap dans les filemanager :
+In order to hide the snap folder in the filemanager
 ''echo snap > ~/.hidden''
 
 ===== **Find snaps** =====

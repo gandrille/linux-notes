@@ -7,12 +7,12 @@ Wiki-Format: zim 0.6
 https://xmpp.chapril.org/
 https://www.chapril.org/XMPP.html
 
-===== sendxmpp =====
+===== go-sendxmpp =====
 **Example with everything defined**
-''echo "sms send 0611223344  foo" | sendxmpp -u username -j my-domain.org -p mysecret --tls recipient@domain.org''
+''echo "sms send 0611223344  foo" | go-sendxmpp -u username -j my-domain.org -p mysecret --tls recipient@domain.org''
 
-**Using ~/.sendxmpprc**
-''echo "sms send 0611223344  foo" | sendxmpp --tls smartbot@chapril.org''
+**Using ~/.config/go-sendxmpp/sendxmpprc**
+''echo "sms send 0611223344  foo" | go-sendxmpp --tls recipient@domain.org''
 
 ===== Local XMPP server =====
 ''docker pull ejabberd/ecs''

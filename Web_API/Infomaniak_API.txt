@@ -6,19 +6,19 @@ Wiki-Format: zim 0.6
 **Token generation:** https://manager.infomaniak.com/v3/ng/accounts/token/list
 
 Notes:
-1. even if a user is allowed to edit aliases, he is not allowed to use the API to manage them. Admin is required.
+1. even if a user is allowed to edit aliases, he is not allowed to use the API to manage them. Admin is required. (Edit: not anymore?)
 2. mail_hosting_id can be found in the URL of the admin mail management interface
+3. the official documentation is sometimes wrong. Double check the response payload format!
 
 '''
 INFOMANIAK_TOKEN="my_token_with_mail_scope"
 INFOMANIAK_MAIL_HOSTING_ID=0123456
 INFOMANIAK_MAILBOX=part_before_the_@
-alias=foo
 '''
-
 
 ===== Aliases =====
 **Aliases list**
+https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/aliases
 
 '''
 curl \
@@ -28,6 +28,7 @@ https://api.infomaniak.com/1/mail_hostings/$INFOMANIAK_MAIL_HOSTING_ID/mailboxes
 '''
 
 **Alias creation**
+https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/aliases
 
 '''
 curl -X POST \
@@ -38,6 +39,7 @@ https://api.infomaniak.com/1/mail_hostings/$INFOMANIAK_MAIL_HOSTING_ID/mailboxes
 '''
 
 **Alias removal**
+https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/aliases/%7Balias%7D
 
 '''
 curl -X DELETE \
@@ -47,8 +49,10 @@ https://api.infomaniak.com/1/mail_hostings/$INFOMANIAK_MAIL_HOSTING_ID/mailboxes
 '''
 
 
-===== Filters =====
+===== Sieve filters =====
 **List filters**
+https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/filters
+
 '''
 curl \
  -H "Authorization: Bearer $INFOMANIAK_TOKEN" \

@@ -1,0 +1,56 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.6
+
+====== 3. Desktop Entries ======
+**Sources**
+* [[https://www.freedesktop.org/wiki/Specifications/desktop-entry-spec/|Freedesktop.org Specification]]
+* [[https://www.freedesktop.org/wiki/Software/desktop-file-utils/|Freedesktop.org Wiki]]
+* [[https://developer.gnome.org/integration-guide/stable/desktop-files.html.en|Gnome Developer Wiki]]
+* [[https://venam.nixers.net/blog/unix/2016/11/25/default-programs.html|venam.nixers.net article]]
+
+===== Desktop file content =====
+[[https://specifications.freedesktop.org/desktop-entry-spec/latest/ar01s06.html|Desktop entry keys]]
+
+**A simple example**
+
+'''
+[Desktop Entry]
+Name=MyProg
+Comment=A life saver program
+Exec=/foo/bar/baz
+StartupNotify=true
+Terminal=false
+Type=Application
+Icon=/foo/bar/icon
+'''
+
+**A more complex example (from the specification)**
+
+'''
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Foo Viewer
+Comment=The best viewer for Foo objects available!
+TryExec=fooview
+Exec=fooview %F
+Icon=fooview
+MimeType=image/x-foo;
+Actions=Gallery;Create;
+
+[Desktop Action Gallery]
+Exec=fooview --gallery
+Name=Browse Gallery
+
+[Desktop Action Create]
+Exec=fooview --create-new
+Name=Create a new Foo!
+Icon=fooview-new
+'''
+
+===== Tools =====
+* ''desktop-file-edit'': helper tool for updating fields inside a desktop file
+* ''desktop-file-install'': installs/updates a desktop file
+* ''desktop-file-validate'': validate desktop entry files according to the Desktop Entry specification
+
+''exo-utils'' package provides ''exo-desktop-item-edit'', which eases a lot desktop entries editing.

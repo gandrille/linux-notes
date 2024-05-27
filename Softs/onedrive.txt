@@ -2,8 +2,11 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.6
 
 ====== onedrive ======
+https://www.omgubuntu.co.uk/2024/05/fix-ubuntu-onedrive-account-error
+
+
 ===== Installation =====
-The ''onedrive'' package in universe is deprecated. Please add an external repository followin [[https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md|Ubuntu installation.]]
+The ''onedrive'' package in universe is deprecated. Please add an external repository following [[https://github.com/abraunegg/onedrive/blob/master/docs/ubuntu-package-install.md|Ubuntu installation.]]
 
 ===== Set up =====
 Run ''onedrive'' command and follow the instructions. This will authorize the cli to access a specific onedrive account.

@@ -29,11 +29,11 @@ In order to install Sieve scripts on a server, two solutions may be available:
 **Infomaniak**
 ✅ [[https://www.infomaniak.com/fr/support/faq/1729/infomaniak-mail-trier-automatiquement-les-e-mails-entrants-filtres-sieve|Sieve support]]
 ✅ [[https://www.infomaniak.com/fr/support/faq/1729/trier-les-e-mails-entrants-selon-des-regles-filtres-sieve|"editheader" extension support]]
-https://app.fastmail.com/sievetester/
 
 **Fastmail**
 ✅ [[https://www.fastmail.help/hc/en-us/articles/1500000280481-Sieve-scripts|Sieve support]]
 ✅ [[https://www.fastmail.help/hc/en-us/articles/360058753814-Sieve-frequently-asked-questions|"editheader" extension support]]
+https://app.fastmail.com/sievetester/
 
 **Proton**
 ✅ [[https://proton.me/support/sieve-advanced-custom-filters|Sieve support]]

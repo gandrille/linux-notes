@@ -10,27 +10,26 @@ https://flatpak.org/setup
 * problème : il faut un runtime pour GNOME, un runtime pour KDE,…
 * portal : pour parler au système de notification,…
 
-**Quick Start**
-
+**Quick Install**
+http://flatpak.org/getting.html
 * Installation : ''sudo apt-get install flatpak''
-* Plugin Flatpak pour GNOME : ''sudo apt install gnome-software-plugin-flatpak''
+* Plugin Flatpak pour le software center de GNOME : ''sudo apt install gnome-software-plugin-flatpak''
 * Desktop integration : ''sudo apt install xdg-desktop-portal''
+* RESTART !
 
-* Ajout d'un dépôt Flatpak de flathub : ''flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo''
+**Remote management**
+* list remotes: ''flatpak remotes''
+* add a remote: ''flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo''
+* and also: ''flatpak remote-add --gpg-import=repo-key.gpg url_address''
 
-**Utilisation**
-
-* Installation : ''flatpak install nom_du_flatpak''
-* Ajout d'un dépôt Flatpak
-	* ''flatpak remote-add une_adresse_url''
-	* ''flatpak remote-add --gpg-import=repo-key.gpg une_adresse_url''
-* Lancement : ''flatpak run nom_de_l_appli''
-* Désinstallation : ''flatpak uninstall nom_du_flatpak''
+**Basic application management**
+* List installed flatpak: ''flatpak list''
+* Installation: ''flatpak install flatpak_remote flatpak_name'' / ''flatpak install --noninteractive --assumeyes flatpak_remote flatpak_name''
+* Execution:  ''flatpak run flatpak_name''
+* Uninstall: ''flatpak uninstall flatpak_name''
 
 **Portals**
-
 http://flatpak.org/xdg-desktop-portal/portal-docs.html
-
 * xdg-desktop-portal
 * Network Monitor
 * proxy resolver
@@ -47,11 +46,13 @@ http://flatpak.org/xdg-desktop-portal/portal-docs.html
 flatpak install flathub io.github.flattool.Warehouse
 flatpak run io.github.flattool.Warehouse
 '''
-[[https://github.com/tchx84/flatseal|Flatseal]]
+[[https://flathub.org/apps/com.github.tchx84.Flatseal|Flatseal]]
+'''
+flatpak install flathub com.github.tchx84.Flatseal
+flatpak run com.github.tchx84.Flatseal
+'''
 
 **Ressources**
-
-* http://flatpak.org/getting.html
 * https://github.com/flatpak/flatpak/tags
 * http://flatpak.org/flatpak/flatpak-docs.html
 * http://flatpak.org/flatpak/reference/html/index.html

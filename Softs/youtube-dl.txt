@@ -7,7 +7,6 @@ Wiki-Format: zim 0.6
 
 **Forks with additional features and fixes**
 * https://github.com/yt-dlp/yt-dlp
-* https://github.com/ytdl-patched/yt-dlp
 
 ===== GUI =====
 [[https://mrs0m30n3.github.io/youtube-dl-gui/|youtube-dl-gui]] ([[https://github.com/MrS0m30n3/youtube-dl-gui|GitHub]])
@@ -126,3 +125,10 @@ En remplaçant PARAM_DE_QUALITE par l’un de ces paramètres :
 
 **Télécharger une vidéo ou une playlist au format MP4**
 ''youtube-dl -f mp4 URL_DE_LA_VIDEO''
+
+
+===== Subtitles =====
+avec le package ''mkvtoolnix''
+
+youtube-dl --write-subs --sub-langs "fr" $url
+mkvmerge -o a.mkv  --default-track 0 --language 0:fr ARTE\ Reportage\ \[112233-000-A\].fr.vtt ARTE\ Reportage\ \[112233-000-A\].mp4 

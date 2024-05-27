@@ -12,6 +12,7 @@ Wiki-Format: zim 0.6
 **Examples**
 * ''notify-send Test "Hello World"''
 * ''notify-send "Message Title" "Message body" -i /usr/share/pixmaps/filezilla.xpm -t 5000''
+* ''notify-send -i messagebox_info "Message Title" "Message body"''
 
 A regarder : contenu des packages
 * ''notify-osd''

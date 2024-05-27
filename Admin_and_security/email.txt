@@ -1,5 +1,5 @@
 Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
+Wiki-Format: zim 0.6
 
 ====== email ======
 2020 [[https://www.nextinpact.com/article/30341/109074-emails-avec-spf-dkim-dmarc-arcet-bimi-a-quoi-ca-sert-comment-en-profiter|Emails avec SPF, DKIM, DMARC, ARC et BIMI : à quoi ça sert, comment en profiter ?]]
@@ -12,3 +12,4 @@ Wiki-Format: zim 0.4
 * [[https://en.wikipedia.org/wiki/Authenticated_Received_Chain|ARC (Authenticated Received Chain)]] is an email authentication system designed to allow an intermediate mail server like a mailing list or forwarding service to sign an email's original authentication results.
 * [[https://tools.ietf.org/html/draft-blank-ietf-bimi-00|BIMI (Brand Indicators for Message Identification)]] : Brand logo on validated emails thanks to a DNS record
 
+→ Anonymous Email Forwarding https://addy.io/

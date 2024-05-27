@@ -1,8 +1,7 @@
 Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
+Wiki-Format: zim 0.6
 
 ====== Bash ======
-* [[https://starship.rs|starship : advanced prompt bor bash and others]]
 * [[https://tiswww.case.edu/php/chet/bash/NEWS|Release notes]]
 * [[https://google.github.io/styleguide/shell.xml|Guide de style de Google]]
 * http://arturoherrero.com/2013/11/29/command-line-one-liners/

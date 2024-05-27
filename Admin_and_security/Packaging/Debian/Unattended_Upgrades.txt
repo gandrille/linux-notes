@@ -1,5 +1,5 @@
 Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
+Wiki-Format: zim 0.6
 
 ====== Unattended Upgrades ======
 The ''unattended-upgrades'' package can be used to automatically install updated packages, and can be configured to update all packages or just install security updates. It is installed by default on Debian 9 (Stretch) and on receant Ubuntu realeases.
@@ -24,6 +24,11 @@ Unattended-Upgrade::Allowed-Origins {
 '''
 
 
+* **Security** The security updates are holes in software that need to be patched for, obviously, security reasons.
+* **Updates (Recommended Updates)**: The Recommended Updates are just software changes, but not updates that will affect the security of your system, just the apps installed and stuff like that. They tend to fix bugs and annoying problems.
+* **Proposed:** The Proposed updates are updates that have to be tested before they can be officially put into the Recommended updates repository. They may have issues that could break your system, and quite often do.
+* **Backports:** Backported updates are pieces of software which come from a newer major release. Thus, they can contain new features, but may also break compatibility with their older version
+
 ===== Which operations sould be triggered =====
 **Configuration file(s)**
 The usual configuration file is ''/etc/apt/apt.conf.d/20auto-upgrades'' BUT all the files inside /''etc/apt/apt.conf.d/'' are evaluated in lexicographical order to compute the values to be used.
@@ -43,7 +48,6 @@ Editing the file ''/etc/apt/apt.conf.d/20auto-upgrades'' is a good practice. Her
 APT::Periodic::Update-Package-Lists "1";
 APT::Periodic::Unattended-Upgrade "1";
 '''
-
 
 ===== Debug =====
 ''unattended-upgrade'' can be executed on demand. It can be usefull for testing the configuration. The script accepts several options

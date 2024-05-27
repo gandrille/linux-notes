@@ -8,19 +8,40 @@ Pour connaitre la version installée : ''lsb_release -a'' ou ''hostnamectl''
 
 
 **Ubuntu 24.04 (Noble Numbat)**
+Ubuntu release notes
+* 
+* 
 
+[[https://wiki.xubuntu.org/releases/24.04/release-notes|XUbuntu release notes]]
+* 
+* 
 
 **Ubuntu 23.10 (Mantic Minotaur)**
-Ubuntu release notes
-* ...
+[[https://discourse.ubuntu.com/t/mantic-minotaur-release-notes/35534|Ubuntu release notes]]
+* Linux 6.5 kernel
+* systemd v253.5
+* The default Ubuntu Desktop installation is now minimal
+* GNOME 45
 
 [[https://wiki.xubuntu.org/releases/23.10/release-notes|XUbuntu release notes]]
-* ...
+* Xfce 4.18 (minior updates)
+* Ristretto 0.13.1 adds printing support to Xubuntu's default image viewer
+* Past [[https://github.com/Xubuntu/xubuntu-marketing/blob/master/wallpapers/README.md|XUbuntu wallpapers]] can now be easily installed from the repositories! They're grouped by LTS release
+	* ''xubuntu-wallpapers-jammy'' Hirsute, Impish, and Jammy
+	* ''xubuntu-wallpapers-focal'' Cosmic, Disco, Eoan, and Focal
+	* ''xubuntu-wallpapers-bionic'' Yakkety, Zesty, Artful, and Bionic
+	* ''xubuntu-wallpapers-xenial'' Utopic, Vivid, Wily, and Xenial
+	* ''xubuntu-wallpapers-trusty'' Quantal, Raring, Saucy, and Trusty
+	* ''xubuntu-wallpapers-precise'' Maverick, Natty, and Precise
+	* ''xubuntu-wallpapers-lucid'' Intrepid, Jaunty, Karmic, and Lucid
+	* ''xubuntu-wallpapers-hardy'' Edgy, Feisty, Gutsy, and Hardy
+	* ''xubuntu-wallpapers-dapper'' Dapper
 
 **Ubuntu 23.04 (Lunar Lobster)**
 [[https://discourse.ubuntu.com/t/lunar-lobster-release-notes/31910|Ubuntu release notes]]
+* Xfce 4.18 (minior updates)
 * Linux 6.2 kernel
-* ca-certificates package has been updated to the 2.60 version of the Mozilla certificate authority bundle.
+* ''ca-certificates'' package has been updated to the 2.60 version of the Mozilla certificate authority bundle.
 * GNOME 44
 
 [[https://wiki.xubuntu.org/releases/23.04/release-notes|XUbuntu release notes]]

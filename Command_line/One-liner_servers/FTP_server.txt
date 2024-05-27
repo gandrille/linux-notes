@@ -1,5 +1,5 @@
 Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
+Wiki-Format: zim 0.6
 
 ====== FTP server ======
 
@@ -15,7 +15,7 @@ Basic FTP server: ''python3 -m pyftpdlib''
 * ''-u john'' → username (default is anonymous user)
 * ''-P mypass'' → password
 
-example: ''python3 -m pyftpdlib -w -u etienne -P foo''
+example: ''python3 -m pyftpdlib -w -u etienne -P foo -p 21''
 see also: ''python3 -m pyftpdlib --help''
 
 ===== twistd3 =====

@@ -15,6 +15,9 @@ Wiki-Format: zim 0.6
 
 ===== cloc =====
 count lines of code.
+package ''cloc''
+
+
 
 ===== Timeout =====
 If no signal is specified, send the ''TERM'' signal upon  timeout. 
