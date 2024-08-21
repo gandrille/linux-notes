@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== Backups and sync ======
-**Chez Framasoft (en 2017)**
-* [[https://github.com/backuppc/backuppc|Backup PC]] : backup de plusieurs postes
-* [[https://borgbackup.readthedocs.io/en/stable/|Borg]] : sauvegardes incrémentales ([[https://github.com/borgbase/vorta|vorta frontend]])

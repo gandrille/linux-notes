@@ -1,6 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== Privacy and web tracking ======
-2020 [[https://www.pixeldetracking.com/fr/home/criteo-geant-marketing-surveillance-francais|Criteo, un géant du marketing de surveillance français]] (→ [[https://securitytrails.com/list/cname/dnsdelegation.io|CNAME dnsdelegation.io]])
-2019 [[https://www.eff.org/wp/behind-the-one-way-mirror|Behind the One-Way Mirror: A Deep Dive Into the Technology of Corporate Surveillance]]

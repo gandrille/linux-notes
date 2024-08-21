@@ -1,6 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.6
-
-====== Key Light ======
-https://blog.sebastian-daschner.com/entries/control-elgato-lights-command-line
-

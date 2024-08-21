@@ -1,8 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== rsnapshot ======
-* [[https://rsnapshot.org/|Website]]
-* [[https://www.microlinux.fr/rsnapshot-centos-7/|Article détaillé]]
-
-

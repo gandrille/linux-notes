@@ -1,8 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== 3 Service types ======
-* simple
-* forking
-* oneshot : pratique avec un timer...
-* dbus : activation via un message dbus

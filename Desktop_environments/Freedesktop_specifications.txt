@@ -1,9 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== Freedesktop specifications ======
-* [[https://specifications.freedesktop.org/|Freedesktop.org Specifications]]
-* [[https://www.freedesktop.org/wiki/|Freedesktop.org Wiki]]
-* [[https://en.wikipedia.org/wiki/Freedesktop.org|Wikipedia]]
-
-Why XDG? That's because freedesktop.org was formerly known as the X desktop group.

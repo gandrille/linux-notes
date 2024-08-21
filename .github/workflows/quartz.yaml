@@ -1,0 +1,110 @@
+# ======================================
+name: Deploy Quartz site to GitHub Pages
+# ======================================
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches:
+      - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    env:
+      QUARTZ_LINKS: shortest
+
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Empty quartz setup
+      # ==================
+
+      - name: Checkout Quartz
+        uses: actions/checkout@v4
+        with:
+          repository: 'jackyzha0/quartz'
+          path: 'quartz'
+      - name: Npm dependency installation
+        working-directory: ./quartz
+        run: npm i
+      - name: Quartz init
+        working-directory: ./quartz
+        run: npx quartz create --strategy new --links ${QUARTZ_LINKS}
+      
+      # Quartz customization with content and config
+      # ============================================
+
+      - name: Checkout content
+        uses: actions/checkout@v4
+        with:
+          path: 'content'
+
+      - name: Apply content
+        run: rsync -va --exclude .git --exclude .quartz content/ quartz/content/
+
+      - name: Apply custom configuration
+        continue-on-error: true
+        run: |
+          [ -d content/.quartz/ ] && rsync -va content/.quartz/ quartz/
+
+      - name: Move README.md to index.md
+        if: ${{ hashFiles('quartz/content/README.md') != '' }}
+        run: mv quartz/content/README.md quartz/content/index.md
+
+      # Build
+      # =====
+
+      - name: Build content
+        working-directory: ./quartz
+        run: npx quartz build
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: quartz/public     
+
+  # Deploy job
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+
+    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    permissions:
+      pages: write      # to deploy to Pages
+      id-token: write   # to verify the deployment originates from an appropriate source
+
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

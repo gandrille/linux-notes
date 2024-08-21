@@ -1,6 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== Distributions et kernel ======
-* https://pkgs.org
-* https://www.kernel.org/category/releases.html

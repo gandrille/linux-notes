@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== Trim ======
-[[https://korben.info/comment-decouper-video-linux.html|Comment découper une vidéo sous Linux ?]]
-TODO à compléter avec ffmpeg.
-

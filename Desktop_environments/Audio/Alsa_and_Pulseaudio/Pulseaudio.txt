@@ -1,6 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== Pulseaudio ======
-* Le contrôleur de volume : [[https://doc.ubuntu-fr.org/pavucontrol|Pavucontrol]] (PulseAudio VolUme Control) → outil graphique de contrôle simplifié des volumes audio entrée/sortie pour le serveur de son PulseAudio.
-* Serveur de son : [[https://doc.ubuntu-fr.org/pulseaudio|PulseAudio.]] S'interface avec ALSA pour l'accès au matériel, mais peut également gérer des fux réseau.

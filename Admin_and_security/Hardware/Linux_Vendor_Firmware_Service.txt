@@ -1,6 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== Linux Vendor Firmware Service ======
-https://en.wikipedia.org/wiki/Fwupd#Linux_Vendor_Firmware_Service
-→ Principalement utilisé par Dell et Lenovo

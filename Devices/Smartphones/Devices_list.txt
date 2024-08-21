@@ -1,9 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== Devices list ======
-* [[https://www.pine64.org/pinephone/|Pinephone]]
-* [[https://puri.sm/products/librem-5/|Librem 5]]
-
-
-

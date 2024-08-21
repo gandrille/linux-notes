@@ -1,9 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== SystemVinit ======
-For bash lovers :-)
-
-===== Logs =====
-* ''tail -f /var/log/messages''
-* ''tail -f /var/log/syslog''

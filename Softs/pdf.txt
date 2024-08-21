@@ -1,5 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== pdf ======
-[[https://en.wikipedia.org/wiki/Ipe_(software)|Ipe]] pour faire des pdf avec du LaTex.

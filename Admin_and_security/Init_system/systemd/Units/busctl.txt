@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.6
-
-====== busctl ======
-''busctl'': introspect the bus (may be used to introspect and monitor the D-Bus bus)
-
-

@@ -1,0 +1,2 @@
+**swapon command**
+`swapon --show`

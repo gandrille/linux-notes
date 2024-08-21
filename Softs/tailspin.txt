@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.6
-Creation-Date: 2024-02-17T22:30:02+01:00
-
-====== tailspin ======
-A log file highlighter
-https://github.com/bensadeh/tailspin

@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.6
-Creation-Date: 2024-05-27T10:30:35+02:00
-
-====== MIME type, Desktop Entries and Default Applications ======
-
-

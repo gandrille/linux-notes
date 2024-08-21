@@ -1,9 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== Pastebin API ======
-http://ix.io
-http://sprunge.us
-http://clbin.com
-[[http://p.defau.lt|h]]ttp://p.defau.lt
-http://pub.iotek.org

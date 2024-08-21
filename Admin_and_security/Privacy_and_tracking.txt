@@ -1,5 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-
-====== Privacy and tracking ======
-[[https://security-list.js.org/#/|Security List]]
